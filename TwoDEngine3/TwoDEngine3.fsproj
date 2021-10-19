@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net6.0</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Compile Include="AbstractLevelController.fs" />
+        <Compile Include="ExampleLevel.fs" />
+        <Compile Include="Program.fs" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="FSFramework" Version="1.0.0-preview-1" />
+      <PackageReference Include="MathSharp" Version="2.0.0-pre" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\GraphicsManagerVeldrid\GraphicsManagerVeldrid.fsproj" />
+      <ProjectReference Include="..\TDE3ManagerInterfaces\TDE3ManagerInterfaces.fsproj" />
+    </ItemGroup>
+
+</Project>

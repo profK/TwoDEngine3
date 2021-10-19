@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "kBzNoFgYg1Ogs+pLmmmT+eZ+wGKB5oTsip8DJerdxCgkxQCAQcWSSLAjgAua01R1a+ZBp9td3CCQ5iiplKLlwQ==",
+  "success": true,
+  "projectFilePath": "D:\\projects\\RiderProjects\\TwoDEngine3\\TDE3ManagerInterfaces\\TDE3ManagerInterfaces.fsproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\jpkessel\\.nuget\\packages\\fsharp.core\\5.0.0\\fsharp.core.5.0.0.nupkg.sha512",
+    "C:\\Users\\jpkessel\\.nuget\\packages\\mathsharp\\2.0.0-pre\\mathsharp.2.0.0-pre.nupkg.sha512",
+    "C:\\Users\\jpkessel\\.nuget\\packages\\microsoft.net.compilers.toolset\\3.2.0-beta1-final\\microsoft.net.compilers.toolset.3.2.0-beta1-final.nupkg.sha512"
+  ],
+  "logs": []
+}
