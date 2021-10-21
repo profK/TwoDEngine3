@@ -10,7 +10,7 @@
         "dependencies": {
           "FSFramework": "1.0.0-preview-1",
           "FSharp.Core": "5.0.0",
-          "GraphicsManagerVeldrid": "1.0.0",
+          "GraphicsManagerVeldridPlugin": "1.0.0",
           "MathSharp": "2.0.0-pre",
           "TDE3ManagerInterfaces": "1.0.0"
         },
@@ -1696,18 +1696,17 @@
           }
         }
       },
-      "GraphicsManagerVeldrid/1.0.0": {
+      "GraphicsManagerVeldridPlugin/1.0.0": {
         "dependencies": {
           "FSFramework": "1.0.0-preview-1",
           "FSharp.Core": "5.0.0",
           "TDE3ManagerInterfaces": "1.0.0",
           "Veldrid": "4.8.0",
-          "Veldrid.SDL2": "4.8.0",
           "Veldrid.SPIRV": "1.0.14",
           "Veldrid.StartupUtilities": "4.8.0"
         },
         "runtime": {
-          "GraphicsManagerVeldrid.dll": {}
+          "GraphicsManagerVeldridPlugin.dll": {}
         }
       },
       "TDE3ManagerInterfaces/1.0.0": {
@@ -2735,7 +2734,7 @@
       "path": "vk/1.0.22",
       "hashPath": "vk.1.0.22.nupkg.sha512"
     },
-    "GraphicsManagerVeldrid/1.0.0": {
+    "GraphicsManagerVeldridPlugin/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

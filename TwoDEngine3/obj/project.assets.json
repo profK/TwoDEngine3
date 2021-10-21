@@ -2594,7 +2594,7 @@
           "lib/netstandard1.4/vk.dll": {}
         }
       },
-      "GraphicsManagerVeldrid/1.0.0": {
+      "GraphicsManagerVeldridPlugin/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
@@ -2602,15 +2602,14 @@
           "FSharp.Core": "5.0.0-beta",
           "TDE3ManagerInterfaces": "1.0.0",
           "Veldrid": "4.8.0",
-          "Veldrid.SDL2": "4.8.0",
           "Veldrid.SPIRV": "1.0.14",
           "Veldrid.StartupUtilities": "4.8.0"
         },
         "compile": {
-          "bin/placeholder/GraphicsManagerVeldrid.dll": {}
+          "bin/placeholder/GraphicsManagerVeldridPlugin.dll": {}
         },
         "runtime": {
-          "bin/placeholder/GraphicsManagerVeldrid.dll": {}
+          "bin/placeholder/GraphicsManagerVeldridPlugin.dll": {}
         }
       },
       "TDE3ManagerInterfaces/1.0.0": {
@@ -8292,10 +8291,10 @@
         "vk.nuspec"
       ]
     },
-    "GraphicsManagerVeldrid/1.0.0": {
+    "GraphicsManagerVeldridPlugin/1.0.0": {
       "type": "project",
-      "path": "../GraphicsManagerVeldrid/GraphicsManagerVeldrid.fsproj",
-      "msbuildProject": "../GraphicsManagerVeldrid/GraphicsManagerVeldrid.fsproj"
+      "path": "../GraphicsManagerVeldridPlugin/GraphicsManagerVeldridPlugin/GraphicsManagerVeldridPlugin.fsproj",
+      "msbuildProject": "../GraphicsManagerVeldridPlugin/GraphicsManagerVeldridPlugin/GraphicsManagerVeldridPlugin.fsproj"
     },
     "TDE3ManagerInterfaces/1.0.0": {
       "type": "project",
@@ -8307,7 +8306,7 @@
     "net6.0": [
       "FSFramework >= 1.0.0-preview-1",
       "FSharp.Core >= 5.0.0-beta.*",
-      "GraphicsManagerVeldrid >= 1.0.0",
+      "GraphicsManagerVeldridPlugin >= 1.0.0",
       "MathSharp >= 2.0.0-pre",
       "TDE3ManagerInterfaces >= 1.0.0"
     ]
@@ -8351,8 +8350,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "D:\\projects\\RiderProjects\\TwoDEngine3\\GraphicsManagerVeldrid\\GraphicsManagerVeldrid.fsproj": {
-              "projectPath": "D:\\projects\\RiderProjects\\TwoDEngine3\\GraphicsManagerVeldrid\\GraphicsManagerVeldrid.fsproj"
+            "D:\\projects\\RiderProjects\\TwoDEngine3\\GraphicsManagerVeldridPlugin\\GraphicsManagerVeldridPlugin\\GraphicsManagerVeldridPlugin.fsproj": {
+              "projectPath": "D:\\projects\\RiderProjects\\TwoDEngine3\\GraphicsManagerVeldridPlugin\\GraphicsManagerVeldridPlugin\\GraphicsManagerVeldridPlugin.fsproj"
             },
             "D:\\projects\\RiderProjects\\TwoDEngine3\\TDE3ManagerInterfaces\\TDE3ManagerInterfaces.fsproj": {
               "projectPath": "D:\\projects\\RiderProjects\\TwoDEngine3\\TDE3ManagerInterfaces\\TDE3ManagerInterfaces.fsproj"

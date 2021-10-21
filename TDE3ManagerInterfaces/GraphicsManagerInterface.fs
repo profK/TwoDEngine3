@@ -17,7 +17,7 @@ type GraphicsListener =
     abstract Render: GraphicsManager -> unit
     
 and GraphicsManager =
-    abstract  GraphicsListeners: GraphicsListener list with get,set
+    abstract GraphicsListeners: GraphicsListener list with get,set
     abstract LoadImage: Stream -> Image
     abstract PushClip: Rectangle ->unit
     abstract PopClip: unit -> Rectangle option

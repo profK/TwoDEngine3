@@ -4,8 +4,10 @@
 open System
 
 
+open GraphicsManagerVeldrid
 open TwoDEngine3.ExampleLevel
 open TwoDEngine3.LevelManagerInterface
+open TwoDEngine3.ManagerInterfaces.GraphicsManagerInterface
 
 
 let mutable currentLevelManager: AbstractLevelController option = None
@@ -33,12 +35,14 @@ let Render unit =
 [<EntryPoint>]
 let main argv =
    
-    //load plugins
-    AppDomain.CurrentDomain.GetAssemblies()
-    |> Array.iter(ManagerRegistry.scanAssembly)
+    //Register GraphicsManager
+    typedefof<GraphicsManagerVeldrid> |> ManagerRegistry.addManager
     
     // create lvel managers and set the active one hereSome(BouncyBall:>AbstractLevelController)
     
     let lm = Some(BouncyBall():>AbstractLevelController)
     SetLevelManager lm
+    match ManagerRegistry.getManager<GraphicsManager>() with
+    | Some graphics -> graphics.Start()
+    | None -> printfn "No Graphics Manager registered, check your project references"
     0 // return an integer exit code

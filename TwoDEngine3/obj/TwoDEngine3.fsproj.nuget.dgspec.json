@@ -4,14 +4,14 @@
     "D:\\projects\\RiderProjects\\TwoDEngine3\\TwoDEngine3\\TwoDEngine3.fsproj": {}
   },
   "projects": {
-    "D:\\projects\\RiderProjects\\TwoDEngine3\\GraphicsManagerVeldrid\\GraphicsManagerVeldrid.fsproj": {
+    "D:\\projects\\RiderProjects\\TwoDEngine3\\GraphicsManagerVeldridPlugin\\GraphicsManagerVeldridPlugin\\GraphicsManagerVeldridPlugin.fsproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\projects\\RiderProjects\\TwoDEngine3\\GraphicsManagerVeldrid\\GraphicsManagerVeldrid.fsproj",
-        "projectName": "GraphicsManagerVeldrid",
-        "projectPath": "D:\\projects\\RiderProjects\\TwoDEngine3\\GraphicsManagerVeldrid\\GraphicsManagerVeldrid.fsproj",
+        "projectUniqueName": "D:\\projects\\RiderProjects\\TwoDEngine3\\GraphicsManagerVeldridPlugin\\GraphicsManagerVeldridPlugin\\GraphicsManagerVeldridPlugin.fsproj",
+        "projectName": "GraphicsManagerVeldridPlugin",
+        "projectPath": "D:\\projects\\RiderProjects\\TwoDEngine3\\GraphicsManagerVeldridPlugin\\GraphicsManagerVeldridPlugin\\GraphicsManagerVeldridPlugin.fsproj",
         "packagesPath": "C:\\Users\\jpkessel\\.nuget\\packages\\",
-        "outputPath": "D:\\projects\\RiderProjects\\TwoDEngine3\\GraphicsManagerVeldrid\\obj\\",
+        "outputPath": "D:\\projects\\RiderProjects\\TwoDEngine3\\GraphicsManagerVeldridPlugin\\GraphicsManagerVeldridPlugin\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -61,11 +61,6 @@
               "generatePathProperty": true
             },
             "Veldrid": {
-              "target": "Package",
-              "version": "[4.8.0, )",
-              "generatePathProperty": true
-            },
-            "Veldrid.SDL2": {
               "target": "Package",
               "version": "[4.8.0, )",
               "generatePathProperty": true
@@ -206,8 +201,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\projects\\RiderProjects\\TwoDEngine3\\GraphicsManagerVeldrid\\GraphicsManagerVeldrid.fsproj": {
-                "projectPath": "D:\\projects\\RiderProjects\\TwoDEngine3\\GraphicsManagerVeldrid\\GraphicsManagerVeldrid.fsproj"
+              "D:\\projects\\RiderProjects\\TwoDEngine3\\GraphicsManagerVeldridPlugin\\GraphicsManagerVeldridPlugin\\GraphicsManagerVeldridPlugin.fsproj": {
+                "projectPath": "D:\\projects\\RiderProjects\\TwoDEngine3\\GraphicsManagerVeldridPlugin\\GraphicsManagerVeldridPlugin\\GraphicsManagerVeldridPlugin.fsproj"
               },
               "D:\\projects\\RiderProjects\\TwoDEngine3\\TDE3ManagerInterfaces\\TDE3ManagerInterfaces.fsproj": {
                 "projectPath": "D:\\projects\\RiderProjects\\TwoDEngine3\\TDE3ManagerInterfaces\\TDE3ManagerInterfaces.fsproj"

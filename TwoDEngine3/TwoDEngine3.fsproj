@@ -17,8 +17,9 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\GraphicsManagerVeldrid\GraphicsManagerVeldrid.fsproj" />
-      <ProjectReference Include="..\TDE3ManagerInterfaces\TDE3ManagerInterfaces.fsproj" />
+      <ProjectReference Include="..\GraphicsManagerVeldridPlugin\GraphicsManagerVeldridPlugin\GraphicsManagerVeldridPlugin.fsproj" />
+      <ProjectReference Include="..\TDE3ManagerInterfaces\TDE3ManagerInterfaces.fsproj">
+      </ProjectReference>
     </ItemGroup>
 
 </Project>
