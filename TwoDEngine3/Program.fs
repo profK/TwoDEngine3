@@ -1,7 +1,6 @@
 // Learn more about F# at http://docs.microsoft.com/dotnet/fsharp
 
 
-open System
 
 
 open GraphicsManagerVeldrid
@@ -10,39 +9,46 @@ open TwoDEngine3.LevelManagerInterface
 open TwoDEngine3.ManagerInterfaces.GraphicsManagerInterface
 
 
-let mutable currentLevelManager: AbstractLevelController option = None
+let mutable currentLevelController: AbstractLevelController option = None
 
 let SetLevelManager newLevelManger : unit =
-    match currentLevelManager with
+    match currentLevelController with
     | Some oldLevelMgr ->
-        oldLevelMgr.Close ()
+        oldLevelMgr.Close()
         ()
     | None -> ()
-    currentLevelManager <- newLevelManger
-    match currentLevelManager with
-    | Some mgr -> mgr.Open ()
+
+    currentLevelController <- newLevelManger
+
+    match currentLevelController with
+    | Some mgr -> mgr.Open()
     | None -> ()
-    
+
 let Update deltaMS =
     printfn $"Update deltams=%d{deltaMS}"
     None // no errors or other reason to quit
-    
+
 let Render unit =
     printfn "Render"
     ()
 
-    
+
 [<EntryPoint>]
 let main argv =
-   
+
     //Register GraphicsManager
-    typedefof<GraphicsManagerVeldrid> |> ManagerRegistry.addManager
-    
+    typedefof<GraphicsManagerVeldrid>
+    |> ManagerRegistry.addManager
+
     // create lvel managers and set the active one hereSome(BouncyBall:>AbstractLevelController)
-    
-    let lm = Some(BouncyBall():>AbstractLevelController)
+
+    let lm =
+        Some(BouncyBall() :> AbstractLevelController)
+
     SetLevelManager lm
-    match ManagerRegistry.getManager<GraphicsManager>() with
+
+    match ManagerRegistry.getManager<GraphicsManager> () with
     | Some graphics -> graphics.Start()
     | None -> printfn "No Graphics Manager registered, check your project references"
+
     0 // return an integer exit code

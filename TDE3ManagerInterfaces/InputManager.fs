@@ -7,11 +7,10 @@ type AxisUnion =
 
 type Axis =
     struct
-          val axis : AxisUnion
-          val path : string
+        val axis: AxisUnion
+        val path: string
     end
 
 type InputManager =
-    abstract PollAllAxes: unit -> Axis list
-    abstract PollChangedAxes:  unit -> Axis list
-    
+    abstract PollAllAxes : unit -> Axis list
+    abstract PollChangedAxes : unit -> Axis list
