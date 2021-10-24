@@ -1,6 +1,7 @@
 ﻿module TwoDEngine3.ExampleLevel
 
 open System.IO
+open System.Numerics
 open TwoDEngine3.LevelManagerInterface
 
 type BouncyBall() as this =
@@ -13,4 +14,7 @@ type BouncyBall() as this =
     override this.Close() = printfn "BouncyBall closed"
     override this.Open() = printfn "BouncyBall opened"
 
-    override this.RenderImpl deltams = printfn ("Bounce!")
+    override this.RenderImpl graphics =
+        let screenSize = this.graphics.Value.ScreenSize
+        graphics.DrawImage ballImage (Vector2(screenSize.X/2f, screenSize.Y/2f))
+        ()

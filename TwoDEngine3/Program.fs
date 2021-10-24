@@ -1,9 +1,7 @@
 // Learn more about F# at http://docs.microsoft.com/dotnet/fsharp
 
 
-
-
-open GraphicsManagerVeldrid
+open GraphicsMgrMonoGameDesktop
 open TwoDEngine3.ExampleLevel
 open TwoDEngine3.LevelManagerInterface
 open TwoDEngine3.ManagerInterfaces.GraphicsManagerInterface
@@ -37,7 +35,7 @@ let Render unit =
 let main argv =
 
     //Register GraphicsManager
-    typedefof<GraphicsManagerVeldrid>
+    typedefof<GraphicsManagerMGDT>
     |> ManagerRegistry.addManager
 
     // create lvel managers and set the active one hereSome(BouncyBall:>AbstractLevelController)

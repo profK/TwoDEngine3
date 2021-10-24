@@ -4,7 +4,7 @@ Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "TwoDEngine3", "TwoDEngine3\
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "TDE3ManagerInterfaces", "TDE3ManagerInterfaces\TDE3ManagerInterfaces.fsproj", "{BFC068FF-29D0-4581-B802-5AFBB481D5DA}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "GraphicsManagerVeldridPlugin", "GraphicsManagerVeldridPlugin\GraphicsManagerVeldridPlugin\GraphicsManagerVeldridPlugin.fsproj", "{6CE9E44C-2771-4929-8902-3D2E97EF8939}"
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "GraphicsMgrMonoGameDesktop", "GraphicsMgrMonoGameDesktop\GraphicsMgrMonoGameDesktop.fsproj", "{963E122D-93B3-44C6-AF28-146C1E6E238F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,9 +20,9 @@ Global
 		{BFC068FF-29D0-4581-B802-5AFBB481D5DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BFC068FF-29D0-4581-B802-5AFBB481D5DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BFC068FF-29D0-4581-B802-5AFBB481D5DA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6CE9E44C-2771-4929-8902-3D2E97EF8939}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6CE9E44C-2771-4929-8902-3D2E97EF8939}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6CE9E44C-2771-4929-8902-3D2E97EF8939}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6CE9E44C-2771-4929-8902-3D2E97EF8939}.Release|Any CPU.Build.0 = Release|Any CPU
+		{963E122D-93B3-44C6-AF28-146C1E6E238F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{963E122D-93B3-44C6-AF28-146C1E6E238F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{963E122D-93B3-44C6-AF28-146C1E6E238F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{963E122D-93B3-44C6-AF28-146C1E6E238F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

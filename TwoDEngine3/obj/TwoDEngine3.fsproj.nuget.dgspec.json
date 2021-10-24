@@ -4,18 +4,19 @@
     "D:\\projects\\RiderProjects\\TwoDEngine3\\TwoDEngine3\\TwoDEngine3.fsproj": {}
   },
   "projects": {
-    "D:\\projects\\RiderProjects\\TwoDEngine3\\GraphicsManagerVeldridPlugin\\GraphicsManagerVeldridPlugin\\GraphicsManagerVeldridPlugin.fsproj": {
+    "D:\\projects\\RiderProjects\\TwoDEngine3\\GraphicsMgrMonoGameDesktop\\GraphicsMgrMonoGameDesktop.fsproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\projects\\RiderProjects\\TwoDEngine3\\GraphicsManagerVeldridPlugin\\GraphicsManagerVeldridPlugin\\GraphicsManagerVeldridPlugin.fsproj",
-        "projectName": "GraphicsManagerVeldridPlugin",
-        "projectPath": "D:\\projects\\RiderProjects\\TwoDEngine3\\GraphicsManagerVeldridPlugin\\GraphicsManagerVeldridPlugin\\GraphicsManagerVeldridPlugin.fsproj",
+        "projectUniqueName": "D:\\projects\\RiderProjects\\TwoDEngine3\\GraphicsMgrMonoGameDesktop\\GraphicsMgrMonoGameDesktop.fsproj",
+        "projectName": "GraphicsMgrMonoGameDesktop",
+        "projectPath": "D:\\projects\\RiderProjects\\TwoDEngine3\\GraphicsMgrMonoGameDesktop\\GraphicsMgrMonoGameDesktop.fsproj",
         "packagesPath": "C:\\Users\\jpkessel\\.nuget\\packages\\",
-        "outputPath": "D:\\projects\\RiderProjects\\TwoDEngine3\\GraphicsManagerVeldridPlugin\\GraphicsManagerVeldridPlugin\\obj\\",
+        "outputPath": "D:\\projects\\RiderProjects\\TwoDEngine3\\GraphicsMgrMonoGameDesktop\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
           "C:\\Users\\jpkessel\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -60,19 +61,9 @@
               "version": "[5.0.0-beta.*, )",
               "generatePathProperty": true
             },
-            "Veldrid": {
+            "MonoGame.Framework.DesktopGL": {
               "target": "Package",
-              "version": "[4.8.0, )",
-              "generatePathProperty": true
-            },
-            "Veldrid.SPIRV": {
-              "target": "Package",
-              "version": "[1.0.14, )",
-              "generatePathProperty": true
-            },
-            "Veldrid.StartupUtilities": {
-              "target": "Package",
-              "version": "[4.8.0, )",
+              "version": "[3.8.0.1641, )",
               "generatePathProperty": true
             }
           },
@@ -106,7 +97,8 @@
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
           "C:\\Users\\jpkessel\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -178,7 +170,8 @@
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
           "C:\\Users\\jpkessel\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -201,8 +194,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\projects\\RiderProjects\\TwoDEngine3\\GraphicsManagerVeldridPlugin\\GraphicsManagerVeldridPlugin\\GraphicsManagerVeldridPlugin.fsproj": {
-                "projectPath": "D:\\projects\\RiderProjects\\TwoDEngine3\\GraphicsManagerVeldridPlugin\\GraphicsManagerVeldridPlugin\\GraphicsManagerVeldridPlugin.fsproj"
+              "D:\\projects\\RiderProjects\\TwoDEngine3\\GraphicsMgrMonoGameDesktop\\GraphicsMgrMonoGameDesktop.fsproj": {
+                "projectPath": "D:\\projects\\RiderProjects\\TwoDEngine3\\GraphicsMgrMonoGameDesktop\\GraphicsMgrMonoGameDesktop.fsproj"
               },
               "D:\\projects\\RiderProjects\\TwoDEngine3\\TDE3ManagerInterfaces\\TDE3ManagerInterfaces.fsproj": {
                 "projectPath": "D:\\projects\\RiderProjects\\TwoDEngine3\\TDE3ManagerInterfaces\\TDE3ManagerInterfaces.fsproj"
