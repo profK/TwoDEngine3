@@ -1,6 +1,6 @@
 // Learn more about F# at http://docs.microsoft.com/dotnet/fsharp
 
-
+open System
 open GraphicsMgrMonoGameDesktop
 open TwoDEngine3.ExampleLevel
 open TwoDEngine3.LevelManagerInterface
@@ -32,6 +32,7 @@ let Render unit =
 
 
 [<EntryPoint>]
+[<STAThread>]
 let main argv =
 
     //Register GraphicsManager
@@ -40,13 +41,15 @@ let main argv =
 
     // create lvel managers and set the active one hereSome(BouncyBall:>AbstractLevelController)
 
-    let lm =
-        Some(BouncyBall() :> AbstractLevelController)
-
-    SetLevelManager lm
+ 
+    
 
     match ManagerRegistry.getManager<GraphicsManager> () with
-    | Some graphics -> graphics.Start()
+    | Some graphics ->
+        graphics.Start(fun gmgr ->
+             SetLevelManager (Some(BouncyBall():>AbstractLevelController))
+        )
+        
     | None -> printfn "No Graphics Manager registered, check your project references"
 
     0 // return an integer exit code

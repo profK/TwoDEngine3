@@ -29,4 +29,5 @@ and GraphicsManager =
     abstract PushTransform : Matrix -> unit
     abstract PopTransform : unit -> Matrix option
     abstract DrawImage : Image-> Vector2 -> unit
-    abstract Start : unit -> unit 
+    abstract Start : (GraphicsManager->unit)  -> unit
+    abstract Start : unit  -> unit 

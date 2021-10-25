@@ -3,6 +3,9 @@
 
 open ManagerRegistry
 open Microsoft.Xna.Framework
+open Microsoft.Xna.Framework
+open Microsoft.Xna.Framework.Graphics
+open Microsoft.Xna.Framework.Graphics
 open Microsoft.Xna.Framework.Graphics
 open TwoDEngine3.ManagerInterfaces.GraphicsManagerInterface
 open System.Numerics
@@ -16,13 +19,27 @@ type XnaRect = Microsoft.Xna.Framework.Rectangle
 type GraphicsManagerMGDT() as this=
     inherit Game()
    
+ 
+    
     let graphics = new GraphicsDeviceManager(this)
-    let spriteBatch = new SpriteBatch(graphics.GraphicsDevice)
+    let lazySpriteBatch = lazy (new SpriteBatch(graphics.GraphicsDevice))
+        
+    member private this.spriteBatch with get() =
+        lazySpriteBatch.Force()
+    
+    member val private initFunc:(GraphicsManager->unit) option = None with get,set
     override this.Initialize() =
         base.Initialize()
+       
+    override this.LoadContent()=
+        base.LoadContent()
+        match this.initFunc with
+        | Some cb -> cb(this)
+        | None -> ()
+       
     override this.Update (gameTime:GameTime) =
         let graphicsManager = (this :> GraphicsManager)
-      
+  
         graphicsManager.GraphicsListeners
         |> List.tryPick (fun listener -> listener.Update gameTime.ElapsedGameTime.Milliseconds)
         |> function
@@ -30,15 +47,15 @@ type GraphicsManagerMGDT() as this=
                 printfn $"Quitting because %s{error}"
                 this.Exit()
             | None -> ()
-        spriteBatch.End()
+   
         base.Update gameTime
     override this.Draw gameTime =
         let graphicsManager = (this :> GraphicsManager)
         graphics.GraphicsDevice.Clear(Color.Black)
-        spriteBatch.Begin()
+        this.spriteBatch.Begin()
         graphicsManager.GraphicsListeners
         |> List.iter (fun listener -> listener.Render(this))
-        spriteBatch.End()
+        this.spriteBatch.End()
         base.Draw gameTime
         
     interface GraphicsManager with
@@ -47,7 +64,7 @@ type GraphicsManagerMGDT() as this=
             let srcRect = XnaRect(int32 mgImage.origin.Y,int32 mgImage.origin.Y,
                                     int32 mgImage.size.X,int32 mgImage.size.Y)
             let pos= XnaVec2(position.X,position.Y)
-            spriteBatch.Draw (mgImage.texture, pos, srcRect, Color.White)
+            this.spriteBatch.Draw (mgImage.texture, pos, srcRect, Color.White)
             ()
         
         member val GraphicsListeners = List.Empty with get,set
@@ -60,9 +77,15 @@ type GraphicsManagerMGDT() as this=
         member this.PushClip(var0) = failwith "todo"
         member this.PushTransform(var0) = failwith "todo"
         member this.ScreenSize =
-            new SysVec2(float32 graphics.PreferredBackBufferWidth,
-                        float32 graphics.PreferredBackBufferHeight)
-        member this.Start() = failwith "todo"
+            new SysVec2(float32 (graphics.PreferredBackBufferWidth),
+                        float32 (graphics.PreferredBackBufferHeight))
+        member this.Start(initFunc:GraphicsManager->unit) =
+            this.initFunc <-  Some initFunc
+            (this :> Game).Run()
+            ()
+        member this.Start() =
+            (this :> Game).Run()
+            ()
 
 and MonogameImage(Texture,?Origin,?Size) =
     member val internal texture: Texture2D = Texture with get
