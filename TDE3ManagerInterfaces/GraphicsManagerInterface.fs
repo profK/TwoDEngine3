@@ -3,7 +3,6 @@
 open System.IO
 open System.Numerics
 open MathSharp
-open MathSharp
 
 type Rectangle =
     abstract Position : Vector2
@@ -15,6 +14,9 @@ type Image =
     abstract SubImage : Rectangle -> Image
     abstract Size : Vector2
 
+type Transform =
+    abstract Multiply : Vector2 -> Vector2
+    abstract Multiply : Transform -> Transform
 
 type GraphicsListener =
     abstract Update : int -> string option
@@ -28,6 +30,9 @@ and GraphicsManager =
     abstract PopClip : unit -> Rectangle option
     abstract PushTransform : Matrix -> unit
     abstract PopTransform : unit -> Matrix option
-    abstract DrawImage : Image-> Vector2 -> unit
-    abstract Start : (GraphicsManager->unit)  -> unit
-    abstract Start : unit  -> unit 
+    abstract DrawImage : Image -> Vector2 -> unit
+    abstract Start : (GraphicsManager -> unit) -> unit
+    abstract Start : unit -> unit
+    abstract IdentityTransform : Transform
+    abstract RotationTransform : float32 -> Transform
+    abstract TranslationTransform : Vector2 -> Transform

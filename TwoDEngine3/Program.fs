@@ -41,15 +41,12 @@ let main argv =
 
     // create lvel managers and set the active one hereSome(BouncyBall:>AbstractLevelController)
 
- 
-    
+
+
 
     match ManagerRegistry.getManager<GraphicsManager> () with
-    | Some graphics ->
-        graphics.Start(fun gmgr ->
-             SetLevelManager (Some(BouncyBall():>AbstractLevelController))
-        )
-        
+    | Some graphics -> graphics.Start(fun gmgr -> SetLevelManager(Some(BouncyBall() :> AbstractLevelController)))
+
     | None -> printfn "No Graphics Manager registered, check your project references"
 
     0 // return an integer exit code

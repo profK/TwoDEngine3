@@ -4,9 +4,9 @@ open TwoDEngine3.ManagerInterfaces.GraphicsManagerInterface
 
 [<AbstractClass>]
 type AbstractLevelController() =
-    member val paused = false with get,set
+    member val paused = false with get, set
     member val graphics = ManagerRegistry.getManager<GraphicsManager> ()
-    
+
 
     interface GraphicsListener with
         member this.Update deltaMS : string option = this.UpdateImpl deltaMS
