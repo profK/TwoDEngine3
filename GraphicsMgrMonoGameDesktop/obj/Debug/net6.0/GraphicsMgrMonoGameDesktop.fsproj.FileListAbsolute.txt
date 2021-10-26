@@ -11,3 +11,17 @@ D:\projects\RiderProjects\TwoDEngine3\GraphicsMgrMonoGameDesktop\obj\Debug\net6.
 D:\projects\RiderProjects\TwoDEngine3\GraphicsMgrMonoGameDesktop\obj\Debug\net6.0\GraphicsMgrMonoGameDesktop.dll
 D:\projects\RiderProjects\TwoDEngine3\GraphicsMgrMonoGameDesktop\obj\Debug\net6.0\GraphicsMgrMonoGameDesktop.xml
 D:\projects\RiderProjects\TwoDEngine3\GraphicsMgrMonoGameDesktop\obj\Debug\net6.0\GraphicsMgrMonoGameDesktop.pdb
+C:\Users\jpkessel\RiderProjects\TwoDEngine3\GraphicsMgrMonoGameDesktop\obj\Debug\net6.0\GraphicsMgrMonoGameDesktop.fsproj.AssemblyReference.cache
+C:\Users\jpkessel\RiderProjects\TwoDEngine3\GraphicsMgrMonoGameDesktop\obj\Debug\net6.0\GraphicsMgrMonoGameDesktop.AssemblyInfoInputs.cache
+C:\Users\jpkessel\RiderProjects\TwoDEngine3\GraphicsMgrMonoGameDesktop\obj\Debug\net6.0\GraphicsMgrMonoGameDesktop.AssemblyInfo.fs
+C:\Users\jpkessel\RiderProjects\TwoDEngine3\GraphicsMgrMonoGameDesktop\obj\Debug\net6.0\GraphicsMgrMonoGameDesktop.dll
+C:\Users\jpkessel\RiderProjects\TwoDEngine3\GraphicsMgrMonoGameDesktop\obj\Debug\net6.0\GraphicsMgrMonoGameDesktop.xml
+C:\Users\jpkessel\RiderProjects\TwoDEngine3\GraphicsMgrMonoGameDesktop\obj\Debug\net6.0\GraphicsMgrMonoGameDesktop.pdb
+C:\Users\jpkessel\RiderProjects\TwoDEngine3\GraphicsMgrMonoGameDesktop\bin\Debug\net6.0\GraphicsMgrMonoGameDesktop.deps.json
+C:\Users\jpkessel\RiderProjects\TwoDEngine3\GraphicsMgrMonoGameDesktop\bin\Debug\net6.0\GraphicsMgrMonoGameDesktop.dll
+C:\Users\jpkessel\RiderProjects\TwoDEngine3\GraphicsMgrMonoGameDesktop\bin\Debug\net6.0\GraphicsMgrMonoGameDesktop.pdb
+C:\Users\jpkessel\RiderProjects\TwoDEngine3\GraphicsMgrMonoGameDesktop\bin\Debug\net6.0\GraphicsMgrMonoGameDesktop.xml
+C:\Users\jpkessel\RiderProjects\TwoDEngine3\GraphicsMgrMonoGameDesktop\bin\Debug\net6.0\TDE3ManagerInterfaces.dll
+C:\Users\jpkessel\RiderProjects\TwoDEngine3\GraphicsMgrMonoGameDesktop\bin\Debug\net6.0\TDE3ManagerInterfaces.pdb
+C:\Users\jpkessel\RiderProjects\TwoDEngine3\GraphicsMgrMonoGameDesktop\bin\Debug\net6.0\TDE3ManagerInterfaces.xml
+C:\Users\jpkessel\RiderProjects\TwoDEngine3\GraphicsMgrMonoGameDesktop\obj\Debug\net6.0\GraphicsMgrMonoGameDesktop.fsproj.CopyComplete

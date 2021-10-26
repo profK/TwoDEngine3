@@ -106,7 +106,6 @@ type GraphicsManagerMGDT() as this =
             (this :> Game).Run()
             ()
 
-        member this.GraphicsListeners = failwith "todo"
         member this.IdentityTransform = failwith "todo"
         member this.RotationTransform(var0) = failwith "todo"
         member this.TranslationTransform(var0) = failwith "todo"
