@@ -6,17 +6,18 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <Compile Include="Stack.fs"/>
-        <Compile Include="Library.fs"/>
+        <Compile Include="Stack.fs" />
+        <Compile Include="DrawingStateManager.fs" />
+        <Compile Include="Library.fs" />
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="FSFramework" Version="1.0.0-preview-1"/>
-        <PackageReference Include="MonoGame.Framework.DesktopGL" Version="3.8.0.1641"/>
+        <PackageReference Include="FSFramework" Version="1.0.0-preview-1" />
+        <PackageReference Include="MonoGame.Framework.DesktopGL" Version="3.8.0.1641" />
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\TDE3ManagerInterfaces\TDE3ManagerInterfaces.fsproj"/>
+        <ProjectReference Include="..\TDE3ManagerInterfaces\TDE3ManagerInterfaces.fsproj" />
     </ItemGroup>
 
 </Project>

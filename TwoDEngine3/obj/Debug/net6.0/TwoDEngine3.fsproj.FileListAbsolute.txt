@@ -81,7 +81,7 @@ C:\Users\jpkessel\RiderProjects\TwoDEngine3\TwoDEngine3\bin\Debug\net6.0\TDE3Man
 C:\Users\jpkessel\RiderProjects\TwoDEngine3\TwoDEngine3\obj\Debug\net6.0\TwoDEngine3.fsproj.AssemblyReference.cache
 C:\Users\jpkessel\RiderProjects\TwoDEngine3\TwoDEngine3\obj\Debug\net6.0\TwoDEngine3.AssemblyInfoInputs.cache
 C:\Users\jpkessel\RiderProjects\TwoDEngine3\TwoDEngine3\obj\Debug\net6.0\TwoDEngine3.AssemblyInfo.fs
-C:\Users\jpkessel\RiderProjects\TwoDEngine3\TwoDEngine3\obj\Debug\net6.0\TwoDEngine3.fsproj.CopyComplete
 C:\Users\jpkessel\RiderProjects\TwoDEngine3\TwoDEngine3\obj\Debug\net6.0\TwoDEngine3.dll
 C:\Users\jpkessel\RiderProjects\TwoDEngine3\TwoDEngine3\obj\Debug\net6.0\TwoDEngine3.pdb
 C:\Users\jpkessel\RiderProjects\TwoDEngine3\TwoDEngine3\obj\Debug\net6.0\TwoDEngine3.genruntimeconfig.cache
+C:\Users\jpkessel\RiderProjects\TwoDEngine3\TwoDEngine3\obj\Debug\net6.0\TwoDEngine3.fsproj.CopyComplete

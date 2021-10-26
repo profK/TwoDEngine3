@@ -28,8 +28,8 @@ and GraphicsManager =
     abstract LoadImage : Stream -> Image
     abstract PushClip : Rectangle -> unit
     abstract PopClip : unit -> Rectangle option
-    abstract PushTransform : Matrix -> unit
-    abstract PopTransform : unit -> Matrix option
+    abstract PushTransform : Transform -> unit
+    abstract PopTransform : unit -> Transform option
     abstract DrawImage : Image -> Vector2 -> unit
     abstract Start : (GraphicsManager -> unit) -> unit
     abstract Start : unit -> unit
