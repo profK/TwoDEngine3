@@ -39,7 +39,8 @@ type GraphicsManagerMGDT() as this =
 
     override this.LoadContent() =
         base.LoadContent()
-
+        let graphicsManager = this :> GraphicsManager
+        graphicsManager.PushTransform graphicsManager.IdentityTransform 
         match this.initFunc with
         | Some cb -> cb (this)
         | None -> ()
@@ -72,7 +73,7 @@ type GraphicsManagerMGDT() as this =
             let mgImage:MonogameImage = image :?> MonogameImage
 
             let srcRect =
-                XnaRect(int32 mgImage.origin.Y, int32 mgImage.origin.Y, int32 mgImage.size.X, int32 mgImage.size.Y)
+                XnaRect(int32 mgImage.origin.X, int32 mgImage.origin.Y, int32 mgImage.size.X, int32 mgImage.size.Y)
 
             let pos = XnaVec2(position.X, position.Y)
             drawingState.Force().SpriteBatch.Draw(mgImage.texture, pos, srcRect, Color.White)
@@ -91,7 +92,7 @@ type GraphicsManagerMGDT() as this =
             let popResult = transformStack |> Stack.pop
             transformStack <- snd popResult
             drawingState.Force().SetTransform (transformStack.Head :?> MGTransform).xform
-            Some (fst popResult)
+            fst popResult
         member this.PushClip(var0) = failwith "todo"
         member this.PushTransform(tform) =
             drawingState.Force().SetTransform (tform :?> MGTransform).xform

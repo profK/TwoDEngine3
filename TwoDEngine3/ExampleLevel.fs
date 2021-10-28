@@ -1,5 +1,6 @@
 ﻿module TwoDEngine3.ExampleLevel
 
+open System.Drawing
 open System.IO
 open System.Numerics
 open TDE3ManagerInterfaces.TextRendererInterfaces
@@ -12,9 +13,11 @@ type BouncyBall() as this =
     let ballImage =
         new FileStream("Assets/football_small.png", FileMode.Open)
         |> this.graphics.Value.LoadImage
+        
+  
     let txtRenderer = ManagerRegistry.getManager<TextManager>().Value
     let Font = txtRenderer.LoadFont(txtRenderer.FontList.[0])
-    let text = Font.MakeText("Ce n’est pas un ballon de football")
+    let text = Font.MakeText("Ce nest pas un ballon de football")
 
     override this.Close() =
         printfn "BouncyBall closed"
@@ -37,5 +40,5 @@ type BouncyBall() as this =
             ballImage
             (Vector2((screenSize.X - ballImage.Size.X) / 2f, ((screenSize.Y - ballImage.Size.Y) / 2f)))
         graphics.PopTransform() |> ignore
-        text |> txtRenderer.RenderText (Vector2 (0f,screenSize.Y/3f*2f))
+        text |> txtRenderer.RenderText (Vector2 (0f,screenSize.Y-50f))
         ()

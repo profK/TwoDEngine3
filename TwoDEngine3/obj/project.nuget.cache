@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "QKI0xZczvclReXN0AQis0gtf+EpFdQjNH3EtBfc4vetDcG9SLUly42BnCYKaN13ZiEywhMPBiSq5VG+J9zbv9Q==",
+  "dgSpecHash": "zeSbpRjqBm8qKbHWXHSpQMu1SoXCzIuqbDBLpIPyzmktIrHhP3TQ32fnFiBdrRMPv6CMX9wX9oG/RbjmW6xo5A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\jpkessel\\RiderProjects\\TwoDEngine3\\TwoDEngine3\\TwoDEngine3.fsproj",
+  "projectFilePath": "D:\\projects\\RiderProjects\\TwoDEngine3\\TwoDEngine3\\TwoDEngine3.fsproj",
   "expectedPackageFiles": [
     "C:\\Users\\jpkessel\\.nuget\\packages\\cyotek.drawing.bitmapfont\\2.0.3\\cyotek.drawing.bitmapfont.2.0.3.nupkg.sha512",
     "C:\\Users\\jpkessel\\.nuget\\packages\\fsframework\\1.0.0-preview-1\\fsframework.1.0.0-preview-1.nupkg.sha512",

@@ -47,7 +47,8 @@ type AngelCodeTextRenderer() =
                             )
                         )
 
-                    graphics.DrawImage charImage pos
+                    graphics.DrawImage charImage
+                        (pos + Vector2(float32 acChar.XOffset,float32 acChar.YOffset))
                     let kern = font.GetKern(lastChar,char)
                     (Vector2(pos.X+ float32 acChar.Width+float32 kern, pos.Y),char)
                 ) (pos,'\n') |> ignore
@@ -60,13 +61,13 @@ and AngelCodeFont(bmFont)  =
 
     let graphics =
         ManagerRegistry.getManager<GraphicsManager> ()
-    //TODO build image dict
+  
     let pages =
         bmFont.Pages
         |> Array.fold
             (fun (pageMap: Map<int, Lazy<Image>>) page ->
                 let fileStream =
-                    File.Open("AnglecodeFonts/" + page.FileName, FileMode.Open)
+                    File.Open(page.FileName, FileMode.Open)
 
                 let lazyImage =
                     lazy (graphics.Value.LoadImage fileStream)
