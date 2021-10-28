@@ -4,9 +4,9 @@ open System.IO
 open System.Numerics
 open MathSharp
 
-type Rectangle =
-    abstract Position : Vector2
-    abstract Size : Vector2
+type Rectangle(pos:Vector2, sz:Vector2) =
+    member val Position=pos with get
+    member val Size=sz with get
 
 
 type Image =

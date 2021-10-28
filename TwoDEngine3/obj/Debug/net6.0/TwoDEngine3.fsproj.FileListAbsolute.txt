@@ -84,5 +84,11 @@ C:\Users\jpkessel\RiderProjects\TwoDEngine3\TwoDEngine3\obj\Debug\net6.0\TwoDEng
 C:\Users\jpkessel\RiderProjects\TwoDEngine3\TwoDEngine3\obj\Debug\net6.0\TwoDEngine3.dll
 C:\Users\jpkessel\RiderProjects\TwoDEngine3\TwoDEngine3\obj\Debug\net6.0\TwoDEngine3.pdb
 C:\Users\jpkessel\RiderProjects\TwoDEngine3\TwoDEngine3\obj\Debug\net6.0\TwoDEngine3.genruntimeconfig.cache
-C:\Users\jpkessel\RiderProjects\TwoDEngine3\TwoDEngine3\obj\Debug\net6.0\TwoDEngine3.fsproj.CopyComplete
 D:\projects\RiderProjects\TwoDEngine3\TwoDEngine3\obj\Debug\net6.0\TwoDEngine3.fsproj.CopyComplete
+C:\Users\jpkessel\RiderProjects\TwoDEngine3\TwoDEngine3\bin\Debug\net6.0\AngelcodeFonts\Latin.fnt
+C:\Users\jpkessel\RiderProjects\TwoDEngine3\TwoDEngine3\bin\Debug\net6.0\Cyotek.Drawing.BitmapFont.dll
+C:\Users\jpkessel\RiderProjects\TwoDEngine3\TwoDEngine3\bin\Debug\net6.0\AngelCodeTextRenderer.dll
+C:\Users\jpkessel\RiderProjects\TwoDEngine3\TwoDEngine3\bin\Debug\net6.0\AngelCodeTextRenderer.pdb
+C:\Users\jpkessel\RiderProjects\TwoDEngine3\TwoDEngine3\bin\Debug\net6.0\AngelCodeTextRenderer.xml
+C:\Users\jpkessel\RiderProjects\TwoDEngine3\TwoDEngine3\obj\Debug\net6.0\TwoDEngine3.fsproj.CopyComplete
+C:\Users\jpkessel\RiderProjects\TwoDEngine3\TwoDEngine3\bin\Debug\net6.0\AngelcodeFonts\Latin_0.png

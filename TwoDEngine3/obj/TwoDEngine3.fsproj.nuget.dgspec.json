@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\projects\\RiderProjects\\TwoDEngine3\\TwoDEngine3\\TwoDEngine3.fsproj": {}
+    "C:\\Users\\jpkessel\\RiderProjects\\TwoDEngine3\\TwoDEngine3\\TwoDEngine3.fsproj": {}
   },
   "projects": {
-    "D:\\projects\\RiderProjects\\TwoDEngine3\\GraphicsMgrMonoGameDesktop\\GraphicsMgrMonoGameDesktop.fsproj": {
+    "C:\\Users\\jpkessel\\RiderProjects\\TwoDEngine3\\AngelCodeTextRenderer\\AngelCodeTextRenderer.fsproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\projects\\RiderProjects\\TwoDEngine3\\GraphicsMgrMonoGameDesktop\\GraphicsMgrMonoGameDesktop.fsproj",
-        "projectName": "GraphicsMgrMonoGameDesktop",
-        "projectPath": "D:\\projects\\RiderProjects\\TwoDEngine3\\GraphicsMgrMonoGameDesktop\\GraphicsMgrMonoGameDesktop.fsproj",
+        "projectUniqueName": "C:\\Users\\jpkessel\\RiderProjects\\TwoDEngine3\\AngelCodeTextRenderer\\AngelCodeTextRenderer.fsproj",
+        "projectName": "AngelCodeTextRenderer",
+        "projectPath": "C:\\Users\\jpkessel\\RiderProjects\\TwoDEngine3\\AngelCodeTextRenderer\\AngelCodeTextRenderer.fsproj",
         "packagesPath": "C:\\Users\\jpkessel\\.nuget\\packages\\",
-        "outputPath": "D:\\projects\\RiderProjects\\TwoDEngine3\\GraphicsMgrMonoGameDesktop\\obj\\",
+        "outputPath": "C:\\Users\\jpkessel\\RiderProjects\\TwoDEngine3\\AngelCodeTextRenderer\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -19,7 +19,7 @@
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\jpkessel\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "U:\\pchome\\.pcprefsBAD\\AppData\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
@@ -29,18 +29,99 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
-          "C:\\Users\\jpkessel\\AppData\\Local\\Stride\\NugetDev": {},
+          "U:\\Personal\\GitHub\\WebGL.NET\\src\\packages": {},
           "https://api.nuget.org/v3/index.json": {},
-          "https://packages.stride3d.net/nuget": {},
           "https://pkgs.dev.azure.com/dnceng/public/_packaging/dotnet-tools/nuget/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\projects\\RiderProjects\\TwoDEngine3\\TDE3ManagerInterfaces\\TDE3ManagerInterfaces.fsproj": {
-                "projectPath": "D:\\projects\\RiderProjects\\TwoDEngine3\\TDE3ManagerInterfaces\\TDE3ManagerInterfaces.fsproj"
+              "C:\\Users\\jpkessel\\RiderProjects\\TwoDEngine3\\GraphicsMgrMonoGameDesktop\\GraphicsMgrMonoGameDesktop.fsproj": {
+                "projectPath": "C:\\Users\\jpkessel\\RiderProjects\\TwoDEngine3\\GraphicsMgrMonoGameDesktop\\GraphicsMgrMonoGameDesktop.fsproj"
+              },
+              "C:\\Users\\jpkessel\\RiderProjects\\TwoDEngine3\\TDE3ManagerInterfaces\\TDE3ManagerInterfaces.fsproj": {
+                "projectPath": "C:\\Users\\jpkessel\\RiderProjects\\TwoDEngine3\\TDE3ManagerInterfaces\\TDE3ManagerInterfaces.fsproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Cyotek.Drawing.BitmapFont": {
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "generatePathProperty": true
+            },
+            "FSFramework": {
+              "target": "Package",
+              "version": "[1.0.0-preview-1, )",
+              "generatePathProperty": true
+            },
+            "FSharp.Core": {
+              "include": "Runtime, Compile, Build, Native, Analyzers, BuildTransitive",
+              "target": "Package",
+              "version": "[5.0.0-beta.*, )",
+              "generatePathProperty": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100-preview.7.21379.14\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\jpkessel\\RiderProjects\\TwoDEngine3\\GraphicsMgrMonoGameDesktop\\GraphicsMgrMonoGameDesktop.fsproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\jpkessel\\RiderProjects\\TwoDEngine3\\GraphicsMgrMonoGameDesktop\\GraphicsMgrMonoGameDesktop.fsproj",
+        "projectName": "GraphicsMgrMonoGameDesktop",
+        "projectPath": "C:\\Users\\jpkessel\\RiderProjects\\TwoDEngine3\\GraphicsMgrMonoGameDesktop\\GraphicsMgrMonoGameDesktop.fsproj",
+        "packagesPath": "C:\\Users\\jpkessel\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\jpkessel\\RiderProjects\\TwoDEngine3\\GraphicsMgrMonoGameDesktop\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "U:\\pchome\\.pcprefsBAD\\AppData\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "U:\\Personal\\GitHub\\WebGL.NET\\src\\packages": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://pkgs.dev.azure.com/dnceng/public/_packaging/dotnet-tools/nuget/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\jpkessel\\RiderProjects\\TwoDEngine3\\TDE3ManagerInterfaces\\TDE3ManagerInterfaces.fsproj": {
+                "projectPath": "C:\\Users\\jpkessel\\RiderProjects\\TwoDEngine3\\TDE3ManagerInterfaces\\TDE3ManagerInterfaces.fsproj"
               }
             }
           }
@@ -86,14 +167,14 @@
         }
       }
     },
-    "D:\\projects\\RiderProjects\\TwoDEngine3\\TDE3ManagerInterfaces\\TDE3ManagerInterfaces.fsproj": {
+    "C:\\Users\\jpkessel\\RiderProjects\\TwoDEngine3\\TDE3ManagerInterfaces\\TDE3ManagerInterfaces.fsproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\projects\\RiderProjects\\TwoDEngine3\\TDE3ManagerInterfaces\\TDE3ManagerInterfaces.fsproj",
+        "projectUniqueName": "C:\\Users\\jpkessel\\RiderProjects\\TwoDEngine3\\TDE3ManagerInterfaces\\TDE3ManagerInterfaces.fsproj",
         "projectName": "TDE3ManagerInterfaces",
-        "projectPath": "D:\\projects\\RiderProjects\\TwoDEngine3\\TDE3ManagerInterfaces\\TDE3ManagerInterfaces.fsproj",
+        "projectPath": "C:\\Users\\jpkessel\\RiderProjects\\TwoDEngine3\\TDE3ManagerInterfaces\\TDE3ManagerInterfaces.fsproj",
         "packagesPath": "C:\\Users\\jpkessel\\.nuget\\packages\\",
-        "outputPath": "D:\\projects\\RiderProjects\\TwoDEngine3\\TDE3ManagerInterfaces\\obj\\",
+        "outputPath": "C:\\Users\\jpkessel\\RiderProjects\\TwoDEngine3\\TDE3ManagerInterfaces\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -101,7 +182,7 @@
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\jpkessel\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "U:\\pchome\\.pcprefsBAD\\AppData\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
@@ -111,10 +192,8 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
-          "C:\\Users\\jpkessel\\AppData\\Local\\Stride\\NugetDev": {},
+          "U:\\Personal\\GitHub\\WebGL.NET\\src\\packages": {},
           "https://api.nuget.org/v3/index.json": {},
-          "https://packages.stride3d.net/nuget": {},
           "https://pkgs.dev.azure.com/dnceng/public/_packaging/dotnet-tools/nuget/v3/index.json": {}
         },
         "frameworks": {
@@ -159,14 +238,14 @@
         }
       }
     },
-    "D:\\projects\\RiderProjects\\TwoDEngine3\\TwoDEngine3\\TwoDEngine3.fsproj": {
+    "C:\\Users\\jpkessel\\RiderProjects\\TwoDEngine3\\TwoDEngine3\\TwoDEngine3.fsproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\projects\\RiderProjects\\TwoDEngine3\\TwoDEngine3\\TwoDEngine3.fsproj",
+        "projectUniqueName": "C:\\Users\\jpkessel\\RiderProjects\\TwoDEngine3\\TwoDEngine3\\TwoDEngine3.fsproj",
         "projectName": "TwoDEngine3",
-        "projectPath": "D:\\projects\\RiderProjects\\TwoDEngine3\\TwoDEngine3\\TwoDEngine3.fsproj",
+        "projectPath": "C:\\Users\\jpkessel\\RiderProjects\\TwoDEngine3\\TwoDEngine3\\TwoDEngine3.fsproj",
         "packagesPath": "C:\\Users\\jpkessel\\.nuget\\packages\\",
-        "outputPath": "D:\\projects\\RiderProjects\\TwoDEngine3\\TwoDEngine3\\obj\\",
+        "outputPath": "C:\\Users\\jpkessel\\RiderProjects\\TwoDEngine3\\TwoDEngine3\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -174,7 +253,7 @@
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\jpkessel\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "U:\\pchome\\.pcprefsBAD\\AppData\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
@@ -184,21 +263,22 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
-          "C:\\Users\\jpkessel\\AppData\\Local\\Stride\\NugetDev": {},
+          "U:\\Personal\\GitHub\\WebGL.NET\\src\\packages": {},
           "https://api.nuget.org/v3/index.json": {},
-          "https://packages.stride3d.net/nuget": {},
           "https://pkgs.dev.azure.com/dnceng/public/_packaging/dotnet-tools/nuget/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\projects\\RiderProjects\\TwoDEngine3\\GraphicsMgrMonoGameDesktop\\GraphicsMgrMonoGameDesktop.fsproj": {
-                "projectPath": "D:\\projects\\RiderProjects\\TwoDEngine3\\GraphicsMgrMonoGameDesktop\\GraphicsMgrMonoGameDesktop.fsproj"
+              "C:\\Users\\jpkessel\\RiderProjects\\TwoDEngine3\\AngelCodeTextRenderer\\AngelCodeTextRenderer.fsproj": {
+                "projectPath": "C:\\Users\\jpkessel\\RiderProjects\\TwoDEngine3\\AngelCodeTextRenderer\\AngelCodeTextRenderer.fsproj"
               },
-              "D:\\projects\\RiderProjects\\TwoDEngine3\\TDE3ManagerInterfaces\\TDE3ManagerInterfaces.fsproj": {
-                "projectPath": "D:\\projects\\RiderProjects\\TwoDEngine3\\TDE3ManagerInterfaces\\TDE3ManagerInterfaces.fsproj"
+              "C:\\Users\\jpkessel\\RiderProjects\\TwoDEngine3\\GraphicsMgrMonoGameDesktop\\GraphicsMgrMonoGameDesktop.fsproj": {
+                "projectPath": "C:\\Users\\jpkessel\\RiderProjects\\TwoDEngine3\\GraphicsMgrMonoGameDesktop\\GraphicsMgrMonoGameDesktop.fsproj"
+              },
+              "C:\\Users\\jpkessel\\RiderProjects\\TwoDEngine3\\TDE3ManagerInterfaces\\TDE3ManagerInterfaces.fsproj": {
+                "projectPath": "C:\\Users\\jpkessel\\RiderProjects\\TwoDEngine3\\TDE3ManagerInterfaces\\TDE3ManagerInterfaces.fsproj"
               }
             }
           }

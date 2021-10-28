@@ -25,3 +25,4 @@ C:\Users\jpkessel\RiderProjects\TwoDEngine3\GraphicsMgrMonoGameDesktop\bin\Debug
 C:\Users\jpkessel\RiderProjects\TwoDEngine3\GraphicsMgrMonoGameDesktop\bin\Debug\net6.0\TDE3ManagerInterfaces.pdb
 C:\Users\jpkessel\RiderProjects\TwoDEngine3\GraphicsMgrMonoGameDesktop\bin\Debug\net6.0\TDE3ManagerInterfaces.xml
 D:\projects\RiderProjects\TwoDEngine3\GraphicsMgrMonoGameDesktop\obj\Debug\net6.0\GraphicsMgrMonoGameDesktop.fsproj.CopyComplete
+C:\Users\jpkessel\RiderProjects\TwoDEngine3\GraphicsMgrMonoGameDesktop\obj\Debug\net6.0\GraphicsMgrMonoGameDesktop.fsproj.CopyComplete

@@ -2,6 +2,15 @@
   "version": 3,
   "targets": {
     "net6.0": {
+      "Cyotek.Drawing.BitmapFont/2.0.3": {
+        "type": "package",
+        "compile": {
+          "lib/net5.0/Cyotek.Drawing.BitmapFont.dll": {}
+        },
+        "runtime": {
+          "lib/net5.0/Cyotek.Drawing.BitmapFont.dll": {}
+        }
+      },
       "FSFramework/1.0.0-preview-1": {
         "type": "package",
         "dependencies": {
@@ -128,6 +137,23 @@
           }
         }
       },
+      "AngelCodeTextRenderer/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Cyotek.Drawing.BitmapFont": "2.0.3",
+          "FSFramework": "1.0.0-preview-1",
+          "FSharp.Core": "5.0.0-beta",
+          "GraphicsMgrMonoGameDesktop": "1.0.0",
+          "TDE3ManagerInterfaces": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/AngelCodeTextRenderer.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/AngelCodeTextRenderer.dll": {}
+        }
+      },
       "GraphicsMgrMonoGameDesktop/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -161,6 +187,44 @@
     }
   },
   "libraries": {
+    "Cyotek.Drawing.BitmapFont/2.0.3": {
+      "sha512": "XYWnPYgm5f8tQiMOiOPzS8LuFP8NIP7O9sLzKMdR1hdmDcKzU6qSgPCNPbTt4c7JMXri6c8AHYHqpPoi2AiZSQ==",
+      "type": "package",
+      "path": "cyotek.drawing.bitmapfont/2.0.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "cyotek.drawing.bitmapfont.2.0.3.nupkg.sha512",
+        "cyotek.drawing.bitmapfont.nuspec",
+        "icon.png",
+        "lib/net35/Cyotek.Drawing.BitmapFont.dll",
+        "lib/net35/Cyotek.Drawing.BitmapFont.xml",
+        "lib/net40/Cyotek.Drawing.BitmapFont.dll",
+        "lib/net40/Cyotek.Drawing.BitmapFont.xml",
+        "lib/net452/Cyotek.Drawing.BitmapFont.dll",
+        "lib/net452/Cyotek.Drawing.BitmapFont.xml",
+        "lib/net462/Cyotek.Drawing.BitmapFont.dll",
+        "lib/net462/Cyotek.Drawing.BitmapFont.xml",
+        "lib/net472/Cyotek.Drawing.BitmapFont.dll",
+        "lib/net472/Cyotek.Drawing.BitmapFont.xml",
+        "lib/net48/Cyotek.Drawing.BitmapFont.dll",
+        "lib/net48/Cyotek.Drawing.BitmapFont.xml",
+        "lib/net5.0/Cyotek.Drawing.BitmapFont.dll",
+        "lib/net5.0/Cyotek.Drawing.BitmapFont.xml",
+        "lib/netcoreapp2.1/Cyotek.Drawing.BitmapFont.dll",
+        "lib/netcoreapp2.1/Cyotek.Drawing.BitmapFont.xml",
+        "lib/netcoreapp2.2/Cyotek.Drawing.BitmapFont.dll",
+        "lib/netcoreapp2.2/Cyotek.Drawing.BitmapFont.xml",
+        "lib/netcoreapp3.1/Cyotek.Drawing.BitmapFont.dll",
+        "lib/netcoreapp3.1/Cyotek.Drawing.BitmapFont.xml",
+        "lib/netstandard1.3/Cyotek.Drawing.BitmapFont.dll",
+        "lib/netstandard1.3/Cyotek.Drawing.BitmapFont.xml",
+        "lib/netstandard2.0/Cyotek.Drawing.BitmapFont.dll",
+        "lib/netstandard2.0/Cyotek.Drawing.BitmapFont.xml",
+        "lib/netstandard2.1/Cyotek.Drawing.BitmapFont.dll",
+        "lib/netstandard2.1/Cyotek.Drawing.BitmapFont.xml"
+      ]
+    },
     "FSFramework/1.0.0-preview-1": {
       "sha512": "pmykRxvdCxAnO4Cb7H+KoXO4kM0vrWt7Ookx/mFl17PD1EKurevrBoBMb1XsslZ1/97zb0ultXdXgX8nE4v4ow==",
       "type": "package",
@@ -438,6 +502,11 @@
         "runtimes/win-x86/native/soft_oal.dll"
       ]
     },
+    "AngelCodeTextRenderer/1.0.0": {
+      "type": "project",
+      "path": "../AngelCodeTextRenderer/AngelCodeTextRenderer.fsproj",
+      "msbuildProject": "../AngelCodeTextRenderer/AngelCodeTextRenderer.fsproj"
+    },
     "GraphicsMgrMonoGameDesktop/1.0.0": {
       "type": "project",
       "path": "../GraphicsMgrMonoGameDesktop/GraphicsMgrMonoGameDesktop.fsproj",
@@ -451,6 +520,7 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "AngelCodeTextRenderer >= 1.0.0",
       "FSFramework >= 1.0.0-preview-1",
       "FSharp.Core >= 5.0.0-beta.*",
       "GraphicsMgrMonoGameDesktop >= 1.0.0",
@@ -467,11 +537,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\projects\\RiderProjects\\TwoDEngine3\\TwoDEngine3\\TwoDEngine3.fsproj",
+      "projectUniqueName": "C:\\Users\\jpkessel\\RiderProjects\\TwoDEngine3\\TwoDEngine3\\TwoDEngine3.fsproj",
       "projectName": "TwoDEngine3",
-      "projectPath": "D:\\projects\\RiderProjects\\TwoDEngine3\\TwoDEngine3\\TwoDEngine3.fsproj",
+      "projectPath": "C:\\Users\\jpkessel\\RiderProjects\\TwoDEngine3\\TwoDEngine3\\TwoDEngine3.fsproj",
       "packagesPath": "C:\\Users\\jpkessel\\.nuget\\packages\\",
-      "outputPath": "D:\\projects\\RiderProjects\\TwoDEngine3\\TwoDEngine3\\obj\\",
+      "outputPath": "C:\\Users\\jpkessel\\RiderProjects\\TwoDEngine3\\TwoDEngine3\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -479,7 +549,7 @@
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\jpkessel\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "U:\\pchome\\.pcprefsBAD\\AppData\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
@@ -489,21 +559,22 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
-        "C:\\Users\\jpkessel\\AppData\\Local\\Stride\\NugetDev": {},
+        "U:\\Personal\\GitHub\\WebGL.NET\\src\\packages": {},
         "https://api.nuget.org/v3/index.json": {},
-        "https://packages.stride3d.net/nuget": {},
         "https://pkgs.dev.azure.com/dnceng/public/_packaging/dotnet-tools/nuget/v3/index.json": {}
       },
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "D:\\projects\\RiderProjects\\TwoDEngine3\\GraphicsMgrMonoGameDesktop\\GraphicsMgrMonoGameDesktop.fsproj": {
-              "projectPath": "D:\\projects\\RiderProjects\\TwoDEngine3\\GraphicsMgrMonoGameDesktop\\GraphicsMgrMonoGameDesktop.fsproj"
+            "C:\\Users\\jpkessel\\RiderProjects\\TwoDEngine3\\AngelCodeTextRenderer\\AngelCodeTextRenderer.fsproj": {
+              "projectPath": "C:\\Users\\jpkessel\\RiderProjects\\TwoDEngine3\\AngelCodeTextRenderer\\AngelCodeTextRenderer.fsproj"
             },
-            "D:\\projects\\RiderProjects\\TwoDEngine3\\TDE3ManagerInterfaces\\TDE3ManagerInterfaces.fsproj": {
-              "projectPath": "D:\\projects\\RiderProjects\\TwoDEngine3\\TDE3ManagerInterfaces\\TDE3ManagerInterfaces.fsproj"
+            "C:\\Users\\jpkessel\\RiderProjects\\TwoDEngine3\\GraphicsMgrMonoGameDesktop\\GraphicsMgrMonoGameDesktop.fsproj": {
+              "projectPath": "C:\\Users\\jpkessel\\RiderProjects\\TwoDEngine3\\GraphicsMgrMonoGameDesktop\\GraphicsMgrMonoGameDesktop.fsproj"
+            },
+            "C:\\Users\\jpkessel\\RiderProjects\\TwoDEngine3\\TDE3ManagerInterfaces\\TDE3ManagerInterfaces.fsproj": {
+              "projectPath": "C:\\Users\\jpkessel\\RiderProjects\\TwoDEngine3\\TDE3ManagerInterfaces\\TDE3ManagerInterfaces.fsproj"
             }
           }
         }
