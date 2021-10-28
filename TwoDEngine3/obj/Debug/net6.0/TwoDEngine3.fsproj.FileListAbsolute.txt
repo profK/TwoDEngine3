@@ -85,3 +85,4 @@ C:\Users\jpkessel\RiderProjects\TwoDEngine3\TwoDEngine3\obj\Debug\net6.0\TwoDEng
 C:\Users\jpkessel\RiderProjects\TwoDEngine3\TwoDEngine3\obj\Debug\net6.0\TwoDEngine3.pdb
 C:\Users\jpkessel\RiderProjects\TwoDEngine3\TwoDEngine3\obj\Debug\net6.0\TwoDEngine3.genruntimeconfig.cache
 C:\Users\jpkessel\RiderProjects\TwoDEngine3\TwoDEngine3\obj\Debug\net6.0\TwoDEngine3.fsproj.CopyComplete
+D:\projects\RiderProjects\TwoDEngine3\TwoDEngine3\obj\Debug\net6.0\TwoDEngine3.fsproj.CopyComplete

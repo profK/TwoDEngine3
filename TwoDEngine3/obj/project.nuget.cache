@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "RHVB0YrEEkBFzTp2wcz4+Qe9ugT2gy4Es8l/qbDLktwMWKOLoPTdkEwbjNruDakfgUwsPbmFJWNY19yGg6H4DA==",
+  "dgSpecHash": "WfoIExlkRO84dAqL8AAexu5T6CYZFdQPFPLTSdz9TXWYh+1rLVNaM5R0fLCP04DbBax+pAW1P1Hm5k7GPhu3UQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\jpkessel\\RiderProjects\\TwoDEngine3\\TwoDEngine3\\TwoDEngine3.fsproj",
+  "projectFilePath": "D:\\projects\\RiderProjects\\TwoDEngine3\\TwoDEngine3\\TwoDEngine3.fsproj",
   "expectedPackageFiles": [
     "C:\\Users\\jpkessel\\.nuget\\packages\\fsframework\\1.0.0-preview-1\\fsframework.1.0.0-preview-1.nupkg.sha512",
     "C:\\Users\\jpkessel\\.nuget\\packages\\fsharp.core\\5.0.0\\fsharp.core.5.0.0.nupkg.sha512",

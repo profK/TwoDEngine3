@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "xa4dzwvTMSRg0DTScCrBGkAkGge5hczjSpP/ZjHXb8yW8pbBmGFnkL9XQKHCWOrxS1NQVGmgeT3nT+RRLuXOaA==",
+  "dgSpecHash": "xcfQc95TUC5Bh6jF1ZEyhAn1yIbou/jKGBN5tAo+nxX3mzrtNAnfXgSbvKel4xBZw7ldRqRJyK0ceeArGFfukQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\jpkessel\\RiderProjects\\TwoDEngine3\\GraphicsMgrMonoGameDesktop\\GraphicsMgrMonoGameDesktop.fsproj",
+  "projectFilePath": "D:\\projects\\RiderProjects\\TwoDEngine3\\GraphicsMgrMonoGameDesktop\\GraphicsMgrMonoGameDesktop.fsproj",
   "expectedPackageFiles": [
     "C:\\Users\\jpkessel\\.nuget\\packages\\fsframework\\1.0.0-preview-1\\fsframework.1.0.0-preview-1.nupkg.sha512",
     "C:\\Users\\jpkessel\\.nuget\\packages\\fsharp.core\\5.0.0\\fsharp.core.5.0.0.nupkg.sha512",

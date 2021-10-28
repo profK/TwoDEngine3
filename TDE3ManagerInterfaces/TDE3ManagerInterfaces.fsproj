@@ -6,12 +6,13 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <Compile Include="GraphicsManagerInterface.fs"/>
-        <Compile Include="InputManager.fs"/>
+        <Compile Include="GraphicsManagerInterface.fs" />
+        <Compile Include="InputManager.fs" />
+        <Compile Include="TextRenderer.fs" />
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="MathSharp" Version="2.0.0-pre"/>
+        <PackageReference Include="MathSharp" Version="2.0.0-pre" />
     </ItemGroup>
 
 </Project>
