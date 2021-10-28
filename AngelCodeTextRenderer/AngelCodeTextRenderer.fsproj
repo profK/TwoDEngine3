@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Compile Include="Library.fs" />
+        <Content Include="Fonts\Latin.fnt" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Cyotek.Drawing.BitmapFont" Version="2.0.3" />
+      <PackageReference Include="FSFramework" Version="1.0.0-preview-1" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\GraphicsMgrMonoGameDesktop\GraphicsMgrMonoGameDesktop.fsproj" />
+      <ProjectReference Include="..\TDE3ManagerInterfaces\TDE3ManagerInterfaces.fsproj" />
+    </ItemGroup>
+
+</Project>

@@ -1,0 +1,16 @@
+D:\projects\RiderProjects\TwoDEngine3\AngelCodeTextRenderer\bin\Debug\net6.0\AngelCodeTextRenderer.deps.json
+D:\projects\RiderProjects\TwoDEngine3\AngelCodeTextRenderer\bin\Debug\net6.0\AngelCodeTextRenderer.dll
+D:\projects\RiderProjects\TwoDEngine3\AngelCodeTextRenderer\bin\Debug\net6.0\AngelCodeTextRenderer.pdb
+D:\projects\RiderProjects\TwoDEngine3\AngelCodeTextRenderer\bin\Debug\net6.0\AngelCodeTextRenderer.xml
+D:\projects\RiderProjects\TwoDEngine3\AngelCodeTextRenderer\bin\Debug\net6.0\GraphicsMgrMonoGameDesktop.dll
+D:\projects\RiderProjects\TwoDEngine3\AngelCodeTextRenderer\bin\Debug\net6.0\TDE3ManagerInterfaces.dll
+D:\projects\RiderProjects\TwoDEngine3\AngelCodeTextRenderer\bin\Debug\net6.0\GraphicsMgrMonoGameDesktop.pdb
+D:\projects\RiderProjects\TwoDEngine3\AngelCodeTextRenderer\bin\Debug\net6.0\GraphicsMgrMonoGameDesktop.xml
+D:\projects\RiderProjects\TwoDEngine3\AngelCodeTextRenderer\bin\Debug\net6.0\TDE3ManagerInterfaces.pdb
+D:\projects\RiderProjects\TwoDEngine3\AngelCodeTextRenderer\bin\Debug\net6.0\TDE3ManagerInterfaces.xml
+D:\projects\RiderProjects\TwoDEngine3\AngelCodeTextRenderer\obj\Debug\net6.0\AngelCodeTextRenderer.fsproj.AssemblyReference.cache
+D:\projects\RiderProjects\TwoDEngine3\AngelCodeTextRenderer\obj\Debug\net6.0\AngelCodeTextRenderer.AssemblyInfoInputs.cache
+D:\projects\RiderProjects\TwoDEngine3\AngelCodeTextRenderer\obj\Debug\net6.0\AngelCodeTextRenderer.AssemblyInfo.fs
+D:\projects\RiderProjects\TwoDEngine3\AngelCodeTextRenderer\obj\Debug\net6.0\AngelCodeTextRenderer.dll
+D:\projects\RiderProjects\TwoDEngine3\AngelCodeTextRenderer\obj\Debug\net6.0\AngelCodeTextRenderer.xml
+D:\projects\RiderProjects\TwoDEngine3\AngelCodeTextRenderer\obj\Debug\net6.0\AngelCodeTextRenderer.pdb
