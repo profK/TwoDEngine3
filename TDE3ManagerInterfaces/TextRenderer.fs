@@ -12,6 +12,7 @@ and Text =
     abstract member Font : Font
        
 and TextManager =
-    abstract member FontList : Font list with get
+    abstract member FontList : string list with get
+    abstract member LoadFont : string -> Font
     abstract member RenderText: Vector2->Text->unit
 

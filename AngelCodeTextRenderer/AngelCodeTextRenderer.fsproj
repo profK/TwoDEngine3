@@ -7,7 +7,9 @@
 
     <ItemGroup>
         <Compile Include="Library.fs" />
-        <Content Include="Fonts\Latin.fnt" />
+        <Content Include="AngelcodeFonts\Latin.fnt">
+          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
     </ItemGroup>
 
     <ItemGroup>
