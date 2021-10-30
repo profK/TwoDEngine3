@@ -3,9 +3,13 @@
 open System
 open AngelCodeTextRenderer
 open GraphicsMgrMonoGameDesktop
+open ManagerRegistry
 open TwoDEngine3.ExampleLevel
 open TwoDEngine3.LevelManagerInterface
+open TwoDEngine3.ManagerInterfaces
 open TwoDEngine3.ManagerInterfaces.GraphicsManagerInterface
+open TwoDEngine3.ManagerInterfaces.InputManager
+open USBInputManager
 
 
 let mutable currentLevelController: AbstractLevelController option = None
@@ -42,11 +46,17 @@ let main argv =
     //register textRenderer
     typedefof<AngelCodeTextRenderer>
     |> ManagerRegistry.addManager
+    //register input manager
+    typedefof<USBInputManager>
+    |> ManagerRegistry.addManager
 
     // create lvel managers and set the active one hereSome(BouncyBall:>AbstractLevelController)
 
-
-
+    //test of usb scan
+    (ManagerRegistry.getManager<InputManager>().Value :?> USBInputManager).AxisTest
+    |> Seq.iter (fun s ->
+            Console.WriteLine s
+        )
 
     match ManagerRegistry.getManager<GraphicsManager> () with
     | Some graphics -> graphics.Start(fun gmgr -> SetLevelManager(Some(BouncyBall() :> AbstractLevelController)))

@@ -97,3 +97,16 @@ D:\projects\RiderProjects\TwoDEngine3\TwoDEngine3\obj\Debug\net6.0\TwoDEngine3.A
 D:\projects\RiderProjects\TwoDEngine3\TwoDEngine3\obj\Debug\net6.0\TwoDEngine3.dll
 D:\projects\RiderProjects\TwoDEngine3\TwoDEngine3\obj\Debug\net6.0\TwoDEngine3.pdb
 D:\projects\RiderProjects\TwoDEngine3\TwoDEngine3\obj\Debug\net6.0\TwoDEngine3.genruntimeconfig.cache
+D:\projects\RiderProjects\TwoDEngine3\TwoDEngine3\bin\Debug\net6.0\LibUsbDotNet.dll
+D:\projects\RiderProjects\TwoDEngine3\TwoDEngine3\bin\Debug\net6.0\runtimes\osx-x64\native\libusb-1.0.0.dylib
+D:\projects\RiderProjects\TwoDEngine3\TwoDEngine3\bin\Debug\net6.0\runtimes\win-x64\native\libusb-1.0.dll
+D:\projects\RiderProjects\TwoDEngine3\TwoDEngine3\bin\Debug\net6.0\runtimes\win-x64\native\libusb-1.0.pdb
+D:\projects\RiderProjects\TwoDEngine3\TwoDEngine3\bin\Debug\net6.0\runtimes\win-x64\native\libusbK.dll
+D:\projects\RiderProjects\TwoDEngine3\TwoDEngine3\bin\Debug\net6.0\runtimes\win-x64\native\libusbK.pdb
+D:\projects\RiderProjects\TwoDEngine3\TwoDEngine3\bin\Debug\net6.0\runtimes\win-x86\native\libusb-1.0.dll
+D:\projects\RiderProjects\TwoDEngine3\TwoDEngine3\bin\Debug\net6.0\runtimes\win-x86\native\libusb-1.0.pdb
+D:\projects\RiderProjects\TwoDEngine3\TwoDEngine3\bin\Debug\net6.0\runtimes\win-x86\native\libusbK.dll
+D:\projects\RiderProjects\TwoDEngine3\TwoDEngine3\bin\Debug\net6.0\runtimes\win-x86\native\libusbK.pdb
+D:\projects\RiderProjects\TwoDEngine3\TwoDEngine3\bin\Debug\net6.0\USBInputManager.dll
+D:\projects\RiderProjects\TwoDEngine3\TwoDEngine3\bin\Debug\net6.0\USBInputManager.pdb
+D:\projects\RiderProjects\TwoDEngine3\TwoDEngine3\bin\Debug\net6.0\USBInputManager.xml

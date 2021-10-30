@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "Br4m2/o9fC8VtlHIivGskpA6d6kEVEV0XPlQCv2/7KhuY5/XgELeGGeZgEtVVsKmIMB3BP6/riaRhhMgLlev4w==",
+  "success": true,
+  "projectFilePath": "D:\\projects\\RiderProjects\\TwoDEngine3\\USBInputManager\\USBInputManager.fsproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\jpkessel\\.nuget\\packages\\fsframework\\1.0.0-preview-1\\fsframework.1.0.0-preview-1.nupkg.sha512",
+    "C:\\Users\\jpkessel\\.nuget\\packages\\fsharp.core\\5.0.0\\fsharp.core.5.0.0.nupkg.sha512",
+    "C:\\Users\\jpkessel\\.nuget\\packages\\libusbdotnet\\3.0.97-alpha\\libusbdotnet.3.0.97-alpha.nupkg.sha512",
+    "C:\\Users\\jpkessel\\.nuget\\packages\\mathsharp\\2.0.0-pre\\mathsharp.2.0.0-pre.nupkg.sha512",
+    "C:\\Users\\jpkessel\\.nuget\\packages\\microsoft.net.compilers.toolset\\3.2.0-beta1-final\\microsoft.net.compilers.toolset.3.2.0-beta1-final.nupkg.sha512"
+  ],
+  "logs": []
+}

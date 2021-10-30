@@ -2,15 +2,6 @@
   "version": 3,
   "targets": {
     "net6.0": {
-      "Cyotek.Drawing.BitmapFont/2.0.3": {
-        "type": "package",
-        "compile": {
-          "lib/net5.0/Cyotek.Drawing.BitmapFont.dll": {}
-        },
-        "runtime": {
-          "lib/net5.0/Cyotek.Drawing.BitmapFont.dll": {}
-        }
-      },
       "FSFramework/1.0.0-preview-1": {
         "type": "package",
         "dependencies": {
@@ -138,85 +129,6 @@
           "build/_._": {}
         }
       },
-      "MonoGame.Framework.DesktopGL/3.8.0.1641": {
-        "type": "package",
-        "compile": {
-          "lib/netstandard2.0/MonoGame.Framework.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/MonoGame.Framework.dll": {}
-        },
-        "build": {
-          "build/_._": {}
-        },
-        "runtimeTargets": {
-          "runtimes/linux-x64/native/libSDL2-2.0.so.0": {
-            "assetType": "native",
-            "rid": "linux-x64"
-          },
-          "runtimes/linux-x64/native/libopenal.so.1": {
-            "assetType": "native",
-            "rid": "linux-x64"
-          },
-          "runtimes/osx/native/libSDL2-2.0.0.dylib": {
-            "assetType": "native",
-            "rid": "osx"
-          },
-          "runtimes/osx/native/libopenal.1.dylib": {
-            "assetType": "native",
-            "rid": "osx"
-          },
-          "runtimes/win-x64/native/SDL2.dll": {
-            "assetType": "native",
-            "rid": "win-x64"
-          },
-          "runtimes/win-x64/native/soft_oal.dll": {
-            "assetType": "native",
-            "rid": "win-x64"
-          },
-          "runtimes/win-x86/native/SDL2.dll": {
-            "assetType": "native",
-            "rid": "win-x86"
-          },
-          "runtimes/win-x86/native/soft_oal.dll": {
-            "assetType": "native",
-            "rid": "win-x86"
-          }
-        }
-      },
-      "AngelCodeTextRenderer/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
-        "dependencies": {
-          "Cyotek.Drawing.BitmapFont": "2.0.3",
-          "FSFramework": "1.0.0-preview-1",
-          "FSharp.Core": "5.0.0-beta",
-          "GraphicsMgrMonoGameDesktop": "1.0.0",
-          "TDE3ManagerInterfaces": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/AngelCodeTextRenderer.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/AngelCodeTextRenderer.dll": {}
-        }
-      },
-      "GraphicsMgrMonoGameDesktop/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
-        "dependencies": {
-          "FSFramework": "1.0.0-preview-1",
-          "FSharp.Core": "5.0.0-beta",
-          "MonoGame.Framework.DesktopGL": "3.8.0.1641",
-          "TDE3ManagerInterfaces": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/GraphicsMgrMonoGameDesktop.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/GraphicsMgrMonoGameDesktop.dll": {}
-        }
-      },
       "TDE3ManagerInterfaces/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -230,64 +142,10 @@
         "runtime": {
           "bin/placeholder/TDE3ManagerInterfaces.dll": {}
         }
-      },
-      "USBInputManager/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
-        "dependencies": {
-          "FSFramework": "1.0.0-preview-1",
-          "FSharp.Core": "5.0.0-beta",
-          "LibUsbDotNet": "3.0.97-alpha",
-          "TDE3ManagerInterfaces": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/USBInputManager.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/USBInputManager.dll": {}
-        }
       }
     }
   },
   "libraries": {
-    "Cyotek.Drawing.BitmapFont/2.0.3": {
-      "sha512": "XYWnPYgm5f8tQiMOiOPzS8LuFP8NIP7O9sLzKMdR1hdmDcKzU6qSgPCNPbTt4c7JMXri6c8AHYHqpPoi2AiZSQ==",
-      "type": "package",
-      "path": "cyotek.drawing.bitmapfont/2.0.3",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "cyotek.drawing.bitmapfont.2.0.3.nupkg.sha512",
-        "cyotek.drawing.bitmapfont.nuspec",
-        "icon.png",
-        "lib/net35/Cyotek.Drawing.BitmapFont.dll",
-        "lib/net35/Cyotek.Drawing.BitmapFont.xml",
-        "lib/net40/Cyotek.Drawing.BitmapFont.dll",
-        "lib/net40/Cyotek.Drawing.BitmapFont.xml",
-        "lib/net452/Cyotek.Drawing.BitmapFont.dll",
-        "lib/net452/Cyotek.Drawing.BitmapFont.xml",
-        "lib/net462/Cyotek.Drawing.BitmapFont.dll",
-        "lib/net462/Cyotek.Drawing.BitmapFont.xml",
-        "lib/net472/Cyotek.Drawing.BitmapFont.dll",
-        "lib/net472/Cyotek.Drawing.BitmapFont.xml",
-        "lib/net48/Cyotek.Drawing.BitmapFont.dll",
-        "lib/net48/Cyotek.Drawing.BitmapFont.xml",
-        "lib/net5.0/Cyotek.Drawing.BitmapFont.dll",
-        "lib/net5.0/Cyotek.Drawing.BitmapFont.xml",
-        "lib/netcoreapp2.1/Cyotek.Drawing.BitmapFont.dll",
-        "lib/netcoreapp2.1/Cyotek.Drawing.BitmapFont.xml",
-        "lib/netcoreapp2.2/Cyotek.Drawing.BitmapFont.dll",
-        "lib/netcoreapp2.2/Cyotek.Drawing.BitmapFont.xml",
-        "lib/netcoreapp3.1/Cyotek.Drawing.BitmapFont.dll",
-        "lib/netcoreapp3.1/Cyotek.Drawing.BitmapFont.xml",
-        "lib/netstandard1.3/Cyotek.Drawing.BitmapFont.dll",
-        "lib/netstandard1.3/Cyotek.Drawing.BitmapFont.xml",
-        "lib/netstandard2.0/Cyotek.Drawing.BitmapFont.dll",
-        "lib/netstandard2.0/Cyotek.Drawing.BitmapFont.xml",
-        "lib/netstandard2.1/Cyotek.Drawing.BitmapFont.dll",
-        "lib/netstandard2.1/Cyotek.Drawing.BitmapFont.xml"
-      ]
-    },
     "FSFramework/1.0.0-preview-1": {
       "sha512": "pmykRxvdCxAnO4Cb7H+KoXO4kM0vrWt7Ookx/mFl17PD1EKurevrBoBMb1XsslZ1/97zb0ultXdXgX8nE4v4ow==",
       "type": "package",
@@ -562,61 +420,18 @@
         "tasks/netcoreapp2.1/zh-Hant/Microsoft.Build.Tasks.CodeAnalysis.resources.dll"
       ]
     },
-    "MonoGame.Framework.DesktopGL/3.8.0.1641": {
-      "sha512": "rJQlrlHQbnOECYV6EcQ8GlGRQ2lzPTroXQcyyOZ0ki+BQRSJEN2zVBm9skqLiXya348aGAfTSSGTaSKjAy9NaA==",
-      "type": "package",
-      "path": "monogame.framework.desktopgl/3.8.0.1641",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "build/MonoGame.Framework.DesktopGL.targets",
-        "lib/net452/MonoGame.Framework.dll",
-        "lib/net452/MonoGame.Framework.xml",
-        "lib/netstandard2.0/MonoGame.Framework.dll",
-        "lib/netstandard2.0/MonoGame.Framework.xml",
-        "monogame.framework.desktopgl.3.8.0.1641.nupkg.sha512",
-        "monogame.framework.desktopgl.nuspec",
-        "runtimes/linux-x64/native/libSDL2-2.0.so.0",
-        "runtimes/linux-x64/native/libopenal.so.1",
-        "runtimes/osx/native/libSDL2-2.0.0.dylib",
-        "runtimes/osx/native/libopenal.1.dylib",
-        "runtimes/win-x64/native/SDL2.dll",
-        "runtimes/win-x64/native/soft_oal.dll",
-        "runtimes/win-x86/native/SDL2.dll",
-        "runtimes/win-x86/native/soft_oal.dll"
-      ]
-    },
-    "AngelCodeTextRenderer/1.0.0": {
-      "type": "project",
-      "path": "../AngelCodeTextRenderer/AngelCodeTextRenderer.fsproj",
-      "msbuildProject": "../AngelCodeTextRenderer/AngelCodeTextRenderer.fsproj"
-    },
-    "GraphicsMgrMonoGameDesktop/1.0.0": {
-      "type": "project",
-      "path": "../GraphicsMgrMonoGameDesktop/GraphicsMgrMonoGameDesktop.fsproj",
-      "msbuildProject": "../GraphicsMgrMonoGameDesktop/GraphicsMgrMonoGameDesktop.fsproj"
-    },
     "TDE3ManagerInterfaces/1.0.0": {
       "type": "project",
       "path": "../TDE3ManagerInterfaces/TDE3ManagerInterfaces.fsproj",
       "msbuildProject": "../TDE3ManagerInterfaces/TDE3ManagerInterfaces.fsproj"
-    },
-    "USBInputManager/1.0.0": {
-      "type": "project",
-      "path": "../USBInputManager/USBInputManager.fsproj",
-      "msbuildProject": "../USBInputManager/USBInputManager.fsproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "AngelCodeTextRenderer >= 1.0.0",
       "FSFramework >= 1.0.0-preview-1",
       "FSharp.Core >= 5.0.0-beta.*",
-      "GraphicsMgrMonoGameDesktop >= 1.0.0",
-      "MathSharp >= 2.0.0-pre",
-      "TDE3ManagerInterfaces >= 1.0.0",
-      "USBInputManager >= 1.0.0"
+      "LibUsbDotNet >= 3.0.97-alpha",
+      "TDE3ManagerInterfaces >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -628,11 +443,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\projects\\RiderProjects\\TwoDEngine3\\TwoDEngine3\\TwoDEngine3.fsproj",
-      "projectName": "TwoDEngine3",
-      "projectPath": "D:\\projects\\RiderProjects\\TwoDEngine3\\TwoDEngine3\\TwoDEngine3.fsproj",
+      "projectUniqueName": "D:\\projects\\RiderProjects\\TwoDEngine3\\USBInputManager\\USBInputManager.fsproj",
+      "projectName": "USBInputManager",
+      "projectPath": "D:\\projects\\RiderProjects\\TwoDEngine3\\USBInputManager\\USBInputManager.fsproj",
       "packagesPath": "C:\\Users\\jpkessel\\.nuget\\packages\\",
-      "outputPath": "D:\\projects\\RiderProjects\\TwoDEngine3\\TwoDEngine3\\obj\\",
+      "outputPath": "D:\\projects\\RiderProjects\\TwoDEngine3\\USBInputManager\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -660,17 +475,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "D:\\projects\\RiderProjects\\TwoDEngine3\\AngelCodeTextRenderer\\AngelCodeTextRenderer.fsproj": {
-              "projectPath": "D:\\projects\\RiderProjects\\TwoDEngine3\\AngelCodeTextRenderer\\AngelCodeTextRenderer.fsproj"
-            },
-            "D:\\projects\\RiderProjects\\TwoDEngine3\\GraphicsMgrMonoGameDesktop\\GraphicsMgrMonoGameDesktop.fsproj": {
-              "projectPath": "D:\\projects\\RiderProjects\\TwoDEngine3\\GraphicsMgrMonoGameDesktop\\GraphicsMgrMonoGameDesktop.fsproj"
-            },
             "D:\\projects\\RiderProjects\\TwoDEngine3\\TDE3ManagerInterfaces\\TDE3ManagerInterfaces.fsproj": {
               "projectPath": "D:\\projects\\RiderProjects\\TwoDEngine3\\TDE3ManagerInterfaces\\TDE3ManagerInterfaces.fsproj"
-            },
-            "D:\\projects\\RiderProjects\\TwoDEngine3\\USBInputManager\\USBInputManager.fsproj": {
-              "projectPath": "D:\\projects\\RiderProjects\\TwoDEngine3\\USBInputManager\\USBInputManager.fsproj"
             }
           }
         }
@@ -691,9 +497,9 @@
             "version": "[5.0.0-beta.*, )",
             "generatePathProperty": true
           },
-          "MathSharp": {
+          "LibUsbDotNet": {
             "target": "Package",
-            "version": "[2.0.0-pre, )",
+            "version": "[3.0.97-alpha, )",
             "generatePathProperty": true
           }
         },

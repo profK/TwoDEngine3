@@ -23,6 +23,7 @@
         <ProjectReference Include="..\AngelCodeTextRenderer\AngelCodeTextRenderer.fsproj" />
         <ProjectReference Include="..\GraphicsMgrMonoGameDesktop\GraphicsMgrMonoGameDesktop.fsproj" />
         <ProjectReference Include="..\TDE3ManagerInterfaces\TDE3ManagerInterfaces.fsproj" />
+        <ProjectReference Include="..\USBInputManager\USBInputManager.fsproj" />
     </ItemGroup>
 
 </Project>
