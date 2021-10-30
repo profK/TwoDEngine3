@@ -8,6 +8,8 @@ Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "GraphicsMgrMonoGameDesktop"
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "AngelCodeTextRenderer", "AngelCodeTextRenderer\AngelCodeTextRenderer.fsproj", "{B1B38F7E-871B-4BA1-8B2F-B7C20C442063}"
 EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "USBInputManager", "USBInputManager\USBInputManager.fsproj", "{CC444604-DC19-4EBF-B82D-4B9A8100DD88}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +32,9 @@ Global
 		{B1B38F7E-871B-4BA1-8B2F-B7C20C442063}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B1B38F7E-871B-4BA1-8B2F-B7C20C442063}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B1B38F7E-871B-4BA1-8B2F-B7C20C442063}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC444604-DC19-4EBF-B82D-4B9A8100DD88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC444604-DC19-4EBF-B82D-4B9A8100DD88}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC444604-DC19-4EBF-B82D-4B9A8100DD88}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC444604-DC19-4EBF-B82D-4B9A8100DD88}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
