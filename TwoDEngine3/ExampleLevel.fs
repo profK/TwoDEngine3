@@ -1,10 +1,32 @@
 ﻿module TwoDEngine3.ExampleLevel
 
+open System
 open System.IO
 open System.Numerics
 open TDE3ManagerInterfaces.TextRendererInterfaces
 open TwoDEngine3.LevelManagerInterface
+open TwoDEngine3.ManagerInterfaces
 open TwoDEngine3.ManagerInterfaces.GraphicsManagerInterface
+open TwoDEngine3.ManagerInterfaces.InputManager
+
+let rec PrintControl (node: Node, writer: TextWriter, indent: int) =
+    let spaces = new string (' ', indent)
+    fprintf writer $"%s{spaces + (node.Name)}"
+
+    match node.Value with
+    | Children children ->
+        printfn ""// new line
+        children
+        |> Seq.iter (fun child -> PrintControl(child, writer, indent + 4))
+    | Axis axis ->
+        let spaces = new string (' ', indent + 4)
+
+        match axis with
+        | Digital b -> fprintf writer $"%s{spaces}Digital = %s{b.ToString()}"
+        | Analog a -> fprintf writer $"%s{spaces}Analog = %s{a.ToString()}"
+        | Keyboard k -> fprintf writer $"%s{spaces}Keyboard = %s{k.ToString()}"
+
+        printfn ""// newline
 
 type BouncyBall() as this =
     inherit AbstractLevelController()
@@ -34,6 +56,8 @@ type BouncyBall() as this =
 
     override this.Open() =
         printfn "BouncyBall opened"
+        let root = ManagerRegistry.getManager<InputManager>().Value.controllerRoot
+        PrintControl(root,Console.Out,0)
 
 
         base.Open()

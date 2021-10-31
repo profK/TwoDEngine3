@@ -38,21 +38,6 @@ let Render unit =
     ()
 
 // test func
-let rec PrintControl (node: Node, writer: TextWriter, indent: int) =
-    let spaces = new string (' ', indent)
-    fprintfn writer $"%s{spaces + (node.Name)}"
-
-    match node.Value with
-    | Children children ->
-        children
-        |> Seq.iter (fun child -> PrintControl(child, writer, indent + 4))
-    | Axis axis ->
-        let spaces = new string (' ', indent + 4)
-
-        match axis with
-        | Digital b -> fprintfn writer $"%s{spaces}Digital = %s{b.ToString()}"
-        | Analog a -> fprintfn writer $"%s{spaces}Analog = %s{a.ToString()}"
-        | Keyboard k -> fprintfn writer $"%s{spaces}Keyboard = %s{k.ToString()}"
 
 [<EntryPoint>]
 [<STAThread>]

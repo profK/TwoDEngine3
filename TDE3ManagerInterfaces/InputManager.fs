@@ -4,7 +4,7 @@
 type AxisUnion =
     | Digital of bool
     | Analog of float
-    | Keyboard of char seq
+    | Keyboard of char list
 
 and NodeValue =
     | Axis of AxisUnion

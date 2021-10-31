@@ -1,5 +1,6 @@
 ﻿namespace HIDInputManager
 
+open System.Reflection.Metadata
 open DevDecoder.HIDDevices
 open DynamicData
 open ManagerRegistry
@@ -11,14 +12,27 @@ open TwoDEngine3.ManagerInterfaces.InputManager
 type HIDInputManager() =
 
 
-    let rec GetControlNodes (controls: Control seq) : Node seq =
+    let rec GetControlNodes (controls: Control seq) : Node list =
         controls
         |> Seq.map
             (fun (control: Control) ->
-                if control.IsBoolean then
-                    Node(control.Name, Axis(Digital(false)))
-                else
-                    Node(control.Name, Axis(Analog(float 0))))
+                Node(
+                    control.Name,
+                    Children(
+                        { 0 .. (control.ElementCount-1) }
+                        |> Seq.map (fun index ->
+                            Node(index.ToString(),
+                                 match control.IsBoolean with
+                                 | true -> Axis(Digital(false))
+                                 | false-> Axis(Analog(float 0))               
+                                )
+                            )
+                        |> Seq.toList
+                        )      
+                    )
+                )
+            |> Seq.toList
+         
 
     let root = Node("root", Children(List.Empty))
 
@@ -35,7 +49,7 @@ type HIDInputManager() =
                         | ChangeReason.Add ->
                             root.Value <-
                                 Children(
-                                    Node(action.Key, Children(List.Empty))
+                                    Node(action.Current.Name, Children(GetControlNodes action.Current.Controls))
                                     :: match root.Value with
                                        | Children oldlist -> oldlist
                                        | _ -> List.Empty
@@ -48,15 +62,12 @@ type HIDInputManager() =
                                     match root.Value with
                                     | Children oldlist ->
                                         oldlist
-                                        |> List.filter (fun childNode ->
-                                            childNode.Name = action.Current.Name)
+                                        |> List.filter (fun childNode -> childNode.Name = action.Current.Name)
                                     | _ -> List.empty
                                 )
 
                             printfn $"Removed %s{action.Key}"
-                        | _ -> printfn $"Unimplemented action: %s{action.Reason.ToString()}"
-                    )
-                )
+                        | _ -> printfn $"Unimplemented action: %s{action.Reason.ToString()}"))
 
     interface InputManager with
         member val controllerRoot = root
