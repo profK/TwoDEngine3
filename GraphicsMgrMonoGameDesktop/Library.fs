@@ -16,11 +16,14 @@ type XnaTransform = Microsoft.Xna.Framework.Matrix
 
 type MGTransform(xnaTransform) =
     member val xform = xnaTransform
+
     interface Transform with
         member this.Multiply(var0: Transform) : Transform = failwith "todo"
         member this.Multiply(var0: Vector2) : Vector2 = failwith "todo"
 
-type SpriteBatchState = Begun | Ended
+type SpriteBatchState =
+    | Begun
+    | Ended
 
 [<Manager("A graphics manager based on Monogame Desktop",
           supportedSystems.Linux
@@ -29,8 +32,9 @@ type SpriteBatchState = Begun | Ended
 type GraphicsManagerMGDT() as this =
     inherit Game()
     let graphics = new GraphicsDeviceManager(this)
-    
-    let drawingState = lazy (DrawingStateManager(graphics.GraphicsDevice))
+
+    let drawingState =
+        lazy (DrawingStateManager(graphics.GraphicsDevice))
 
     let mutable transformStack: Transform list = List.Empty
     let mutable clipStack: Rectangle list = List.Empty
@@ -40,7 +44,8 @@ type GraphicsManagerMGDT() as this =
     override this.LoadContent() =
         base.LoadContent()
         let graphicsManager = this :> GraphicsManager
-        graphicsManager.PushTransform graphicsManager.IdentityTransform 
+        graphicsManager.PushTransform graphicsManager.IdentityTransform
+
         match this.initFunc with
         | Some cb -> cb (this)
         | None -> ()
@@ -58,25 +63,31 @@ type GraphicsManagerMGDT() as this =
 
         base.Update gameTime
 
-   
+
     override this.Draw gameTime =
         let graphicsManager = (this :> GraphicsManager)
         graphics.GraphicsDevice.Clear(Color.Black)
         drawingState.Force().BeginDrawing
+
         graphicsManager.GraphicsListeners
         |> List.iter (fun listener -> listener.Render(this))
+
         drawingState.Force().EndDrawing
         base.Draw gameTime
 
     interface GraphicsManager with
         override this.DrawImage image position =
-            let mgImage:MonogameImage = image :?> MonogameImage
+            let mgImage: MonogameImage = image :?> MonogameImage
 
             let srcRect =
                 XnaRect(int32 mgImage.origin.X, int32 mgImage.origin.Y, int32 mgImage.size.X, int32 mgImage.size.Y)
 
             let pos = XnaVec2(position.X, position.Y)
-            drawingState.Force().SpriteBatch.Draw(mgImage.texture, pos, srcRect, Color.White)
+
+            drawingState
+                .Force()
+                .SpriteBatch.Draw(mgImage.texture, pos, srcRect, Color.White)
+
             ()
 
         member val GraphicsListeners = List.Empty with get, set
@@ -88,16 +99,26 @@ type GraphicsManagerMGDT() as this =
             MonogameImage(tex, SysVec2(float32 0, float32 0), SysVec2(float32 tex.Width, float32 tex.Height)) :> Image
 
         member this.PopClip() = failwith "todo"
+
         member this.PopTransform() =
             let popResult = transformStack |> Stack.pop
             transformStack <- snd popResult
-            drawingState.Force().SetTransform (transformStack.Head :?> MGTransform).xform
+
+            drawingState
+                .Force()
+                .SetTransform (transformStack.Head :?> MGTransform).xform
+
             fst popResult
+
         member this.PushClip(var0) = failwith "todo"
+
         member this.PushTransform(tform) =
-            drawingState.Force().SetTransform (tform :?> MGTransform).xform
+            drawingState
+                .Force()
+                .SetTransform (tform :?> MGTransform).xform
+
             transformStack <- transformStack |> Stack.push tform
-   
+
 
         member this.ScreenSize =
             new SysVec2(float32 (graphics.PreferredBackBufferWidth), float32 (graphics.PreferredBackBufferHeight))
@@ -113,11 +134,12 @@ type GraphicsManagerMGDT() as this =
 
         member this.IdentityTransform =
             (MGTransform XnaTransform.Identity) :> Transform
-            
+
         member this.RotationTransform(rotRadians) =
-            (MGTransform (XnaTransform.CreateRotationZ rotRadians)) :> Transform
+            (MGTransform(XnaTransform.CreateRotationZ rotRadians)) :> Transform
+
         member this.TranslationTransform(v2) =
-            (MGTransform (XnaTransform.CreateTranslation (XnaVec3 (v2.X, v2.Y, 0F )))):> Transform
+            (MGTransform(XnaTransform.CreateTranslation(XnaVec3(v2.X, v2.Y, 0F)))) :> Transform
 
 and MonogameImage(Texture, ?Origin, ?Size) =
     member val internal texture: Texture2D = Texture

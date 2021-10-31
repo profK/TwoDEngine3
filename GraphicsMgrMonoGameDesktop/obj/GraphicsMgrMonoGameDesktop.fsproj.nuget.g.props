@@ -20,7 +20,7 @@
   </PropertyGroup>
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <PkgFSharp_Core Condition=" '$(PkgFSharp_Core)' == '' ">C:\Users\jpkessel\.nuget\packages\fsharp.core\5.0.0</PkgFSharp_Core>
-    <PkgMonoGame_Framework_DesktopGL Condition=" '$(PkgMonoGame_Framework_DesktopGL)' == '' ">C:\Users\jpkessel\.nuget\packages\monogame.framework.desktopgl\3.8.0.1641</PkgMonoGame_Framework_DesktopGL>
     <PkgFSFramework Condition=" '$(PkgFSFramework)' == '' ">C:\Users\jpkessel\.nuget\packages\fsframework\1.0.0-preview-1</PkgFSFramework>
+    <PkgMonoGame_Framework_DesktopGL Condition=" '$(PkgMonoGame_Framework_DesktopGL)' == '' ">C:\Users\jpkessel\.nuget\packages\monogame.framework.desktopgl\3.8.0.1641</PkgMonoGame_Framework_DesktopGL>
   </PropertyGroup>
 </Project>

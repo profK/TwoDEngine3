@@ -2,6 +2,18 @@
   "version": 3,
   "targets": {
     "net6.0": {
+      "FSFramework/1.0.0-preview-1": {
+        "type": "package",
+        "dependencies": {
+          "FSharp.Core": "5.0.0"
+        },
+        "compile": {
+          "lib/net6.0/FSFramework.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/FSFramework.dll": {}
+        }
+      },
       "FSharp.Core/5.0.0": {
         "type": "package",
         "compile": {
@@ -73,6 +85,19 @@
     }
   },
   "libraries": {
+    "FSFramework/1.0.0-preview-1": {
+      "sha512": "pmykRxvdCxAnO4Cb7H+KoXO4kM0vrWt7Ookx/mFl17PD1EKurevrBoBMb1XsslZ1/97zb0ultXdXgX8nE4v4ow==",
+      "type": "package",
+      "path": "fsframework/1.0.0-preview-1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "fsframework.1.0.0-preview-1.nupkg.sha512",
+        "fsframework.nuspec",
+        "lib/net6.0/FSFramework.dll",
+        "lib/net6.0/FSFramework.xml"
+      ]
+    },
     "FSharp.Core/5.0.0": {
       "sha512": "iHoYXA0VaSQUONGENB1aVafjDDZDZpwu39MtaRCTrmwFW/cTcK0b2yKNVYneFHJMc3ChtsSoM9lNtJ1dYXkHfA==",
       "type": "package",
@@ -315,6 +340,7 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "FSFramework >= 1.0.0-preview-1",
       "FSharp.Core >= 5.0.0-beta.*",
       "MathSharp >= 2.0.0-pre"
     ]
@@ -367,6 +393,11 @@
       "net6.0": {
         "targetAlias": "net6.0",
         "dependencies": {
+          "FSFramework": {
+            "target": "Package",
+            "version": "[1.0.0-preview-1, )",
+            "generatePathProperty": true
+          },
           "FSharp.Core": {
             "include": "Runtime, Compile, Build, Native, Analyzers, BuildTransitive",
             "target": "Package",

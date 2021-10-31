@@ -1,16 +1,20 @@
 ﻿module TwoDEngine3.ManagerInterfaces.InputManager
 
-type AxisUnion =
-    | DigitalAxis of bool
-    | Analog of float
-    | Keyboard of char list
 
-type Axis =
-    struct
-        val axis: AxisUnion
-        val path: string
-    end
+type AxisUnion =
+    | Digital of bool
+    | Analog of float
+    | Keyboard of char seq
+
+and NodeValue =
+    | Axis of AxisUnion
+    | Children of Node list
+
+and Node(name: string, value: NodeValue) =
+    member val Name: string = name
+    member val Value: NodeValue = value with get, set
+
+
 
 type InputManager =
-    abstract PollAllAxes : unit -> Axis list
-    abstract PollChangedAxes : unit -> Axis list
+    abstract controllerRoot : Node

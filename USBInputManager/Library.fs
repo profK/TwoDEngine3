@@ -9,27 +9,14 @@ open TwoDEngine3.ManagerInterfaces.InputManager
 [<Manager("USB based input manager",supportedSystems.Windows)>]
 type USBInputManager() =
     let context = new UsbContext()
-    let axes = context.List() |>
-                Seq.fold (
-                    fun state (usbDevice:IUsbDevice) ->
-                        match usbDevice.TryOpen() with
-                        | true ->
-                            usbDevice.Configs |> Seq.fold (
-                                fun state (configInfo:UsbConfigInfo) ->
-                                    configInfo.Interfaces |> Seq.fold(
-                                        fun state (interfaceInfo:UsbInterfaceInfo) ->
-                                            interfaceInfo.Endpoints |> Seq.fold (
-                                                fun state (endPoint:UsbEndpointInfo) ->
-                                                    //TODO build device desc tree
-                                                ) state
-                                        ) state
-                                ) state
-                        | false -> state
-                    ) List.Empty
-    
-    member val AxisTest = axes with get
+    let axes =  Node("controllers",Children(
+                    (context.List() |> Seq.filter (fun usbDevice -> usbDevice.TryOpen()))
+                    |>Seq.map (fun (usbDevice:IUsbDevice) ->
+                       usbDevice.
+                       
+    let 
     
     interface InputManager with
+        member val controllerRoot = axes
         
-        member this.PollAllAxes() = failwith "todo"
-        member this.PollChangedAxes() = failwith "todo"
+        

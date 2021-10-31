@@ -1,0 +1,13 @@
+D:\projects\RiderProjects\TwoDEngine3\HIDInputManager\bin\Debug\net6.0\HIDInputManager.deps.json
+D:\projects\RiderProjects\TwoDEngine3\HIDInputManager\bin\Debug\net6.0\HIDInputManager.dll
+D:\projects\RiderProjects\TwoDEngine3\HIDInputManager\bin\Debug\net6.0\HIDInputManager.pdb
+D:\projects\RiderProjects\TwoDEngine3\HIDInputManager\bin\Debug\net6.0\HIDInputManager.xml
+D:\projects\RiderProjects\TwoDEngine3\HIDInputManager\bin\Debug\net6.0\TDE3ManagerInterfaces.dll
+D:\projects\RiderProjects\TwoDEngine3\HIDInputManager\bin\Debug\net6.0\TDE3ManagerInterfaces.pdb
+D:\projects\RiderProjects\TwoDEngine3\HIDInputManager\bin\Debug\net6.0\TDE3ManagerInterfaces.xml
+D:\projects\RiderProjects\TwoDEngine3\HIDInputManager\obj\Debug\net6.0\HIDInputManager.fsproj.AssemblyReference.cache
+D:\projects\RiderProjects\TwoDEngine3\HIDInputManager\obj\Debug\net6.0\HIDInputManager.AssemblyInfoInputs.cache
+D:\projects\RiderProjects\TwoDEngine3\HIDInputManager\obj\Debug\net6.0\HIDInputManager.AssemblyInfo.fs
+D:\projects\RiderProjects\TwoDEngine3\HIDInputManager\obj\Debug\net6.0\HIDInputManager.dll
+D:\projects\RiderProjects\TwoDEngine3\HIDInputManager\obj\Debug\net6.0\HIDInputManager.xml
+D:\projects\RiderProjects\TwoDEngine3\HIDInputManager\obj\Debug\net6.0\HIDInputManager.pdb

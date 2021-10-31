@@ -30,9 +30,9 @@ type AngelCodeTextRenderer() =
                 ManagerRegistry
                     .getManager<GraphicsManager>()
                     .Value
-           
+
             textObj.Text
-            |> Seq.fold 
+            |> Seq.fold
                 (fun state char ->
                     let pos = fst state
                     let lastChar = snd state
@@ -47,27 +47,31 @@ type AngelCodeTextRenderer() =
                             )
                         )
 
-                    graphics.DrawImage charImage
-                        (pos + Vector2(float32 acChar.XOffset,float32 acChar.YOffset))
-                    let kern = font.GetKern(lastChar,char)
-                    (Vector2(pos.X+ float32 acChar.Width+float32 kern, pos.Y),char)
-                ) (pos,'\n') |> ignore
+                    graphics.DrawImage
+                        charImage
+                        (pos
+                         + Vector2(float32 acChar.XOffset, float32 acChar.YOffset))
+
+                    let kern = font.GetKern(lastChar, char)
+                    (Vector2(pos.X + float32 acChar.Width + float32 kern, pos.Y), char))
+                (pos, '\n')
+            |> ignore
+
             ()
-                
 
 
-and AngelCodeFont(bmFont)  =
+
+and AngelCodeFont(bmFont) =
     let bitmapFont = bmFont
 
     let graphics =
         ManagerRegistry.getManager<GraphicsManager> ()
-  
+
     let pages =
         bmFont.Pages
         |> Array.fold
             (fun (pageMap: Map<int, Lazy<Image>>) page ->
-                let fileStream =
-                    File.Open(page.FileName, FileMode.Open)
+                let fileStream = File.Open(page.FileName, FileMode.Open)
 
                 let lazyImage =
                     lazy (graphics.Value.LoadImage fileStream)
@@ -77,8 +81,8 @@ and AngelCodeFont(bmFont)  =
 
     member this.GetPage(id) = pages.[id].Force()
     member this.GetCharacter char = bitmapFont.Characters.[char]
-    
-    member this.GetKern (last,curr) = bitmapFont.GetKerning(last,curr)
+
+    member this.GetKern(last, curr) = bitmapFont.GetKerning(last, curr)
 
     interface Font with
         member this.MakeText(text) = AngelCodeText(text, this) :> Text

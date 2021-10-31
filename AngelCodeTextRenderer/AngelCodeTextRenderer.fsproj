@@ -6,23 +6,23 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <Compile Include="Library.fs" />
+        <Compile Include="Library.fs"/>
         <Content Include="AngelcodeFonts\Latin.fnt">
-          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </Content>
         <Content Include="AngelcodeFonts\Latin_0.png">
-          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </Content>
     </ItemGroup>
 
     <ItemGroup>
-      <PackageReference Include="Cyotek.Drawing.BitmapFont" Version="2.0.3" />
-      <PackageReference Include="FSFramework" Version="1.0.0-preview-1" />
+        <PackageReference Include="Cyotek.Drawing.BitmapFont" Version="2.0.3"/>
+        <PackageReference Include="FSFramework" Version="1.0.0-preview-1"/>
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\GraphicsMgrMonoGameDesktop\GraphicsMgrMonoGameDesktop.fsproj" />
-      <ProjectReference Include="..\TDE3ManagerInterfaces\TDE3ManagerInterfaces.fsproj" />
+        <ProjectReference Include="..\GraphicsMgrMonoGameDesktop\GraphicsMgrMonoGameDesktop.fsproj"/>
+        <ProjectReference Include="..\TDE3ManagerInterfaces\TDE3ManagerInterfaces.fsproj"/>
     </ItemGroup>
 
 </Project>

@@ -20,7 +20,7 @@
   </PropertyGroup>
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <PkgFSharp_Core Condition=" '$(PkgFSharp_Core)' == '' ">C:\Users\jpkessel\.nuget\packages\fsharp.core\5.0.0</PkgFSharp_Core>
-    <PkgLibUsbDotNet Condition=" '$(PkgLibUsbDotNet)' == '' ">C:\Users\jpkessel\.nuget\packages\libusbdotnet\3.0.97-alpha</PkgLibUsbDotNet>
     <PkgFSFramework Condition=" '$(PkgFSFramework)' == '' ">C:\Users\jpkessel\.nuget\packages\fsframework\1.0.0-preview-1</PkgFSFramework>
+    <PkgLibUsbDotNet Condition=" '$(PkgLibUsbDotNet)' == '' ">C:\Users\jpkessel\.nuget\packages\libusbdotnet\3.0.97-alpha</PkgLibUsbDotNet>
   </PropertyGroup>
 </Project>

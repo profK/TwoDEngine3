@@ -8,11 +8,23 @@
     ".NETCoreApp,Version=v6.0": {
       "TDE3ManagerInterfaces/1.0.0": {
         "dependencies": {
+          "FSFramework": "1.0.0-preview-1",
           "FSharp.Core": "5.0.0",
           "MathSharp": "2.0.0-pre"
         },
         "runtime": {
           "TDE3ManagerInterfaces.dll": {}
+        }
+      },
+      "FSFramework/1.0.0-preview-1": {
+        "dependencies": {
+          "FSharp.Core": "5.0.0"
+        },
+        "runtime": {
+          "lib/net6.0/FSFramework.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "FSharp.Core/5.0.0": {
@@ -83,6 +95,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "FSFramework/1.0.0-preview-1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-pmykRxvdCxAnO4Cb7H+KoXO4kM0vrWt7Ookx/mFl17PD1EKurevrBoBMb1XsslZ1/97zb0ultXdXgX8nE4v4ow==",
+      "path": "fsframework/1.0.0-preview-1",
+      "hashPath": "fsframework.1.0.0-preview-1.nupkg.sha512"
     },
     "FSharp.Core/5.0.0": {
       "type": "package",

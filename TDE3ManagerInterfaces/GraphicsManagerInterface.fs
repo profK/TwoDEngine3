@@ -2,11 +2,10 @@
 
 open System.IO
 open System.Numerics
-open MathSharp
 
-type Rectangle(pos:Vector2, sz:Vector2) =
-    member val Position=pos with get
-    member val Size=sz with get
+type Rectangle(pos: Vector2, sz: Vector2) =
+    member val Position = pos
+    member val Size = sz
 
 
 type Image =

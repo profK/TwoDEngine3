@@ -6,24 +6,24 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <Compile Include="AbstractLevelController.fs" />
-        <Compile Include="ExampleLevel.fs" />
-        <Compile Include="Program.fs" />
+        <Compile Include="AbstractLevelController.fs"/>
+        <Compile Include="ExampleLevel.fs"/>
+        <Compile Include="Program.fs"/>
         <Content Include="Assets\football_small.png">
             <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </Content>
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="FSFramework" Version="1.0.0-preview-1" />
-        <PackageReference Include="MathSharp" Version="2.0.0-pre" />
+        <PackageReference Include="FSFramework" Version="1.0.0-preview-1"/>
+        <PackageReference Include="MathSharp" Version="2.0.0-pre"/>
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\AngelCodeTextRenderer\AngelCodeTextRenderer.fsproj" />
-        <ProjectReference Include="..\GraphicsMgrMonoGameDesktop\GraphicsMgrMonoGameDesktop.fsproj" />
-        <ProjectReference Include="..\TDE3ManagerInterfaces\TDE3ManagerInterfaces.fsproj" />
-        <ProjectReference Include="..\USBInputManager\USBInputManager.fsproj" />
+        <ProjectReference Include="..\AngelCodeTextRenderer\AngelCodeTextRenderer.fsproj"/>
+        <ProjectReference Include="..\GraphicsMgrMonoGameDesktop\GraphicsMgrMonoGameDesktop.fsproj"/>
+        <ProjectReference Include="..\HIDInputManager\HIDInputManager.fsproj"/>
+        <ProjectReference Include="..\TDE3ManagerInterfaces\TDE3ManagerInterfaces.fsproj"/>
     </ItemGroup>
 
 </Project>

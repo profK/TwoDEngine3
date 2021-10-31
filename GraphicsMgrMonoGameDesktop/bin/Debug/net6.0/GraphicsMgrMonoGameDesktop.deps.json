@@ -141,6 +141,7 @@
       },
       "TDE3ManagerInterfaces/1.0.0": {
         "dependencies": {
+          "FSFramework": "1.0.0-preview-1",
           "FSharp.Core": "5.0.0",
           "MathSharp": "2.0.0-pre"
         },
