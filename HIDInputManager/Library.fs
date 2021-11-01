@@ -7,10 +7,10 @@ open ManagerRegistry
 open TwoDEngine3.ManagerInterfaces.InputManager
 
 
-type HIDAxisNode(name, value) =
-    inherit Node(name, value)
+type HIDAxisNode(name, value,parent) =
+    inherit Node(name, value,parent)
 
-type HIDControlNode(control: Control) =
+type HIDControlNode(control: Control,parent:Node) as this =
     inherit Node(control.Name,
                  Children(
                      { 0 .. (control.ElementCount - 1) }
@@ -21,18 +21,19 @@ type HIDControlNode(control: Control) =
                                  match control.IsBoolean with
                                  | true -> Axis(Digital(false))
                                  | false -> Axis(Analog(float 0))
+                                 , Some(this :> Node)
                              )
                              :> Node)
                      |> Seq.toList
-                 ))
+                 ) ,Some(parent) )
 
-type HIDDeviceNode(device: Device) =
+type HIDDeviceNode(device: Device) as this =
     inherit Node(device.Name,
                  Children(
                      device.Controls
-                     |> Seq.map (fun ctrl -> (HIDControlNode(ctrl) :> Node))
+                     |> Seq.map (fun ctrl -> (HIDControlNode(ctrl,this) :> Node))
                      |> Seq.toList
-                 ))
+                 ), None)
 
     let Device = device
 
@@ -42,7 +43,7 @@ type HIDDeviceNode(device: Device) =
 
 [<Manager("A cross platform HID input manager", supportedSystems.Windows)>]
 type HIDInputManager() =
-    let root = Node("root", Children(List.Empty))
+    let root = Node("root", Children(List.Empty), None)
     let devices = new Devices()
 
     let hidDevices =

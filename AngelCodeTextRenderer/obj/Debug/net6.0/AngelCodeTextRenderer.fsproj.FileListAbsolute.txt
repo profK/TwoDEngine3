@@ -35,3 +35,4 @@ D:\projects\RiderProjects\TwoDEngine3\AngelCodeTextRenderer\obj\Debug\net6.0\Ang
 D:\projects\RiderProjects\TwoDEngine3\AngelCodeTextRenderer\obj\Debug\net6.0\AngelCodeTextRenderer.xml
 D:\projects\RiderProjects\TwoDEngine3\AngelCodeTextRenderer\obj\Debug\net6.0\AngelCodeTextRenderer.pdb
 D:\projects\RiderProjects\TwoDEngine3\AngelCodeTextRenderer\obj\Debug\net6.0\AngelCodeTextRenderer.fsproj.CopyComplete
+C:\Users\jpkessel\RiderProjects\TwoDEngine3\AngelCodeTextRenderer\obj\Debug\net6.0\AngelCodeTextRenderer.fsproj.CopyComplete
