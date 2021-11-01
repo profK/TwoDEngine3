@@ -149,3 +149,4 @@ D:\projects\RiderProjects\TwoDEngine3\TwoDEngine3\bin\Debug\net6.0\ru\Microsoft.
 D:\projects\RiderProjects\TwoDEngine3\TwoDEngine3\bin\Debug\net6.0\tr\Microsoft.VisualStudio.Validation.resources.dll
 D:\projects\RiderProjects\TwoDEngine3\TwoDEngine3\bin\Debug\net6.0\zh-Hans\Microsoft.VisualStudio.Validation.resources.dll
 D:\projects\RiderProjects\TwoDEngine3\TwoDEngine3\bin\Debug\net6.0\zh-Hant\Microsoft.VisualStudio.Validation.resources.dll
+D:\projects\RiderProjects\TwoDEngine3\TwoDEngine3\obj\Debug\net6.0\TwoDEngine3.fsproj.CopyComplete

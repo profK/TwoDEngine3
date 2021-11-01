@@ -18,3 +18,7 @@ and Node(name: string, value: NodeValue) =
 
 type InputManager =
     abstract controllerRoot : Node
+    
+    abstract ListenTo: Node -> Node
+    
+    abstract StateChanges : Node seq 

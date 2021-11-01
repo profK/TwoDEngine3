@@ -1,4 +1,4 @@
-﻿namespace HIDInputManager
+﻿module HIDInputManager
 
 open System.Reflection.Metadata
 open DevDecoder.HIDDevices
@@ -7,40 +7,47 @@ open ManagerRegistry
 open TwoDEngine3.ManagerInterfaces.InputManager
 
 
+type HIDAxisNode(name, value) =
+    inherit Node(name, value)
+
+type HIDControlNode(control: Control) =
+    inherit Node(control.Name,
+                 Children(
+                     { 0 .. (control.ElementCount - 1) }
+                     |> Seq.map
+                         (fun index ->
+                             HIDAxisNode(
+                                 index.ToString(),
+                                 match control.IsBoolean with
+                                 | true -> Axis(Digital(false))
+                                 | false -> Axis(Analog(float 0))
+                             )
+                             :> Node)
+                     |> Seq.toList
+                 ))
+
+type HIDDeviceNode(device: Device) =
+    inherit Node(device.Name,
+                 Children(
+                     device.Controls
+                     |> Seq.map (fun ctrl -> (HIDControlNode(ctrl) :> Node))
+                     |> Seq.toList
+                 ))
+
+    let Device = device
+
+    member val listenTo = false with get, set
+
+
 
 [<Manager("A cross platform HID input manager", supportedSystems.Windows)>]
 type HIDInputManager() =
-
-
-    let rec GetControlNodes (controls: Control seq) : Node list =
-        controls
-        |> Seq.map
-            (fun (control: Control) ->
-                Node(
-                    control.Name,
-                    Children(
-                        { 0 .. (control.ElementCount-1) }
-                        |> Seq.map (fun index ->
-                            Node(index.ToString(),
-                                 match control.IsBoolean with
-                                 | true -> Axis(Digital(false))
-                                 | false-> Axis(Analog(float 0))               
-                                )
-                            )
-                        |> Seq.toList
-                        )      
-                    )
-                )
-            |> Seq.toList
-         
-
     let root = Node("root", Children(List.Empty))
-
     let devices = new Devices()
 
     let hidDevices =
         devices
-            .Connect()
+            .Connected()
             .Subscribe(fun changeSet ->
                 changeSet
                 |> Seq.iter
@@ -49,7 +56,7 @@ type HIDInputManager() =
                         | ChangeReason.Add ->
                             root.Value <-
                                 Children(
-                                    Node(action.Current.Name, Children(GetControlNodes action.Current.Controls))
+                                    (HIDDeviceNode(action.Current) :> Node)
                                     :: match root.Value with
                                        | Children oldlist -> oldlist
                                        | _ -> List.Empty
@@ -70,4 +77,6 @@ type HIDInputManager() =
                         | _ -> printfn $"Unimplemented action: %s{action.Reason.ToString()}"))
 
     interface InputManager with
+        member this.ListenTo(node) = failwith "todo"
+        member this.StateChanges = failwith "todo"
         member val controllerRoot = root
