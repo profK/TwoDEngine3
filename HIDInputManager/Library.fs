@@ -35,11 +35,17 @@ type HIDDeviceNode(device: Device) as this =
                      |> Seq.toList
                  ), None)
 
-    let Device = device
+    member val Device = device
+    
 
     member val listenTo = false with get, set
 
-
+type ControlChange(devNode,ctrlNode,oldVal,newVal,tstamp) =
+        member val DeviceNode = devNode with get
+        member val ControlNode = ctrlNode with get
+        member val OldValue = oldVal with get
+        member val NewValue = newVal with get
+        member val Timestamp = tstamp with get
 
 [<Manager("A cross platform HID input manager", supportedSystems.Windows)>]
 type HIDInputManager() =
@@ -76,8 +82,26 @@ type HIDInputManager() =
 
                             printfn $"Removed %s{action.Key}"
                         | _ -> printfn $"Unimplemented action: %s{action.Reason.ToString()}"))
-
+    
+        
+    let mutable changeList:ControlChange list = List.empty
+    
+    let QueueCtrlChange(devNode, ctrlNode, oldVal, newVal, tstamp) =
+        changeList <- (ControlChange(devNode,ctrlNode,oldVal,newVal,tstamp) :: changeList)
+            
     interface InputManager with
-        member this.ListenTo(node) = failwith "todo"
+        member this.ListenTo(node:Node) =
+            match node with
+            | :? HIDDeviceNode ->
+                (node :?> HIDDeviceNode).Device.Subscribe(fun (controlChanges) ->
+                    controlChanges
+                    |> Seq.iter ( fun controlChange ->
+                        QueueCtrlChange(node,controlChange.Control,controlChange.PreviousValue,
+                                        controlChange.Value,controlChange.Timestamp
+                                        )
+                        )
+                ) |> ignore
+            | :? HIDControlNode -> (this:>InputManager).ListenTo(node.Parent.Value)
+            | :? HIDAxisNode -> (this:>InputManager).ListenTo(node.Parent.Value)
         member this.StateChanges = failwith "todo"
         member val controllerRoot = root

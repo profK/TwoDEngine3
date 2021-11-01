@@ -20,6 +20,6 @@ and Node(name: string, value: NodeValue, parent:Node option) =
 type InputManager =
     abstract controllerRoot : Node
     
-    abstract ListenTo: Node -> Node
+    abstract ListenTo: Node -> unit
     
     abstract StateChanges : Node seq 
