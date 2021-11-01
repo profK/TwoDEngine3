@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ijut6mcfL2dAFA1OUUvYbFJ3JbiSln4CGlAiMN/DOXUszKshVT+FVX7VZDsG+vZnZPcWVWRcsn8wKe/gJtiNRQ==",
+  "dgSpecHash": "aVoKidum9MBBtvwJvDyrID0iGuMzltGewOsFu1CZBehKBbUcSp9noa2IMGle+d4s4Ck9h6GfI2bPgePlJHYbkA==",
   "success": true,
-  "projectFilePath": "D:\\projects\\RiderProjects\\TwoDEngine3\\TwoDEngine3\\TwoDEngine3.fsproj",
+  "projectFilePath": "C:\\Users\\jpkessel\\RiderProjects\\TwoDEngine3\\TwoDEngine3\\TwoDEngine3.fsproj",
   "expectedPackageFiles": [
     "C:\\Users\\jpkessel\\.nuget\\packages\\cyotek.drawing.bitmapfont\\2.0.3\\cyotek.drawing.bitmapfont.2.0.3.nupkg.sha512",
     "C:\\Users\\jpkessel\\.nuget\\packages\\dynamicdata\\7.3.1\\dynamicdata.7.3.1.nupkg.sha512",

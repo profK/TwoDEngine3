@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ze0aXAb6Znp+0k5nZwlRB6c5BTgvM9RJIUw1pcp6x2u64UCfn2niqreHBo9OND4nlnsPL1IeALeiKULc2ZJQXw==",
+  "dgSpecHash": "rXMaL28TXjg3ekazv96biM5s+Z292gVKHaWE9Z/r9E/Ck9lQqq92j0Hxz3yYtvbJJHuQkjoQqffkbayrz40BVw==",
   "success": true,
-  "projectFilePath": "D:\\projects\\RiderProjects\\TwoDEngine3\\HIDInputManager\\HIDInputManager.fsproj",
+  "projectFilePath": "C:\\Users\\jpkessel\\RiderProjects\\TwoDEngine3\\HIDInputManager\\HIDInputManager.fsproj",
   "expectedPackageFiles": [
     "C:\\Users\\jpkessel\\.nuget\\packages\\dynamicdata\\7.3.1\\dynamicdata.7.3.1.nupkg.sha512",
     "C:\\Users\\jpkessel\\.nuget\\packages\\fsframework\\1.0.0-preview-1\\fsframework.1.0.0-preview-1.nupkg.sha512",
