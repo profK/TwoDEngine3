@@ -137,7 +137,7 @@
           }
         }
       },
-      "GraphicsMgrMonoGameDesktop/1.0.0": {
+      "MonoGameDesktopMultiManager/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
@@ -147,10 +147,10 @@
           "TDE3ManagerInterfaces": "1.0.0"
         },
         "compile": {
-          "bin/placeholder/GraphicsMgrMonoGameDesktop.dll": {}
+          "bin/placeholder/MonoGameDesktopMultiManager.dll": {}
         },
         "runtime": {
-          "bin/placeholder/GraphicsMgrMonoGameDesktop.dll": {}
+          "bin/placeholder/MonoGameDesktopMultiManager.dll": {}
         }
       },
       "TDE3ManagerInterfaces/1.0.0": {
@@ -486,10 +486,10 @@
         "runtimes/win-x86/native/soft_oal.dll"
       ]
     },
-    "GraphicsMgrMonoGameDesktop/1.0.0": {
+    "MonoGameDesktopMultiManager/1.0.0": {
       "type": "project",
-      "path": "../GraphicsMgrMonoGameDesktop/GraphicsMgrMonoGameDesktop.fsproj",
-      "msbuildProject": "../GraphicsMgrMonoGameDesktop/GraphicsMgrMonoGameDesktop.fsproj"
+      "path": "../MonoGameDesktopMultiManager/MonoGameDesktopMultiManager.fsproj",
+      "msbuildProject": "../MonoGameDesktopMultiManager/MonoGameDesktopMultiManager.fsproj"
     },
     "TDE3ManagerInterfaces/1.0.0": {
       "type": "project",
@@ -502,7 +502,7 @@
       "Cyotek.Drawing.BitmapFont >= 2.0.3",
       "FSFramework >= 1.0.0-preview-1",
       "FSharp.Core >= 5.0.0-beta.*",
-      "GraphicsMgrMonoGameDesktop >= 1.0.0",
+      "MonoGameDesktopMultiManager >= 1.0.0",
       "TDE3ManagerInterfaces >= 1.0.0"
     ]
   },
@@ -515,11 +515,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\jpkessel\\RiderProjects\\TwoDEngine3\\AngelCodeTextRenderer\\AngelCodeTextRenderer.fsproj",
+      "projectUniqueName": "D:\\projects\\RiderProjects\\TwoDEngine3\\AngelCodeTextRenderer\\AngelCodeTextRenderer.fsproj",
       "projectName": "AngelCodeTextRenderer",
-      "projectPath": "C:\\Users\\jpkessel\\RiderProjects\\TwoDEngine3\\AngelCodeTextRenderer\\AngelCodeTextRenderer.fsproj",
+      "projectPath": "D:\\projects\\RiderProjects\\TwoDEngine3\\AngelCodeTextRenderer\\AngelCodeTextRenderer.fsproj",
       "packagesPath": "C:\\Users\\jpkessel\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\jpkessel\\RiderProjects\\TwoDEngine3\\AngelCodeTextRenderer\\obj\\",
+      "outputPath": "D:\\projects\\RiderProjects\\TwoDEngine3\\AngelCodeTextRenderer\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -527,7 +527,7 @@
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "U:\\pchome\\.pcprefsBAD\\AppData\\NuGet\\NuGet.Config",
+        "C:\\Users\\jpkessel\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
@@ -537,19 +537,21 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "U:\\Personal\\GitHub\\WebGL.NET\\src\\packages": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
+        "C:\\Users\\jpkessel\\AppData\\Local\\Stride\\NugetDev": {},
         "https://api.nuget.org/v3/index.json": {},
+        "https://packages.stride3d.net/nuget": {},
         "https://pkgs.dev.azure.com/dnceng/public/_packaging/dotnet-tools/nuget/v3/index.json": {}
       },
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\jpkessel\\RiderProjects\\TwoDEngine3\\GraphicsMgrMonoGameDesktop\\GraphicsMgrMonoGameDesktop.fsproj": {
-              "projectPath": "C:\\Users\\jpkessel\\RiderProjects\\TwoDEngine3\\GraphicsMgrMonoGameDesktop\\GraphicsMgrMonoGameDesktop.fsproj"
+            "D:\\projects\\RiderProjects\\TwoDEngine3\\MonoGameDesktopMultiManager\\MonoGameDesktopMultiManager.fsproj": {
+              "projectPath": "D:\\projects\\RiderProjects\\TwoDEngine3\\MonoGameDesktopMultiManager\\MonoGameDesktopMultiManager.fsproj"
             },
-            "C:\\Users\\jpkessel\\RiderProjects\\TwoDEngine3\\TDE3ManagerInterfaces\\TDE3ManagerInterfaces.fsproj": {
-              "projectPath": "C:\\Users\\jpkessel\\RiderProjects\\TwoDEngine3\\TDE3ManagerInterfaces\\TDE3ManagerInterfaces.fsproj"
+            "D:\\projects\\RiderProjects\\TwoDEngine3\\TDE3ManagerInterfaces\\TDE3ManagerInterfaces.fsproj": {
+              "projectPath": "D:\\projects\\RiderProjects\\TwoDEngine3\\TDE3ManagerInterfaces\\TDE3ManagerInterfaces.fsproj"
             }
           }
         }

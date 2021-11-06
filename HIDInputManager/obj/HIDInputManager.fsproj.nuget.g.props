@@ -18,11 +18,20 @@
   <PropertyGroup>
     <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
   </PropertyGroup>
+  <ItemGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <Content Include="$(NuGetPackageRoot)hidlibrarycore\1.0.1\contentFiles\any\net5.0\HidLibrary.csproj" Condition="Exists('$(NuGetPackageRoot)hidlibrarycore\1.0.1\contentFiles\any\net5.0\HidLibrary.csproj')">
+      <NuGetPackageId>HidLibraryCore</NuGetPackageId>
+      <NuGetPackageVersion>1.0.1</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <Private>False</Private>
+      <Link>HidLibrary.csproj</Link>
+    </Content>
+  </ItemGroup>
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <PkgFSharp_Core Condition=" '$(PkgFSharp_Core)' == '' ">C:\Users\jpkessel\.nuget\packages\fsharp.core\5.0.0</PkgFSharp_Core>
     <PkgFSFramework Condition=" '$(PkgFSFramework)' == '' ">C:\Users\jpkessel\.nuget\packages\fsframework\1.0.0-preview-1</PkgFSFramework>
-    <PkgMicrosoft_VisualStudio_Threading_Analyzers Condition=" '$(PkgMicrosoft_VisualStudio_Threading_Analyzers)' == '' ">C:\Users\jpkessel\.nuget\packages\microsoft.visualstudio.threading.analyzers\17.0.63</PkgMicrosoft_VisualStudio_Threading_Analyzers>
     <PkgMicrosoft_Extensions_Logging Condition=" '$(PkgMicrosoft_Extensions_Logging)' == '' ">C:\Users\jpkessel\.nuget\packages\microsoft.extensions.logging\6.0.0-rc.2.21480.5</PkgMicrosoft_Extensions_Logging>
-    <PkgHIDDevices Condition=" '$(PkgHIDDevices)' == '' ">C:\Users\jpkessel\.nuget\packages\hiddevices\2.1.12</PkgHIDDevices>
+    <PkgHidLibraryCore Condition=" '$(PkgHidLibraryCore)' == '' ">C:\Users\jpkessel\.nuget\packages\hidlibrarycore\1.0.1</PkgHidLibraryCore>
   </PropertyGroup>
 </Project>

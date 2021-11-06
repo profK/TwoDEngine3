@@ -6,17 +6,17 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <Compile Include="Library.fs"/>
+        <Compile Include="Library.fs" />
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\TDE3ManagerInterfaces\TDE3ManagerInterfaces.fsproj"/>
+        <ProjectReference Include="..\TDE3ManagerInterfaces\TDE3ManagerInterfaces.fsproj" />
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="FSFramework" Version="1.0.0-preview-1"/>
-        <PackageReference Include="HIDDevices" Version="2.1.12"/>
-        <PackageReference Include="Microsoft.Extensions.Logging" Version="6.0.0-rc.2.21480.5"/>
+        <PackageReference Include="FSFramework" Version="1.0.0-preview-1" />
+        <PackageReference Include="HidLibraryCore" Version="1.0.1" />
+        <PackageReference Include="Microsoft.Extensions.Logging" Version="6.0.0-rc.2.21480.5" />
     </ItemGroup>
 
 </Project>

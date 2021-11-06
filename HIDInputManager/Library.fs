@@ -1,76 +1,43 @@
 ﻿module HIDInputManager
 
+
 open System
-open System.Reflection.Metadata
-open DevDecoder.HIDDevices
-open DevDecoder.HIDDevices.Controllers
-open DynamicData
+open HidLibrary
+open HidLibrary.HIDUsages
 open ManagerRegistry
 open TwoDEngine3.ManagerInterfaces.InputManager
 
+type UsageNode (usageId:byte, parent:Node option) =  
+    inherit Node(Enum.ToObject(typeof(Desktop),usageId).ToString(),
+                 
+                 ,parent)
+    
 
-type AxisNode(ctrl:ControlValue,parent) =
-    inherit Node(ctrl.PropertyName,
-                 if ctrl.Type = typeof<bool> then
-                    Axis(Digital(false))
-                 else
-                    Axis(Analog(float 0))
-                 ,Some(parent))
-
-
-
-type ControllerNode(controller: Controller,parent) as this =
-    inherit Node(controller.Name,
-                 Children(
-                     controller
-                     |> Seq.cast<ControlValue>
-                     |> Seq.map (fun ctrl -> (AxisNode(ctrl,this) :> Node))
-                     |> Seq.toList
-                 ), parent)
-
-
-type ControlChange(devNode,ctrlNode,oldVal,newVal,tstamp) =
-        member val DeviceNode = devNode with get
-        member val ControlNode = ctrlNode with get
-        member val OldValue = oldVal with get
-        member val NewValue = newVal with get
-        member val Timestamp = tstamp with get
 
 [<Manager("A cross platform HID input manager", supportedSystems.Windows)>]
 type HIDInputManager() =
-    let root = Node("root", Children(List.Empty), None)
-    let subsciption = (new Devices()).Controllers<Controller>().Subscribe(fun controller ->
-            root.Value <- Children(
-                match root.Value with
-                | Children list ->
-                    (ControllerNode(controller,Some(root)):>Node)::list
-                | _ -> failwith "Error: root does not have a children list as its value!"
-            )
-        )
-    
- 
-
-    
-    
-        
-    let mutable changeList:ControlChange list = List.empty
-    
-    let QueueCtrlChange(devNode, ctrlNode, oldVal, newVal, tstamp) =
-        changeList <- (ControlChange(devNode,ctrlNode,oldVal,newVal,tstamp) :: changeList)
-            
-    interface InputManager with
-        member this.ListenTo(node:Node) =
-            match node with
-            | :? HIDDeviceNode ->
-                (node :?> HIDDeviceNode).Device.Subscribe(fun (controlChanges) ->
-                    controlChanges
-                    |> Seq.iter ( fun controlChange ->
-                        QueueCtrlChange(node,controlChange.Control,controlChange.PreviousValue,
-                                        controlChange.Value,controlChange.Timestamp
-                                        )
-                        )
-                ) |> ignore
-            | :? HIDControlNode -> (this:>InputManager).ListenTo(node.Parent.Value)
-            | :? HIDAxisNode -> (this:>InputManager).ListenTo(node.Parent.Value)
-        member this.StateChanges = failwith "todo"
-        member val controllerRoot = root
+    let devices =
+        HidDevices.Enumerate()
+        |> Seq.fold ( fun dlist dev ->
+            match dev.Capabilities.Usage with
+            | 4 ->
+                dev.Buttons.buttons
+                |> Seq.fold (fun blist (button:HidButton) ->
+                        button.Usages
+                        |> Seq.fold(fun ulist usage ->
+                            match usage with
+                            | num when (num>=0x30)&&(num <= 0x93) ->
+                                UsageNode(usage)::ulist
+                            | _ -> ulist
+                            ) List.Empty
+                        |> fun ulist ->
+                            match ulist with
+                            | [] -> blist
+                            | _ -> ButtonNode(ulist)::blist
+                    ) List.Empty
+                |> fun blist ->
+                    match blist with
+                    | [] -> dlist 
+                    | _ -> DeviceNode(blist)::dlist
+            | _ -> dlist
+            ) List.Empty

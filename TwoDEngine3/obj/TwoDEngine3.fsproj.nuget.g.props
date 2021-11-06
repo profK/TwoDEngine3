@@ -22,6 +22,5 @@
     <PkgMathSharp Condition=" '$(PkgMathSharp)' == '' ">C:\Users\jpkessel\.nuget\packages\mathsharp\2.0.0-pre</PkgMathSharp>
     <PkgFSharp_Core Condition=" '$(PkgFSharp_Core)' == '' ">C:\Users\jpkessel\.nuget\packages\fsharp.core\5.0.0</PkgFSharp_Core>
     <PkgFSFramework Condition=" '$(PkgFSFramework)' == '' ">C:\Users\jpkessel\.nuget\packages\fsframework\1.0.0-preview-1</PkgFSFramework>
-    <PkgMicrosoft_VisualStudio_Threading_Analyzers Condition=" '$(PkgMicrosoft_VisualStudio_Threading_Analyzers)' == '' ">C:\Users\jpkessel\.nuget\packages\microsoft.visualstudio.threading.analyzers\17.0.63</PkgMicrosoft_VisualStudio_Threading_Analyzers>
   </PropertyGroup>
 </Project>
