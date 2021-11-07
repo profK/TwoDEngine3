@@ -18,7 +18,7 @@ and Node(name: string, value: NodeValue, parent:Node option) =
 
 
 type InputManager =
-    abstract controllerRoot : Node
+    abstract Controllers : Node list
     
     abstract ListenTo: Node -> unit
     

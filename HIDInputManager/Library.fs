@@ -4,6 +4,7 @@
 open System
 open HidLibrary
 open ManagerRegistry
+open TwoDEngine3.ManagerInterfaces
 open TwoDEngine3.ManagerInterfaces.InputManager
 
 type UsageNode(num:uint16,value,parent) =
@@ -44,6 +45,10 @@ type HIDInputManager() =
                 |> fun usageList ->
                         match usageList with
                         | [] -> dlist
-                        | _ -> DeviceNode(dev.Name,usageList)::dlist
+                        | _ -> (DeviceNode(dev.Name,usageList):> Node)::dlist
             | _ -> dlist
             ) List.Empty
+    interface InputManager with
+        member this.ListenTo(var0) = failwith "todo"
+        member this.StateChanges = failwith "todo"
+        member val Controllers = devices with get
