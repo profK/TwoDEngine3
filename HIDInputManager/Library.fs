@@ -3,14 +3,24 @@
 
 open System
 open HidLibrary
-open HidLibrary.HIDUsages
 open ManagerRegistry
 open TwoDEngine3.ManagerInterfaces.InputManager
 
-type UsageNode (usageId:byte, parent:Node option) =  
-    inherit Node(Enum.ToObject(typeof(Desktop),usageId).ToString(),
-                 
-                 ,parent)
+type UsageNode(num:uint16,value,parent) =
+    inherit Node(Enum.ToObject(typeof<HIDUsages.Desktop>,num).ToString(),
+                 value,parent)
+    
+
+type DeviceNode(name,usages: uint16 list) as this=
+    inherit Node(name,
+                 Children(
+                     usages
+                     |> List.map (fun usage->
+                            UsageNode(usage, Axis(Digital(false)),
+                                      Some(this :> Node)) :> Node
+                         )
+                     )
+                 ,None)
     
 
 
@@ -20,24 +30,20 @@ type HIDInputManager() =
         HidDevices.Enumerate()
         |> Seq.fold ( fun dlist dev ->
             match dev.Capabilities.Usage with
-            | 4 ->
+            | 4s ->
                 dev.Buttons.buttons
-                |> Seq.fold (fun blist (button:HidButton) ->
+                |> Seq.fold (fun ulist (button:HidButton) ->
                         button.Usages
                         |> Seq.fold(fun ulist usage ->
                             match usage with
-                            | num when (num>=0x30)&&(num <= 0x93) ->
-                                UsageNode(usage)::ulist
+                            | num when ((num>=uint16 0x30)&&(num <=uint16 0x93)) ->
+                                usage::ulist
                             | _ -> ulist
-                            ) List.Empty
-                        |> fun ulist ->
-                            match ulist with
-                            | [] -> blist
-                            | _ -> ButtonNode(ulist)::blist
+                            ) ulist
                     ) List.Empty
-                |> fun blist ->
-                    match blist with
-                    | [] -> dlist 
-                    | _ -> DeviceNode(blist)::dlist
+                |> fun usageList ->
+                        match usageList with
+                        | [] -> dlist
+                        | _ -> DeviceNode(dev.Name,usageList)::dlist
             | _ -> dlist
             ) List.Empty
