@@ -18,6 +18,7 @@
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <PkgFSharp_Core Condition=" '$(PkgFSharp_Core)' == '' ">C:\Users\jpkessel\.nuget\packages\fsharp.core\6.0.1</PkgFSharp_Core>
     <PkgOpenGL_Net Condition=" '$(PkgOpenGL_Net)' == '' ">C:\Users\jpkessel\.nuget\packages\opengl.net\0.8.4</PkgOpenGL_Net>
+    <PkgGlmNet Condition=" '$(PkgGlmNet)' == '' ">C:\Users\jpkessel\.nuget\packages\glmnet\0.7.0</PkgGlmNet>
     <PkgGLFW_NET Condition=" '$(PkgGLFW_NET)' == '' ">C:\Users\jpkessel\.nuget\packages\glfw.net\0.9.7.1</PkgGLFW_NET>
     <Pkgglfw Condition=" '$(Pkgglfw)' == '' ">C:\Users\jpkessel\.nuget\packages\glfw\3.3.5</Pkgglfw>
   </PropertyGroup>

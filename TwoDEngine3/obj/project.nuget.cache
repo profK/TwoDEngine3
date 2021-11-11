@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "RLbeyZrlcY4b+lD8/QJ1IiT98ixMbtsfH+wxBeREIl/OwGrRj/nS6w0FparXYU2s8yOzn5V2VP9Q+yY2T2KeKw==",
+  "dgSpecHash": "qzI4UrC6y1f1TCAXNyYArm9DuXPSX0xSCaG6Nf9+A2R5MDyOHvH2QCw5s/vA2FigqO8zDgHJm7FKk6/ljWXC2g==",
   "success": true,
   "projectFilePath": "C:\\Users\\jpkessel\\RiderProjects\\TwoDEngine3\\TwoDEngine3\\TwoDEngine3.fsproj",
   "expectedPackageFiles": [
@@ -10,6 +10,7 @@
     "C:\\Users\\jpkessel\\.nuget\\packages\\fsharp.core\\6.0.1\\fsharp.core.6.0.1.nupkg.sha512",
     "C:\\Users\\jpkessel\\.nuget\\packages\\glfw\\3.3.5\\glfw.3.3.5.nupkg.sha512",
     "C:\\Users\\jpkessel\\.nuget\\packages\\glfw.net\\0.9.7.1\\glfw.net.0.9.7.1.nupkg.sha512",
+    "C:\\Users\\jpkessel\\.nuget\\packages\\glmnet\\0.7.0\\glmnet.0.7.0.nupkg.sha512",
     "C:\\Users\\jpkessel\\.nuget\\packages\\hiddevices\\2.1.12\\hiddevices.2.1.12.nupkg.sha512",
     "C:\\Users\\jpkessel\\.nuget\\packages\\hidsharp\\2.1.0\\hidsharp.2.1.0.nupkg.sha512",
     "C:\\Users\\jpkessel\\.nuget\\packages\\mathsharp\\2.0.0-pre\\mathsharp.2.0.0-pre.nupkg.sha512",
@@ -53,6 +54,16 @@
       "warningLevel": 1,
       "message": "Package 'GLFW.NET 0.9.7.1' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
       "libraryId": "GLFW.NET",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'GlmNet 0.7.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
+      "libraryId": "GlmNet",
       "targetGraphs": [
         "net6.0"
       ]

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "C+0CIMDA54G+buJgstB/UVY4ehhbyM9C7NMMv6GVMyTUiYUYp4GcrWmG9Gzcypv5qFWuILuhg+C27VRBaxUFlQ==",
+  "dgSpecHash": "oZWNgIEvaaMhpeKiAXf4Tz3+s7+lys1mTX3Hqn5L5On4VubyAmUZKOkFAA6htdqmHNxkbtl90tyzCebGKF/r2A==",
   "success": true,
   "projectFilePath": "C:\\Users\\jpkessel\\RiderProjects\\TwoDEngine3\\GraphicsManagerGLFW\\GraphicsManagerGLFW.fsproj",
   "expectedPackageFiles": [
@@ -8,6 +8,7 @@
     "C:\\Users\\jpkessel\\.nuget\\packages\\fsharp.core\\6.0.1\\fsharp.core.6.0.1.nupkg.sha512",
     "C:\\Users\\jpkessel\\.nuget\\packages\\glfw\\3.3.5\\glfw.3.3.5.nupkg.sha512",
     "C:\\Users\\jpkessel\\.nuget\\packages\\glfw.net\\0.9.7.1\\glfw.net.0.9.7.1.nupkg.sha512",
+    "C:\\Users\\jpkessel\\.nuget\\packages\\glmnet\\0.7.0\\glmnet.0.7.0.nupkg.sha512",
     "C:\\Users\\jpkessel\\.nuget\\packages\\mathsharp\\2.0.0-pre\\mathsharp.2.0.0-pre.nupkg.sha512",
     "C:\\Users\\jpkessel\\.nuget\\packages\\microsoft.net.compilers.toolset\\3.2.0-beta1-final\\microsoft.net.compilers.toolset.3.2.0-beta1-final.nupkg.sha512",
     "C:\\Users\\jpkessel\\.nuget\\packages\\opengl.net\\0.8.4\\opengl.net.0.8.4.nupkg.sha512"
@@ -19,6 +20,16 @@
       "warningLevel": 1,
       "message": "Package 'GLFW.NET 0.9.7.1' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
       "libraryId": "GLFW.NET",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'GlmNet 0.7.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
+      "libraryId": "GlmNet",
       "targetGraphs": [
         "net6.0"
       ]

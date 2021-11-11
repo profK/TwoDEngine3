@@ -83,6 +83,15 @@
           "lib/net45/WrapperGLFW.dll": {}
         }
       },
+      "GlmNet/0.7.0": {
+        "type": "package",
+        "compile": {
+          "lib/net40/GlmNet.dll": {}
+        },
+        "runtime": {
+          "lib/net40/GlmNet.dll": {}
+        }
+      },
       "MathSharp/2.0.0-pre": {
         "type": "package",
         "dependencies": {
@@ -472,6 +481,19 @@
         "lib/net45/WrapperGLFW.dll"
       ]
     },
+    "GlmNet/0.7.0": {
+      "sha512": "g3EFJOV89dWppRVT5PJ8nVYWSEIoB4yqqEZy71ryb3mfxSGrvwqxsF+XbK+J0jUgSwRIYEWHqodvtd3LchlE+w==",
+      "type": "package",
+      "path": "glmnet/0.7.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "glmnet.0.7.0.nupkg.sha512",
+        "glmnet.nuspec",
+        "lib/net40/GlmNet.XML",
+        "lib/net40/GlmNet.dll"
+      ]
+    },
     "MathSharp/2.0.0-pre": {
       "sha512": "no7zvuWKdJWG4fVps/rgJBZe+jbdddT2EaZGjGlvCNLZsbmqRS03mR7TwtA4FVDGzvLqirJyAIaa6vvnTtxucg==",
       "type": "package",
@@ -713,6 +735,7 @@
     "net6.0": [
       "FSharp.Core >= 6.0.1",
       "GLFW.NET >= 0.9.7.1",
+      "GlmNet >= 0.7.0",
       "OpenGL.Net >= 0.8.4",
       "TDE3ManagerInterfaces >= 1.0.0",
       "glfw >= 3.3.5"
@@ -778,6 +801,11 @@
             "version": "[0.9.7.1, )",
             "generatePathProperty": true
           },
+          "GlmNet": {
+            "target": "Package",
+            "version": "[0.7.0, )",
+            "generatePathProperty": true
+          },
           "OpenGL.Net": {
             "target": "Package",
             "version": "[0.8.4, )",
@@ -815,6 +843,16 @@
       "warningLevel": 1,
       "message": "Package 'GLFW.NET 0.9.7.1' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
       "libraryId": "GLFW.NET",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'GlmNet 0.7.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
+      "libraryId": "GlmNet",
       "targetGraphs": [
         "net6.0"
       ]

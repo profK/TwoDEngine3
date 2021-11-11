@@ -3,15 +3,32 @@
 open System
 open System.Numerics
 open System.Threading
+open GlmNet
 open TwoDEngine3.ManagerInterfaces.GraphicsManagerInterface
 open glfw3
 open OpenGL
 open glfw3
 
-type OglXform() =
+type OglVector(vec:vec4)  =
+    member this.oglVec = vec
+    interface Vector with
+        member this.X = float this.oglVec.x
+        member this.Y = float this.oglVec.y
+
+    new(x:float, y:float) as this =
+        OglVector(vec4(float32 x,float32 y,float32 0,float32 1))
+    
+type OglXform(glMatrix:mat4) =
+    member val glMat:mat4 = glMatrix
     interface Transform with
-        member this.Multiply (other:Transform):Transform = failwith "todo"
-        member this.Multiply (vec:Vector2): Vector2 = failwith "todo"
+        member this.Multiply (other:Transform):Transform =
+            let otherXform = (other :?> OglXform).glMat
+            OglXform(otherXform * this.glMat) :> Transform
+            
+        member this.Multiply (vec:Vector): Vector =
+            let oglvec = (vec :?> OglVector).oglVec
+            let newVec = this.glMat * oglvec 
+            OglVector(newVec) :> Vector
 
 type GraphicsManagerGLFW()as this=
     //Create a window with the oop binding

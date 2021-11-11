@@ -58,6 +58,11 @@
               "version": "[0.9.7.1, )",
               "generatePathProperty": true
             },
+            "GlmNet": {
+              "target": "Package",
+              "version": "[0.7.0, )",
+              "generatePathProperty": true
+            },
             "OpenGL.Net": {
               "target": "Package",
               "version": "[0.8.4, )",
