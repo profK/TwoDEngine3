@@ -3,7 +3,11 @@
 open System.IO
 open System.Numerics
 
-type Rectangle(pos: Vector2, sz: Vector2) =
+type Vector =
+    abstract X:float
+    abstract Y:float
+    
+type Rectangle(pos: Vector, sz: Vector) =
     member val Position = pos
     member val Size = sz
 
@@ -11,10 +15,10 @@ type Rectangle(pos: Vector2, sz: Vector2) =
 type Image =
 
     abstract SubImage : Rectangle -> Image
-    abstract Size : Vector2
+    abstract Size : Vector
 
 type Transform =
-    abstract Multiply : Vector2 -> Vector2
+    abstract Multiply : Vector -> Vector
     abstract Multiply : Transform -> Transform
 
 type GraphicsListener =
@@ -29,9 +33,9 @@ and GraphicsManager =
     abstract PopClip : unit -> Rectangle option
     abstract PushTransform : Transform -> unit
     abstract PopTransform : unit -> Transform option
-    abstract DrawImage : Image -> Vector2 -> unit
+    abstract DrawImage : Image -> Vector -> unit
     abstract Start : (GraphicsManager -> unit) -> unit
     abstract Start : unit -> unit
-    abstract IdentityTransform : Transform
+    abstract IdentityTransform : Transform with get
     abstract RotationTransform : float32 -> Transform
-    abstract TranslationTransform : Vector2 -> Transform
+    abstract TranslationTransform : Vector -> Transform

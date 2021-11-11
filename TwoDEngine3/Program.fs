@@ -1,16 +1,14 @@
 // Learn more about F# at http://docs.microsoft.com/dotnet/fsharp
+module program
 
 open System
 
-open System.IO
 open AngelCodeTextRenderer
-open GraphicsMgrMonoGameDesktop
-
+open GraphicsManagerGLFW
 open TwoDEngine3.ExampleLevel
 open TwoDEngine3.LevelManagerInterface
-open HIDInputManager
 open TwoDEngine3.ManagerInterfaces.GraphicsManagerInterface
-open TwoDEngine3.ManagerInterfaces.InputManager
+
 
 
 
@@ -44,21 +42,14 @@ let Render unit =
 let main argv =
 
     //Register GraphicsManager
-    typedefof<GraphicsManagerMGDT>
+    typedefof<GraphicsManagerGLFW>
     |> ManagerRegistry.addManager
     //register textRenderer
     typedefof<AngelCodeTextRenderer>
     |> ManagerRegistry.addManager
-    //register input manager
-    typedefof<HIDInputManager>
-    |> ManagerRegistry.addManager
-
+   
     // create lvel managers and set the active one hereSome(BouncyBall:>AbstractLevelController)
-    let inputMgr =
-        ManagerRegistry.getManager<InputManager>().Value
-
-    PrintControl(inputMgr.controllerRoot, Console.Out, 0)
-
+   
     match ManagerRegistry.getManager<GraphicsManager> () with
     | Some graphics -> graphics.Start(fun gmgr -> SetLevelManager(Some(BouncyBall() :> AbstractLevelController)))
 

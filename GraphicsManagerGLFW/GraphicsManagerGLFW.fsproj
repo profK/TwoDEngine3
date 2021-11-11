@@ -1,0 +1,31 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Compile Include="Library.fs" />
+        <Content Include="..\..\..\.nuget\packages\glfw\3.3.5\build\native\bin\dynamic\v143\x64\glfw3.dll">
+          <Link>glfw3.dll</Link>
+          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
+        <None Include="..\..\..\.nuget\packages\glfw.net\0.9.7.1\content\WrapperGLFW.dll.config">
+          <Link>WrapperGLFW.dll.config</Link>
+          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </None>
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="glfw" Version="3.3.5" />
+      <PackageReference Include="GLFW.NET" Version="0.9.7.1" />
+      <PackageReference Include="GlmNet" Version="0.7.0" />
+      <PackageReference Include="OpenGL.Net" Version="0.8.4" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\TDE3ManagerInterfaces\TDE3ManagerInterfaces.fsproj" />
+    </ItemGroup>
+
+</Project>

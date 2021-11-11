@@ -170,9 +170,7 @@ C:\Users\jpkessel\RiderProjects\TwoDEngine3\TwoDEngine3\bin\Debug\net6.0\Nito.As
 C:\Users\jpkessel\RiderProjects\TwoDEngine3\TwoDEngine3\bin\Debug\net6.0\Nito.Cancellation.dll
 C:\Users\jpkessel\RiderProjects\TwoDEngine3\TwoDEngine3\bin\Debug\net6.0\Nito.Collections.Deque.dll
 C:\Users\jpkessel\RiderProjects\TwoDEngine3\TwoDEngine3\bin\Debug\net6.0\Nito.Disposables.dll
-C:\Users\jpkessel\RiderProjects\TwoDEngine3\TwoDEngine3\bin\Debug\net6.0\System.Diagnostics.DiagnosticSource.dll
 C:\Users\jpkessel\RiderProjects\TwoDEngine3\TwoDEngine3\bin\Debug\net6.0\System.Reactive.dll
-C:\Users\jpkessel\RiderProjects\TwoDEngine3\TwoDEngine3\bin\Debug\net6.0\System.Runtime.CompilerServices.Unsafe.dll
 C:\Users\jpkessel\RiderProjects\TwoDEngine3\TwoDEngine3\bin\Debug\net6.0\cs\Microsoft.VisualStudio.Threading.resources.dll
 C:\Users\jpkessel\RiderProjects\TwoDEngine3\TwoDEngine3\bin\Debug\net6.0\de\Microsoft.VisualStudio.Threading.resources.dll
 C:\Users\jpkessel\RiderProjects\TwoDEngine3\TwoDEngine3\bin\Debug\net6.0\es\Microsoft.VisualStudio.Threading.resources.dll
@@ -202,3 +200,10 @@ C:\Users\jpkessel\RiderProjects\TwoDEngine3\TwoDEngine3\bin\Debug\net6.0\zh-Hant
 C:\Users\jpkessel\RiderProjects\TwoDEngine3\TwoDEngine3\bin\Debug\net6.0\HIDInputManager.dll
 C:\Users\jpkessel\RiderProjects\TwoDEngine3\TwoDEngine3\bin\Debug\net6.0\HIDInputManager.pdb
 C:\Users\jpkessel\RiderProjects\TwoDEngine3\TwoDEngine3\bin\Debug\net6.0\HIDInputManager.xml
+C:\Users\jpkessel\RiderProjects\TwoDEngine3\TwoDEngine3\bin\Debug\net6.0\WrapperGLFW.dll
+C:\Users\jpkessel\RiderProjects\TwoDEngine3\TwoDEngine3\bin\Debug\net6.0\OpenGL.Net.dll
+C:\Users\jpkessel\RiderProjects\TwoDEngine3\TwoDEngine3\bin\Debug\net6.0\GraphicsManagerGLFW.dll
+C:\Users\jpkessel\RiderProjects\TwoDEngine3\TwoDEngine3\bin\Debug\net6.0\GraphicsManagerGLFW.pdb
+C:\Users\jpkessel\RiderProjects\TwoDEngine3\TwoDEngine3\bin\Debug\net6.0\GraphicsManagerGLFW.xml
+C:\Users\jpkessel\RiderProjects\TwoDEngine3\TwoDEngine3\bin\Debug\net6.0\glfw3.dll
+C:\Users\jpkessel\RiderProjects\TwoDEngine3\TwoDEngine3\bin\Debug\net6.0\WrapperGLFW.dll.config
