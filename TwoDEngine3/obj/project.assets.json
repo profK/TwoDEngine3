@@ -35,54 +35,73 @@
           "lib/net6.0/FSFramework.dll": {}
         }
       },
-      "FSharp.Core/5.0.0": {
+      "FSharp.Core/6.0.1": {
         "type": "package",
         "compile": {
-          "lib/netstandard2.0/FSharp.Core.dll": {}
+          "lib/netstandard2.1/FSharp.Core.dll": {}
         },
         "runtime": {
-          "lib/netstandard2.0/FSharp.Core.dll": {}
+          "lib/netstandard2.1/FSharp.Core.dll": {}
         },
         "resource": {
-          "lib/netstandard2.0/cs/FSharp.Core.resources.dll": {
+          "lib/netstandard2.1/cs/FSharp.Core.resources.dll": {
             "locale": "cs"
           },
-          "lib/netstandard2.0/de/FSharp.Core.resources.dll": {
+          "lib/netstandard2.1/de/FSharp.Core.resources.dll": {
             "locale": "de"
           },
-          "lib/netstandard2.0/es/FSharp.Core.resources.dll": {
+          "lib/netstandard2.1/es/FSharp.Core.resources.dll": {
             "locale": "es"
           },
-          "lib/netstandard2.0/fr/FSharp.Core.resources.dll": {
+          "lib/netstandard2.1/fr/FSharp.Core.resources.dll": {
             "locale": "fr"
           },
-          "lib/netstandard2.0/it/FSharp.Core.resources.dll": {
+          "lib/netstandard2.1/it/FSharp.Core.resources.dll": {
             "locale": "it"
           },
-          "lib/netstandard2.0/ja/FSharp.Core.resources.dll": {
+          "lib/netstandard2.1/ja/FSharp.Core.resources.dll": {
             "locale": "ja"
           },
-          "lib/netstandard2.0/ko/FSharp.Core.resources.dll": {
+          "lib/netstandard2.1/ko/FSharp.Core.resources.dll": {
             "locale": "ko"
           },
-          "lib/netstandard2.0/pl/FSharp.Core.resources.dll": {
+          "lib/netstandard2.1/pl/FSharp.Core.resources.dll": {
             "locale": "pl"
           },
-          "lib/netstandard2.0/pt-BR/FSharp.Core.resources.dll": {
+          "lib/netstandard2.1/pt-BR/FSharp.Core.resources.dll": {
             "locale": "pt-BR"
           },
-          "lib/netstandard2.0/ru/FSharp.Core.resources.dll": {
+          "lib/netstandard2.1/ru/FSharp.Core.resources.dll": {
             "locale": "ru"
           },
-          "lib/netstandard2.0/tr/FSharp.Core.resources.dll": {
+          "lib/netstandard2.1/tr/FSharp.Core.resources.dll": {
             "locale": "tr"
           },
-          "lib/netstandard2.0/zh-Hans/FSharp.Core.resources.dll": {
+          "lib/netstandard2.1/zh-Hans/FSharp.Core.resources.dll": {
             "locale": "zh-Hans"
           },
-          "lib/netstandard2.0/zh-Hant/FSharp.Core.resources.dll": {
+          "lib/netstandard2.1/zh-Hant/FSharp.Core.resources.dll": {
             "locale": "zh-Hant"
           }
+        },
+        "contentFiles": {
+          "contentFiles/any/any/_._": {
+            "buildAction": "None",
+            "codeLanguage": "any",
+            "copyToOutput": false
+          }
+        }
+      },
+      "glfw/3.3.5": {
+        "type": "package"
+      },
+      "GLFW.NET/0.9.7.1": {
+        "type": "package",
+        "compile": {
+          "lib/net45/WrapperGLFW.dll": {}
+        },
+        "runtime": {
+          "lib/net45/WrapperGLFW.dll": {}
         }
       },
       "HIDDevices/2.1.12": {
@@ -514,6 +533,15 @@
           "lib/netstandard2.1/Nito.Disposables.dll": {}
         }
       },
+      "OpenGL.Net/0.8.4": {
+        "type": "package",
+        "compile": {
+          "lib/net461/OpenGL.Net.dll": {}
+        },
+        "runtime": {
+          "lib/net461/OpenGL.Net.dll": {}
+        }
+      },
       "System.Collections.Immutable/1.7.1": {
         "type": "package",
         "compile": {
@@ -624,7 +652,7 @@
         "dependencies": {
           "Cyotek.Drawing.BitmapFont": "2.0.3",
           "FSFramework": "1.0.0-preview-1",
-          "FSharp.Core": "5.0.0-beta",
+          "FSharp.Core": "6.0.1",
           "GraphicsMgrMonoGameDesktop": "1.0.0",
           "TDE3ManagerInterfaces": "1.0.0"
         },
@@ -635,12 +663,29 @@
           "bin/placeholder/AngelCodeTextRenderer.dll": {}
         }
       },
+      "GraphicsManagerGLFW/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "FSharp.Core": "6.0.1",
+          "GLFW.NET": "0.9.7.1",
+          "OpenGL.Net": "0.8.4",
+          "TDE3ManagerInterfaces": "1.0.0",
+          "glfw": "3.3.5"
+        },
+        "compile": {
+          "bin/placeholder/GraphicsManagerGLFW.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/GraphicsManagerGLFW.dll": {}
+        }
+      },
       "GraphicsMgrMonoGameDesktop/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "FSFramework": "1.0.0-preview-1",
-          "FSharp.Core": "5.0.0-beta",
+          "FSharp.Core": "6.0.1",
           "MonoGame.Framework.DesktopGL": "3.8.0.1641",
           "TDE3ManagerInterfaces": "1.0.0"
         },
@@ -656,7 +701,7 @@
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "FSFramework": "1.0.0-preview-1",
-          "FSharp.Core": "5.0.0-beta",
+          "FSharp.Core": "6.0.1",
           "HIDDevices": "2.1.12",
           "Microsoft.Extensions.Logging": "6.0.0-rc.2.21480.5",
           "TDE3ManagerInterfaces": "1.0.0"
@@ -673,7 +718,7 @@
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "FSFramework": "1.0.0-preview-1",
-          "FSharp.Core": "5.0.0-beta",
+          "FSharp.Core": "6.0.1",
           "MathSharp": "2.0.0-pre"
         },
         "compile": {
@@ -758,15 +803,17 @@
         "lib/net6.0/FSFramework.xml"
       ]
     },
-    "FSharp.Core/5.0.0": {
-      "sha512": "iHoYXA0VaSQUONGENB1aVafjDDZDZpwu39MtaRCTrmwFW/cTcK0b2yKNVYneFHJMc3ChtsSoM9lNtJ1dYXkHfA==",
+    "FSharp.Core/6.0.1": {
+      "sha512": "VrFAiW8dEEekk+0aqlbvMNZzDvYXmgWZwAt68AUBqaWK8RnoEVUNglj66bZzhs4/U63q0EfXlhcEKnH1sTYLjw==",
       "type": "package",
-      "path": "fsharp.core/5.0.0",
+      "path": "fsharp.core/6.0.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
-        "fsharp.core.5.0.0.nupkg.sha512",
+        "contentFiles/any/netstandard2.0/FSharp.Core.xml",
+        "contentFiles/any/netstandard2.1/FSharp.Core.xml",
+        "fsharp.core.6.0.1.nupkg.sha512",
         "fsharp.core.nuspec",
         "lib/netstandard2.0/FSharp.Core.dll",
         "lib/netstandard2.0/FSharp.Core.xml",
@@ -782,7 +829,309 @@
         "lib/netstandard2.0/ru/FSharp.Core.resources.dll",
         "lib/netstandard2.0/tr/FSharp.Core.resources.dll",
         "lib/netstandard2.0/zh-Hans/FSharp.Core.resources.dll",
-        "lib/netstandard2.0/zh-Hant/FSharp.Core.resources.dll"
+        "lib/netstandard2.0/zh-Hant/FSharp.Core.resources.dll",
+        "lib/netstandard2.1/FSharp.Core.dll",
+        "lib/netstandard2.1/FSharp.Core.xml",
+        "lib/netstandard2.1/cs/FSharp.Core.resources.dll",
+        "lib/netstandard2.1/de/FSharp.Core.resources.dll",
+        "lib/netstandard2.1/es/FSharp.Core.resources.dll",
+        "lib/netstandard2.1/fr/FSharp.Core.resources.dll",
+        "lib/netstandard2.1/it/FSharp.Core.resources.dll",
+        "lib/netstandard2.1/ja/FSharp.Core.resources.dll",
+        "lib/netstandard2.1/ko/FSharp.Core.resources.dll",
+        "lib/netstandard2.1/pl/FSharp.Core.resources.dll",
+        "lib/netstandard2.1/pt-BR/FSharp.Core.resources.dll",
+        "lib/netstandard2.1/ru/FSharp.Core.resources.dll",
+        "lib/netstandard2.1/tr/FSharp.Core.resources.dll",
+        "lib/netstandard2.1/zh-Hans/FSharp.Core.resources.dll",
+        "lib/netstandard2.1/zh-Hant/FSharp.Core.resources.dll"
+      ]
+    },
+    "glfw/3.3.5": {
+      "sha512": "nY9HyL8kejc0hSbfQH1eoxj3AH4GBnKu4XHq2MmIu8p+sAApSwMt1YIXTkoHln8mf6FtdiUXQ9P4Y/QlTnFJxA==",
+      "type": "package",
+      "path": "glfw/3.3.5",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "build/native/bin/dynamic/v100/win32/glfw3.dll",
+        "build/native/bin/dynamic/v110/win32/glfw3.dll",
+        "build/native/bin/dynamic/v110/x64/glfw3.dll",
+        "build/native/bin/dynamic/v120/win32/glfw3.dll",
+        "build/native/bin/dynamic/v120/x64/glfw3.dll",
+        "build/native/bin/dynamic/v140/win32/glfw3.dll",
+        "build/native/bin/dynamic/v140/x64/glfw3.dll",
+        "build/native/bin/dynamic/v141/win32/glfw3.dll",
+        "build/native/bin/dynamic/v141/x64/glfw3.dll",
+        "build/native/bin/dynamic/v142/win32/glfw3.dll",
+        "build/native/bin/dynamic/v142/x64/glfw3.dll",
+        "build/native/bin/dynamic/v143/win32/glfw3.dll",
+        "build/native/bin/dynamic/v143/x64/glfw3.dll",
+        "build/native/glfw-propertiesui.xml",
+        "build/native/glfw.targets",
+        "build/native/include/GLFW/glfw3.h",
+        "build/native/include/GLFW/glfw3native.h",
+        "build/native/lib/dynamic/v100/win32/glfw3dll.lib",
+        "build/native/lib/dynamic/v110/win32/glfw3dll.lib",
+        "build/native/lib/dynamic/v110/x64/glfw3dll.lib",
+        "build/native/lib/dynamic/v120/win32/glfw3dll.lib",
+        "build/native/lib/dynamic/v120/x64/glfw3dll.lib",
+        "build/native/lib/dynamic/v140/win32/glfw3dll.lib",
+        "build/native/lib/dynamic/v140/x64/glfw3dll.lib",
+        "build/native/lib/dynamic/v141/win32/glfw3dll.lib",
+        "build/native/lib/dynamic/v141/x64/glfw3dll.lib",
+        "build/native/lib/dynamic/v142/win32/glfw3dll.lib",
+        "build/native/lib/dynamic/v142/x64/glfw3dll.lib",
+        "build/native/lib/dynamic/v143/win32/glfw3dll.lib",
+        "build/native/lib/dynamic/v143/x64/glfw3dll.lib",
+        "build/native/lib/static/v100/win32/glfw3.lib",
+        "build/native/lib/static/v110/win32/glfw3.lib",
+        "build/native/lib/static/v110/x64/glfw3.lib",
+        "build/native/lib/static/v120/win32/glfw3.lib",
+        "build/native/lib/static/v120/x64/glfw3.lib",
+        "build/native/lib/static/v140/win32/glfw3.lib",
+        "build/native/lib/static/v140/x64/glfw3.lib",
+        "build/native/lib/static/v141/win32/glfw3.lib",
+        "build/native/lib/static/v141/x64/glfw3.lib",
+        "build/native/lib/static/v142/win32/glfw3.lib",
+        "build/native/lib/static/v142/x64/glfw3.lib",
+        "build/native/lib/static/v143/win32/glfw3.lib",
+        "build/native/lib/static/v143/x64/glfw3.lib",
+        "docs/LICENSE.md",
+        "docs/README.md",
+        "docs/glfw_sq.png",
+        "docs/html/bc_s.png",
+        "docs/html/bdwn.png",
+        "docs/html/build_8dox.html",
+        "docs/html/build_guide.html",
+        "docs/html/closed.png",
+        "docs/html/compat_8dox.html",
+        "docs/html/compat_guide.html",
+        "docs/html/compile_8dox.html",
+        "docs/html/compile_guide.html",
+        "docs/html/context_8dox.html",
+        "docs/html/context_guide.html",
+        "docs/html/deprecated.html",
+        "docs/html/dir_95e305b1bfdd4b95b22076c452f17802.html",
+        "docs/html/dir_a2f8ccc4e596c8744057ab6c4a040d5c.html",
+        "docs/html/dir_af88d45d38f632316cb7d639530d38c2.html",
+        "docs/html/dir_ba478fc71671afc03f16a7df0eff1823.html",
+        "docs/html/doc.png",
+        "docs/html/doxygen.css",
+        "docs/html/doxygen.svg",
+        "docs/html/dynsections.js",
+        "docs/html/extra.css",
+        "docs/html/files.html",
+        "docs/html/folderclosed.png",
+        "docs/html/folderopen.png",
+        "docs/html/glfw3_8h.html",
+        "docs/html/glfw3_8h_source.html",
+        "docs/html/glfw3native_8h.html",
+        "docs/html/glfw3native_8h_source.html",
+        "docs/html/group__buttons.html",
+        "docs/html/group__context.html",
+        "docs/html/group__errors.html",
+        "docs/html/group__gamepad__axes.html",
+        "docs/html/group__gamepad__buttons.html",
+        "docs/html/group__hat__state.html",
+        "docs/html/group__init.html",
+        "docs/html/group__input.html",
+        "docs/html/group__joysticks.html",
+        "docs/html/group__keys.html",
+        "docs/html/group__mods.html",
+        "docs/html/group__monitor.html",
+        "docs/html/group__native.html",
+        "docs/html/group__shapes.html",
+        "docs/html/group__vulkan.html",
+        "docs/html/group__window.html",
+        "docs/html/index.html",
+        "docs/html/input_8dox.html",
+        "docs/html/input_guide.html",
+        "docs/html/internal_8dox.html",
+        "docs/html/internals_guide.html",
+        "docs/html/intro_8dox.html",
+        "docs/html/intro_guide.html",
+        "docs/html/jquery.js",
+        "docs/html/main_8dox.html",
+        "docs/html/menu.js",
+        "docs/html/menudata.js",
+        "docs/html/modules.html",
+        "docs/html/monitor_8dox.html",
+        "docs/html/monitor_guide.html",
+        "docs/html/moving_8dox.html",
+        "docs/html/moving_guide.html",
+        "docs/html/nav_f.png",
+        "docs/html/nav_g.png",
+        "docs/html/nav_h.png",
+        "docs/html/news.html",
+        "docs/html/news_8dox.html",
+        "docs/html/open.png",
+        "docs/html/pages.html",
+        "docs/html/quick_8dox.html",
+        "docs/html/quick_guide.html",
+        "docs/html/search/all_0.html",
+        "docs/html/search/all_0.js",
+        "docs/html/search/all_1.html",
+        "docs/html/search/all_1.js",
+        "docs/html/search/all_10.html",
+        "docs/html/search/all_10.js",
+        "docs/html/search/all_11.html",
+        "docs/html/search/all_11.js",
+        "docs/html/search/all_2.html",
+        "docs/html/search/all_2.js",
+        "docs/html/search/all_3.html",
+        "docs/html/search/all_3.js",
+        "docs/html/search/all_4.html",
+        "docs/html/search/all_4.js",
+        "docs/html/search/all_5.html",
+        "docs/html/search/all_5.js",
+        "docs/html/search/all_6.html",
+        "docs/html/search/all_6.js",
+        "docs/html/search/all_7.html",
+        "docs/html/search/all_7.js",
+        "docs/html/search/all_8.html",
+        "docs/html/search/all_8.js",
+        "docs/html/search/all_9.html",
+        "docs/html/search/all_9.js",
+        "docs/html/search/all_a.html",
+        "docs/html/search/all_a.js",
+        "docs/html/search/all_b.html",
+        "docs/html/search/all_b.js",
+        "docs/html/search/all_c.html",
+        "docs/html/search/all_c.js",
+        "docs/html/search/all_d.html",
+        "docs/html/search/all_d.js",
+        "docs/html/search/all_e.html",
+        "docs/html/search/all_e.js",
+        "docs/html/search/all_f.html",
+        "docs/html/search/all_f.js",
+        "docs/html/search/classes_0.html",
+        "docs/html/search/classes_0.js",
+        "docs/html/search/close.svg",
+        "docs/html/search/defines_0.html",
+        "docs/html/search/defines_0.js",
+        "docs/html/search/files_0.html",
+        "docs/html/search/files_0.js",
+        "docs/html/search/files_1.html",
+        "docs/html/search/files_1.js",
+        "docs/html/search/files_2.html",
+        "docs/html/search/files_2.js",
+        "docs/html/search/files_3.html",
+        "docs/html/search/files_3.js",
+        "docs/html/search/files_4.html",
+        "docs/html/search/files_4.js",
+        "docs/html/search/files_5.html",
+        "docs/html/search/files_5.js",
+        "docs/html/search/files_6.html",
+        "docs/html/search/files_6.js",
+        "docs/html/search/files_7.html",
+        "docs/html/search/files_7.js",
+        "docs/html/search/files_8.html",
+        "docs/html/search/files_8.js",
+        "docs/html/search/functions_0.html",
+        "docs/html/search/functions_0.js",
+        "docs/html/search/groups_0.html",
+        "docs/html/search/groups_0.js",
+        "docs/html/search/groups_1.html",
+        "docs/html/search/groups_1.js",
+        "docs/html/search/groups_2.html",
+        "docs/html/search/groups_2.js",
+        "docs/html/search/groups_3.html",
+        "docs/html/search/groups_3.js",
+        "docs/html/search/groups_4.html",
+        "docs/html/search/groups_4.js",
+        "docs/html/search/groups_5.html",
+        "docs/html/search/groups_5.js",
+        "docs/html/search/groups_6.html",
+        "docs/html/search/groups_6.js",
+        "docs/html/search/groups_7.html",
+        "docs/html/search/groups_7.js",
+        "docs/html/search/groups_8.html",
+        "docs/html/search/groups_8.js",
+        "docs/html/search/groups_9.html",
+        "docs/html/search/groups_9.js",
+        "docs/html/search/groups_a.html",
+        "docs/html/search/groups_a.js",
+        "docs/html/search/mag_sel.svg",
+        "docs/html/search/nomatches.html",
+        "docs/html/search/pages_0.html",
+        "docs/html/search/pages_0.js",
+        "docs/html/search/pages_1.html",
+        "docs/html/search/pages_1.js",
+        "docs/html/search/pages_2.html",
+        "docs/html/search/pages_2.js",
+        "docs/html/search/pages_3.html",
+        "docs/html/search/pages_3.js",
+        "docs/html/search/pages_4.html",
+        "docs/html/search/pages_4.js",
+        "docs/html/search/pages_5.html",
+        "docs/html/search/pages_5.js",
+        "docs/html/search/pages_6.html",
+        "docs/html/search/pages_6.js",
+        "docs/html/search/pages_7.html",
+        "docs/html/search/pages_7.js",
+        "docs/html/search/pages_8.html",
+        "docs/html/search/pages_8.js",
+        "docs/html/search/pages_9.html",
+        "docs/html/search/pages_9.js",
+        "docs/html/search/pages_a.html",
+        "docs/html/search/pages_a.js",
+        "docs/html/search/search.css",
+        "docs/html/search/search.js",
+        "docs/html/search/search_l.png",
+        "docs/html/search/search_m.png",
+        "docs/html/search/search_r.png",
+        "docs/html/search/searchdata.js",
+        "docs/html/search/typedefs_0.html",
+        "docs/html/search/typedefs_0.js",
+        "docs/html/search/variables_0.html",
+        "docs/html/search/variables_0.js",
+        "docs/html/search/variables_1.html",
+        "docs/html/search/variables_1.js",
+        "docs/html/search/variables_2.html",
+        "docs/html/search/variables_2.js",
+        "docs/html/search/variables_3.html",
+        "docs/html/search/variables_3.js",
+        "docs/html/search/variables_4.html",
+        "docs/html/search/variables_4.js",
+        "docs/html/search/variables_5.html",
+        "docs/html/search/variables_5.js",
+        "docs/html/search/variables_6.html",
+        "docs/html/search/variables_6.js",
+        "docs/html/search/variables_7.html",
+        "docs/html/search/variables_7.js",
+        "docs/html/spaces.svg",
+        "docs/html/splitbar.png",
+        "docs/html/structGLFWgamepadstate.html",
+        "docs/html/structGLFWgammaramp.html",
+        "docs/html/structGLFWimage.html",
+        "docs/html/structGLFWvidmode.html",
+        "docs/html/sync_off.png",
+        "docs/html/sync_on.png",
+        "docs/html/tab_a.png",
+        "docs/html/tab_b.png",
+        "docs/html/tab_h.png",
+        "docs/html/tab_s.png",
+        "docs/html/tabs.css",
+        "docs/html/vulkan_8dox.html",
+        "docs/html/vulkan_guide.html",
+        "docs/html/window_8dox.html",
+        "docs/html/window_guide.html",
+        "glfw.3.3.5.nupkg.sha512",
+        "glfw.nuspec"
+      ]
+    },
+    "GLFW.NET/0.9.7.1": {
+      "sha512": "nEUnIMg0CY5ZZILCY9S0a6gyYtJydyU836Y3lV66gBWJzcLCbwroumQ+PASpfMO9Z1GSHWOTUjX9XvRe/Z8KXQ==",
+      "type": "package",
+      "path": "glfw.net/0.9.7.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "content/WrapperGLFW.dll.config",
+        "glfw.net.0.9.7.1.nupkg.sha512",
+        "glfw.net.nuspec",
+        "lib/net45/WrapperGLFW.dll"
       ]
     },
     "HIDDevices/2.1.12": {
@@ -1601,6 +1950,25 @@
         "nito.disposables.nuspec"
       ]
     },
+    "OpenGL.Net/0.8.4": {
+      "sha512": "F7o2KkIrz9rrtBY7+VRgPKnf2mV8pt3h4/o/CWPt86oIocjzKTQFNo2qH4zVYSWyy/T9rS0xBpu9t75MS6wM8Q==",
+      "type": "package",
+      "path": "opengl.net/0.8.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/monoandroid/OpenGL.Net.dll",
+        "lib/monoandroid/OpenGL.Net.xml",
+        "lib/net35/OpenGL.Net.dll",
+        "lib/net35/OpenGL.Net.pdb",
+        "lib/net35/OpenGL.Net.xml",
+        "lib/net461/OpenGL.Net.dll",
+        "lib/net461/OpenGL.Net.pdb",
+        "lib/net461/OpenGL.Net.xml",
+        "opengl.net.0.8.4.nupkg.sha512",
+        "opengl.net.nuspec"
+      ]
+    },
     "System.Collections.Immutable/1.7.1": {
       "sha512": "B43Zsz5EfMwyEbnObwRxW5u85fzJma3lrDeGcSAV1qkhSRTNY5uXAByTn9h9ddNdhM+4/YoLc/CI43umjwIl9Q==",
       "type": "package",
@@ -1940,6 +2308,11 @@
       "path": "../AngelCodeTextRenderer/AngelCodeTextRenderer.fsproj",
       "msbuildProject": "../AngelCodeTextRenderer/AngelCodeTextRenderer.fsproj"
     },
+    "GraphicsManagerGLFW/1.0.0": {
+      "type": "project",
+      "path": "../GraphicsManagerGLFW/GraphicsManagerGLFW.fsproj",
+      "msbuildProject": "../GraphicsManagerGLFW/GraphicsManagerGLFW.fsproj"
+    },
     "GraphicsMgrMonoGameDesktop/1.0.0": {
       "type": "project",
       "path": "../GraphicsMgrMonoGameDesktop/GraphicsMgrMonoGameDesktop.fsproj",
@@ -1960,11 +2333,11 @@
     "net6.0": [
       "AngelCodeTextRenderer >= 1.0.0",
       "FSFramework >= 1.0.0-preview-1",
-      "FSharp.Core >= 5.0.0-beta.*",
+      "FSharp.Core >= 6.0.1",
+      "GraphicsManagerGLFW >= 1.0.0",
       "GraphicsMgrMonoGameDesktop >= 1.0.0",
       "HIDInputManager >= 1.0.0",
-      "MathSharp >= 2.0.0-pre",
-      "TDE3ManagerInterfaces >= 1.0.0"
+      "MathSharp >= 2.0.0-pre"
     ]
   },
   "packageFolders": {
@@ -1999,8 +2372,7 @@
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "U:\\Personal\\GitHub\\WebGL.NET\\src\\packages": {},
-        "https://api.nuget.org/v3/index.json": {},
-        "https://pkgs.dev.azure.com/dnceng/public/_packaging/dotnet-tools/nuget/v3/index.json": {}
+        "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net6.0": {
@@ -2009,14 +2381,14 @@
             "C:\\Users\\jpkessel\\RiderProjects\\TwoDEngine3\\AngelCodeTextRenderer\\AngelCodeTextRenderer.fsproj": {
               "projectPath": "C:\\Users\\jpkessel\\RiderProjects\\TwoDEngine3\\AngelCodeTextRenderer\\AngelCodeTextRenderer.fsproj"
             },
+            "C:\\Users\\jpkessel\\RiderProjects\\TwoDEngine3\\GraphicsManagerGLFW\\GraphicsManagerGLFW.fsproj": {
+              "projectPath": "C:\\Users\\jpkessel\\RiderProjects\\TwoDEngine3\\GraphicsManagerGLFW\\GraphicsManagerGLFW.fsproj"
+            },
             "C:\\Users\\jpkessel\\RiderProjects\\TwoDEngine3\\GraphicsMgrMonoGameDesktop\\GraphicsMgrMonoGameDesktop.fsproj": {
               "projectPath": "C:\\Users\\jpkessel\\RiderProjects\\TwoDEngine3\\GraphicsMgrMonoGameDesktop\\GraphicsMgrMonoGameDesktop.fsproj"
             },
             "C:\\Users\\jpkessel\\RiderProjects\\TwoDEngine3\\HIDInputManager\\HIDInputManager.fsproj": {
               "projectPath": "C:\\Users\\jpkessel\\RiderProjects\\TwoDEngine3\\HIDInputManager\\HIDInputManager.fsproj"
-            },
-            "C:\\Users\\jpkessel\\RiderProjects\\TwoDEngine3\\TDE3ManagerInterfaces\\TDE3ManagerInterfaces.fsproj": {
-              "projectPath": "C:\\Users\\jpkessel\\RiderProjects\\TwoDEngine3\\TDE3ManagerInterfaces\\TDE3ManagerInterfaces.fsproj"
             }
           }
         }
@@ -2034,7 +2406,7 @@
           "FSharp.Core": {
             "include": "Runtime, Compile, Build, Native, Analyzers, BuildTransitive",
             "target": "Package",
-            "version": "[5.0.0-beta.*, )",
+            "version": "[6.0.1, )",
             "generatePathProperty": true
           },
           "MathSharp": {
@@ -2058,8 +2430,30 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100-preview.7.21379.14\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'GLFW.NET 0.9.7.1' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
+      "libraryId": "GLFW.NET",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'OpenGL.Net 0.8.4' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
+      "libraryId": "OpenGL.Net",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    }
+  ]
 }

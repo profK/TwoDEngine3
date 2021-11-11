@@ -15,11 +15,8 @@
     <SourceRoot Include="C:\Program Files (x86)\Microsoft\Xamarin\NuGet\" />
     <SourceRoot Include="C:\Program Files\dotnet\sdk\NuGetFallbackFolder\" />
   </ItemGroup>
-  <PropertyGroup>
-    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
-  </PropertyGroup>
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
-    <PkgFSharp_Core Condition=" '$(PkgFSharp_Core)' == '' ">C:\Users\jpkessel\.nuget\packages\fsharp.core\5.0.0</PkgFSharp_Core>
+    <PkgFSharp_Core Condition=" '$(PkgFSharp_Core)' == '' ">C:\Users\jpkessel\.nuget\packages\fsharp.core\6.0.1</PkgFSharp_Core>
     <PkgFSFramework Condition=" '$(PkgFSFramework)' == '' ">C:\Users\jpkessel\.nuget\packages\fsframework\1.0.0-preview-1</PkgFSFramework>
     <PkgCyotek_Drawing_BitmapFont Condition=" '$(PkgCyotek_Drawing_BitmapFont)' == '' ">C:\Users\jpkessel\.nuget\packages\cyotek.drawing.bitmapfont\2.0.3</PkgCyotek_Drawing_BitmapFont>
   </PropertyGroup>

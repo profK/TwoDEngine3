@@ -1,13 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "aVoKidum9MBBtvwJvDyrID0iGuMzltGewOsFu1CZBehKBbUcSp9noa2IMGle+d4s4Ck9h6GfI2bPgePlJHYbkA==",
+  "dgSpecHash": "RLbeyZrlcY4b+lD8/QJ1IiT98ixMbtsfH+wxBeREIl/OwGrRj/nS6w0FparXYU2s8yOzn5V2VP9Q+yY2T2KeKw==",
   "success": true,
   "projectFilePath": "C:\\Users\\jpkessel\\RiderProjects\\TwoDEngine3\\TwoDEngine3\\TwoDEngine3.fsproj",
   "expectedPackageFiles": [
     "C:\\Users\\jpkessel\\.nuget\\packages\\cyotek.drawing.bitmapfont\\2.0.3\\cyotek.drawing.bitmapfont.2.0.3.nupkg.sha512",
     "C:\\Users\\jpkessel\\.nuget\\packages\\dynamicdata\\7.3.1\\dynamicdata.7.3.1.nupkg.sha512",
     "C:\\Users\\jpkessel\\.nuget\\packages\\fsframework\\1.0.0-preview-1\\fsframework.1.0.0-preview-1.nupkg.sha512",
-    "C:\\Users\\jpkessel\\.nuget\\packages\\fsharp.core\\5.0.0\\fsharp.core.5.0.0.nupkg.sha512",
+    "C:\\Users\\jpkessel\\.nuget\\packages\\fsharp.core\\6.0.1\\fsharp.core.6.0.1.nupkg.sha512",
+    "C:\\Users\\jpkessel\\.nuget\\packages\\glfw\\3.3.5\\glfw.3.3.5.nupkg.sha512",
+    "C:\\Users\\jpkessel\\.nuget\\packages\\glfw.net\\0.9.7.1\\glfw.net.0.9.7.1.nupkg.sha512",
     "C:\\Users\\jpkessel\\.nuget\\packages\\hiddevices\\2.1.12\\hiddevices.2.1.12.nupkg.sha512",
     "C:\\Users\\jpkessel\\.nuget\\packages\\hidsharp\\2.1.0\\hidsharp.2.1.0.nupkg.sha512",
     "C:\\Users\\jpkessel\\.nuget\\packages\\mathsharp\\2.0.0-pre\\mathsharp.2.0.0-pre.nupkg.sha512",
@@ -34,6 +36,7 @@
     "C:\\Users\\jpkessel\\.nuget\\packages\\nito.cancellation\\1.1.2\\nito.cancellation.1.1.2.nupkg.sha512",
     "C:\\Users\\jpkessel\\.nuget\\packages\\nito.collections.deque\\1.1.1\\nito.collections.deque.1.1.1.nupkg.sha512",
     "C:\\Users\\jpkessel\\.nuget\\packages\\nito.disposables\\2.2.1\\nito.disposables.2.2.1.nupkg.sha512",
+    "C:\\Users\\jpkessel\\.nuget\\packages\\opengl.net\\0.8.4\\opengl.net.0.8.4.nupkg.sha512",
     "C:\\Users\\jpkessel\\.nuget\\packages\\system.collections.immutable\\1.7.1\\system.collections.immutable.1.7.1.nupkg.sha512",
     "C:\\Users\\jpkessel\\.nuget\\packages\\system.componentmodel.annotations\\5.0.0\\system.componentmodel.annotations.5.0.0.nupkg.sha512",
     "C:\\Users\\jpkessel\\.nuget\\packages\\system.diagnostics.diagnosticsource\\6.0.0-rc.2.21480.5\\system.diagnostics.diagnosticsource.6.0.0-rc.2.21480.5.nupkg.sha512",
@@ -43,5 +46,26 @@
     "C:\\Users\\jpkessel\\.nuget\\packages\\system.security.principal.windows\\5.0.0\\system.security.principal.windows.5.0.0.nupkg.sha512",
     "C:\\Users\\jpkessel\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'GLFW.NET 0.9.7.1' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
+      "libraryId": "GLFW.NET",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'OpenGL.Net 0.8.4' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
+      "libraryId": "OpenGL.Net",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    }
+  ]
 }

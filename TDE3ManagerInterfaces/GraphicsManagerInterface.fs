@@ -32,6 +32,6 @@ and GraphicsManager =
     abstract DrawImage : Image -> Vector2 -> unit
     abstract Start : (GraphicsManager -> unit) -> unit
     abstract Start : unit -> unit
-    abstract IdentityTransform : Transform
+    abstract IdentityTransform : Transform with get
     abstract RotationTransform : float32 -> Transform
     abstract TranslationTransform : Vector2 -> Transform

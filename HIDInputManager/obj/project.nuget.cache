@@ -1,12 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "rXMaL28TXjg3ekazv96biM5s+Z292gVKHaWE9Z/r9E/Ck9lQqq92j0Hxz3yYtvbJJHuQkjoQqffkbayrz40BVw==",
+  "dgSpecHash": "JmuZwXx6yVhnhFiOJ/n5nFksywo9pxjiJ4JmtcZFlyn4c0vko/BdjsAvUx6PeOArjn4HLhOXvtpvpILZ0F+z9A==",
   "success": true,
   "projectFilePath": "C:\\Users\\jpkessel\\RiderProjects\\TwoDEngine3\\HIDInputManager\\HIDInputManager.fsproj",
   "expectedPackageFiles": [
     "C:\\Users\\jpkessel\\.nuget\\packages\\dynamicdata\\7.3.1\\dynamicdata.7.3.1.nupkg.sha512",
     "C:\\Users\\jpkessel\\.nuget\\packages\\fsframework\\1.0.0-preview-1\\fsframework.1.0.0-preview-1.nupkg.sha512",
-    "C:\\Users\\jpkessel\\.nuget\\packages\\fsharp.core\\5.0.0\\fsharp.core.5.0.0.nupkg.sha512",
+    "C:\\Users\\jpkessel\\.nuget\\packages\\fsharp.core\\6.0.1\\fsharp.core.6.0.1.nupkg.sha512",
     "C:\\Users\\jpkessel\\.nuget\\packages\\hiddevices\\2.1.12\\hiddevices.2.1.12.nupkg.sha512",
     "C:\\Users\\jpkessel\\.nuget\\packages\\hidsharp\\2.1.0\\hidsharp.2.1.0.nupkg.sha512",
     "C:\\Users\\jpkessel\\.nuget\\packages\\mathsharp\\2.0.0-pre\\mathsharp.2.0.0-pre.nupkg.sha512",

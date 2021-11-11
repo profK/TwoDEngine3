@@ -1,14 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "TwoDEngine3", "TwoDEngine3\TwoDEngine3.fsproj", "{8FE15F01-3F8C-42FC-9EF1-A99AB3C64C9E}"
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31829.152
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "TwoDEngine3", "TwoDEngine3\TwoDEngine3.fsproj", "{8FE15F01-3F8C-42FC-9EF1-A99AB3C64C9E}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "TDE3ManagerInterfaces", "TDE3ManagerInterfaces\TDE3ManagerInterfaces.fsproj", "{BFC068FF-29D0-4581-B802-5AFBB481D5DA}"
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "TDE3ManagerInterfaces", "TDE3ManagerInterfaces\TDE3ManagerInterfaces.fsproj", "{BFC068FF-29D0-4581-B802-5AFBB481D5DA}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "GraphicsMgrMonoGameDesktop", "GraphicsMgrMonoGameDesktop\GraphicsMgrMonoGameDesktop.fsproj", "{963E122D-93B3-44C6-AF28-146C1E6E238F}"
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "GraphicsMgrMonoGameDesktop", "GraphicsMgrMonoGameDesktop\GraphicsMgrMonoGameDesktop.fsproj", "{963E122D-93B3-44C6-AF28-146C1E6E238F}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "AngelCodeTextRenderer", "AngelCodeTextRenderer\AngelCodeTextRenderer.fsproj", "{B1B38F7E-871B-4BA1-8B2F-B7C20C442063}"
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "AngelCodeTextRenderer", "AngelCodeTextRenderer\AngelCodeTextRenderer.fsproj", "{B1B38F7E-871B-4BA1-8B2F-B7C20C442063}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "HIDInputManager", "HIDInputManager\HIDInputManager.fsproj", "{C43C9D68-DD71-4CAF-A75C-FB52AFB67A63}"
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "GraphicsManagerGLFW", "GraphicsManagerGLFW\GraphicsManagerGLFW.fsproj", "{7F0EA03F-1109-4EA2-ACAE-0B12B789570B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -32,9 +35,15 @@ Global
 		{B1B38F7E-871B-4BA1-8B2F-B7C20C442063}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B1B38F7E-871B-4BA1-8B2F-B7C20C442063}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B1B38F7E-871B-4BA1-8B2F-B7C20C442063}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C43C9D68-DD71-4CAF-A75C-FB52AFB67A63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C43C9D68-DD71-4CAF-A75C-FB52AFB67A63}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C43C9D68-DD71-4CAF-A75C-FB52AFB67A63}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C43C9D68-DD71-4CAF-A75C-FB52AFB67A63}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F0EA03F-1109-4EA2-ACAE-0B12B789570B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F0EA03F-1109-4EA2-ACAE-0B12B789570B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F0EA03F-1109-4EA2-ACAE-0B12B789570B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F0EA03F-1109-4EA2-ACAE-0B12B789570B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D469A18B-B153-4B2E-A5D1-AA94BCA251BD}
 	EndGlobalSection
 EndGlobal
