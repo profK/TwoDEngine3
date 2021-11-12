@@ -4,6 +4,7 @@ open System
 open System.IO
 open System.Numerics
 open System.Numerics
+open System.Security.Cryptography
 open System.Threading
 open GlmNet
 open StbImageSharp
@@ -53,26 +54,30 @@ type OglImage(image:ImageResult,?rect) as this =
             OglVector(this.src.Size.X, this.src.Size.Y) :> Vector
 type GraphicsManagerGLFW()as this=
     //Create a window with the oop binding
-    let vertShaderCode = [|
-        "#version 400\n"
-        "in vec3 vp;\n"
-        "void main() {\n"
-        "   gl_Position = vec4(vp, 1.0);\n"
-        "}"
-    |]    
-    let fragShaderCode = [|
-        "#version 400\n"
-        "out vec4 frag_colour;\n"
-        "void main() {\n"
-        "    frag_colour = vec4(0.5, 0.0, 0.5, 1.0);\n"
-        "}"
-    |]
-    
-     let mutable xformStack:Transform list = List.Empty
-     let mutable clipStack:Rectangle list = List.Empty
-    
-     member val window = new Window(800, 600, "Glfw test window") 
+    //
+    let fragShaderCode =                                    
+      [|                                                  
+          "#version 400"                                  
+          "out vec4 frag_colour;"                         
+          "void main() {"                                 
+          "    frag_colour = vec4(0.5, 0.0, 0.5, 1.0);"   
+          "}"                                             
+      |]                                                  
+    let vertShaderCode =
+        [|
+            "#version 400"
+            "in vec3 vp;"
+            "void main() {"
+            "   gl_Position = vec4(vp, 1.0);"
+            "}"
+        |]
      
+    
+    let mutable xformStack = List.Empty
+    let mutable clipStack = List.Empty
+    
+    let mutable window : Window option = None
+                                                                            
     interface GraphicsManager with
         member this.DrawImage(img:Image) (pos) =
             // This is a naive implementation that could defintiely
@@ -128,10 +133,11 @@ type GraphicsManagerGLFW()as this=
             let gm = this :?> GraphicsManagerGLFW
             let mutable w = 0;
             let mutable h= 0;
-            this.window.GetSize(ref w, ref h)
+            window.Value.GetSize(ref w, ref h)
             OglVector(float32 w,float32 h) :> Vector
         member this.Start() =
             Glfw.Init() |> ignore
+            window <- Some(new Window(800, 600, "Glfw test window")  )
             let vshader = Gl.CreateShader(ShaderType.VertexShader)
             Gl.ShaderSource(vshader,vertShaderCode)
             Gl.CompileShader(vshader)
@@ -143,12 +149,12 @@ type GraphicsManagerGLFW()as this=
             Gl.AttachShader(shaderProgram,vshader)
             Gl.LinkProgram(shaderProgram)
             
-            let window = this.window // convenience
+            let window = window.Value // convenience
            
             Glfw.SetWindowCloseCallback(window,fun args -> window.Close()) |> ignore
             //You need to be notified if the size changed? 
             //Simply add a handler to the Size changed event
-            window.SizeChanged.Add (fun args -> printfn "Size changed! New width %A, new height %A" args.width args.height)
+            //window.SizeChanged.Add (fun args -> printfn "Size changed! New width %A, new height %A" args.width args.height)
             while 
                 (this :> GraphicsManager).GraphicsListeners 
                 |> List.tryPick (fun listener -> listener.Update DateTime.Now.Millisecond)
@@ -164,7 +170,9 @@ type GraphicsManagerGLFW()as this=
                     |> Seq.iter(fun listener-> listener.Render(this) )
                     Glfw.SwapBuffers(window)
                     Glfw.PollEvents();
-        member this.Start(var0) = failwith "todo"
+        member this.Start(userfunc) =
+            (this :> GraphicsManager).Start()
+            userfunc(this)
         member this.TranslationTransform x y =
             OglXform(glm.translate(mat4.identity(),
                                    vec3(float32 x,float32 y,0f))) :> Transform

@@ -150,3 +150,4 @@ D:\projects\RiderProjects\TwoDEngine3\TwoDEngine3\bin\Debug\net6.0\GraphicsManag
 D:\projects\RiderProjects\TwoDEngine3\TwoDEngine3\bin\Debug\net6.0\GraphicsManagerGLFW.pdb
 D:\projects\RiderProjects\TwoDEngine3\TwoDEngine3\bin\Debug\net6.0\GraphicsManagerGLFW.xml
 D:\projects\RiderProjects\TwoDEngine3\TwoDEngine3\obj\Debug\net6.0\TwoDEngine3.fsproj.CopyComplete
+D:\projects\RiderProjects\TwoDEngine3\TwoDEngine3\bin\Debug\net6.0\StbImageSharp.dll
