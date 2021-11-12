@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "lbKoX7Dynpt3BHh1ht1v9oRrvmE6m3fkM4LRRgnNncasTK+rFVbipHOR23aJfsS6NPPlKNf4D4t0D1O9DXvpcg==",
+  "dgSpecHash": "RSO8rXrl6IhHSFhxYoAuJZPryDslLdrLChAsQ0cFeYdTGR4ychSAgh8BHhZep2x0GBnEUIJbFaBJMEuZQIRJsQ==",
   "success": true,
   "projectFilePath": "D:\\projects\\RiderProjects\\TwoDEngine3\\GraphicsManagerGLFW\\GraphicsManagerGLFW.fsproj",
   "expectedPackageFiles": [
@@ -11,7 +11,8 @@
     "C:\\Users\\jpkessel\\.nuget\\packages\\glmnet\\0.7.0\\glmnet.0.7.0.nupkg.sha512",
     "C:\\Users\\jpkessel\\.nuget\\packages\\mathsharp\\2.0.0-pre\\mathsharp.2.0.0-pre.nupkg.sha512",
     "C:\\Users\\jpkessel\\.nuget\\packages\\microsoft.net.compilers.toolset\\3.2.0-beta1-final\\microsoft.net.compilers.toolset.3.2.0-beta1-final.nupkg.sha512",
-    "C:\\Users\\jpkessel\\.nuget\\packages\\opengl.net\\0.8.4\\opengl.net.0.8.4.nupkg.sha512"
+    "C:\\Users\\jpkessel\\.nuget\\packages\\opengl.net\\0.8.4\\opengl.net.0.8.4.nupkg.sha512",
+    "C:\\Users\\jpkessel\\.nuget\\packages\\stbimagesharp\\2.22.6\\stbimagesharp.2.22.6.nupkg.sha512"
   ],
   "logs": [
     {

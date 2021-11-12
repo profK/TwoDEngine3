@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Ap0S6BKYAP7Wgxl1wV+xLiph+cXn6M9KrodAjeoIn2DAcjkOYhYT2sgnx+0X1BbeYayFLoDC5wzpztP7Al6vWQ==",
+  "dgSpecHash": "6V0p1TAgjRCiJghbE9uPgcA3aNvdnbFCTKVtqunHZZpbqxJWzBv6AoOwoVpWNJ02hBkGMA7iDVaJ+I222ofqzA==",
   "success": true,
   "projectFilePath": "D:\\projects\\RiderProjects\\TwoDEngine3\\TwoDEngine3\\TwoDEngine3.fsproj",
   "expectedPackageFiles": [
@@ -12,7 +12,8 @@
     "C:\\Users\\jpkessel\\.nuget\\packages\\glmnet\\0.7.0\\glmnet.0.7.0.nupkg.sha512",
     "C:\\Users\\jpkessel\\.nuget\\packages\\mathsharp\\2.0.0-pre\\mathsharp.2.0.0-pre.nupkg.sha512",
     "C:\\Users\\jpkessel\\.nuget\\packages\\microsoft.net.compilers.toolset\\3.2.0-beta1-final\\microsoft.net.compilers.toolset.3.2.0-beta1-final.nupkg.sha512",
-    "C:\\Users\\jpkessel\\.nuget\\packages\\opengl.net\\0.8.4\\opengl.net.0.8.4.nupkg.sha512"
+    "C:\\Users\\jpkessel\\.nuget\\packages\\opengl.net\\0.8.4\\opengl.net.0.8.4.nupkg.sha512",
+    "C:\\Users\\jpkessel\\.nuget\\packages\\stbimagesharp\\2.22.6\\stbimagesharp.2.22.6.nupkg.sha512"
   ],
   "logs": [
     {

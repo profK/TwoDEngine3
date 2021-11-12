@@ -18,6 +18,7 @@
       <PackageReference Include="GLFW.NET" Version="0.9.7.1" />
       <PackageReference Include="GlmNet" Version="0.7.0" />
       <PackageReference Include="OpenGL.Net" Version="0.8.4" />
+      <PackageReference Include="StbImageSharp" Version="2.22.6" />
     </ItemGroup>
 
     <ItemGroup>

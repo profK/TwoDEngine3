@@ -128,6 +128,15 @@
           "lib/net461/OpenGL.Net.dll": {}
         }
       },
+      "StbImageSharp/2.22.6": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/StbImageSharp.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/StbImageSharp.dll": {}
+        }
+      },
       "AngelCodeTextRenderer/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -152,6 +161,7 @@
           "GLFW.NET": "0.9.7.1",
           "GlmNet": "0.7.0",
           "OpenGL.Net": "0.8.4",
+          "StbImageSharp": "2.22.6",
           "TDE3ManagerInterfaces": "1.0.0",
           "glfw": "3.3.5"
         },
@@ -804,6 +814,19 @@
         "lib/net461/OpenGL.Net.xml",
         "opengl.net.0.8.4.nupkg.sha512",
         "opengl.net.nuspec"
+      ]
+    },
+    "StbImageSharp/2.22.6": {
+      "sha512": "QePcBRY8uGhFuD5CD9jIxqdS0YLbbnT4llbyZ6e8odUOi/J7YEwZcNSXk8scPsPDVgZgvLjKFruduWAMk0gScw==",
+      "type": "package",
+      "path": "stbimagesharp/2.22.6",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net45/StbImageSharp.dll",
+        "lib/netstandard2.0/StbImageSharp.dll",
+        "stbimagesharp.2.22.6.nupkg.sha512",
+        "stbimagesharp.nuspec"
       ]
     },
     "AngelCodeTextRenderer/1.0.0": {

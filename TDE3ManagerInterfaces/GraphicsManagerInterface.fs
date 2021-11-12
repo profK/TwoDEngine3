@@ -30,7 +30,7 @@ type GraphicsListener =
 
 and GraphicsManager =
     abstract GraphicsListeners : GraphicsListener list with get, set
-    abstract ScreenSize : Vector2
+    abstract ScreenSize : Vector
     abstract LoadImage : Stream -> Image
     abstract PushClip : Rectangle -> unit
     abstract PopClip : unit -> Rectangle option
