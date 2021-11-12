@@ -38,18 +38,19 @@ type OglXform(glMatrix:mat4) =
             let newVec = this.glMat * oglvec 
             OglVector(newVec) :> Vector
 
-type OglImage(image,?rect) =
+type OglImage(image:ImageResult,?rect) as this =
     
-    let img: ImageResult = image
-    let src = defaultArg rect
+    member val src:Rectangle = (defaultArg rect
                   (Rectangle(OglVector(0f,0f),
-                        OglVector(float32 img.Width,float32 img.Height)))
-
+                        OglVector(float32 image.Width,float32 image.Height))))
+    member val img:ImageResult = image
     interface Image with
+       
         override this.SubImage rect =
-            OglImage(img,rect) :> Image
+            OglImage(this.img,rect) :> Image
         override val Size =
-            OglVector(float32 img.Width, float32 img.Height) :> Vector
+            let oglImage = this :> OglImage
+            OglVector(this.src.Size.X, this.src.Size.Y) :> Vector
 type GraphicsManagerGLFW()as this=
     //Create a window with the oop binding
     let vertShaderCode = [|
@@ -73,7 +74,19 @@ type GraphicsManagerGLFW()as this=
      member val window = new Window(800, 600, "Glfw test window") 
      
     interface GraphicsManager with
-        member this.DrawImage(var0) (var1) = failwith "todo"
+        member this.DrawImage(img:Image) (pos) =
+            // This is a naive implementation that could defintiely
+            // be sped up by grouping draws
+            //setup texture
+            let texid = Gl.GenTexture()
+            let stbImage = (img :?> OglImage).img
+            let srcSize = img.Size
+            Gl.BindTexture(TextureTarget.Texture2d,texid)
+            Gl.TexImage2D(TextureTarget.Texture2d, 0,InternalFormat.Rgba,
+                          int srcSize.X, int srcSize.Y, 0, PixelFormat.Rgba,
+                          PixelType.UnsignedByte,stbImage.Data)
+            //draw image
+            
         member val GraphicsListeners:(GraphicsListener list) = List.Empty  with get, set
         member val IdentityTransform =
             OglXform(mat4.identity()) :> Transform
