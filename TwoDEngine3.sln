@@ -7,8 +7,6 @@ Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "TwoDEngine3", "TwoDEngine3\
 EndProject
 Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "TDE3ManagerInterfaces", "TDE3ManagerInterfaces\TDE3ManagerInterfaces.fsproj", "{BFC068FF-29D0-4581-B802-5AFBB481D5DA}"
 EndProject
-Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "GraphicsMgrMonoGameDesktop", "GraphicsMgrMonoGameDesktop\GraphicsMgrMonoGameDesktop.fsproj", "{963E122D-93B3-44C6-AF28-146C1E6E238F}"
-EndProject
 Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "AngelCodeTextRenderer", "AngelCodeTextRenderer\AngelCodeTextRenderer.fsproj", "{B1B38F7E-871B-4BA1-8B2F-B7C20C442063}"
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "GraphicsManagerGLFW", "GraphicsManagerGLFW\GraphicsManagerGLFW.fsproj", "{7F0EA03F-1109-4EA2-ACAE-0B12B789570B}"
@@ -27,10 +25,6 @@ Global
 		{BFC068FF-29D0-4581-B802-5AFBB481D5DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BFC068FF-29D0-4581-B802-5AFBB481D5DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BFC068FF-29D0-4581-B802-5AFBB481D5DA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{963E122D-93B3-44C6-AF28-146C1E6E238F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{963E122D-93B3-44C6-AF28-146C1E6E238F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{963E122D-93B3-44C6-AF28-146C1E6E238F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{963E122D-93B3-44C6-AF28-146C1E6E238F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B1B38F7E-871B-4BA1-8B2F-B7C20C442063}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B1B38F7E-871B-4BA1-8B2F-B7C20C442063}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B1B38F7E-871B-4BA1-8B2F-B7C20C442063}.Release|Any CPU.ActiveCfg = Release|Any CPU

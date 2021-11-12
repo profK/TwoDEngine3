@@ -10,13 +10,16 @@ open OpenGL
 open glfw3
 
 type OglVector(vec:vec4)  =
+    inherit Vector() 
     member this.oglVec = vec
-    interface Vector with
-        member this.X = float this.oglVec.x
-        member this.Y = float this.oglVec.y
-
-    new(x:float, y:float) as this =
-        OglVector(vec4(float32 x,float32 y,float32 0,float32 1))
+   
+    override this.X = this.oglVec.x
+    override this.Y = this.oglVec.y
+    override this.Plus (other:Vector) =
+        let otherVec = (other :?> OglVector).oglVec
+        OglVector(this.oglVec+otherVec) :> Vector
+    new(x:float32, y:float32) as this =
+        OglVector(vec4(x, y, 0f,1f))
     
 type OglXform(glMatrix:mat4) =
     member val glMat:mat4 = glMatrix
@@ -91,6 +94,12 @@ type GraphicsManagerGLFW()as this=
                     Glfw.SwapBuffers(window)
                     Glfw.PollEvents();
         member this.Start(var0) = failwith "todo"
-        member this.TranslationTransform(var0) = failwith "todo"
+        member this.TranslationTransform x y =
+            OglXform(glm.translate(mat4.identity(),
+                                   vec3(float32 x,float32 y,0f))) :> Transform
+        
+        member this.NewVector x y =
+            OglVector(x,y) :> Vector 
+        
        
     

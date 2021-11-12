@@ -1,14 +1,15 @@
 // Learn more about F# at http://docs.microsoft.com/dotnet/fsharp
-module program
 
 open System
 
+
 open AngelCodeTextRenderer
+
 open GraphicsManagerGLFW
 open TwoDEngine3.ExampleLevel
 open TwoDEngine3.LevelManagerInterface
 open TwoDEngine3.ManagerInterfaces.GraphicsManagerInterface
-
+open TwoDEngine3.ManagerInterfaces.InputManager
 
 
 
@@ -47,9 +48,8 @@ let main argv =
     //register textRenderer
     typedefof<AngelCodeTextRenderer>
     |> ManagerRegistry.addManager
-   
-    // create lvel managers and set the active one hereSome(BouncyBall:>AbstractLevelController)
-   
+    
+
     match ManagerRegistry.getManager<GraphicsManager> () with
     | Some graphics -> graphics.Start(fun gmgr -> SetLevelManager(Some(BouncyBall() :> AbstractLevelController)))
 

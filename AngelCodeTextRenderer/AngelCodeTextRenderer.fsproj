@@ -21,7 +21,6 @@
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\MonoGameDesktopMultiManager\MonoGameDesktopMultiManager.fsproj" />
         <ProjectReference Include="..\TDE3ManagerInterfaces\TDE3ManagerInterfaces.fsproj" />
     </ItemGroup>
 

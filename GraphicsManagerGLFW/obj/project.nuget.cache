@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "oZWNgIEvaaMhpeKiAXf4Tz3+s7+lys1mTX3Hqn5L5On4VubyAmUZKOkFAA6htdqmHNxkbtl90tyzCebGKF/r2A==",
+  "dgSpecHash": "lbKoX7Dynpt3BHh1ht1v9oRrvmE6m3fkM4LRRgnNncasTK+rFVbipHOR23aJfsS6NPPlKNf4D4t0D1O9DXvpcg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\jpkessel\\RiderProjects\\TwoDEngine3\\GraphicsManagerGLFW\\GraphicsManagerGLFW.fsproj",
+  "projectFilePath": "D:\\projects\\RiderProjects\\TwoDEngine3\\GraphicsManagerGLFW\\GraphicsManagerGLFW.fsproj",
   "expectedPackageFiles": [
     "C:\\Users\\jpkessel\\.nuget\\packages\\fsframework\\1.0.0-preview-1\\fsframework.1.0.0-preview-1.nupkg.sha512",
     "C:\\Users\\jpkessel\\.nuget\\packages\\fsharp.core\\6.0.1\\fsharp.core.6.0.1.nupkg.sha512",

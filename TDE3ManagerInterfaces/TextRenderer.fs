@@ -1,7 +1,6 @@
 ﻿module TDE3ManagerInterfaces.TextRendererInterfaces
 
-open System.Numerics
-
+open TwoDEngine3.ManagerInterfaces.GraphicsManagerInterface
 type Font =
     abstract member Name : string
     abstract member Size : int
@@ -14,4 +13,4 @@ and Text =
 and TextManager =
     abstract member FontList : string list
     abstract member LoadFont : string -> Font
-    abstract member RenderText : Vector2 -> Text -> unit
+    abstract member RenderText : Vector -> Text -> unit

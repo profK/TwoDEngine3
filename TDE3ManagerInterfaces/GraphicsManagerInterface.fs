@@ -3,15 +3,18 @@
 open System.IO
 open System.Numerics
 
-type Vector =
-    abstract X:float
-    abstract Y:float
+[<AbstractClass>]
+type Vector() =
+    abstract X:float32 with get
+    abstract Y:float32 with get
     
-type Rectangle(pos: Vector, sz: Vector) =
-    member val Position = pos
-    member val Size = sz
-
-
+    abstract Plus: Vector -> Vector
+    static member (+) (v : Vector, a: Vector) =
+        v.Plus(a)
+     
+type Rectangle(pos, sz) =
+    member val Position:Vector = pos
+    member val Size:Vector =sz
 type Image =
 
     abstract SubImage : Rectangle -> Image
@@ -38,4 +41,6 @@ and GraphicsManager =
     abstract Start : unit -> unit
     abstract IdentityTransform : Transform with get
     abstract RotationTransform : float32 -> Transform
-    abstract TranslationTransform : Vector -> Transform
+    abstract TranslationTransform : float32-> float32 -> Transform
+    abstract NewVector: float32 ->float32->Vector
+    

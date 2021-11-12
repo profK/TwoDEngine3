@@ -10,10 +10,10 @@ and NodeValue =
     | Axis of AxisUnion
     | Children of Node list
 
-and Node(name: string, value: NodeValue, parent:Node option) =
-    member val Name: string = name
-    member val Value: NodeValue = value with get, set
-    member val Parent: Node option = parent
+and Node =
+    abstract Name: string with get
+    abstract Value: NodeValue with get
+    abstract Parent: Node option with get
 
 
 

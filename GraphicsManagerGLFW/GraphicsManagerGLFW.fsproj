@@ -7,14 +7,10 @@
 
     <ItemGroup>
         <Compile Include="Library.fs" />
-        <Content Include="..\..\..\.nuget\packages\glfw\3.3.5\build\native\bin\dynamic\v143\x64\glfw3.dll">
+        <Content Include="C:\Users\jpkessel\.nuget\packages\glfw\3.3.5\build\native\bin\dynamic\v143\x64\glfw3.dll">
           <Link>glfw3.dll</Link>
           <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </Content>
-        <None Include="..\..\..\.nuget\packages\glfw.net\0.9.7.1\content\WrapperGLFW.dll.config">
-          <Link>WrapperGLFW.dll.config</Link>
-          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-        </None>
     </ItemGroup>
 
     <ItemGroup>

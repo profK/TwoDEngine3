@@ -56,8 +56,7 @@ type BouncyBall() as this =
 
     override this.Open() =
         printfn "BouncyBall opened"
-        let root = ManagerRegistry.getManager<InputManager>().Value.controllerRoot
-        PrintControl(root,Console.Out,0)
+        
 
 
         base.Open()
@@ -66,15 +65,16 @@ type BouncyBall() as this =
         let screenSize = this.graphics.Value.ScreenSize
 
 
-        graphics.PushTransform(graphics.TranslationTransform(Vector2(-100f, -100f)))
+        graphics.PushTransform(graphics.TranslationTransform -100f -100f)
 
         graphics.DrawImage
             ballImage
-            (Vector2((screenSize.X - ballImage.Size.X) / 2f, ((screenSize.Y - ballImage.Size.Y) / 2f)))
+            (graphics.NewVector ((screenSize.X - ballImage.Size.X) / 2f)
+                                ((screenSize.Y - ballImage.Size.Y) / 2f))
 
         graphics.PopTransform() |> ignore
 
         text
-        |> txtRenderer.RenderText(Vector2(0f, screenSize.Y - 50.0f))
+        |> txtRenderer.RenderText(graphics.NewVector  0f (screenSize.Y - 50.0f))
 
         ()

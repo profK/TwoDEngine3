@@ -23,7 +23,7 @@ type AngelCodeTextRenderer() =
             |> AngelCodeFont
             :> Font
 
-        member this.RenderText (pos: Vector2) (textObj) =
+        member this.RenderText (pos: Vector) (textObj) =
             let font: AngelCodeFont = textObj.Font :?> AngelCodeFont
 
             let graphics =
@@ -33,27 +33,25 @@ type AngelCodeTextRenderer() =
 
             textObj.Text
             |> Seq.fold
-                (fun state char ->
+                (fun (state:Vector * char) char ->
                     let pos = fst state
                     let lastChar = snd state
                     let acChar: Character = font.GetCharacter char
                     let acImage: Image = font.GetPage(acChar.TexturePage)
+                    let rectPos = graphics.NewVector (float acChar.X) (float acChar.Y)
+                    let rectSz =  graphics.NewVector (float acChar.Width) (float acChar.Height)
 
                     let charImage =
-                        acImage.SubImage(
-                            Rectangle(
-                                Vector2(float32 acChar.X, float32 acChar.Y),
-                                Vector2(float32 acChar.Width, float32 acChar.Height)
-                            )
-                        )
+                        acImage.SubImage(Rectangle(rectPos,rectSz))
+                    let offset = graphics.NewVector (float acChar.XOffset) (float acChar.YOffset)
 
-                    graphics.DrawImage
-                        charImage
-                        (pos
-                         + Vector2(float32 acChar.XOffset, float32 acChar.YOffset))
+                    graphics.DrawImage charImage (pos + offset)
 
                     let kern = font.GetKern(lastChar, char)
-                    (Vector2(pos.X + float32 acChar.Width + float32 kern, pos.Y), char))
+                    let newX = pos.X + (float acChar.Width) + kern
+                        
+                    ((graphics.NewVector newX pos.Y),char)    
+                )
                 (pos, '\n')
             |> ignore
 

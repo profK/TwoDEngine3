@@ -98,68 +98,6 @@
           "build/_._": {}
         }
       },
-      "MonoGame.Framework.DesktopGL/3.8.0.1641": {
-        "type": "package",
-        "compile": {
-          "lib/netstandard2.0/MonoGame.Framework.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/MonoGame.Framework.dll": {}
-        },
-        "build": {
-          "build/_._": {}
-        },
-        "runtimeTargets": {
-          "runtimes/linux-x64/native/libSDL2-2.0.so.0": {
-            "assetType": "native",
-            "rid": "linux-x64"
-          },
-          "runtimes/linux-x64/native/libopenal.so.1": {
-            "assetType": "native",
-            "rid": "linux-x64"
-          },
-          "runtimes/osx/native/libSDL2-2.0.0.dylib": {
-            "assetType": "native",
-            "rid": "osx"
-          },
-          "runtimes/osx/native/libopenal.1.dylib": {
-            "assetType": "native",
-            "rid": "osx"
-          },
-          "runtimes/win-x64/native/SDL2.dll": {
-            "assetType": "native",
-            "rid": "win-x64"
-          },
-          "runtimes/win-x64/native/soft_oal.dll": {
-            "assetType": "native",
-            "rid": "win-x64"
-          },
-          "runtimes/win-x86/native/SDL2.dll": {
-            "assetType": "native",
-            "rid": "win-x86"
-          },
-          "runtimes/win-x86/native/soft_oal.dll": {
-            "assetType": "native",
-            "rid": "win-x86"
-          }
-        }
-      },
-      "GraphicsMgrMonoGameDesktop/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
-        "dependencies": {
-          "FSFramework": "1.0.0-preview-1",
-          "FSharp.Core": "6.0.1",
-          "MonoGame.Framework.DesktopGL": "3.8.0.1641",
-          "TDE3ManagerInterfaces": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/GraphicsMgrMonoGameDesktop.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/GraphicsMgrMonoGameDesktop.dll": {}
-        }
-      },
       "TDE3ManagerInterfaces/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -485,36 +423,6 @@
         "tasks/netcoreapp2.1/zh-Hant/Microsoft.Build.Tasks.CodeAnalysis.resources.dll"
       ]
     },
-    "MonoGame.Framework.DesktopGL/3.8.0.1641": {
-      "sha512": "rJQlrlHQbnOECYV6EcQ8GlGRQ2lzPTroXQcyyOZ0ki+BQRSJEN2zVBm9skqLiXya348aGAfTSSGTaSKjAy9NaA==",
-      "type": "package",
-      "path": "monogame.framework.desktopgl/3.8.0.1641",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "build/MonoGame.Framework.DesktopGL.targets",
-        "lib/net452/MonoGame.Framework.dll",
-        "lib/net452/MonoGame.Framework.xml",
-        "lib/netstandard2.0/MonoGame.Framework.dll",
-        "lib/netstandard2.0/MonoGame.Framework.xml",
-        "monogame.framework.desktopgl.3.8.0.1641.nupkg.sha512",
-        "monogame.framework.desktopgl.nuspec",
-        "runtimes/linux-x64/native/libSDL2-2.0.so.0",
-        "runtimes/linux-x64/native/libopenal.so.1",
-        "runtimes/osx/native/libSDL2-2.0.0.dylib",
-        "runtimes/osx/native/libopenal.1.dylib",
-        "runtimes/win-x64/native/SDL2.dll",
-        "runtimes/win-x64/native/soft_oal.dll",
-        "runtimes/win-x86/native/SDL2.dll",
-        "runtimes/win-x86/native/soft_oal.dll"
-      ]
-    },
-    "GraphicsMgrMonoGameDesktop/1.0.0": {
-      "type": "project",
-      "path": "../GraphicsMgrMonoGameDesktop/GraphicsMgrMonoGameDesktop.fsproj",
-      "msbuildProject": "../GraphicsMgrMonoGameDesktop/GraphicsMgrMonoGameDesktop.fsproj"
-    },
     "TDE3ManagerInterfaces/1.0.0": {
       "type": "project",
       "path": "../TDE3ManagerInterfaces/TDE3ManagerInterfaces.fsproj",
@@ -526,7 +434,6 @@
       "Cyotek.Drawing.BitmapFont >= 2.0.3",
       "FSFramework >= 1.0.0-preview-1",
       "FSharp.Core >= 6.0.1",
-      "GraphicsMgrMonoGameDesktop >= 1.0.0",
       "TDE3ManagerInterfaces >= 1.0.0"
     ]
   },
@@ -539,11 +446,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\jpkessel\\RiderProjects\\TwoDEngine3\\AngelCodeTextRenderer\\AngelCodeTextRenderer.fsproj",
+      "projectUniqueName": "D:\\projects\\RiderProjects\\TwoDEngine3\\AngelCodeTextRenderer\\AngelCodeTextRenderer.fsproj",
       "projectName": "AngelCodeTextRenderer",
-      "projectPath": "C:\\Users\\jpkessel\\RiderProjects\\TwoDEngine3\\AngelCodeTextRenderer\\AngelCodeTextRenderer.fsproj",
+      "projectPath": "D:\\projects\\RiderProjects\\TwoDEngine3\\AngelCodeTextRenderer\\AngelCodeTextRenderer.fsproj",
       "packagesPath": "C:\\Users\\jpkessel\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\jpkessel\\RiderProjects\\TwoDEngine3\\AngelCodeTextRenderer\\obj\\",
+      "outputPath": "D:\\projects\\RiderProjects\\TwoDEngine3\\AngelCodeTextRenderer\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -551,7 +458,7 @@
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "U:\\pchome\\.pcprefsBAD\\AppData\\NuGet\\NuGet.Config",
+        "C:\\Users\\jpkessel\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
@@ -561,18 +468,17 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "U:\\Personal\\GitHub\\WebGL.NET\\src\\packages": {},
-        "https://api.nuget.org/v3/index.json": {}
+        "C:\\Program Files\\dotnet\\library-packs": {},
+        "C:\\Users\\jpkessel\\AppData\\Local\\Stride\\NugetDev": {},
+        "https://api.nuget.org/v3/index.json": {},
+        "https://packages.stride3d.net/nuget": {}
       },
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\jpkessel\\RiderProjects\\TwoDEngine3\\GraphicsMgrMonoGameDesktop\\GraphicsMgrMonoGameDesktop.fsproj": {
-              "projectPath": "C:\\Users\\jpkessel\\RiderProjects\\TwoDEngine3\\GraphicsMgrMonoGameDesktop\\GraphicsMgrMonoGameDesktop.fsproj"
-            },
-            "C:\\Users\\jpkessel\\RiderProjects\\TwoDEngine3\\TDE3ManagerInterfaces\\TDE3ManagerInterfaces.fsproj": {
-              "projectPath": "C:\\Users\\jpkessel\\RiderProjects\\TwoDEngine3\\TDE3ManagerInterfaces\\TDE3ManagerInterfaces.fsproj"
+            "D:\\projects\\RiderProjects\\TwoDEngine3\\TDE3ManagerInterfaces\\TDE3ManagerInterfaces.fsproj": {
+              "projectPath": "D:\\projects\\RiderProjects\\TwoDEngine3\\TDE3ManagerInterfaces\\TDE3ManagerInterfaces.fsproj"
             }
           }
         }
