@@ -76,7 +76,7 @@ type GraphicsManagerGLFW()as this=
     interface GraphicsManager with
         member this.DrawImage(img:Image) (pos) =
             // This is a naive implementation that could defintiely
-            // be sped up by grouping draws
+            // be sped up by grouping draws and caching textures
             //setup texture
             let texid = Gl.GenTexture()
             let stbImage = (img :?> OglImage).img
@@ -85,7 +85,18 @@ type GraphicsManagerGLFW()as this=
             Gl.TexImage2D(TextureTarget.Texture2d, 0,InternalFormat.Rgba,
                           int srcSize.X, int srcSize.Y, 0, PixelFormat.Rgba,
                           PixelType.UnsignedByte,stbImage.Data)
-            //draw image
+            //draw a quad
+            Gl.Begin(PrimitiveType.Polygon)
+            Gl.TexCoord2(0,0)
+            Gl.Vertex2(0, 0)
+            Gl.TexCoord2(1,0)
+            Gl.Vertex2(img.Size.X, 0f)
+            Gl.TexCoord2(1,1)
+            Gl.Vertex2(img.Size.X, img.Size.Y)
+            Gl.TexCoord2(0,1)
+            Gl.Vertex2(0f,img.Size.Y);
+            Gl.End()
+            
             
         member val GraphicsListeners:(GraphicsListener list) = List.Empty  with get, set
         member val IdentityTransform =
