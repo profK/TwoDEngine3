@@ -60,19 +60,21 @@ type GraphicsManagerGLFW()as this=
     //
     let fragShaderCode =                                    
       [|                                                  
-          "#version 400"                                  
-          "out vec4 frag_colour;"                         
-          "void main() {"                                 
-          "    frag_colour = vec4(0.5, 0.0, 0.5, 1.0);"   
-          "}"                                             
+        "#version 330 core\n"
+        "out vec4 FragColor;\n"
+        "void main()\n"
+        "{\n"
+        "   FragColor = vec4(1.0f, 0.5f, 0.2f, 1.0f);\n"
+        "}\n"                                             
       |]                                                  
     let vertShaderCode =
         [|
-            "#version 400"
-            "in vec3 vp;"
-            "void main() {"
-            "   gl_Position = vec4(vp, 1.0);"
-            "}"
+            "#version 330 core\n"
+            "layout (location = 0) in vec3 aPos;\n"
+            "void main()\n"
+            "{\n"
+            "   gl_Position = vec4(aPos.x, aPos.y, aPos.z, 1.0);\n"
+            "}\n"
         |]
      
     
@@ -193,11 +195,11 @@ type GraphicsManagerGLFW()as this=
                     Gl.ClearColor(0.0f, 0.0f, 1.0f, 1.0f)     
                     Gl.Clear(ClearBufferMask.ColorBufferBit)
                     Gl.MatrixMode(MatrixMode.Modelview);
-                   (* Gl.LoadIdentity();
+                    Gl.LoadIdentity();
                     Gl.Translate( 0.0, 0.0, -15.0 )
                     Gl.UseProgram(shaderProgram)  
                     (this :> GraphicsManager).GraphicsListeners 
-                    |> Seq.iter(fun listener-> listener.Render(this) ) *)
+                    |> Seq.iter(fun listener-> listener.Render(this) ) 
                     Glfw.SwapBuffers(window)
                     Glfw.PollEvents();
         member this.Start(userfunc) =
