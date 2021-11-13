@@ -70,13 +70,16 @@ type GraphicsManagerGLFW()as this=
     let vertShaderCode =
         [|
             "#version 330 core\n"
-            "layout (location = 0) in vec3 aPos;\n"
+            "out vec4 FragColor;\n"
+            "in vec3 ourColor;\n"
+            "in vec2 TexCoord;\n"
+            "uniform sampler2D ourTexture;\n"
             "void main()\n"
             "{\n"
-            "   gl_Position = vec4(aPos.x, aPos.y, aPos.z, 1.0);\n"
+            "    FragColor = texture(ourTexture, TexCoord);\n"
             "}\n"
         |]
-     
+    
     
     let mutable xformStack = List.Empty
     let mutable clipStack = List.Empty
@@ -89,23 +92,43 @@ type GraphicsManagerGLFW()as this=
             // be sped up by grouping draws and caching textures
             //setup texture
             let texid = Gl.GenTexture()
+            Gl.BindTexture(TextureTarget.Texture2d,texid)
+            Gl.TexParameteri(TextureTarget.Texture2d, TextureParameterName.TextureWrapS,
+                             TextureWrapMode.Repeat)
+            Gl.TexParameteri(TextureTarget.Texture2d, TextureParameterName.TextureWrapT,
+                             TextureWrapMode.Repeat)
+            Gl.TexParameteri(TextureTarget.Texture2d, TextureParameterName.TextureMinFilter,
+                             TextureMinFilter.LinearMipmapLinear)
+            Gl.TexParameteri(TextureTarget.Texture2d, TextureParameterName.TextureMagFilter,
+                             TextureMagFilter.Linear)
+            
             let stbImage = (img :?> OglImage).img
             let srcSize = img.Size
-            Gl.BindTexture(TextureTarget.Texture2d,texid)
-            Gl.TexImage2D(TextureTarget.Texture2d, 0,InternalFormat.Rgba,
-                          int srcSize.X, int srcSize.Y, 0, PixelFormat.Rgba,
-                          PixelType.UnsignedInt,stbImage.Data)
-
-            //draw a quad
+            Gl.TexImage2D(TextureTarget.Texture2d, 0, InternalFormat.Rgba,
+                          int srcSize.X, int srcSize.Y, 0, PixelFormat.Rgb, PixelType.UnsignedByte,
+                          stbImage.Data);
+            Gl.GenerateMipmap(TextureTarget.Texture2d);
+           
+           
+            //    draw a quad
+            
             Gl.Begin(PrimitiveType.Polygon)
-            Gl.TexCoord2(0,0)
-            Gl.Vertex2(0, 0)
+            let wsz = window.Value.GetSize()
+            let sx = (img.Size.X/2f)/float32 (fst wsz)
+            let sy = (img.Size.Y/2f)/float32 (snd wsz)
+            
+           // Gl.TexCoord2(0,0)
+            Gl.Color3(1.0,1.0,1.0)
+            Gl.Vertex2(-sx, -sy)
             Gl.TexCoord2(1,0)
-            Gl.Vertex2(img.Size.X, 0f)
+            Gl.Color3(1.0,1.0,1.0)
+            Gl.Vertex2(sx, -sy)
             Gl.TexCoord2(1,1)
-            Gl.Vertex2(img.Size.X, img.Size.Y)
+            Gl.Color3(1.0,1.0,1.0)
+            Gl.Vertex2(sx, sy)
             Gl.TexCoord2(0,1)
-            Gl.Vertex2(0f,img.Size.Y);
+            Gl.Color3(1.0,1.0,1.0)
+            Gl.Vertex2(-sx,sy);
             Gl.End()
             
             
