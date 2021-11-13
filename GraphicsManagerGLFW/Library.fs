@@ -62,29 +62,31 @@ type GraphicsManagerGLFW()as this=
       [|                                                  
         "#version 330 core\n"
         "out vec4 FragColor;\n"
+        "in vec3 ourColor;\n"
+        "in vec2 TexCoord;\n"
+        "uniform sampler2D ourTexture;\n"
         "void main()\n"
         "{\n"
-        "   FragColor = vec4(1.0f, 0.5f, 0.2f, 1.0f);\n"
-        "}\n"                                             
+        "    FragColor = texture(ourTexture, TexCoord);\n"
+        "}\n"                                           
       |]                                                  
     let vertShaderCode =
         [|
             "#version 330 core\n"
-            "out vec4 FragColor;\n"
-            "in vec3 ourColor;\n"
-            "in vec2 TexCoord;\n"
-            "uniform sampler2D ourTexture;\n"
+            "layout (location = 0) in vec3 aPos;\n"
             "void main()\n"
             "{\n"
-            "    FragColor = texture(ourTexture, TexCoord);\n"
+            "    gl_Position = vec4(aPos.x, aPos.y, aPos.z, 1.0);\n"
             "}\n"
         |]
-    
+   
     
     let mutable xformStack = List.Empty
     let mutable clipStack = List.Empty
     
     let mutable window : Window option = None
+    
+    member val shaderProgram:uint32 = 0u with get, set
                                                                             
     interface GraphicsManager with
         member this.DrawImage(img:Image) (pos) =
@@ -107,27 +109,26 @@ type GraphicsManagerGLFW()as this=
             Gl.TexImage2D(TextureTarget.Texture2d, 0, InternalFormat.Rgba,
                           int srcSize.X, int srcSize.Y, 0, PixelFormat.Rgb, PixelType.UnsignedByte,
                           stbImage.Data);
-            Gl.GenerateMipmap(TextureTarget.Texture2d);
-           
+            Gl.GenerateMipmap(TextureTarget.Texture2d)
+            Gl.ActiveTexture(TextureUnit.Texture0); // activate the texture unit first before binding texture
+            Gl.BindTexture(TextureTarget.Texture2d, texid);
            
             //    draw a quad
-            
+            let loc =
+                Gl.GetUniformLocation(this.shaderProgram, "ourTexture")
+            Gl.Uniform1i(loc,1,0)
             Gl.Begin(PrimitiveType.Polygon)
             let wsz = window.Value.GetSize()
             let sx = (img.Size.X/2f)/float32 (fst wsz)
             let sy = (img.Size.Y/2f)/float32 (snd wsz)
             
-           // Gl.TexCoord2(0,0)
-            Gl.Color3(1.0,1.0,1.0)
+            Gl.TexCoord2(0,0)
             Gl.Vertex2(-sx, -sy)
             Gl.TexCoord2(1,0)
-            Gl.Color3(1.0,1.0,1.0)
             Gl.Vertex2(sx, -sy)
             Gl.TexCoord2(1,1)
-            Gl.Color3(1.0,1.0,1.0)
             Gl.Vertex2(sx, sy)
             Gl.TexCoord2(0,1)
-            Gl.Color3(1.0,1.0,1.0)
             Gl.Vertex2(-sx,sy);
             Gl.End()
             
@@ -195,10 +196,10 @@ type GraphicsManagerGLFW()as this=
             Gl.ShaderSource(fshader,fragShaderCode)
             Gl.CompileShader(fshader)
             CheckCompile(fshader)
-            let shaderProgram = Gl.CreateProgram()
-            Gl.AttachShader(shaderProgram,fshader)
-            Gl.AttachShader(shaderProgram,vshader)
-            Gl.LinkProgram(shaderProgram)
+            this.shaderProgram <- Gl.CreateProgram()
+            Gl.AttachShader(this.shaderProgram,fshader)
+            Gl.AttachShader(this.shaderProgram,vshader)
+            Gl.LinkProgram(this.shaderProgram)
             
             let window = window.Value // convenience
            
@@ -220,7 +221,7 @@ type GraphicsManagerGLFW()as this=
                     Gl.MatrixMode(MatrixMode.Modelview);
                     Gl.LoadIdentity();
                     Gl.Translate( 0.0, 0.0, -15.0 )
-                    Gl.UseProgram(shaderProgram)  
+                    Gl.UseProgram(this.shaderProgram)  
                     (this :> GraphicsManager).GraphicsListeners 
                     |> Seq.iter(fun listener-> listener.Render(this) ) 
                     Glfw.SwapBuffers(window)
