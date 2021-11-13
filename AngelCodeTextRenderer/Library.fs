@@ -38,17 +38,17 @@ type AngelCodeTextRenderer() =
                     let lastChar = snd state
                     let acChar: Character = font.GetCharacter char
                     let acImage: Image = font.GetPage(acChar.TexturePage)
-                    let rectPos = graphics.NewVector (float acChar.X) (float acChar.Y)
-                    let rectSz =  graphics.NewVector (float acChar.Width) (float acChar.Height)
+                    let rectPos = graphics.NewVector (float32 acChar.X) (float32 acChar.Y)
+                    let rectSz =  graphics.NewVector (float32 acChar.Width) (float32 acChar.Height)
 
                     let charImage =
                         acImage.SubImage(Rectangle(rectPos,rectSz))
-                    let offset = graphics.NewVector (float acChar.XOffset) (float acChar.YOffset)
+                    let offset = graphics.NewVector (float32 acChar.XOffset) (float32 acChar.YOffset)
 
                     graphics.DrawImage charImage (pos + offset)
 
                     let kern = font.GetKern(lastChar, char)
-                    let newX = pos.X + (float acChar.Width) + kern
+                    let newX = pos.X + (float32 acChar.Width) + kern
                         
                     ((graphics.NewVector newX pos.Y),char)    
                 )
@@ -80,7 +80,7 @@ and AngelCodeFont(bmFont) =
     member this.GetPage(id) = pages.[id].Force()
     member this.GetCharacter char = bitmapFont.Characters.[char]
 
-    member this.GetKern(last, curr) = bitmapFont.GetKerning(last, curr)
+    member this.GetKern(last, curr) = float32 (bitmapFont.GetKerning(last, curr))
 
     interface Font with
         member this.MakeText(text) = AngelCodeText(text, this) :> Text

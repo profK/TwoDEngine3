@@ -49,9 +49,11 @@ type OglImage(image:ImageResult,?rect) as this =
        
         override this.SubImage rect =
             OglImage(this.img,rect) :> Image
-        override val Size =
-            let oglImage = this :> OglImage
+        override this.Size with get() =
+            let oglImage = this :> OglImage                      
             OglVector(this.src.Size.X, this.src.Size.Y) :> Vector
+            
+            
 type GraphicsManagerGLFW()as this=
     //Create a window with the oop binding
     //
@@ -90,6 +92,7 @@ type GraphicsManagerGLFW()as this=
             Gl.TexImage2D(TextureTarget.Texture2d, 0,InternalFormat.Rgba,
                           int srcSize.X, int srcSize.Y, 0, PixelFormat.Rgba,
                           PixelType.UnsignedByte,stbImage.Data)
+
             //draw a quad
             Gl.Begin(PrimitiveType.Polygon)
             Gl.TexCoord2(0,0)
@@ -165,14 +168,19 @@ type GraphicsManagerGLFW()as this=
                    | None -> true
                 do
                     Gl.Clear(ClearBufferMask.ColorBufferBit|||ClearBufferMask.DepthBufferBit)
-                    Gl.UseProgram(shaderProgram)
+                 
+                    Gl.MatrixMode(MatrixMode.Modelview);
+                    Gl.LoadIdentity();
+                    Gl.Translate( 0.0, 0.0, -15.0 )
+                    Gl.UseProgram(shaderProgram)  
                     (this :> GraphicsManager).GraphicsListeners 
                     |> Seq.iter(fun listener-> listener.Render(this) )
                     Glfw.SwapBuffers(window)
                     Glfw.PollEvents();
         member this.Start(userfunc) =
+            userfunc(this)  
             (this :> GraphicsManager).Start()
-            userfunc(this)
+            
         member this.TranslationTransform x y =
             OglXform(glm.translate(mat4.identity(),
                                    vec3(float32 x,float32 y,0f))) :> Transform

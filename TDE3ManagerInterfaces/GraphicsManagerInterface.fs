@@ -14,11 +14,11 @@ type Vector() =
      
 type Rectangle(pos, sz) =
     member val Position:Vector = pos
-    member val Size:Vector =sz
+    member val Size:Vector =sz with get
 type Image =
 
     abstract SubImage : Rectangle -> Image
-    abstract Size : Vector
+    abstract Size : Vector with get
 
 type Transform =
     abstract Multiply : Vector -> Vector
