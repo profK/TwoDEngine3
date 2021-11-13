@@ -186,8 +186,8 @@ type GraphicsManagerGLFW()as this=
             //Glfw.WindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
             //Glfw.WindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
             //Glfw.WindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
-            window <- Some(new Window(800, 600, "Glfw test window")  )
-            Glfw.MakeContextCurrent(window.Value);
+            window <- Some(new Window(1024, 768, "Glfw test window"))  
+            Glfw.MakeContextCurrent(window.Value)
             let vshader = Gl.CreateShader(ShaderType.VertexShader)
             Gl.ShaderSource(vshader,vertShaderCode)
             Gl.CompileShader(vshader)
