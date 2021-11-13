@@ -5,6 +5,7 @@ open System.IO
 open System.Numerics
 open System.Numerics
 open System.Security.Cryptography
+open System.Text
 open System.Threading
 open GlmNet
 open StbImageSharp
@@ -91,7 +92,7 @@ type GraphicsManagerGLFW()as this=
             Gl.BindTexture(TextureTarget.Texture2d,texid)
             Gl.TexImage2D(TextureTarget.Texture2d, 0,InternalFormat.Rgba,
                           int srcSize.X, int srcSize.Y, 0, PixelFormat.Rgba,
-                          PixelType.UnsignedByte,stbImage.Data)
+                          PixelType.UnsignedInt,stbImage.Data)
 
             //draw a quad
             Gl.Begin(PrimitiveType.Polygon)
@@ -139,14 +140,36 @@ type GraphicsManagerGLFW()as this=
             window.Value.GetSize(ref w, ref h)
             OglVector(float32 w,float32 h) :> Vector
         member this.Start() =
+            let CheckCompile shader =
+                let mutable success = 99
+                Gl.GetShader(shader, ShaderParameterName.CompileStatus,&success)
+                if success=Gl.FALSE then
+                    let mutable logSize = 512
+                    let message = StringBuilder(512)
+                    message.EnsureCapacity(512) |> ignore
+                    Gl.GetShaderInfoLog(shader,512,&logSize, message)
+                    printfn $"Compile Error: %s{message.ToString()}"
+                    false
+                else
+                    printfn $"Shader Compiled" 
+                    true
+                    
+            let mutable buffers = [| uint32 0 |]
+            Gl.GenBuffers(buffers)
             Glfw.Init() |> ignore
+            //Glfw.WindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
+            //Glfw.WindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
+            //Glfw.WindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
             window <- Some(new Window(800, 600, "Glfw test window")  )
+            Glfw.MakeContextCurrent(window.Value);
             let vshader = Gl.CreateShader(ShaderType.VertexShader)
             Gl.ShaderSource(vshader,vertShaderCode)
             Gl.CompileShader(vshader)
+            CheckCompile(vshader)
             let fshader =Gl.CreateShader(ShaderType.FragmentShader)
             Gl.ShaderSource(fshader,fragShaderCode)
             Gl.CompileShader(fshader)
+            CheckCompile(fshader)
             let shaderProgram = Gl.CreateProgram()
             Gl.AttachShader(shaderProgram,fshader)
             Gl.AttachShader(shaderProgram,vshader)
@@ -167,14 +190,14 @@ type GraphicsManagerGLFW()as this=
                         false
                    | None -> true
                 do
-                    Gl.Clear(ClearBufferMask.ColorBufferBit|||ClearBufferMask.DepthBufferBit)
-                 
+                    Gl.ClearColor(0.0f, 0.0f, 1.0f, 1.0f)     
+                    Gl.Clear(ClearBufferMask.ColorBufferBit)
                     Gl.MatrixMode(MatrixMode.Modelview);
-                    Gl.LoadIdentity();
+                   (* Gl.LoadIdentity();
                     Gl.Translate( 0.0, 0.0, -15.0 )
                     Gl.UseProgram(shaderProgram)  
                     (this :> GraphicsManager).GraphicsListeners 
-                    |> Seq.iter(fun listener-> listener.Render(this) )
+                    |> Seq.iter(fun listener-> listener.Render(this) ) *)
                     Glfw.SwapBuffers(window)
                     Glfw.PollEvents();
         member this.Start(userfunc) =
