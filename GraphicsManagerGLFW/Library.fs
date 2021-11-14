@@ -15,7 +15,7 @@ open OpenGL
 open glfw3
 
 let NormalizeTo (value:float32) (max:float32) =
-        (value*2f/max)-1f
+        (value/max)
 type OglVector(vec:vec4)  =
     inherit Vector() 
     member this.oglVec = vec
@@ -71,12 +71,7 @@ type OglImage(image:ImageResult,?rect,?texid) as this =
     member val src = srcRect with get
     member val img:ImageResult = image
    
-    member val texCoord = ([|
-        NormalizeTo (srcRect.Position.X) (float32 (image.Width))
-        NormalizeTo (srcRect.Position.Y) (float32 (image.Height))
-        NormalizeTo (srcRect.Position.X+srcRect.Size.X) (float32 image.Width)
-        NormalizeTo (srcRect.Position.Y+srcRect.Size.Y) (float32 image.Height)
-    |]) with get
+   
     
 
     interface Image with
@@ -91,26 +86,36 @@ type OglImage(image:ImageResult,?rect,?texid) as this =
 type GraphicsManagerGLFW()as this=
     //Create a window with the oop binding
     //
-    let fragShaderCode =                                    
-      [| """
-#version 330 core
-out vec4 FragColor;
-
-void main()
-{
-    FragColor = vec4(1.0f, 0.5f, 0.2f, 1.0f);
-} 
-    """|]                                                  
     let vertShaderCode =
         [|"""
-#version 330 core
-layout (location = 0) in vec3 aPos;
+    #version 330 core
+    layout (location = 0) in vec3 aPos;
+    layout (location = 1) in vec2 aTexCoord;
 
-void main()
-{
-    gl_Position = vec4(aPos.x, aPos.y, aPos.z, 1.0);
-}
+    out vec2 TexCoord;
+
+    void main()
+    {
+        gl_Position = vec4(aPos, 1.0);
+        TexCoord = aTexCoord;
+    }  
         """|]
+    
+    
+    let fragShaderCode =                                    
+        [| """
+    #version 330 core
+    out vec4 FragColor;
+    in vec2 TexCoord;
+
+    uniform sampler2D ourTexture;
+
+    void main()
+    {
+        FragColor = vec4(TexCoord.x,TexCoord.y,0.0,1.0); 
+    }
+        """|]                                                  
+
    
     
     let mutable xformStack = List.Empty
@@ -134,34 +139,47 @@ void main()
             |]
             
             let texLR = [| 
-                NormalizeTo (oglImage.src.Position.X+oglImage.src.Size.X) img.Size.X
-                NormalizeTo (oglImage.src.Position.Y+oglImage.src.Size.Y) img.Size.Y
+                (oglImage.src.Position.X+oglImage.src.Size.X)/img.Size.X
+                (oglImage.src.Position.Y+oglImage.src.Size.Y)/img.Size.Y
             |]
             let vertexCoords =
                 [|
-                //position         color                texture
-                -xOfs;-yOfs;0f;  1.0f;1.0f;1.0f;  texTl.[0];texTl.[1];
-                 xOfs;-yOfs;0f;  1.0f;1.0f;1.0f;  texLR.[0];texTl.[1];
-                 xOfs;yOfs;0f;   1.0f;1.0f;1.0f;  texLR.[0];texLR.[1];
-                 -xOfs;yOfs;0f;  1.0f;1.0f;1.0f;  texLR.[0];texTl.[1];
-               //  -0.5f; -0.5f; 0.0f;
-               //   0.5f; -0.5f; 0.0f;
-               //   0.0f;  0.5f; 0.0f
+                //position         texture
+                -xOfs;-yOfs;0f;    texTl.[0];texTl.[1];
+                 xOfs;-yOfs;0f;    texLR.[0];texTl.[1];
+                 xOfs;yOfs;0f;     texLR.[0];texLR.[1];
+                 -xOfs;yOfs;0f;    texTl.[0];texLR.[1];
+              
             |]
            
            // make vertex buffer
             let vbuff = [| uint32 0 |]
             Gl.GenBuffers(vbuff)
             Gl.BindBuffer(BufferTarget.ArrayBuffer,vbuff.[0])
-            Gl.BufferData(BufferTarget.ArrayBuffer,(uint32) (sizeof<float32>*8*4), vertexCoords,
+            Gl.BufferData(BufferTarget.ArrayBuffer,(uint32) (sizeof<float32>*5*4), vertexCoords,
                           BufferUsage.StaticDraw)
-            Gl.VertexAttribPointer(0u, 3, VertexAttribType.Float, false, 8*sizeof<float32>, 0);
-            Gl.EnableVertexAttribArray(0u)  
-            Gl.UseProgram(this.shaderProgram)
+            Gl.VertexAttribPointer(0u, 3, VertexAttribType.Float, false, 5*sizeof<float32>, 0);
+            Gl.EnableVertexAttribArray(0u)
+            Gl.VertexAttribPointer(1u, 2, VertexAttribType.Float, false, 5*sizeof<float32>,
+                                   3* sizeof<float32>);
+            Gl.EnableVertexAttribArray(1u)
+            
+            
+            
             Gl.BindVertexArray(vbuff.[0])
             //make texture buffer
-          
-            
+            let texID = Gl.GenTexture();
+              
+           
+            Gl.TexImage2D(TextureTarget.Texture2d, 0, InternalFormat.Rgba,
+                          oglImage.img.Width, oglImage.img.Height, 0,
+                          PixelFormat.Rgba, PixelType.UnsignedInt8888,
+                          oglImage.img.Data);
+            Gl.GenerateMipmap(TextureTarget.Texture2d)
+            let texLoc = Gl.GetUniformLocation(this.shaderProgram, "ourColor");
+            Gl.UseProgram(this.shaderProgram)
+            Gl.BindTexture(TextureTarget.Texture2d, texID)
+            //draw
             Gl.DrawArrays(PrimitiveType.Quads, 0, 4);
         member val GraphicsListeners:(GraphicsListener list) = List.Empty  with get, set
         member val IdentityTransform =
