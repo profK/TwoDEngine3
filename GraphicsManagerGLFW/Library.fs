@@ -14,6 +14,8 @@ open glfw3
 open OpenGL
 open glfw3
 
+let NormalizeTo (value:float32) (max:float32) =
+        (value*2f/max)-1f
 type OglVector(vec:vec4)  =
     inherit Vector() 
     member this.oglVec = vec
@@ -64,8 +66,7 @@ type OglImage(image:ImageResult,?rect,?texid) as this =
             Gl.ActiveTexture(TextureUnit.Texture0); // activate the texture unit first before binding texture
             Gl.BindTexture(TextureTarget.Texture2d, texid)
             texid
-    let NormalizeTo (value:float32) (div:float32) =
-        (value*2f/div)-1f
+    
     member val texID = (defaultArg texid (MakeTexture())) with get
     member val src = srcRect with get
     member val img:ImageResult = image
@@ -126,9 +127,23 @@ void main()
             let sHeight = float32(snd wsz)
             let xOfs = (img.Size.X/sWidth)/2f
             let yOfs = (img.Size.X/sWidth)/2f
-            let vertexCoords = [|
-                -xOfs;-yOfs;0f;  xOfs;-yOfs;0f;
-                 xOfs;yOfs;0f;  -xOfs;yOfs;0f
+            let oglImage = (img :?> OglImage)
+            let texTl = [|
+                NormalizeTo oglImage.src.Position.X img.Size.X
+                NormalizeTo oglImage.src.Position.Y img.Size.Y
+            |]
+            
+            let texLR = [| 
+                NormalizeTo (oglImage.src.Position.X+oglImage.src.Size.X) img.Size.X
+                NormalizeTo (oglImage.src.Position.Y+oglImage.src.Size.Y) img.Size.Y
+            |]
+            let vertexCoords =
+                [|
+                //position         color                texture
+                -xOfs;-yOfs;0f;  1.0f;1.0f;1.0f;  texTl.[0];texTl.[1];
+                 xOfs;-yOfs;0f;  1.0f;1.0f;1.0f;  texLR.[0];texTl.[1];
+                 xOfs;yOfs;0f;   1.0f;1.0f;1.0f;  texLR.[0];texLR.[1];
+                 -xOfs;yOfs;0f;  1.0f;1.0f;1.0f;  texLR.[0];texTl.[1];
                //  -0.5f; -0.5f; 0.0f;
                //   0.5f; -0.5f; 0.0f;
                //   0.0f;  0.5f; 0.0f
@@ -138,9 +153,9 @@ void main()
             let vbuff = [| uint32 0 |]
             Gl.GenBuffers(vbuff)
             Gl.BindBuffer(BufferTarget.ArrayBuffer,vbuff.[0])
-            Gl.BufferData(BufferTarget.ArrayBuffer,(uint32) (sizeof<float32>*3*4), vertexCoords,
+            Gl.BufferData(BufferTarget.ArrayBuffer,(uint32) (sizeof<float32>*8*4), vertexCoords,
                           BufferUsage.StaticDraw)
-            Gl.VertexAttribPointer(0u, 3, VertexAttribType.Float, false, 0, 0);
+            Gl.VertexAttribPointer(0u, 3, VertexAttribType.Float, false, 8*sizeof<float32>, 0);
             Gl.EnableVertexAttribArray(0u)  
             Gl.UseProgram(this.shaderProgram)
             Gl.BindVertexArray(vbuff.[0])
