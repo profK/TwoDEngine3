@@ -134,7 +134,7 @@ void main()
                //   0.0f;  0.5f; 0.0f
             |]
            
-           
+           // make vertex buffer
             let vbuff = [| uint32 0 |]
             Gl.GenBuffers(vbuff)
             Gl.BindBuffer(BufferTarget.ArrayBuffer,vbuff.[0])
@@ -143,7 +143,10 @@ void main()
             Gl.VertexAttribPointer(0u, 3, VertexAttribType.Float, false, 0, 0);
             Gl.EnableVertexAttribArray(0u)  
             Gl.UseProgram(this.shaderProgram)
-            Gl.BindVertexArray(vbuff.[0]);
+            Gl.BindVertexArray(vbuff.[0])
+            //make texture buffer
+          
+            
             Gl.DrawArrays(PrimitiveType.Quads, 0, 4);
         member val GraphicsListeners:(GraphicsListener list) = List.Empty  with get, set
         member val IdentityTransform =
