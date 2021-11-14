@@ -92,29 +92,22 @@ type GraphicsManagerGLFW()as this=
     //
     let fragShaderCode =                                    
       [| """
-#version 330
- 
-in vec2 texCoordV;
-out vec4 colorOut;
- 
-void main() {
-    colorOut = vec4(texCoordV, 0.0, 0.0);    
-}
+#version 330 core
+out vec4 FragColor;
+
+void main()
+{
+    FragColor = vec4(1.0f, 0.5f, 0.2f, 1.0f);
+} 
     """|]                                                  
     let vertShaderCode =
         [|"""
-#version 330    
-uniform mat4 pvm;
- 
-in vec4 position;
-in vec2 texCoord;
- 
-out vec2 texCoordV;
- 
-void main() {
- 
-    texCoordV = texCoord;
-    gl_Position = position;
+#version 330 core
+layout (location = 0) in vec3 aPos;
+
+void main()
+{
+    gl_Position = vec4(aPos.x, aPos.y, aPos.z, 1.0);
 }
         """|]
    
@@ -135,8 +128,10 @@ void main() {
             let yOfs = (img.Size.X/sWidth)/2f
             let vertexCoords = [|
                 -xOfs;-yOfs;0f;  xOfs;-yOfs;0f;
-                xOfs;yOfs;0f;  -xOfs;yOfs;0f
-                
+                 xOfs;yOfs;0f;  -xOfs;yOfs;0f
+               //  -0.5f; -0.5f; 0.0f;
+               //   0.5f; -0.5f; 0.0f;
+               //   0.0f;  0.5f; 0.0f
             |]
            
            
@@ -145,7 +140,7 @@ void main() {
             Gl.BindBuffer(BufferTarget.ArrayBuffer,vbuff.[0])
             Gl.BufferData(BufferTarget.ArrayBuffer,(uint32) (sizeof<float32>*3*4), vertexCoords,
                           BufferUsage.StaticDraw)
-            Gl.VertexAttribPointer(0u, 3, VertexAttribType.Float, false, 3 * sizeof<float>, 0);
+            Gl.VertexAttribPointer(0u, 3, VertexAttribType.Float, false, 0, 0);
             Gl.EnableVertexAttribArray(0u)  
             Gl.UseProgram(this.shaderProgram)
             Gl.BindVertexArray(vbuff.[0]);
