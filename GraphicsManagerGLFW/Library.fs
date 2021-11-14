@@ -41,7 +41,9 @@ type OglXform(glMatrix:mat4) =
             OglVector(newVec) :> Vector
 
 type OglImage(image:ImageResult,?rect,?texid) as this =
-   
+    let srcRect:Rectangle = (defaultArg rect
+                  (Rectangle(OglVector(0f,0f),
+                        OglVector(float32 image.Width,float32 image.Height))))
     
     let MakeTexture() =
             let texid = Gl.GenTexture()
@@ -65,19 +67,17 @@ type OglImage(image:ImageResult,?rect,?texid) as this =
     let NormalizeTo (value:float32) (div:float32) =
         (value*2f/div)-1f
     member val texID = (defaultArg texid (MakeTexture())) with get
-    member val src:Rectangle = (defaultArg rect
-                  (Rectangle(OglVector(0f,0f),
-                        OglVector(float32 image.Width,float32 image.Height))))
+    member val src = srcRect with get
     member val img:ImageResult = image
    
     member val texCoord = ([|
-        NormalizeTo ((this.src).Position.X) (float32 (this.img).Width)
-        NormalizeTo ((this.src).Position.Y) (float32 (this.img).Height)
-        NormalizeTo ((this.src).Position.X+this.src.Size.X) (float32 (this.img).Width)
-        NormalizeTo ((this.src).Position.Y+this.src.Size.Y) (float32 (this.img).Height)
+        NormalizeTo (srcRect.Position.X) (float32 (image.Width))
+        NormalizeTo (srcRect.Position.Y) (float32 (image.Height))
+        NormalizeTo (srcRect.Position.X+srcRect.Size.X) (float32 image.Width)
+        NormalizeTo (srcRect.Position.Y+srcRect.Size.Y) (float32 image.Height)
     |]) with get
     
-    member val 
+
     interface Image with
        
         override this.SubImage rect =
@@ -134,15 +134,22 @@ void main() {
             let xOfs = (img.Size.X/sWidth)/2f
             let yOfs = (img.Size.X/sWidth)/2f
             let vertexCoords = [|
-                -xOfs,-yOfs,0f,  xOfs,-yOfs,0f,
-                xOfs,yOfs,0f,  -xOfs,yOfs,0f
+                -xOfs;-yOfs;0f;  xOfs;-yOfs;0f;
+                xOfs;yOfs;0f;  -xOfs;yOfs;0f
                 
             |]
            
+           
+            let vbuff = [| uint32 0 |]
+            Gl.GenBuffers(vbuff)
+            Gl.BindBuffer(BufferTarget.ArrayBuffer,vbuff.[0])
+            Gl.BufferData(BufferTarget.ArrayBuffer,(uint32) (sizeof<float32>*3*4), vertexCoords,
+                          BufferUsage.StaticDraw)
+            Gl.VertexAttribPointer(0u, 3, VertexAttribType.Float, false, 3 * sizeof<float>, 0);
+            Gl.EnableVertexAttribArray(0u)  
             Gl.UseProgram(this.shaderProgram)
-            
-            
-            
+            Gl.BindVertexArray(vbuff.[0]);
+            Gl.DrawArrays(PrimitiveType.Quads, 0, 4);
         member val GraphicsListeners:(GraphicsListener list) = List.Empty  with get, set
         member val IdentityTransform =
             OglXform(mat4.identity()) :> Transform
