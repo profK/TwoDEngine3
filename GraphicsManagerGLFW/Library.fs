@@ -40,12 +40,44 @@ type OglXform(glMatrix:mat4) =
             let newVec = this.glMat * oglvec 
             OglVector(newVec) :> Vector
 
-type OglImage(image:ImageResult,?rect) as this =
+type OglImage(image:ImageResult,?rect,?texid) as this =
+   
     
+    let MakeTexture() =
+            let texid = Gl.GenTexture()
+            Gl.BindTexture(TextureTarget.Texture2d,texid)
+            Gl.TexParameteri(TextureTarget.Texture2d, TextureParameterName.TextureWrapS,
+                             TextureWrapMode.Repeat)
+            Gl.TexParameteri(TextureTarget.Texture2d, TextureParameterName.TextureWrapT,
+                             TextureWrapMode.Repeat)
+            Gl.TexParameteri(TextureTarget.Texture2d, TextureParameterName.TextureMinFilter,
+                             TextureMinFilter.LinearMipmapLinear)
+            Gl.TexParameteri(TextureTarget.Texture2d, TextureParameterName.TextureMagFilter,
+                             TextureMagFilter.Linear)
+            
+            Gl.TexImage2D(TextureTarget.Texture2d, 0, InternalFormat.Rgba,
+                          image.Width, image.Height, 0, PixelFormat.Rgb, PixelType.UnsignedByte,
+                          image.Data);
+            Gl.GenerateMipmap(TextureTarget.Texture2d)
+            Gl.ActiveTexture(TextureUnit.Texture0); // activate the texture unit first before binding texture
+            Gl.BindTexture(TextureTarget.Texture2d, texid)
+            texid
+    let NormalizeTo (value:float32) (div:float32) =
+        (value*2f/div)-1f
+    member val texID = (defaultArg texid (MakeTexture())) with get
     member val src:Rectangle = (defaultArg rect
                   (Rectangle(OglVector(0f,0f),
                         OglVector(float32 image.Width,float32 image.Height))))
     member val img:ImageResult = image
+   
+    member val texCoord = ([|
+        NormalizeTo ((this.src).Position.X) (float32 (this.img).Width)
+        NormalizeTo ((this.src).Position.Y) (float32 (this.img).Height)
+        NormalizeTo ((this.src).Position.X+this.src.Size.X) (float32 (this.img).Width)
+        NormalizeTo ((this.src).Position.Y+this.src.Size.Y) (float32 (this.img).Height)
+    |]) with get
+    
+    member val 
     interface Image with
        
         override this.SubImage rect =
@@ -59,26 +91,32 @@ type GraphicsManagerGLFW()as this=
     //Create a window with the oop binding
     //
     let fragShaderCode =                                    
-      [|                                                  
-        "#version 330 core\n"
-        "out vec4 FragColor;\n"
-        "in vec3 ourColor;\n"
-        "in vec2 TexCoord;\n"
-        "uniform sampler2D ourTexture;\n"
-        "void main()\n"
-        "{\n"
-        "    FragColor = texture(ourTexture, TexCoord);\n"
-        "}\n"                                           
-      |]                                                  
+      [| """
+#version 330
+ 
+in vec2 texCoordV;
+out vec4 colorOut;
+ 
+void main() {
+    colorOut = vec4(texCoordV, 0.0, 0.0);    
+}
+    """|]                                                  
     let vertShaderCode =
-        [|
-            "#version 330 core\n"
-            "layout (location = 0) in vec3 aPos;\n"
-            "void main()\n"
-            "{\n"
-            "    gl_Position = vec4(aPos.x, aPos.y, aPos.z, 1.0);\n"
-            "}\n"
-        |]
+        [|"""
+#version 330    
+uniform mat4 pvm;
+ 
+in vec4 position;
+in vec2 texCoord;
+ 
+out vec2 texCoordV;
+ 
+void main() {
+ 
+    texCoordV = texCoord;
+    gl_Position = position;
+}
+        """|]
    
     
     let mutable xformStack = List.Empty
@@ -90,47 +128,19 @@ type GraphicsManagerGLFW()as this=
                                                                             
     interface GraphicsManager with
         member this.DrawImage(img:Image) (pos) =
-            // This is a naive implementation that could defintiely
-            // be sped up by grouping draws and caching textures
-            //setup texture
-            let texid = Gl.GenTexture()
-            Gl.BindTexture(TextureTarget.Texture2d,texid)
-            Gl.TexParameteri(TextureTarget.Texture2d, TextureParameterName.TextureWrapS,
-                             TextureWrapMode.Repeat)
-            Gl.TexParameteri(TextureTarget.Texture2d, TextureParameterName.TextureWrapT,
-                             TextureWrapMode.Repeat)
-            Gl.TexParameteri(TextureTarget.Texture2d, TextureParameterName.TextureMinFilter,
-                             TextureMinFilter.LinearMipmapLinear)
-            Gl.TexParameteri(TextureTarget.Texture2d, TextureParameterName.TextureMagFilter,
-                             TextureMagFilter.Linear)
-            
-            let stbImage = (img :?> OglImage).img
-            let srcSize = img.Size
-            Gl.TexImage2D(TextureTarget.Texture2d, 0, InternalFormat.Rgba,
-                          int srcSize.X, int srcSize.Y, 0, PixelFormat.Rgb, PixelType.UnsignedByte,
-                          stbImage.Data);
-            Gl.GenerateMipmap(TextureTarget.Texture2d)
-            Gl.ActiveTexture(TextureUnit.Texture0); // activate the texture unit first before binding texture
-            Gl.BindTexture(TextureTarget.Texture2d, texid);
-           
-            //    draw a quad
-            let loc =
-                Gl.GetUniformLocation(this.shaderProgram, "ourTexture")
-            Gl.Uniform1i(loc,1,0)
-            Gl.Begin(PrimitiveType.Polygon)
             let wsz = window.Value.GetSize()
-            let sx = (img.Size.X/2f)/float32 (fst wsz)
-            let sy = (img.Size.Y/2f)/float32 (snd wsz)
+            let sWidth = float32(fst wsz)
+            let sHeight = float32(snd wsz)
+            let xOfs = (img.Size.X/sWidth)/2f
+            let yOfs = (img.Size.X/sWidth)/2f
+            let vertexCoords = [|
+                -xOfs,-yOfs,0f,  xOfs,-yOfs,0f,
+                xOfs,yOfs,0f,  -xOfs,yOfs,0f
+                
+            |]
+           
+            Gl.UseProgram(this.shaderProgram)
             
-            Gl.TexCoord2(0,0)
-            Gl.Vertex2(-sx, -sy)
-            Gl.TexCoord2(1,0)
-            Gl.Vertex2(sx, -sy)
-            Gl.TexCoord2(1,1)
-            Gl.Vertex2(sx, sy)
-            Gl.TexCoord2(0,1)
-            Gl.Vertex2(-sx,sy);
-            Gl.End()
             
             
         member val GraphicsListeners:(GraphicsListener list) = List.Empty  with get, set
