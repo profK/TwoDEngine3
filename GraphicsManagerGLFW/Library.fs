@@ -45,34 +45,33 @@ type OglXform(glMatrix:mat4) =
 type OglImage(image:ImageResult,?rect,?texid) as this =
     let srcRect:Rectangle = (defaultArg rect
                   (Rectangle(OglVector(0f,0f),
-                        OglVector(float32 image.Width,float32 image.Height))))
-    
-    let MakeTexture() =
-            let texid = Gl.GenTexture()
-            Gl.BindTexture(TextureTarget.Texture2d,texid)
-            Gl.TexParameteri(TextureTarget.Texture2d, TextureParameterName.TextureWrapS,
-                             TextureWrapMode.Repeat)
-            Gl.TexParameteri(TextureTarget.Texture2d, TextureParameterName.TextureWrapT,
-                             TextureWrapMode.Repeat)
-            Gl.TexParameteri(TextureTarget.Texture2d, TextureParameterName.TextureMinFilter,
-                             TextureMinFilter.LinearMipmapLinear)
-            Gl.TexParameteri(TextureTarget.Texture2d, TextureParameterName.TextureMagFilter,
-                             TextureMagFilter.Linear)
-            
-            Gl.TexImage2D(TextureTarget.Texture2d, 0, InternalFormat.Rgba,
-                          image.Width, image.Height, 0, PixelFormat.Rgb, PixelType.UnsignedByte,
-                          image.Data);
-            Gl.GenerateMipmap(TextureTarget.Texture2d)
-            Gl.ActiveTexture(TextureUnit.Texture0); // activate the texture unit first before binding texture
-            Gl.BindTexture(TextureTarget.Texture2d, texid)
-            texid
-    
-    member val texID = (defaultArg texid (MakeTexture())) with get
+                        OglVector(float32 image.Width,float32 image.Height)))) 
+
     member val src = srcRect with get
     member val img:ImageResult = image
    
-   
+    member val texID=uint32 0  with set, get 
+    member this.BindImage() : uint32 =
+        this.texID <- Gl.GenTexture() 
+        Gl.BindTexture(TextureTarget.Texture2d, this.texID)
+        // set the texture wrapping/filtering options (on the currently bound texture object)
+        Gl.TexParameteri(TextureTarget.Texture2d, TextureParameterName.TextureWrapS,
+                         TextureWrapMode.Repeat)
+        Gl.TexParameteri(TextureTarget.Texture2d, TextureParameterName.TextureWrapT,
+                         TextureWrapMode.Repeat)
+        Gl.TexParameteri(TextureTarget.Texture2d, TextureParameterName.TextureMinFilter,
+                         TextureMinFilter.Linear)
+        Gl.TexParameteri(TextureTarget.Texture2d, TextureParameterName.TextureMagFilter,
+                         TextureMagFilter.Linear)
+
+        // load and generate the texture
+        Gl.TexImage2D(TextureTarget.Texture2d, 0, InternalFormat.Rgb, this.img.Width,
+                      this.img.Height, 0, PixelFormat.Rgba, PixelType.UnsignedInt8888, this.img.Data);
+        Gl.GenerateMipmap(TextureTarget.Texture2d)
+        this.texID
     
+    member this.ReleaseImage() =
+        Gl.DeleteTextures([| this.texID |])
 
     interface Image with
        
@@ -112,7 +111,7 @@ type GraphicsManagerGLFW()as this=
 
     void main()
     {
-        FragColor = vec4(TexCoord.x,TexCoord.y,0.0,1.0); 
+        FragColor = texture(ourTexture, TexCoord);
     }
         """|]                                                  
 
@@ -163,24 +162,17 @@ type GraphicsManagerGLFW()as this=
             Gl.VertexAttribPointer(1u, 2, VertexAttribType.Float, false, 5*sizeof<float32>,
                                    3* sizeof<float32>);
             Gl.EnableVertexAttribArray(1u)
-            
-            
-            
-            Gl.BindVertexArray(vbuff.[0])
-            //make texture buffer
-            let texID = Gl.GenTexture();
-              
            
-            Gl.TexImage2D(TextureTarget.Texture2d, 0, InternalFormat.Rgba,
-                          oglImage.img.Width, oglImage.img.Height, 0,
-                          PixelFormat.Rgba, PixelType.UnsignedInt8888,
-                          oglImage.img.Data);
-            Gl.GenerateMipmap(TextureTarget.Texture2d)
-            let texLoc = Gl.GetUniformLocation(this.shaderProgram, "ourColor");
+            //make texture buffer
+            let oglImage = img :?> OglImage
+            let texID = oglImage.BindImage()
+             
             Gl.UseProgram(this.shaderProgram)
             Gl.BindTexture(TextureTarget.Texture2d, texID)
+            Gl.BindVertexArray(vbuff.[0])
             //draw
-            Gl.DrawArrays(PrimitiveType.Quads, 0, 4);
+            Gl.DrawArrays(PrimitiveType.Quads, 0, 4)
+            oglImage.ReleaseImage()
         member val GraphicsListeners:(GraphicsListener list) = List.Empty  with get, set
         member val IdentityTransform =
             OglXform(mat4.identity()) :> Transform
