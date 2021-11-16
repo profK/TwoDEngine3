@@ -278,7 +278,8 @@ type GraphicsManagerGLFW()as this=
             let graphics = this :> GraphicsManager
             let screenSize = graphics.ScreenSize
             let oglXform = OglXform(
-                Matrix4x4.CreateTranslation((float32 x)/screenSize.X,(float32 y)/screenSize.Y,0f))
+                Matrix4x4.CreateTranslation((float32 x)/screenSize.X,
+                                            -(float32 y)/screenSize.Y,0f))
             oglXform :> Transform
         
         member this.NewVector x y =
