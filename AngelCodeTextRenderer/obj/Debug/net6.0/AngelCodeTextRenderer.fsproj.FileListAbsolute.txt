@@ -3,10 +3,7 @@ C:\Users\jpkessel\RiderProjects\TwoDEngine3\AngelCodeTextRenderer\bin\Debug\net6
 C:\Users\jpkessel\RiderProjects\TwoDEngine3\AngelCodeTextRenderer\bin\Debug\net6.0\AngelCodeTextRenderer.dll
 C:\Users\jpkessel\RiderProjects\TwoDEngine3\AngelCodeTextRenderer\bin\Debug\net6.0\AngelCodeTextRenderer.pdb
 C:\Users\jpkessel\RiderProjects\TwoDEngine3\AngelCodeTextRenderer\bin\Debug\net6.0\AngelCodeTextRenderer.xml
-C:\Users\jpkessel\RiderProjects\TwoDEngine3\AngelCodeTextRenderer\bin\Debug\net6.0\GraphicsMgrMonoGameDesktop.dll
 C:\Users\jpkessel\RiderProjects\TwoDEngine3\AngelCodeTextRenderer\bin\Debug\net6.0\TDE3ManagerInterfaces.dll
-C:\Users\jpkessel\RiderProjects\TwoDEngine3\AngelCodeTextRenderer\bin\Debug\net6.0\GraphicsMgrMonoGameDesktop.pdb
-C:\Users\jpkessel\RiderProjects\TwoDEngine3\AngelCodeTextRenderer\bin\Debug\net6.0\GraphicsMgrMonoGameDesktop.xml
 C:\Users\jpkessel\RiderProjects\TwoDEngine3\AngelCodeTextRenderer\bin\Debug\net6.0\TDE3ManagerInterfaces.pdb
 C:\Users\jpkessel\RiderProjects\TwoDEngine3\AngelCodeTextRenderer\bin\Debug\net6.0\TDE3ManagerInterfaces.xml
 C:\Users\jpkessel\RiderProjects\TwoDEngine3\AngelCodeTextRenderer\obj\Debug\net6.0\AngelCodeTextRenderer.fsproj.AssemblyReference.cache

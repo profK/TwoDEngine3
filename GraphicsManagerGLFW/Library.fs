@@ -16,21 +16,21 @@ open glfw3
 
 let NormalizeTo (value:float32) (max:float32) =
         (value/max)
-type OglVector(vec:vec4)  =
+type OglVector(vec:Vector4)  =
     inherit Vector() 
     member this.oglVec = vec
    
-    override this.X = this.oglVec.x
-    override this.Y = this.oglVec.y
+    override this.X = this.oglVec.X
+    override this.Y = this.oglVec.Y
     override this.Plus (other:Vector) =
         let otherVec = (other :?> OglVector).oglVec
         OglVector(this.oglVec+otherVec) :> Vector
     new(x:float32, y:float32) as this =
-        OglVector(vec4(x, y, 0f,1f))
+        OglVector(Vector4(x, y, 0f,1f))
     
-type OglXform(glMatrix:mat4) =
+type OglXform(glMatrix:Matrix4x4) =
    
-    member val glMat:mat4 = glMatrix
+    member val glMat:Matrix4x4 = glMatrix
     
     interface Transform with
         member this.Multiply (other:Transform):Transform =
@@ -39,7 +39,7 @@ type OglXform(glMatrix:mat4) =
             
         member this.Multiply (vec:Vector): Vector =
             let oglvec = (vec :?> OglVector).oglVec
-            let newVec = this.glMat * oglvec 
+            let newVec =  Vector4.Transform(oglvec,this.glMat)
             OglVector(newVec) :> Vector
 
 type OglImage(image:ImageResult,?rect,?texid) as this =
@@ -91,11 +91,12 @@ type GraphicsManagerGLFW()as this=
     layout (location = 0) in vec3 aPos;
     layout (location = 1) in vec2 aTexCoord;
 
+    uniform mat4 transform;
     out vec2 TexCoord;
 
     void main()
     {
-        gl_Position = vec4(aPos, 1.0);
+        gl_Position = transform * vec4(aPos, 1.0) ;
         TexCoord = aTexCoord;
     }  
         """|]
@@ -117,8 +118,8 @@ type GraphicsManagerGLFW()as this=
 
    
     
-    let mutable xformStack = List.Empty
-    let mutable clipStack = List.Empty
+    let mutable xformStack:Transform list = List.Empty
+    let mutable clipStack:Rectangle list = List.Empty
     
     let mutable window : Window option = None
     
@@ -170,12 +171,17 @@ type GraphicsManagerGLFW()as this=
             Gl.UseProgram(this.shaderProgram)
             Gl.BindTexture(TextureTarget.Texture2d, texID)
             Gl.BindVertexArray(vbuff.[0])
+            let transformLoc = Gl.GetUniformLocation(this.shaderProgram,"transform")
+            let oglMat = match xformStack with
+                         | [] -> Matrix4x4.Identity
+                         | head::tail -> (head :?> OglXform).glMat
+            Gl.UniformMatrix4f(transformLoc,1,false, oglMat)
             //draw
             Gl.DrawArrays(PrimitiveType.Quads, 0, 4)
             oglImage.ReleaseImage()
         member val GraphicsListeners:(GraphicsListener list) = List.Empty  with get, set
         member val IdentityTransform =
-            OglXform(mat4.identity()) :> Transform
+            OglXform(Matrix4x4.Identity) :> Transform
         member this.LoadImage(stream:Stream) =
             let image = ImageResult.FromStream(stream, ColorComponents.RedGreenBlueAlpha);
             OglImage(image) :> Image
@@ -195,16 +201,14 @@ type GraphicsManagerGLFW()as this=
         member this.PushClip(rect) = 
             clipStack <- rect::clipStack
         member this.PushTransform(xform) =
-            xformStack = xform :: xformStack |> ignore
+            (xformStack <- xform :: xformStack) |> ignore
         member this.RotationTransform(angle) =
-             OglXform(glm.rotate(angle,
-                                   vec3(0f,0f,1f))) :> Transform
+             OglXform(Matrix4x4.CreateRotationZ(angle)) :> Transform
         member this.ScreenSize =
-            let gm = this :?> GraphicsManagerGLFW
-            let mutable w = 0;
-            let mutable h= 0;
-            window.Value.GetSize(ref w, ref h)
-            OglVector(float32 w,float32 h) :> Vector
+            let wsz = window.Value.GetSize()
+            let sWidth = float32(fst wsz)
+            let sHeight = float32(snd wsz)
+            (OglVector(float32 sWidth, float32 sHeight)) :> Vector
         member this.Start() =
             let CheckCompile shader =
                 let mutable success = 99
@@ -271,8 +275,11 @@ type GraphicsManagerGLFW()as this=
             (this :> GraphicsManager).Start()
             
         member this.TranslationTransform x y =
-            OglXform(glm.translate(mat4.identity(),
-                                   vec3(float32 x,float32 y,0f))) :> Transform
+            let graphics = this :> GraphicsManager
+            let screenSize = graphics.ScreenSize
+            let oglXform = OglXform(
+                Matrix4x4.CreateTranslation((float32 x)/screenSize.X,(float32 y)/screenSize.Y,0f))
+            oglXform :> Transform
         
         member this.NewVector x y =
             OglVector(x,y) :> Vector 
