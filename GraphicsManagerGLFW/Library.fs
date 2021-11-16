@@ -65,8 +65,8 @@ type OglImage(image:ImageResult,?rect,?texid) as this =
                          TextureMagFilter.Linear)
 
         // load and generate the texture
-        Gl.TexImage2D(TextureTarget.Texture2d, 0, InternalFormat.Rgb, this.img.Width,
-                      this.img.Height, 0, PixelFormat.Rgba, PixelType.UnsignedInt8888, this.img.Data);
+        Gl.TexImage2D(TextureTarget.Texture2d, 0, InternalFormat.Rgba, this.img.Width,
+                      this.img.Height, 0, PixelFormat.Rgba, PixelType.UnsignedByte, this.img.Data);
         Gl.GenerateMipmap(TextureTarget.Texture2d)
         this.texID
     
@@ -244,7 +244,8 @@ type GraphicsManagerGLFW()as this=
             Gl.AttachShader(this.shaderProgram,fshader)
             Gl.AttachShader(this.shaderProgram,vshader)
             Gl.LinkProgram(this.shaderProgram)
-            
+            Gl.BlendFunc(BlendingFactor.SrcAlpha, BlendingFactor.OneMinusSrcAlpha);
+            Gl.Enable( EnableCap.Blend );
             let window = window.Value // convenience
            
             Glfw.SetWindowCloseCallback(window,fun args -> window.Close()) |> ignore
@@ -260,8 +261,8 @@ type GraphicsManagerGLFW()as this=
                         false
                    | None -> true
                 do
-                    Gl.ClearColor(0.0f, 0.0f, 1.0f, 1.0f)     
-                    Gl.Clear(ClearBufferMask.ColorBufferBit)
+                    Gl.ClearColor(0.0f, 0.0f, 0.0f, 0.0f)     
+                    Gl.Clear(ClearBufferMask.ColorBufferBit|||ClearBufferMask.DepthBufferBit)
                     Gl.MatrixMode(MatrixMode.Modelview);
                     Gl.LoadIdentity();
                     Gl.Translate( 0.0, 0.0, -15.0 )

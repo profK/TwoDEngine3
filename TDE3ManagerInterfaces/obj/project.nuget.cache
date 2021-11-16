@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "5jWbp1+gBW6nsBjxgsTw1HEBJLVPCEWOLZyz9Wa5O3iETpTNFDfw0gRcU0huriGcCRcCFKC0Lrej8/iKoQD3jA==",
+  "dgSpecHash": "E840519Pt7yhCr+ADQ3Qon6gaoCEfsZziTDlzcVRnx3WUNgvkz8wyh0rYMtG77MtbTi+I+sqJZBTnM1BSM2b7Q==",
   "success": true,
-  "projectFilePath": "D:\\projects\\RiderProjects\\TwoDEngine3\\TDE3ManagerInterfaces\\TDE3ManagerInterfaces.fsproj",
+  "projectFilePath": "C:\\Users\\jpkessel\\RiderProjects\\TwoDEngine3\\TDE3ManagerInterfaces\\TDE3ManagerInterfaces.fsproj",
   "expectedPackageFiles": [
     "C:\\Users\\jpkessel\\.nuget\\packages\\fsframework\\1.0.0-preview-1\\fsframework.1.0.0-preview-1.nupkg.sha512",
     "C:\\Users\\jpkessel\\.nuget\\packages\\fsharp.core\\6.0.1\\fsharp.core.6.0.1.nupkg.sha512",

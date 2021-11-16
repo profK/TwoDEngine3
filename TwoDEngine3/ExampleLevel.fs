@@ -74,7 +74,7 @@ type BouncyBall() as this =
 
         graphics.PopTransform() |> ignore
 
-        text
-        |> txtRenderer.RenderText(graphics.NewVector  0f (screenSize.Y - 50.0f))
+      //  text
+      //  |> txtRenderer.RenderText(graphics.NewVector  0f (screenSize.Y - 50.0f))
 
         ()
