@@ -48,7 +48,7 @@ type OglImage(image:ImageResult,?rect,?texid) as this =
                         OglVector(float32 image.Width,float32 image.Height)))) 
 
     member val src = srcRect with get
-    member val img:ImageResult = image
+    member val img:ImageResult = image with get
    
     member val texID=uint32 0  with set, get 
     member this.BindImage() : uint32 =
@@ -126,7 +126,7 @@ type GraphicsManagerGLFW()as this=
     member val shaderProgram:uint32 = 0u with get, set
                                                                             
     interface GraphicsManager with
-        member this.DrawImage(img:Image) (pos) =
+        member this.DrawImage(img:Image)  =
             let wsz = window.Value.GetSize()
             let sWidth = float32(fst wsz)
             let sHeight = float32(snd wsz)
@@ -134,21 +134,21 @@ type GraphicsManagerGLFW()as this=
             let yOfs = (img.Size.X/sWidth)/2f
             let oglImage = (img :?> OglImage)
             let texTl = [|
-                NormalizeTo oglImage.src.Position.X img.Size.X
-                NormalizeTo oglImage.src.Position.Y img.Size.Y
+                NormalizeTo oglImage.src.Position.X (float32 oglImage.img.Width)
+                (NormalizeTo oglImage.src.Position.Y (float32 oglImage.img.Height))
             |]
             
             let texLR = [| 
-                (oglImage.src.Position.X+oglImage.src.Size.X)/img.Size.X
-                (oglImage.src.Position.Y+oglImage.src.Size.Y)/img.Size.Y
+                (oglImage.src.Position.X+oglImage.src.Size.X)/(float32 oglImage.img.Width)
+                ((oglImage.src.Position.Y+oglImage.src.Size.Y)/(float32 oglImage.img.Height))
             |]
             let vertexCoords =
                 [|
-                //position         texture
-                -xOfs;-yOfs;0f;    texTl.[0];texTl.[1];
-                 xOfs;-yOfs;0f;    texLR.[0];texTl.[1];
-                 xOfs;yOfs;0f;     texLR.[0];texLR.[1];
-                 -xOfs;yOfs;0f;    texTl.[0];texLR.[1];
+                //position         texture  - Ys are reversed to get TL coord system rather than LL
+                -xOfs;-yOfs;0f;    texTl.[0];texLR.[1];
+                 xOfs;-yOfs;0f;    texLR.[0];texLR.[1];
+                 xOfs;yOfs;0f;     texLR.[0];texTl.[1];
+                 -xOfs;yOfs;0f;    texTl.[0];texTl.[1];
               
             |]
            
@@ -198,12 +198,25 @@ type GraphicsManagerGLFW()as this=
                 xformStack <- tail
                 Some(head)
                 
+        member this.PeekTransform() =
+            match xformStack with
+            | [] -> None
+            | head::tail ->
+                Some(head)
         member this.PushClip(rect) = 
             clipStack <- rect::clipStack
         member this.PushTransform(xform) =
             (xformStack <- xform :: xformStack) |> ignore
+        member this.PushMultTransform(xform) =
+            let gm = (this :> GraphicsManager)
+            let top = match xformStack with
+                      | [] -> gm.IdentityTransform
+                      | head::tail -> head
+            gm.PushTransform (top.Multiply xform)    
         member this.RotationTransform(angle) =
              OglXform(Matrix4x4.CreateRotationZ(angle)) :> Transform
+        member this.ScaleTransform  xScale yScale =
+            OglXform(Matrix4x4.CreateScale(xScale,yScale,1f)) :> Transform
         member this.ScreenSize =
             let wsz = window.Value.GetSize()
             let sWidth = float32(fst wsz)
@@ -230,7 +243,7 @@ type GraphicsManagerGLFW()as this=
             //Glfw.WindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
             //Glfw.WindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
             //Glfw.WindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
-            window <- Some(new Window(1024, 768, "Glfw test window"))  
+            window <- Some(new Window(800, 600, "Glfw test window"))  
             Glfw.MakeContextCurrent(window.Value)
             let vshader = Gl.CreateShader(ShaderType.VertexShader)
             Gl.ShaderSource(vshader,vertShaderCode)

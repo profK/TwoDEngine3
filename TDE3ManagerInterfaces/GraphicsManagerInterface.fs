@@ -36,11 +36,15 @@ and GraphicsManager =
     abstract PopClip : unit -> Rectangle option
     abstract PushTransform : Transform -> unit
     abstract PopTransform : unit -> Transform option
-    abstract DrawImage : Image -> Vector -> unit
+    abstract PeekTransform : unit -> Transform option
+    abstract PushMultTransform: Transform -> unit
+    abstract DrawImage : Image -> unit
     abstract Start : (GraphicsManager -> unit) -> unit
     abstract Start : unit -> unit
     abstract IdentityTransform : Transform with get
     abstract RotationTransform : float32 -> Transform
     abstract TranslationTransform : float32-> float32 -> Transform
+    
+    abstract ScaleTransform : float32-> float32 -> Transform
     abstract NewVector: float32 ->float32->Vector
     

@@ -23,7 +23,7 @@ type AngelCodeTextRenderer() =
             |> AngelCodeFont
             :> Font
 
-        member this.RenderText (pos: Vector) (textObj) =
+        member this.RenderText  textObj =
             let font: AngelCodeFont = textObj.Font :?> AngelCodeFont
 
             let graphics =
@@ -45,14 +45,18 @@ type AngelCodeTextRenderer() =
                         acImage.SubImage(Rectangle(rectPos,rectSz))
                     let offset = graphics.NewVector (float32 acChar.XOffset) (float32 acChar.YOffset)
 
-                    graphics.DrawImage charImage (pos + offset)
+                    let translation:Vector = (pos + offset)
+                    let xform = graphics.TranslationTransform translation.X  translation.Y
+                    graphics.PushMultTransform(xform)
+                    graphics.DrawImage charImage
+                    graphics.PopTransform() |> ignore
 
                     let kern = font.GetKern(lastChar, char)
                     let newX = pos.X + (float32 acChar.Width) + kern
                         
                     ((graphics.NewVector newX pos.Y),char)    
                 )
-                (pos, '\n')
+                ((graphics.NewVector 0f 0f), '\n')
             |> ignore
 
             ()

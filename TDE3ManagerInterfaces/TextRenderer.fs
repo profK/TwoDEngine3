@@ -13,4 +13,4 @@ and Text =
 and TextManager =
     abstract member FontList : string list
     abstract member LoadFont : string -> Font
-    abstract member RenderText : Vector -> Text -> unit
+    abstract member RenderText : Text  -> unit

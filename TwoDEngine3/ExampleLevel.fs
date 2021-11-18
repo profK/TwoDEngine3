@@ -43,7 +43,7 @@ type BouncyBall() as this =
         txtRenderer.LoadFont(txtRenderer.FontList.[0])
 
     let text =
-        Font.MakeText("Ce nest pas un ballon de football")
+        Font.MakeText("BBBBB bbbbb")
 
     override this.Close() =
         printfn "BouncyBall closed"
@@ -66,15 +66,28 @@ type BouncyBall() as this =
 
 
         graphics.PushTransform(graphics.TranslationTransform -100f -100f)
+        
+        let subImage = ballImage.SubImage(
+            Rectangle(
+                (graphics.NewVector (ballImage.Size.X/4f) (ballImage.Size.Y/4f)),
+                (graphics.NewVector (ballImage.Size.X/2f) (ballImage.Size.Y/2f))
+            )
+        )
 
-        graphics.DrawImage
-            ballImage
-            (graphics.NewVector ((screenSize.X - ballImage.Size.X) / 2f)
-                                ((screenSize.Y - ballImage.Size.Y) / 2f))
+        graphics.DrawImage subImage
+           
 
         graphics.PopTransform() |> ignore
+        
+        let texXform = (graphics.TranslationTransform 0f 50f).
+                            Multiply(
+                                graphics.ScaleTransform 4f 4f)
+        
+        graphics.PushTransform(texXform)
 
-      //  text
-      //  |> txtRenderer.RenderText(graphics.NewVector  0f (screenSize.Y - 50.0f))
+        text
+        |> txtRenderer.RenderText
 
+        graphics.PopTransform()
+        
         ()
