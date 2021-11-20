@@ -1,0 +1,14 @@
+D:\projects\RiderProjects\TwoDEngine3\InputManagerGLFW\bin\Debug\net6.0\InputManagerGLFW.deps.json
+D:\projects\RiderProjects\TwoDEngine3\InputManagerGLFW\bin\Debug\net6.0\InputManagerGLFW.dll
+D:\projects\RiderProjects\TwoDEngine3\InputManagerGLFW\bin\Debug\net6.0\InputManagerGLFW.pdb
+D:\projects\RiderProjects\TwoDEngine3\InputManagerGLFW\bin\Debug\net6.0\InputManagerGLFW.xml
+D:\projects\RiderProjects\TwoDEngine3\InputManagerGLFW\bin\Debug\net6.0\TDE3ManagerInterfaces.dll
+D:\projects\RiderProjects\TwoDEngine3\InputManagerGLFW\bin\Debug\net6.0\TDE3ManagerInterfaces.pdb
+D:\projects\RiderProjects\TwoDEngine3\InputManagerGLFW\bin\Debug\net6.0\TDE3ManagerInterfaces.xml
+D:\projects\RiderProjects\TwoDEngine3\InputManagerGLFW\obj\Debug\net6.0\InputManagerGLFW.fsproj.AssemblyReference.cache
+D:\projects\RiderProjects\TwoDEngine3\InputManagerGLFW\obj\Debug\net6.0\InputManagerGLFW.AssemblyInfoInputs.cache
+D:\projects\RiderProjects\TwoDEngine3\InputManagerGLFW\obj\Debug\net6.0\InputManagerGLFW.AssemblyInfo.fs
+D:\projects\RiderProjects\TwoDEngine3\InputManagerGLFW\obj\Debug\net6.0\InputManagerGLFW.fsproj.CopyComplete
+D:\projects\RiderProjects\TwoDEngine3\InputManagerGLFW\obj\Debug\net6.0\InputManagerGLFW.dll
+D:\projects\RiderProjects\TwoDEngine3\InputManagerGLFW\obj\Debug\net6.0\InputManagerGLFW.xml
+D:\projects\RiderProjects\TwoDEngine3\InputManagerGLFW\obj\Debug\net6.0\InputManagerGLFW.pdb
