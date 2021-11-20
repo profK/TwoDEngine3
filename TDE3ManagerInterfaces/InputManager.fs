@@ -4,6 +4,7 @@
 type AxisUnion =
     | Digital of bool
     | Analog of float
+    | Hat of int
     | Keyboard of char list
 
 and NodeValue =
