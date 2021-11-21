@@ -71,13 +71,13 @@
           }
         }
       },
-      "GLFW.NET/0.9.7.1": {
+      "glfw-net/3.3.1": {
         "type": "package",
         "compile": {
-          "lib/net45/WrapperGLFW.dll": {}
+          "lib/netstandard2.0/GLFW.NET.dll": {}
         },
         "runtime": {
-          "lib/net45/WrapperGLFW.dll": {}
+          "lib/netstandard2.0/GLFW.NET.dll": {}
         }
       },
       "MathSharp/2.0.0-pre": {
@@ -173,17 +173,17 @@
         "lib/netstandard2.1/zh-Hant/FSharp.Core.resources.dll"
       ]
     },
-    "GLFW.NET/0.9.7.1": {
-      "sha512": "nEUnIMg0CY5ZZILCY9S0a6gyYtJydyU836Y3lV66gBWJzcLCbwroumQ+PASpfMO9Z1GSHWOTUjX9XvRe/Z8KXQ==",
+    "glfw-net/3.3.1": {
+      "sha512": "TpFcYN+/YjBRRJ1O3L6V1y2YpT15AgGn8DRFtsXow76++x9QC8m+mxb38Uv43N4Xh4//k9NkxlIhF/Ci2khqqA==",
       "type": "package",
-      "path": "glfw.net/0.9.7.1",
+      "path": "glfw-net/3.3.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "content/WrapperGLFW.dll.config",
-        "glfw.net.0.9.7.1.nupkg.sha512",
-        "glfw.net.nuspec",
-        "lib/net45/WrapperGLFW.dll"
+        "glfw-net.3.3.1.nupkg.sha512",
+        "glfw-net.nuspec",
+        "lib/netstandard2.0/GLFW.NET.dll",
+        "lib/netstandard2.0/GLFW.NET.xml"
       ]
     },
     "MathSharp/2.0.0-pre": {
@@ -408,8 +408,8 @@
     "net6.0": [
       "FSFramework >= 1.0.0-preview-1",
       "FSharp.Core >= 6.0.1",
-      "GLFW.NET >= 0.9.7.1",
-      "TDE3ManagerInterfaces >= 1.0.0"
+      "TDE3ManagerInterfaces >= 1.0.0",
+      "glfw-net >= 3.3.1"
     ]
   },
   "packageFolders": {
@@ -474,9 +474,9 @@
             "version": "[6.0.1, )",
             "generatePathProperty": true
           },
-          "GLFW.NET": {
+          "glfw-net": {
             "target": "Package",
-            "version": "[0.9.7.1, )",
+            "version": "[3.3.1, )",
             "generatePathProperty": true
           }
         },
@@ -498,17 +498,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'GLFW.NET 0.9.7.1' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
-      "libraryId": "GLFW.NET",
-      "targetGraphs": [
-        "net6.0"
-      ]
-    }
-  ]
+  }
 }

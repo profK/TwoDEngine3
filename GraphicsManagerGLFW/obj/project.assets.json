@@ -74,15 +74,6 @@
       "glfw/3.3.5": {
         "type": "package"
       },
-      "GLFW.NET/0.9.7.1": {
-        "type": "package",
-        "compile": {
-          "lib/net45/WrapperGLFW.dll": {}
-        },
-        "runtime": {
-          "lib/net45/WrapperGLFW.dll": {}
-        }
-      },
       "GlmNet/0.7.0": {
         "type": "package",
         "compile": {
@@ -126,6 +117,16 @@
         },
         "runtime": {
           "lib/netstandard2.0/StbImageSharp.dll": {}
+        }
+      },
+      "glfw-net/3.3.1": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.1",
+        "compile": {
+          "bin/placeholder/glfw-net.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/glfw-net.dll": {}
         }
       },
       "TDE3ManagerInterfaces/1.0.0": {
@@ -477,19 +478,6 @@
         "glfw.nuspec"
       ]
     },
-    "GLFW.NET/0.9.7.1": {
-      "sha512": "nEUnIMg0CY5ZZILCY9S0a6gyYtJydyU836Y3lV66gBWJzcLCbwroumQ+PASpfMO9Z1GSHWOTUjX9XvRe/Z8KXQ==",
-      "type": "package",
-      "path": "glfw.net/0.9.7.1",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "content/WrapperGLFW.dll.config",
-        "glfw.net.0.9.7.1.nupkg.sha512",
-        "glfw.net.nuspec",
-        "lib/net45/WrapperGLFW.dll"
-      ]
-    },
     "GlmNet/0.7.0": {
       "sha512": "g3EFJOV89dWppRVT5PJ8nVYWSEIoB4yqqEZy71ryb3mfxSGrvwqxsF+XbK+J0jUgSwRIYEWHqodvtd3LchlE+w==",
       "type": "package",
@@ -747,6 +735,11 @@
         "stbimagesharp.nuspec"
       ]
     },
+    "glfw-net/3.3.1": {
+      "type": "project",
+      "path": "../../glfw-net/GLFW.NET/GLFW.NET.csproj",
+      "msbuildProject": "../../glfw-net/GLFW.NET/GLFW.NET.csproj"
+    },
     "TDE3ManagerInterfaces/1.0.0": {
       "type": "project",
       "path": "../TDE3ManagerInterfaces/TDE3ManagerInterfaces.fsproj",
@@ -756,12 +749,12 @@
   "projectFileDependencyGroups": {
     "net6.0": [
       "FSharp.Core >= 6.0.1",
-      "GLFW.NET >= 0.9.7.1",
       "GlmNet >= 0.7.0",
       "OpenGL.Net >= 0.8.4",
       "StbImageSharp >= 2.22.6",
       "TDE3ManagerInterfaces >= 1.0.0",
-      "glfw >= 3.3.5"
+      "glfw >= 3.3.5",
+      "glfw-net >= 3.3.1"
     ]
   },
   "packageFolders": {
@@ -804,6 +797,9 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
+            "D:\\projects\\RiderProjects\\glfw-net\\GLFW.NET\\GLFW.NET.csproj": {
+              "projectPath": "D:\\projects\\RiderProjects\\glfw-net\\GLFW.NET\\GLFW.NET.csproj"
+            },
             "D:\\projects\\RiderProjects\\TwoDEngine3\\TDE3ManagerInterfaces\\TDE3ManagerInterfaces.fsproj": {
               "projectPath": "D:\\projects\\RiderProjects\\TwoDEngine3\\TDE3ManagerInterfaces\\TDE3ManagerInterfaces.fsproj"
             }
@@ -819,11 +815,6 @@
             "include": "Runtime, Compile, Build, Native, Analyzers, BuildTransitive",
             "target": "Package",
             "version": "[6.0.1, )",
-            "generatePathProperty": true
-          },
-          "GLFW.NET": {
-            "target": "Package",
-            "version": "[0.9.7.1, )",
             "generatePathProperty": true
           },
           "GlmNet": {
@@ -867,16 +858,6 @@
     }
   },
   "logs": [
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'GLFW.NET 0.9.7.1' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
-      "libraryId": "GLFW.NET",
-      "targetGraphs": [
-        "net6.0"
-      ]
-    },
     {
       "code": "NU1701",
       "level": "Warning",

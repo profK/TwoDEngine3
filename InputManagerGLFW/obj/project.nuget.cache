@@ -1,25 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "VJNa4tnuOb7zTsxZr9V2FHcfdz/eHa7ssnTaGmBTMToRbfviSWQxQwPrJFgDEp0rHnsAYo3ZU+KI+t3HrOZjZQ==",
+  "dgSpecHash": "0zCzyXxiRtxBN4cN3QqOuZiPkMkOjU9lm1PzwQaIIcnvMfYW/SZdrDq+oIz+Ik2XM50o9OCpsclCH/1rZCRGlA==",
   "success": true,
   "projectFilePath": "D:\\projects\\RiderProjects\\TwoDEngine3\\InputManagerGLFW\\InputManagerGLFW.fsproj",
   "expectedPackageFiles": [
     "C:\\Users\\jpkessel\\.nuget\\packages\\fsframework\\1.0.0-preview-1\\fsframework.1.0.0-preview-1.nupkg.sha512",
     "C:\\Users\\jpkessel\\.nuget\\packages\\fsharp.core\\6.0.1\\fsharp.core.6.0.1.nupkg.sha512",
-    "C:\\Users\\jpkessel\\.nuget\\packages\\glfw.net\\0.9.7.1\\glfw.net.0.9.7.1.nupkg.sha512",
+    "C:\\Users\\jpkessel\\.nuget\\packages\\glfw-net\\3.3.1\\glfw-net.3.3.1.nupkg.sha512",
     "C:\\Users\\jpkessel\\.nuget\\packages\\mathsharp\\2.0.0-pre\\mathsharp.2.0.0-pre.nupkg.sha512",
     "C:\\Users\\jpkessel\\.nuget\\packages\\microsoft.net.compilers.toolset\\3.2.0-beta1-final\\microsoft.net.compilers.toolset.3.2.0-beta1-final.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'GLFW.NET 0.9.7.1' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
-      "libraryId": "GLFW.NET",
-      "targetGraphs": [
-        "net6.0"
-      ]
-    }
-  ]
+  "logs": []
 }

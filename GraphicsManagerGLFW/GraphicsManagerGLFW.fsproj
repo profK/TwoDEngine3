@@ -3,6 +3,13 @@
     <PropertyGroup>
         <TargetFramework>net6.0</TargetFramework>
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <Configurations>Debug;Release;DebugWindows</Configurations>
+        <Platforms>AnyCPU</Platforms>
+    </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+      <DefineConstants>TRACECOREAPP</DefineConstants>
+      <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     </PropertyGroup>
 
     <ItemGroup>
@@ -15,13 +22,13 @@
 
     <ItemGroup>
       <PackageReference Include="glfw" Version="3.3.5" />
-      <PackageReference Include="GLFW.NET" Version="0.9.7.1" />
       <PackageReference Include="GlmNet" Version="0.7.0" />
       <PackageReference Include="OpenGL.Net" Version="0.8.4" />
       <PackageReference Include="StbImageSharp" Version="2.22.6" />
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\..\glfw-net\GLFW.NET\GLFW.NET.csproj" />
       <ProjectReference Include="..\TDE3ManagerInterfaces\TDE3ManagerInterfaces.fsproj" />
     </ItemGroup>
 

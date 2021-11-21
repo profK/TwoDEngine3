@@ -10,9 +10,12 @@ open System.Threading
 open GlmNet
 open StbImageSharp
 open TwoDEngine3.ManagerInterfaces.GraphicsManagerInterface
-open glfw3
+open GLFW
 open OpenGL
-open glfw3
+
+
+type glImage = GLFW.Image
+type tdeImage = TwoDEngine3.ManagerInterfaces.GraphicsManagerInterface.Image
 
 let NormalizeTo (value:float32) (max:float32) =
         (value/max)
@@ -73,10 +76,9 @@ type OglImage(image:ImageResult,?rect,?texid) as this =
     member this.ReleaseImage() =
         Gl.DeleteTextures([| this.texID |])
 
-    interface Image with
-       
+    interface tdeImage with
         override this.SubImage rect =
-            OglImage(this.img,rect) :> Image
+            OglImage(this.img,rect) :> tdeImage
         override this.Size with get() =
             let oglImage = this :> OglImage                      
             OglVector(this.src.Size.X, this.src.Size.Y) :> Vector
@@ -121,17 +123,17 @@ type GraphicsManagerGLFW()as this=
     let mutable xformStack:Transform list = List.Empty
     let mutable clipStack:Rectangle list = List.Empty
     
-    let mutable window : Window option = None
+    let mutable window : NativeWindow option = None
     
     member val shaderProgram:uint32 = 0u with get, set
                                                                             
     interface GraphicsManager with
-        member this.DrawImage(img:Image)  =
-            let wsz = window.Value.GetSize()
-            let sWidth = float32(fst wsz)
-            let sHeight = float32(snd wsz)
-            let xOfs = (img.Size.X/sWidth)/2f
-            let yOfs = (img.Size.X/sWidth)/2f
+        member this.DrawImage(img:tdeImage)  =
+            let wbnds = window.Value.Bounds
+            let sWidth = wbnds.Width
+            let sHeight = wbnds.Height
+            let xOfs = (img.Size.X/float32 sHeight)/2f
+            let yOfs = (img.Size.X/float32 sWidth)/2f
             let oglImage = (img :?> OglImage)
             let texTl = [|
                 NormalizeTo oglImage.src.Position.X (float32 oglImage.img.Width)
@@ -184,7 +186,7 @@ type GraphicsManagerGLFW()as this=
             OglXform(Matrix4x4.Identity) :> Transform
         member this.LoadImage(stream:Stream) =
             let image = ImageResult.FromStream(stream, ColorComponents.RedGreenBlueAlpha);
-            OglImage(image) :> Image
+            OglImage(image) :> tdeImage
         member this.PopClip() =
              match clipStack with
             | [] -> None
@@ -218,9 +220,9 @@ type GraphicsManagerGLFW()as this=
         member this.ScaleTransform  xScale yScale =
             OglXform(Matrix4x4.CreateScale(xScale,yScale,1f)) :> Transform
         member this.ScreenSize =
-            let wsz = window.Value.GetSize()
-            let sWidth = float32(fst wsz)
-            let sHeight = float32(snd wsz)
+            let wsz = window.Value.Bounds
+            let sWidth = float32(wsz.Width)
+            let sHeight = float32(wsz.Height)
             (OglVector(float32 sWidth, float32 sHeight)) :> Vector
         member this.Start() =
             let CheckCompile shader =
@@ -243,8 +245,8 @@ type GraphicsManagerGLFW()as this=
             //Glfw.WindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
             //Glfw.WindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
             //Glfw.WindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
-            window <- Some(new Window(800, 600, "Glfw test window"))  
-            Glfw.MakeContextCurrent(window.Value)
+            window <- Some(new NativeWindow(800, 600, "Glfw test window"))  
+            //Glfw.MakeContextCurrent(window.Value.)
             let vshader = Gl.CreateShader(ShaderType.VertexShader)
             Gl.ShaderSource(vshader,vertShaderCode)
             Gl.CompileShader(vshader)
@@ -261,7 +263,7 @@ type GraphicsManagerGLFW()as this=
             Gl.Enable( EnableCap.Blend );
             let window = window.Value // convenience
            
-            Glfw.SetWindowCloseCallback(window,fun args -> window.Close()) |> ignore
+            //Glfw.SetWindowCloseCallback(window,fun args -> window.Close()) |> ignore
             //You need to be notified if the size changed? 
             //Simply add a handler to the Size changed event
             //window.SizeChanged.Add (fun args -> printfn "Size changed! New width %A, new height %A" args.width args.height)
@@ -282,7 +284,7 @@ type GraphicsManagerGLFW()as this=
                     Gl.UseProgram(this.shaderProgram)  
                     (this :> GraphicsManager).GraphicsListeners 
                     |> Seq.iter(fun listener-> listener.Render(this) ) 
-                    Glfw.SwapBuffers(window)
+                    window.SwapBuffers()
                     Glfw.PollEvents();
         member this.Start(userfunc) =
             userfunc(this)  

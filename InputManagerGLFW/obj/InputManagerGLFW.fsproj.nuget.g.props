@@ -18,6 +18,6 @@
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <PkgFSharp_Core Condition=" '$(PkgFSharp_Core)' == '' ">C:\Users\jpkessel\.nuget\packages\fsharp.core\6.0.1</PkgFSharp_Core>
     <PkgFSFramework Condition=" '$(PkgFSFramework)' == '' ">C:\Users\jpkessel\.nuget\packages\fsframework\1.0.0-preview-1</PkgFSFramework>
-    <PkgGLFW_NET Condition=" '$(PkgGLFW_NET)' == '' ">C:\Users\jpkessel\.nuget\packages\glfw.net\0.9.7.1</PkgGLFW_NET>
+    <Pkgglfw-net Condition=" '$(Pkgglfw-net)' == '' ">C:\Users\jpkessel\.nuget\packages\glfw-net\3.3.1</Pkgglfw-net>
   </PropertyGroup>
 </Project>

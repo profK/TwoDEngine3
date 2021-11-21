@@ -3,6 +3,8 @@
     <PropertyGroup>
         <OutputType>Exe</OutputType>
         <TargetFramework>net6.0</TargetFramework>
+        <Configurations>Debug;Release;DebugWindows</Configurations>
+        <Platforms>AnyCPU</Platforms>
     </PropertyGroup>
 
     <ItemGroup>
@@ -22,8 +24,6 @@
     <ItemGroup>
         <ProjectReference Include="..\AngelCodeTextRenderer\AngelCodeTextRenderer.fsproj" />
         <ProjectReference Include="..\GraphicsManagerGLFW\GraphicsManagerGLFW.fsproj" />
-        <ProjectReference Include="..\GraphicsMgrMonoGameDesktop\GraphicsMgrMonoGameDesktop.fsproj" />
-        <ProjectReference Include="..\HIDInputManager\HIDInputManager.fsproj" />
     </ItemGroup>
 
 </Project>

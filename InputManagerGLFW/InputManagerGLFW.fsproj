@@ -15,7 +15,7 @@
 
     <ItemGroup>
       <PackageReference Include="FSFramework" Version="1.0.0-preview-1" />
-      <PackageReference Include="GLFW.NET" Version="0.9.7.1" />
+      <PackageReference Include="glfw-net" Version="3.3.1" />
     </ItemGroup>
 
 </Project>

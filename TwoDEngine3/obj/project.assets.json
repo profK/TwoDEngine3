@@ -83,15 +83,6 @@
       "glfw/3.3.5": {
         "type": "package"
       },
-      "GLFW.NET/0.9.7.1": {
-        "type": "package",
-        "compile": {
-          "lib/net45/WrapperGLFW.dll": {}
-        },
-        "runtime": {
-          "lib/net45/WrapperGLFW.dll": {}
-        }
-      },
       "GlmNet/0.7.0": {
         "type": "package",
         "compile": {
@@ -153,17 +144,27 @@
           "bin/placeholder/AngelCodeTextRenderer.dll": {}
         }
       },
+      "glfw-net/3.3.1": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.1",
+        "compile": {
+          "bin/placeholder/glfw-net.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/glfw-net.dll": {}
+        }
+      },
       "GraphicsManagerGLFW/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "FSharp.Core": "6.0.1",
-          "GLFW.NET": "0.9.7.1",
           "GlmNet": "0.7.0",
           "OpenGL.Net": "0.8.4",
           "StbImageSharp": "2.22.6",
           "TDE3ManagerInterfaces": "1.0.0",
-          "glfw": "3.3.5"
+          "glfw": "3.3.5",
+          "glfw-net": "3.3.1"
         },
         "compile": {
           "bin/placeholder/GraphicsManagerGLFW.dll": {}
@@ -559,19 +560,6 @@
         "glfw.nuspec"
       ]
     },
-    "GLFW.NET/0.9.7.1": {
-      "sha512": "nEUnIMg0CY5ZZILCY9S0a6gyYtJydyU836Y3lV66gBWJzcLCbwroumQ+PASpfMO9Z1GSHWOTUjX9XvRe/Z8KXQ==",
-      "type": "package",
-      "path": "glfw.net/0.9.7.1",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "content/WrapperGLFW.dll.config",
-        "glfw.net.0.9.7.1.nupkg.sha512",
-        "glfw.net.nuspec",
-        "lib/net45/WrapperGLFW.dll"
-      ]
-    },
     "GlmNet/0.7.0": {
       "sha512": "g3EFJOV89dWppRVT5PJ8nVYWSEIoB4yqqEZy71ryb3mfxSGrvwqxsF+XbK+J0jUgSwRIYEWHqodvtd3LchlE+w==",
       "type": "package",
@@ -834,6 +822,11 @@
       "path": "../AngelCodeTextRenderer/AngelCodeTextRenderer.fsproj",
       "msbuildProject": "../AngelCodeTextRenderer/AngelCodeTextRenderer.fsproj"
     },
+    "glfw-net/3.3.1": {
+      "type": "project",
+      "path": "../../glfw-net/GLFW.NET/GLFW.NET.csproj",
+      "msbuildProject": "../../glfw-net/GLFW.NET/GLFW.NET.csproj"
+    },
     "GraphicsManagerGLFW/1.0.0": {
       "type": "project",
       "path": "../GraphicsManagerGLFW/GraphicsManagerGLFW.fsproj",
@@ -945,16 +938,6 @@
     }
   },
   "logs": [
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'GLFW.NET 0.9.7.1' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
-      "libraryId": "GLFW.NET",
-      "targetGraphs": [
-        "net6.0"
-      ]
-    },
     {
       "code": "NU1701",
       "level": "Warning",

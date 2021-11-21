@@ -2,7 +2,7 @@
 
 open TwoDEngine3.ManagerInterfaces.GraphicsManagerInterface
 open TwoDEngine3.ManagerInterfaces.InputManager
-open glfw3
+open GLFW
 
 type GLFWAxisNode(axisID:int,parentOpt:Node option) =
      interface Node with
@@ -65,13 +65,13 @@ type InputManagerGLFW() as this =
        
                     
    interface InputManager with
-       member this.Controllers =
+      (* member this.Controllers =
            Joystick.GetValues() |> Seq.choose(fun joy ->
                  Glfw.JoystickPresent(joy)
                )
            |> Seq.iter (fun joy ->
                  let node = Node()
-               )
+               ) *)
            
        member this.ListenTo(var0) = failwith "todo"
        member this.StateChanges = failwith "todo"
