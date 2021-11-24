@@ -23,22 +23,36 @@ type GLFWHatNode(hatID:int,parentOpt) as this =
      member val Value = Children(
          [0..3] |> Seq.map(fun id -> GLFWButtonNode(id,Some(this :> Node)))
          |> Seq.cast<Node> |> Seq.toList)
-    
+type GLFWKeyboardNode(parent) =
+    interface Node with
+        member this.Name = failwith "todo"
+        member this.Parent = failwith "todo"
+        member this.Value = failwith "todo"
+
+type GLFWMouseNode(parent) =
+    interface Node with
+        member this.Name = failwith "todo"
+        member this.Parent = failwith "todo"
+        member this.Value = failwith "todo"
 
 type GLFWJoyNode(joyID,parentOpt) as this =
-    let mutable axisCount:int =0
-    do Glfw.GetJoystickAxes(joyID,&axisCount) |> ignore
-    //let mutable hatCount:int =0
-    //do Glfw.GetJoystickHats(joyID,&hatCount) |> ignore
-    let mutable buttonCount:int = 0
-    do Glfw.GetJoystickButtons(joyID,&buttonCount) |> ignore
-    let children =
+    let myID = joyID
+    let mutable children = List.Empty
+    
+    do this.MakeChildren()
+    
+    member this.MakeChildren() =
+        children <- 
         [ //axes
-            [0..axisCount-1] |> Seq.map(fun num ->
+            [0..(Glfw.GetJoystickAxesCount(myID)-1)] |> Seq.map(fun num ->
                 GLFWAxisNode(num,Some(this :> Node)) :> Node);
-          //  [0..hatCount-1] |> Seq.map(fun num -> GLFWHatNode(num,Some(this)));
-            [0..buttonCount-1] |> Seq.map(fun num ->
+            [0..(Glfw.GetJoystickButtonsCount(myID)-1)] |> Seq.map(fun num ->
                 GLFWButtonNode(num,Some(this :> Node)) :> Node)
+            [0..(Glfw.GetJoystickAxesCount(myID)-1)] |> Seq.map(fun num ->
+                GLFWHatNode(num,Some(this :> Node)) :> Node)
+            [GLFWKeyboardNode(Some(this :> Node)):>Node
+             GLFWMouseNode(Some(this:>Node)) :> Node]
+            |> List.toSeq
         ] |> Seq.concat |> Seq.toList
     
     interface Node with
@@ -60,18 +74,9 @@ type InputManagerGLFW() as this =
        member this.Update(deltaTime) =
            Glfw.PollEvents()
            None // no errors
-           
- 
        
                     
    interface InputManager with
-      (* member this.Controllers =
-           Joystick.GetValues() |> Seq.choose(fun joy ->
-                 Glfw.JoystickPresent(joy)
-               )
-           |> Seq.iter (fun joy ->
-                 let node = Node()
-               ) *)
-           
        member this.ListenTo(var0) = failwith "todo"
        member this.StateChanges = failwith "todo"
+       member this.Controllers = failwith "todo"

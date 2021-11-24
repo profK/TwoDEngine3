@@ -6,6 +6,7 @@ open System
 open AngelCodeTextRenderer
 
 open GraphicsManagerGLFW
+open InputManagerGLFW
 open TwoDEngine3.ExampleLevel
 open TwoDEngine3.LevelManagerInterface
 open TwoDEngine3.ManagerInterfaces.GraphicsManagerInterface
@@ -48,7 +49,9 @@ let main argv =
     //register textRenderer
     typedefof<AngelCodeTextRenderer>
     |> ManagerRegistry.addManager
-    
+     //register InputManager
+    typedefof<InputManagerGLFW>
+    |> ManagerRegistry.addManager
 
     match ManagerRegistry.getManager<GraphicsManager> () with
     | Some graphics -> graphics.Start(fun gmgr -> SetLevelManager(Some(BouncyBall() :> AbstractLevelController)))

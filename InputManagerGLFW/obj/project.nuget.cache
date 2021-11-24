@@ -1,14 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "0zCzyXxiRtxBN4cN3QqOuZiPkMkOjU9lm1PzwQaIIcnvMfYW/SZdrDq+oIz+Ik2XM50o9OCpsclCH/1rZCRGlA==",
+  "dgSpecHash": "BZPi7zWLukXikbbzhk/cflVA6TA18SGz/YFFdTvl7kAKnw7nJRHMTuEt2eAT8RDorvFqh7mR2FtZE3C6gG3Otw==",
   "success": true,
   "projectFilePath": "D:\\projects\\RiderProjects\\TwoDEngine3\\InputManagerGLFW\\InputManagerGLFW.fsproj",
   "expectedPackageFiles": [
     "C:\\Users\\jpkessel\\.nuget\\packages\\fsframework\\1.0.0-preview-1\\fsframework.1.0.0-preview-1.nupkg.sha512",
     "C:\\Users\\jpkessel\\.nuget\\packages\\fsharp.core\\6.0.1\\fsharp.core.6.0.1.nupkg.sha512",
-    "C:\\Users\\jpkessel\\.nuget\\packages\\glfw-net\\3.3.1\\glfw-net.3.3.1.nupkg.sha512",
     "C:\\Users\\jpkessel\\.nuget\\packages\\mathsharp\\2.0.0-pre\\mathsharp.2.0.0-pre.nupkg.sha512",
-    "C:\\Users\\jpkessel\\.nuget\\packages\\microsoft.net.compilers.toolset\\3.2.0-beta1-final\\microsoft.net.compilers.toolset.3.2.0-beta1-final.nupkg.sha512"
+    "C:\\Users\\jpkessel\\.nuget\\packages\\microsoft.net.compilers.toolset\\3.2.0-beta1-final\\microsoft.net.compilers.toolset.3.2.0-beta1-final.nupkg.sha512",
+    "C:\\Users\\jpkessel\\.nuget\\packages\\glfw-net\\3.3.1\\glfw-net.3.3.1.nupkg.sha512"
   ],
   "logs": []
 }

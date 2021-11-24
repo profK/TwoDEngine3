@@ -55,8 +55,25 @@ type BouncyBall() as this =
         base.Close()
 
     override this.Open() =
+        let rec PrintControllers (controllerList:Node list) (indent:string) =
+            controllerList
+            |> Seq.iter(fun controller ->
+                    printfn $"%s{indent}%s{controller.Name}"
+                    let newIndent = indent+"  "
+                    match controller.Value with
+                    | Axis axis ->
+                        match axis with
+                        | Digital b -> printfn $"{newIndent}Digitial Axis"
+                        | Analog a ->  printfn $"%s{newIndent}Analog Axis"
+                        | Keyboard ca -> printfn $"%s{newIndent}Keyboard Axis"
+                    | Children c -> PrintControllers c newIndent     
+                )
         printfn "BouncyBall opened"
         
+        let im = ManagerRegistry.getManager<InputManager>()
+        match im with
+        | None -> printfn "No Input Manager found" |> ignore
+        | Some im -> PrintControllers im.Controllers "" |> ignore
 
 
         base.Open()

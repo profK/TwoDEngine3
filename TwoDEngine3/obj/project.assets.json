@@ -146,7 +146,7 @@
       },
       "glfw-net/3.3.1": {
         "type": "project",
-        "framework": ".NETStandard,Version=v2.1",
+        "framework": ".NETCoreApp,Version=v5.0",
         "compile": {
           "bin/placeholder/glfw-net.dll": {}
         },
@@ -171,6 +171,22 @@
         },
         "runtime": {
           "bin/placeholder/GraphicsManagerGLFW.dll": {}
+        }
+      },
+      "InputManagerGLFW/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "FSFramework": "1.0.0-preview-1",
+          "FSharp.Core": "6.0.1",
+          "TDE3ManagerInterfaces": "1.0.0",
+          "glfw-net": "3.3.1"
+        },
+        "compile": {
+          "bin/placeholder/InputManagerGLFW.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/InputManagerGLFW.dll": {}
         }
       },
       "TDE3ManagerInterfaces/1.0.0": {
@@ -832,6 +848,11 @@
       "path": "../GraphicsManagerGLFW/GraphicsManagerGLFW.fsproj",
       "msbuildProject": "../GraphicsManagerGLFW/GraphicsManagerGLFW.fsproj"
     },
+    "InputManagerGLFW/1.0.0": {
+      "type": "project",
+      "path": "../InputManagerGLFW/InputManagerGLFW.fsproj",
+      "msbuildProject": "../InputManagerGLFW/InputManagerGLFW.fsproj"
+    },
     "TDE3ManagerInterfaces/1.0.0": {
       "type": "project",
       "path": "../TDE3ManagerInterfaces/TDE3ManagerInterfaces.fsproj",
@@ -844,6 +865,7 @@
       "FSFramework >= 1.0.0-preview-1",
       "FSharp.Core >= 6.0.1",
       "GraphicsManagerGLFW >= 1.0.0",
+      "InputManagerGLFW >= 1.0.0",
       "MathSharp >= 2.0.0-pre"
     ]
   },
@@ -892,6 +914,9 @@
             },
             "D:\\projects\\RiderProjects\\TwoDEngine3\\GraphicsManagerGLFW\\GraphicsManagerGLFW.fsproj": {
               "projectPath": "D:\\projects\\RiderProjects\\TwoDEngine3\\GraphicsManagerGLFW\\GraphicsManagerGLFW.fsproj"
+            },
+            "D:\\projects\\RiderProjects\\TwoDEngine3\\InputManagerGLFW\\InputManagerGLFW.fsproj": {
+              "projectPath": "D:\\projects\\RiderProjects\\TwoDEngine3\\InputManagerGLFW\\InputManagerGLFW.fsproj"
             }
           }
         }

@@ -10,12 +10,12 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\..\glfw-net\GLFW.NET\GLFW.NET.csproj" />
       <ProjectReference Include="..\TDE3ManagerInterfaces\TDE3ManagerInterfaces.fsproj" />
     </ItemGroup>
 
     <ItemGroup>
       <PackageReference Include="FSFramework" Version="1.0.0-preview-1" />
-      <PackageReference Include="glfw-net" Version="3.3.1" />
     </ItemGroup>
 
 </Project>

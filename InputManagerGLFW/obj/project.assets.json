@@ -71,15 +71,6 @@
           }
         }
       },
-      "glfw-net/3.3.1": {
-        "type": "package",
-        "compile": {
-          "lib/netstandard2.0/GLFW.NET.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/GLFW.NET.dll": {}
-        }
-      },
       "MathSharp/2.0.0-pre": {
         "type": "package",
         "dependencies": {
@@ -96,6 +87,16 @@
         "type": "package",
         "build": {
           "build/_._": {}
+        }
+      },
+      "glfw-net/3.3.1": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/glfw-net.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/glfw-net.dll": {}
         }
       },
       "TDE3ManagerInterfaces/1.0.0": {
@@ -171,19 +172,6 @@
         "lib/netstandard2.1/tr/FSharp.Core.resources.dll",
         "lib/netstandard2.1/zh-Hans/FSharp.Core.resources.dll",
         "lib/netstandard2.1/zh-Hant/FSharp.Core.resources.dll"
-      ]
-    },
-    "glfw-net/3.3.1": {
-      "sha512": "TpFcYN+/YjBRRJ1O3L6V1y2YpT15AgGn8DRFtsXow76++x9QC8m+mxb38Uv43N4Xh4//k9NkxlIhF/Ci2khqqA==",
-      "type": "package",
-      "path": "glfw-net/3.3.1",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "glfw-net.3.3.1.nupkg.sha512",
-        "glfw-net.nuspec",
-        "lib/netstandard2.0/GLFW.NET.dll",
-        "lib/netstandard2.0/GLFW.NET.xml"
       ]
     },
     "MathSharp/2.0.0-pre": {
@@ -398,6 +386,11 @@
         "tasks/netcoreapp2.1/zh-Hant/Microsoft.Build.Tasks.CodeAnalysis.resources.dll"
       ]
     },
+    "glfw-net/3.3.1": {
+      "type": "project",
+      "path": "../../glfw-net/GLFW.NET/GLFW.NET.csproj",
+      "msbuildProject": "../../glfw-net/GLFW.NET/GLFW.NET.csproj"
+    },
     "TDE3ManagerInterfaces/1.0.0": {
       "type": "project",
       "path": "../TDE3ManagerInterfaces/TDE3ManagerInterfaces.fsproj",
@@ -452,6 +445,9 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
+            "D:\\projects\\RiderProjects\\glfw-net\\GLFW.NET\\GLFW.NET.csproj": {
+              "projectPath": "D:\\projects\\RiderProjects\\glfw-net\\GLFW.NET\\GLFW.NET.csproj"
+            },
             "D:\\projects\\RiderProjects\\TwoDEngine3\\TDE3ManagerInterfaces\\TDE3ManagerInterfaces.fsproj": {
               "projectPath": "D:\\projects\\RiderProjects\\TwoDEngine3\\TDE3ManagerInterfaces\\TDE3ManagerInterfaces.fsproj"
             }
@@ -472,11 +468,6 @@
             "include": "Runtime, Compile, Build, Native, Analyzers, BuildTransitive",
             "target": "Package",
             "version": "[6.0.1, )",
-            "generatePathProperty": true
-          },
-          "glfw-net": {
-            "target": "Package",
-            "version": "[3.3.1, )",
             "generatePathProperty": true
           }
         },
