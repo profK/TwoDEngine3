@@ -25,15 +25,20 @@ type GLFWHatNode(hatID:int,parentOpt) as this =
          |> Seq.cast<Node> |> Seq.toList)
 type GLFWKeyboardNode(parent) =
     interface Node with
-        member this.Name = failwith "todo"
+        member this.Name = "Keyboard"
         member this.Parent = failwith "todo"
-        member this.Value = failwith "todo"
+        member this.Value =
+            Axis(Keyboard([]))
 
-type GLFWMouseNode(parent) =
+type GLFWMouseNode(parent) as this=
+    
     interface Node with
-        member this.Name = failwith "todo"
+        member this.Name = "Mouse"
         member this.Parent = failwith "todo"
-        member this.Value = failwith "todo"
+        member this.Value = Children([
+            GLFWAxisNode(0,Some(this:>Node))
+            GLFWAxisNode(1,Some(this:>Node));
+        ])
 
 type GLFWJoyNode(joyID,parentOpt) as this =
     let myID = joyID
@@ -50,9 +55,6 @@ type GLFWJoyNode(joyID,parentOpt) as this =
                 GLFWButtonNode(num,Some(this :> Node)) :> Node)
             [0..(Glfw.GetJoystickAxesCount(myID)-1)] |> Seq.map(fun num ->
                 GLFWHatNode(num,Some(this :> Node)) :> Node)
-            [GLFWKeyboardNode(Some(this :> Node)):>Node
-             GLFWMouseNode(Some(this:>Node)) :> Node]
-            |> List.toSeq
         ] |> Seq.concat |> Seq.toList
     
     interface Node with
@@ -79,4 +81,15 @@ type InputManagerGLFW() as this =
    interface InputManager with
        member this.ListenTo(var0) = failwith "todo"
        member this.StateChanges = failwith "todo"
-       member this.Controllers = failwith "todo"
+       member this.Controllers =
+           Joystick.GetValues()
+           |> Array.fold (fun joylist (joystick:Joystick) ->
+                if Glfw.JoystickPresent(joystick) then
+                    joystick::joylist
+                else
+                    joylist
+               ) List.Empty
+           |> List.map (fun joy ->
+                GLFWJoyNode(joy,None) :> Node
+               )
+           |> List.append [GLFWMouseNode();GLFWKeyboardNode()]
