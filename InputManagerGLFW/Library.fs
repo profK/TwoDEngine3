@@ -69,27 +69,34 @@ type InputManagerGLFW() as this =
                 .Value
                     
    do graphics.GraphicsListeners <- (this:>GraphicsListener) :: graphics.GraphicsListeners
+   let mutable lastTree:Node list = List.empty 
+   let mutable currentTree:Node list = List.empty
     
    interface GraphicsListener with
        member this.Render(graphics) =
            ()
        member this.Update(deltaTime) =
            Glfw.PollEvents()
+           lastTree <-currentTree
+           currentTree <-
+               Joystick.GetValues()
+               |> Array.fold (fun joylist (joystick:Joystick) ->
+                    if Glfw.JoystickPresent(joystick) then
+                        joystick::joylist
+                    else
+                        joylist
+                   ) List.Empty
+               |> List.map (fun joy ->
+                    GLFWJoyNode(joy,None) :> Node
+                   )
+               |> List.append [GLFWMouseNode();GLFWKeyboardNode()]
            None // no errors
        
                     
    interface InputManager with
-       member this.ListenTo(var0) = failwith "todo"
-       member this.StateChanges = failwith "todo"
-       member this.Controllers =
-           Joystick.GetValues()
-           |> Array.fold (fun joylist (joystick:Joystick) ->
-                if Glfw.JoystickPresent(joystick) then
-                    joystick::joylist
-                else
-                    joylist
-               ) List.Empty
-           |> List.map (fun joy ->
-                GLFWJoyNode(joy,None) :> Node
-               )
-           |> List.append [GLFWMouseNode();GLFWKeyboardNode()]
+       member val Controllers = currentTree with get 
+       member this.StateChanges =
+           let changes = GetTreeChanges currentTree lastTree 
+           //TODO cook lists to change statements
+     
+           
