@@ -9,7 +9,10 @@ type InputManagerGLFW() as this =
         ManagerRegistry
             .getManager<GraphicsManager>()
                 .Value
-                    
+                
+   let window = Glfw.CurrentContext
+   let mutable currentKeysDown = List.Empty
+   do Glfw.SetKeyCallback
    do graphics.GraphicsListeners <- (this:>GraphicsListener) :: graphics.GraphicsListeners
    let mutable lastTree:Node list = List.empty 
    let mutable currentTree:Node list = List.empty
