@@ -17,16 +17,17 @@ and Node =
     abstract Name: string with get
     abstract Value: NodeValue with get
     abstract Parent: Node option with get
-
-type ChangeType=
-    | NotChanged
-    | Added
-    | Removed
-    | ValueChanged
     
+    abstract Path: string with get
+
+
 type InputManager =
     abstract Controllers : Node list
-    abstract StateChanges : (Node * ChangeType) seq
+    // gets changes since last update
+    // The first map is added nodes
+    // The second map is removed nodes
+    // The third map is nodes whose value has changed
+    abstract StateChanges : (Map<string,Node> * Map<string,Node> * Map<string,Node>)
 let FlattenTree tree:Node list =
     let rec Recursor nodes:Node list =
         nodes |> List.fold (
