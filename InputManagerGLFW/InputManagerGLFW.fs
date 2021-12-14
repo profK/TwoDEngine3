@@ -12,7 +12,9 @@ type InputManagerGLFW() as this =
                 
    let window = Glfw.CurrentContext
    let mutable currentKeysDown = List.Empty
-   do Glfw.SetKeyCallback
+   do Glfw.SetKeyCallback(window,fun window key scancode action mods ->
+            printfn($"Scancode ${scancode}")
+       ) |> ignore
    do graphics.GraphicsListeners <- (this:>GraphicsListener) :: graphics.GraphicsListeners
    let mutable lastTree:Node list = List.empty 
    let mutable currentTree:Node list = List.empty

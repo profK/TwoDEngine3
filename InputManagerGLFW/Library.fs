@@ -26,14 +26,14 @@ type GLFWButtonNode(buttonID:int,parentOpt:Node option, state)as this =
              |Some parent -> parent.Path+"."+(this:>Node).Name
              |None -> (this:>Node).Name
 
-type GLFWHatNode(hatID:int,parentOpt:Node option, state:uint8) as this =
+type GLFWHatNode(hatID:int,parentOpt:Node option, state:Hat) as this =
     interface Node with
      member val Name = $"Hat %d{hatID}" with get
      member val Parent = parentOpt with get
      member val Value = Children(
          [0..3] |> Seq.map(fun id ->
              GLFWButtonNode(id,Some(this :> Node),
-                            if 2.0 ** float id = 0.0 then
+                            if ((uint8 state) &&& (uint8 2 >>> id)) = uint8 0  then
                                 InputState.Release
                             else
                                 InputState.Press))
@@ -43,7 +43,7 @@ type GLFWHatNode(hatID:int,parentOpt:Node option, state:uint8) as this =
              |Some parent -> parent.Path+"."+(this:>Node).Name
              |None -> (this:>Node).Name
              
-type GLFWKeyboardNode(parentOpt:Node option,) as this =
+type GLFWKeyboardNode(parentOpt:Node option) as this =
     interface Node with
         member val Name = "Keyboard" with get
         member val Parent = parentOpt with get
@@ -87,7 +87,7 @@ type GLFWJoyNode(joyID,parentOpt:Node Option) as this =
                 GLFWAxisNode(num,Some(this :> Node),float axisPositions.[num]) :> Node);
             [0..(Glfw.GetJoystickButtonsCount(myID)-1)] |> Seq.map(fun num ->
                 GLFWButtonNode(num,Some(this :> Node),buttonValues.[num]) :> Node)
-            [0..(Glfw.GetJoystickAxesCount(myID)-1)] |> Seq.map(fun num ->
+            [0..(Glfw.GetJoystickHatCount(int myID)-1)] |> Seq.map(fun num ->
                 GLFWHatNode(num,Some(this :> Node),hatValues.[num]) :> Node)
         ] |> Seq.concat |> Seq.toList
     
