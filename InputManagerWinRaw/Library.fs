@@ -8,15 +8,14 @@ open TDE3ManagerInterfaces.InputDevices
 
 type InputManagerWinRaw() as this=
     [<STAThread>]
-    let pollingThread  =
-        async {
-            NativeAPI.OpenWindow()
-            |> fun (window:NativeAPI.HWND_WRAPPER) ->
-                this.RawInputOpt <- Some(RawInput(window))
-                NativeAPI.MessagePump(window)
-        }
-        |> Async.StartImmediate
-      
+    let inputThread() =
+        NativeAPI.OpenWindow()
+        |> fun (window:NativeAPI.HWND_WRAPPER) ->
+            this.RawInputOpt <- Some(RawInput(window))
+            NativeAPI.MessagePump(window)
+        
+    let thread  = Thread(ThreadStart(inputThread)).Start()
+    
     member val RawInputOpt:RawInput option = None with get,set   
         
     interface InputDeviceInterface with
@@ -48,7 +47,8 @@ type InputManagerWinRaw() as this=
             |> Seq.sortWith(fun dev1 dev2 ->
                     stringCompare(dev1.Names.Product, dev2.Names.Product)  
                 )
-                //todo build tree
+               
+            |> Seq.map
         member val StateChanges = failwith "todo"
         
         
