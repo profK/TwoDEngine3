@@ -8,10 +8,12 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <Compile Include="InputDeviceManager.fs" />
         <Compile Include="GraphicsManagerInterface.fs" />
-        <Compile Include="InputManager.fs" />
+        <Compile Include="GameControllerManager.fs" />
         <Compile Include="TextRenderer.fs" />
         <Compile Include="SystemContext.fs" />
+        <Compile Include="MouseAndKeyboardManager.fs" />
     </ItemGroup>
 
     <ItemGroup>

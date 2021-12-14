@@ -87,10 +87,10 @@ C:\Users\jpkessel\RiderProjects\TwoDEngine3\TwoDEngine3\bin\Debug\net6.0\AngelCo
 C:\Users\jpkessel\RiderProjects\TwoDEngine3\TwoDEngine3\bin\Debug\net6.0\AngelCodeTextRenderer.xml
 C:\Users\jpkessel\RiderProjects\TwoDEngine3\TwoDEngine3\bin\Debug\net6.0\GraphicsManagerGLFW.pdb
 C:\Users\jpkessel\RiderProjects\TwoDEngine3\TwoDEngine3\bin\Debug\net6.0\GraphicsManagerGLFW.xml
-C:\Users\jpkessel\RiderProjects\TwoDEngine3\TwoDEngine3\bin\Debug\net6.0\InputManagerGLFW.pdb
-C:\Users\jpkessel\RiderProjects\TwoDEngine3\TwoDEngine3\bin\Debug\net6.0\InputManagerGLFW.xml
 C:\Users\jpkessel\RiderProjects\TwoDEngine3\TwoDEngine3\bin\Debug\net6.0\TDE3ManagerInterfaces.pdb
 C:\Users\jpkessel\RiderProjects\TwoDEngine3\TwoDEngine3\bin\Debug\net6.0\TDE3ManagerInterfaces.xml
+C:\Users\jpkessel\RiderProjects\TwoDEngine3\TwoDEngine3\bin\Debug\net6.0\InputManagerGLFW.pdb
+C:\Users\jpkessel\RiderProjects\TwoDEngine3\TwoDEngine3\bin\Debug\net6.0\InputManagerGLFW.xml
 C:\Users\jpkessel\RiderProjects\TwoDEngine3\TwoDEngine3\bin\Debug\net6.0\GLFW.NET.pdb
 C:\Users\jpkessel\RiderProjects\TwoDEngine3\TwoDEngine3\bin\Debug\net6.0\GLFW.NET.xml
 C:\Users\jpkessel\RiderProjects\TwoDEngine3\TwoDEngine3\obj\Debug\net6.0\TwoDEngine3.fsproj.AssemblyReference.cache

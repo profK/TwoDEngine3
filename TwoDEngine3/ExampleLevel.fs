@@ -3,6 +3,7 @@
 open System
 open System.IO
 open System.Numerics
+open TDE3ManagerInterfaces.InputDevices
 open TDE3ManagerInterfaces.TextRendererInterfaces
 open TwoDEngine3.LevelManagerInterface
 open TwoDEngine3.ManagerInterfaces
@@ -70,7 +71,7 @@ type BouncyBall() as this =
                 )
         printfn "BouncyBall opened"
         
-        let im = ManagerRegistry.getManager<InputManager>()
+        let im = ManagerRegistry.getManager<GameControllerManager>()
         match im with
         | None -> printfn "No Input Manager found" |> ignore
         | Some im -> PrintControllers im.Controllers "" |> ignore

@@ -71,6 +71,15 @@
           }
         }
       },
+      "HidSharpCore/1.2.1.1": {
+        "type": "package",
+        "compile": {
+          "lib/net5.0/HidSharpCore.dll": {}
+        },
+        "runtime": {
+          "lib/net5.0/HidSharpCore.dll": {}
+        }
+      },
       "MathSharp/2.0.0-pre": {
         "type": "package",
         "dependencies": {
@@ -87,6 +96,33 @@
         "type": "package",
         "build": {
           "build/_._": {}
+        }
+      },
+      "RawInputLight/1.0.1": {
+        "type": "package",
+        "dependencies": {
+          "HidSharpCore": "1.2.1.1"
+        },
+        "compile": {
+          "lib/net6.0/RawInputLight.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/RawInputLight.dll": {}
+        }
+      },
+      "TDE3ManagerInterfaces/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "FSFramework": "1.0.0-preview-1",
+          "FSharp.Core": "6.0.1",
+          "MathSharp": "2.0.0-pre"
+        },
+        "compile": {
+          "bin/placeholder/TDE3ManagerInterfaces.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/TDE3ManagerInterfaces.dll": {}
         }
       }
     }
@@ -147,6 +183,18 @@
         "lib/netstandard2.1/tr/FSharp.Core.resources.dll",
         "lib/netstandard2.1/zh-Hans/FSharp.Core.resources.dll",
         "lib/netstandard2.1/zh-Hant/FSharp.Core.resources.dll"
+      ]
+    },
+    "HidSharpCore/1.2.1.1": {
+      "sha512": "NJOXoNiMby/DQn1mttFWp88LXLITs6swXpLtFUFTMTJJEFgCDs0UbcpxH8Oc1N1N/pgduaiG2TC9OYOCEEgv/A==",
+      "type": "package",
+      "path": "hidsharpcore/1.2.1.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "hidsharpcore.1.2.1.1.nupkg.sha512",
+        "hidsharpcore.nuspec",
+        "lib/net5.0/HidSharpCore.dll"
       ]
     },
     "MathSharp/2.0.0-pre": {
@@ -360,13 +408,30 @@
         "tasks/netcoreapp2.1/zh-Hans/Microsoft.Build.Tasks.CodeAnalysis.resources.dll",
         "tasks/netcoreapp2.1/zh-Hant/Microsoft.Build.Tasks.CodeAnalysis.resources.dll"
       ]
+    },
+    "RawInputLight/1.0.1": {
+      "sha512": "Z2xptPjGUCWIPlXJYN0fgeuoJpzQNUHzGVY1PDQVrk9d4o/xW6v3TRS0t+Yb5aiilMrkVB/1LTLb1xNdKYF1CQ==",
+      "type": "package",
+      "path": "rawinputlight/1.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net6.0/RawInputLight.dll",
+        "rawinputlight.1.0.1.nupkg.sha512",
+        "rawinputlight.nuspec"
+      ]
+    },
+    "TDE3ManagerInterfaces/1.0.0": {
+      "type": "project",
+      "path": "../TDE3ManagerInterfaces/TDE3ManagerInterfaces.fsproj",
+      "msbuildProject": "../TDE3ManagerInterfaces/TDE3ManagerInterfaces.fsproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "FSFramework >= 1.0.0-preview-1",
       "FSharp.Core >= 6.0.1",
-      "MathSharp >= 2.0.0-pre"
+      "RawInputLight >= 1.0.1",
+      "TDE3ManagerInterfaces >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -378,11 +443,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\jpkessel\\RiderProjects\\TwoDEngine3\\TDE3ManagerInterfaces\\TDE3ManagerInterfaces.fsproj",
-      "projectName": "TDE3ManagerInterfaces",
-      "projectPath": "C:\\Users\\jpkessel\\RiderProjects\\TwoDEngine3\\TDE3ManagerInterfaces\\TDE3ManagerInterfaces.fsproj",
+      "projectUniqueName": "C:\\Users\\jpkessel\\RiderProjects\\TwoDEngine3\\InputManagerWinRaw\\InputManagerWinRaw.fsproj",
+      "projectName": "InputManagerWinRaw",
+      "projectPath": "C:\\Users\\jpkessel\\RiderProjects\\TwoDEngine3\\InputManagerWinRaw\\InputManagerWinRaw.fsproj",
       "packagesPath": "C:\\Users\\jpkessel\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\jpkessel\\RiderProjects\\TwoDEngine3\\TDE3ManagerInterfaces\\obj\\",
+      "outputPath": "C:\\Users\\jpkessel\\RiderProjects\\TwoDEngine3\\InputManagerWinRaw\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -406,7 +471,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\jpkessel\\RiderProjects\\TwoDEngine3\\TDE3ManagerInterfaces\\TDE3ManagerInterfaces.fsproj": {
+              "projectPath": "C:\\Users\\jpkessel\\RiderProjects\\TwoDEngine3\\TDE3ManagerInterfaces\\TDE3ManagerInterfaces.fsproj"
+            }
+          }
         }
       }
     },
@@ -414,20 +483,15 @@
       "net6.0": {
         "targetAlias": "net6.0",
         "dependencies": {
-          "FSFramework": {
-            "target": "Package",
-            "version": "[1.0.0-preview-1, )",
-            "generatePathProperty": true
-          },
           "FSharp.Core": {
             "include": "Runtime, Compile, Build, Native, Analyzers, BuildTransitive",
             "target": "Package",
             "version": "[6.0.1, )",
             "generatePathProperty": true
           },
-          "MathSharp": {
+          "RawInputLight": {
             "target": "Package",
-            "version": "[2.0.0-pre, )",
+            "version": "[1.0.1, )",
             "generatePathProperty": true
           }
         },
