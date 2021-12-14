@@ -15,6 +15,8 @@ Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "GraphicsManagerGLFW", "Grap
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "InputManagerWinRaw", "InputManagerWinRaw\InputManagerWinRaw.fsproj", "{86462DCD-154F-44E7-93A9-168682013E7B}"
 EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "OddsAndEnds", "OddsAndEnds\OddsAndEnds.fsproj", "{52302432-CF18-4CB2-A945-CB92DC670DF9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -58,6 +60,12 @@ Global
 		{86462DCD-154F-44E7-93A9-168682013E7B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{86462DCD-154F-44E7-93A9-168682013E7B}.DebugWindows|Any CPU.ActiveCfg = Debug|Any CPU
 		{86462DCD-154F-44E7-93A9-168682013E7B}.DebugWindows|Any CPU.Build.0 = Debug|Any CPU
+		{52302432-CF18-4CB2-A945-CB92DC670DF9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52302432-CF18-4CB2-A945-CB92DC670DF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52302432-CF18-4CB2-A945-CB92DC670DF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52302432-CF18-4CB2-A945-CB92DC670DF9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52302432-CF18-4CB2-A945-CB92DC670DF9}.DebugWindows|Any CPU.ActiveCfg = Debug|Any CPU
+		{52302432-CF18-4CB2-A945-CB92DC670DF9}.DebugWindows|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
