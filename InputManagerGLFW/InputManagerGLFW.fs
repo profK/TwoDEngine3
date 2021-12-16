@@ -1,5 +1,6 @@
 ﻿namespace InputManagerGLFW
 
+open TDE3ManagerInterfaces.InputDevices
 open TwoDEngine3.ManagerInterfaces.GraphicsManagerInterface
 open TwoDEngine3.ManagerInterfaces.InputManager
 open GLFW
@@ -40,7 +41,7 @@ type InputManagerGLFW() as this =
            None // no errors
        
                     
-   interface InputManager with
+   interface InputDeviceInterface with
        member val Controllers = currentTree with get 
        member this.StateChanges =
            let rec TreeToMap (tree:Node list) (map:Map<string,Node>) =

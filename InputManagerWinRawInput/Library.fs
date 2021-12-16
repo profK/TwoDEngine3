@@ -3,11 +3,9 @@
 open System
 open System.Threading
 open RawInputLight
+open TDE3ManagerInterfaces.InputDevices
 open TwoDEngine3.ManagerInterfaces.InputManager
 open Windows.Win32.Devices.HumanInterfaceDevice
-
-
-
  type AxisNode(parent:Node,name) =
         interface Node with
             member val Name:string = name with get
@@ -104,7 +102,7 @@ type InputManagerWinRawInput() as this =
                NativeAPI.RefreshDeviceInfo();
                NativeAPI.MessagePump(wrapper)
                
-       interface InputManager with
+       interface InputDeviceInterface with
            member val Controllers =
                NativeAPI.GetDevices()
                |> Array.fold(fun state (devInfo:DeviceInfo) ->

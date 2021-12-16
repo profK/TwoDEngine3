@@ -2,6 +2,7 @@
 
 open GLFW
 open GLFW
+open TDE3ManagerInterfaces.InputDevices
 open TwoDEngine3.ManagerInterfaces.GraphicsManagerInterface
 open TwoDEngine3.ManagerInterfaces.InputManager
 open GLFW
