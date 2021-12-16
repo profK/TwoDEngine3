@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "8ka6tvX4vbx3yE6zngIB2LotxPRgb7/mzG2s39+knhcFEOdJT0k/PZb0wD4PZMnYWaUDqymOjZQXO++uLKtz7Q==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\jpkessel\\RiderProjects\\TwoDEngine3\\InputManagerWinRaw\\InputManagerWinRaw.fsproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\jpkessel\\.nuget\\packages\\fsframework\\1.0.0-preview-1\\fsframework.1.0.0-preview-1.nupkg.sha512",
+    "C:\\Users\\jpkessel\\.nuget\\packages\\fsharp.core\\6.0.1\\fsharp.core.6.0.1.nupkg.sha512",
+    "C:\\Users\\jpkessel\\.nuget\\packages\\hidsharpcore\\1.2.1.1\\hidsharpcore.1.2.1.1.nupkg.sha512",
+    "C:\\Users\\jpkessel\\.nuget\\packages\\mathsharp\\2.0.0-pre\\mathsharp.2.0.0-pre.nupkg.sha512",
+    "C:\\Users\\jpkessel\\.nuget\\packages\\microsoft.net.compilers.toolset\\3.2.0-beta1-final\\microsoft.net.compilers.toolset.3.2.0-beta1-final.nupkg.sha512",
+    "C:\\Users\\jpkessel\\.nuget\\packages\\rawinputlight\\1.0.1\\rawinputlight.1.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}

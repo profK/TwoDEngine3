@@ -1,13 +1,3 @@
-C:\Users\jpkessel\RiderProjects\TwoDEngine3\TDE3ManagerInterfaces\bin\Debug\net6.0\TDE3ManagerInterfaces.deps.json
-C:\Users\jpkessel\RiderProjects\TwoDEngine3\TDE3ManagerInterfaces\bin\Debug\net6.0\TDE3ManagerInterfaces.dll
-C:\Users\jpkessel\RiderProjects\TwoDEngine3\TDE3ManagerInterfaces\bin\Debug\net6.0\TDE3ManagerInterfaces.pdb
-C:\Users\jpkessel\RiderProjects\TwoDEngine3\TDE3ManagerInterfaces\bin\Debug\net6.0\TDE3ManagerInterfaces.xml
-C:\Users\jpkessel\RiderProjects\TwoDEngine3\TDE3ManagerInterfaces\obj\Debug\net6.0\TDE3ManagerInterfaces.fsproj.AssemblyReference.cache
-C:\Users\jpkessel\RiderProjects\TwoDEngine3\TDE3ManagerInterfaces\obj\Debug\net6.0\TDE3ManagerInterfaces.AssemblyInfoInputs.cache
-C:\Users\jpkessel\RiderProjects\TwoDEngine3\TDE3ManagerInterfaces\obj\Debug\net6.0\TDE3ManagerInterfaces.AssemblyInfo.fs
-C:\Users\jpkessel\RiderProjects\TwoDEngine3\TDE3ManagerInterfaces\obj\Debug\net6.0\TDE3ManagerInterfaces.dll
-C:\Users\jpkessel\RiderProjects\TwoDEngine3\TDE3ManagerInterfaces\obj\Debug\net6.0\TDE3ManagerInterfaces.xml
-C:\Users\jpkessel\RiderProjects\TwoDEngine3\TDE3ManagerInterfaces\obj\Debug\net6.0\TDE3ManagerInterfaces.pdb
 D:\projects\RiderProjects\TwoDEngine3\TDE3ManagerInterfaces\bin\Debug\net6.0\TDE3ManagerInterfaces.deps.json
 D:\projects\RiderProjects\TwoDEngine3\TDE3ManagerInterfaces\bin\Debug\net6.0\TDE3ManagerInterfaces.dll
 D:\projects\RiderProjects\TwoDEngine3\TDE3ManagerInterfaces\bin\Debug\net6.0\TDE3ManagerInterfaces.pdb
@@ -18,3 +8,13 @@ D:\projects\RiderProjects\TwoDEngine3\TDE3ManagerInterfaces\obj\Debug\net6.0\TDE
 D:\projects\RiderProjects\TwoDEngine3\TDE3ManagerInterfaces\obj\Debug\net6.0\TDE3ManagerInterfaces.dll
 D:\projects\RiderProjects\TwoDEngine3\TDE3ManagerInterfaces\obj\Debug\net6.0\TDE3ManagerInterfaces.xml
 D:\projects\RiderProjects\TwoDEngine3\TDE3ManagerInterfaces\obj\Debug\net6.0\TDE3ManagerInterfaces.pdb
+C:\Users\jpkessel\RiderProjects\TwoDEngine3\TDE3ManagerInterfaces\bin\Debug\net6.0\TDE3ManagerInterfaces.deps.json
+C:\Users\jpkessel\RiderProjects\TwoDEngine3\TDE3ManagerInterfaces\bin\Debug\net6.0\TDE3ManagerInterfaces.dll
+C:\Users\jpkessel\RiderProjects\TwoDEngine3\TDE3ManagerInterfaces\bin\Debug\net6.0\TDE3ManagerInterfaces.pdb
+C:\Users\jpkessel\RiderProjects\TwoDEngine3\TDE3ManagerInterfaces\bin\Debug\net6.0\TDE3ManagerInterfaces.xml
+C:\Users\jpkessel\RiderProjects\TwoDEngine3\TDE3ManagerInterfaces\obj\Debug\net6.0\TDE3ManagerInterfaces.fsproj.AssemblyReference.cache
+C:\Users\jpkessel\RiderProjects\TwoDEngine3\TDE3ManagerInterfaces\obj\Debug\net6.0\TDE3ManagerInterfaces.AssemblyInfoInputs.cache
+C:\Users\jpkessel\RiderProjects\TwoDEngine3\TDE3ManagerInterfaces\obj\Debug\net6.0\TDE3ManagerInterfaces.AssemblyInfo.fs
+C:\Users\jpkessel\RiderProjects\TwoDEngine3\TDE3ManagerInterfaces\obj\Debug\net6.0\TDE3ManagerInterfaces.dll
+C:\Users\jpkessel\RiderProjects\TwoDEngine3\TDE3ManagerInterfaces\obj\Debug\net6.0\TDE3ManagerInterfaces.xml
+C:\Users\jpkessel\RiderProjects\TwoDEngine3\TDE3ManagerInterfaces\obj\Debug\net6.0\TDE3ManagerInterfaces.pdb
