@@ -16,7 +16,6 @@
     <SourceRoot Include="C:\Program Files\dotnet\sdk\NuGetFallbackFolder\" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
-    <PkgFSharp_Core Condition=" '$(PkgFSharp_Core)' == '' ">C:\Users\jpkessel\.nuget\packages\fsharp.core\6.0.1</PkgFSharp_Core>
-    <PkgRawInputLight Condition=" '$(PkgRawInputLight)' == '' ">C:\Users\jpkessel\.nuget\packages\rawinputlight\1.0.0</PkgRawInputLight>
+    <PkgRawInputLight Condition=" '$(PkgRawInputLight)' == '' ">C:\Users\jpkessel\.nuget\packages\rawinputlight\1.1.1</PkgRawInputLight>
   </PropertyGroup>
 </Project>

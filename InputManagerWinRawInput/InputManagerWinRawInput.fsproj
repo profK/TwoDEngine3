@@ -14,7 +14,8 @@
     </ItemGroup>
 
     <ItemGroup>
-      <PackageReference Include="RawInputLight" Version="1.0.0" />
+      <PackageReference Include="RawInputLight" Version="1.1.1" />
+      <PackageReference Remove="FSharp.Core" />
     </ItemGroup>
 
 </Project>

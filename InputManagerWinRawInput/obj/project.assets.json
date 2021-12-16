@@ -71,15 +71,6 @@
           }
         }
       },
-      "HidSharpCore/1.2.1.1": {
-        "type": "package",
-        "compile": {
-          "lib/net5.0/HidSharpCore.dll": {}
-        },
-        "runtime": {
-          "lib/net5.0/HidSharpCore.dll": {}
-        }
-      },
       "MathSharp/2.0.0-pre": {
         "type": "package",
         "dependencies": {
@@ -98,11 +89,8 @@
           "build/_._": {}
         }
       },
-      "RawInputLight/1.0.0": {
+      "RawInputLight/1.1.1": {
         "type": "package",
-        "dependencies": {
-          "HidSharpCore": "1.2.1.1"
-        },
         "compile": {
           "lib/net6.0/RawInputLight.dll": {}
         },
@@ -183,18 +171,6 @@
         "lib/netstandard2.1/tr/FSharp.Core.resources.dll",
         "lib/netstandard2.1/zh-Hans/FSharp.Core.resources.dll",
         "lib/netstandard2.1/zh-Hant/FSharp.Core.resources.dll"
-      ]
-    },
-    "HidSharpCore/1.2.1.1": {
-      "sha512": "NJOXoNiMby/DQn1mttFWp88LXLITs6swXpLtFUFTMTJJEFgCDs0UbcpxH8Oc1N1N/pgduaiG2TC9OYOCEEgv/A==",
-      "type": "package",
-      "path": "hidsharpcore/1.2.1.1",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "hidsharpcore.1.2.1.1.nupkg.sha512",
-        "hidsharpcore.nuspec",
-        "lib/net5.0/HidSharpCore.dll"
       ]
     },
     "MathSharp/2.0.0-pre": {
@@ -409,15 +385,15 @@
         "tasks/netcoreapp2.1/zh-Hant/Microsoft.Build.Tasks.CodeAnalysis.resources.dll"
       ]
     },
-    "RawInputLight/1.0.0": {
-      "sha512": "MFGR8b9n9heM09eoeKZ5MPYzNrtcyKCrYS0038FePb8KKzG4uX+OZLaZTP7INyCQ1xokFGXUcfJQWAsY5acjEA==",
+    "RawInputLight/1.1.1": {
+      "sha512": "OxeuxgWEFqt6ESD8V1vIQyhDi/mR8wM3irjfRlHvzMX8hxOmBShFH2MVXYsanNeqNX2y/RNgnK56S8Ml7SqrQA==",
       "type": "package",
-      "path": "rawinputlight/1.0.0",
+      "path": "rawinputlight/1.1.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "lib/net6.0/RawInputLight.dll",
-        "rawinputlight.1.0.0.nupkg.sha512",
+        "rawinputlight.1.1.1.nupkg.sha512",
         "rawinputlight.nuspec"
       ]
     },
@@ -429,8 +405,7 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "FSharp.Core >= 6.0.1",
-      "RawInputLight >= 1.0.0",
+      "RawInputLight >= 1.1.1",
       "TDE3ManagerInterfaces >= 1.0.0"
     ]
   },
@@ -485,15 +460,9 @@
       "net6.0": {
         "targetAlias": "net6.0",
         "dependencies": {
-          "FSharp.Core": {
-            "include": "Runtime, Compile, Build, Native, Analyzers, BuildTransitive",
-            "target": "Package",
-            "version": "[6.0.1, )",
-            "generatePathProperty": true
-          },
           "RawInputLight": {
             "target": "Package",
-            "version": "[1.0.0, )",
+            "version": "[1.1.1, )",
             "generatePathProperty": true
           }
         },
