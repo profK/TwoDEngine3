@@ -128,7 +128,7 @@ type InputManagerWinRawInput() as this =
             else
                 ()
                 
-       let SetAnalogAxis (name:string, value:float):AxisUnion =
+       let DeltaAnalogAxis (name:string, value:float):AxisUnion =
            axisStateCollector.AddOrUpdate(
                    name,
                     Analog(value),
@@ -151,8 +151,8 @@ type InputManagerWinRawInput() as this =
             (dWheel:int) =
             let devInfo:Nullable<DeviceInfo> = NativeAPI.GetDeviceInfo(devh)
             if devInfo.HasValue then
-                SetAnalogAxis(devInfo.Value.Names.Product+".deltaX", dx) |> ignore
-                SetAnalogAxis(devInfo.Value.Names.Product+".deltaY", dx) |> ignore
+                DeltaAnalogAxis(devInfo.Value.Names.Product+".deltaX", dx) |> ignore
+                DeltaAnalogAxis(devInfo.Value.Names.Product+".deltaY", dx) |> ignore
                 [0..4]
                 |> Seq.iter (fun (buttonNum:int) ->
                         let bitVal:UInt32 = uint32 1<<<(buttonNum*2)
@@ -163,7 +163,9 @@ type InputManagerWinRawInput() as this =
                             SetDigitalAxis(devInfo.Value.Names.Product+".button"+
                                            buttonNum.ToString(),false) |> ignore
                     )
-                
+                if (buttons &&& 0x0400ul ) = 0x0400ul then
+                    DeltaAnalogAxis(devInfo.Value.Names.Product+".deltaWheel",
+                                    dWheel) |> ignore
             else
                 ()
            
