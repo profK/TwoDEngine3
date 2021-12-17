@@ -1,12 +1,16 @@
 ﻿module InputManagerWinRawInput
 
 open System
+open System.Collections.Concurrent
+open System.Collections.Generic
 open System.Threading
 open RawInputLight
 open TDE3ManagerInterfaces.InputDevices
 open TwoDEngine3.ManagerInterfaces.InputManager
 open Windows.Win32.Devices.HumanInterfaceDevice
- type AxisNode(parent:Node,name) =
+open Windows.Win32.Foundation
+ 
+type AxisNode(parent:Node,name) =
         interface Node with
             member val Name:string = name with get
             member val Parent: Node option = Some(parent) with get
@@ -89,12 +93,48 @@ type JoystickNode(devInfo:DeviceInfo) as this =
             )
 
 type InputManagerWinRawInput() as this =
-       let mutable rawInput = None
-      
+       let mutable rawInput: RawInput option = None
+       let mutable oldStateMap = Map.empty
+       let  axisStateCollector =
+           new ConcurrentDictionary<string,AxisUnion>()
+           
+       let doKbEvent (devh:HANDLE) (asc:uint16) (keystate:KeyState):unit =
+            let devInfo:Nullable<DeviceInfo> = NativeAPI.GetDeviceInfo(devh)
+            if devInfo.HasValue then
+                match keystate with
+                | KeyState.KeyDown ->
+                    axisStateCollector.AddOrUpdate(
+                        devInfo.Value.Names.Product,
+                        Keyboard([char asc]),
+                        (fun (name:string) (oldAxisUnion:AxisUnion)->
+                            let (Keyboard oldList) = oldAxisUnion
+                            Keyboard(
+                                (char asc)::oldList
+                            )
+                        )
+                    ) |> ignore
+                | KeyState.KeyUp ->
+                    axisStateCollector.AddOrUpdate(
+                        devInfo.Value.Names.Product,
+                        Keyboard([]),
+                        (fun (name:string) (oldAxisUnion:AxisUnion) ->
+                            let (Keyboard oldList) = oldAxisUnion 
+                            Keyboard(
+                                    oldList
+                                    |> List.except([char asc])
+                                )
+                            )
+                        )|> ignore
+            else
+                ()
+                
        let messagePump():unit =
            NativeAPI.OpenWindow()
            |> fun wrapper ->
                rawInput <- Some(RawInput(wrapper))
+               rawInput.Value.add_KeyStateChangeEvent (
+                    Action<HANDLE,uint16, KeyState>(doKbEvent))
+                    
                NativeAPI.MessagePump(wrapper)
        let messagePumpThread =
            Thread(ThreadStart(messagePump))
@@ -125,5 +165,7 @@ type InputManagerWinRawInput() as this =
                             JoystickNode(devInfo):>Node :: state
                         | _ -> state
                    ) List.Empty
+          
            member val StateChanges = (Map.empty, Map.empty, Map.empty)
-       
+            
+           
