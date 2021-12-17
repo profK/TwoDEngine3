@@ -90,12 +90,13 @@
         }
       },
       "RawInputLight/1.1.1": {
-        "type": "package",
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
         "compile": {
-          "lib/net6.0/RawInputLight.dll": {}
+          "bin/placeholder/RawInputLight.dll": {}
         },
         "runtime": {
-          "lib/net6.0/RawInputLight.dll": {}
+          "bin/placeholder/RawInputLight.dll": {}
         }
       },
       "TDE3ManagerInterfaces/1.0.0": {
@@ -386,16 +387,9 @@
       ]
     },
     "RawInputLight/1.1.1": {
-      "sha512": "OxeuxgWEFqt6ESD8V1vIQyhDi/mR8wM3irjfRlHvzMX8hxOmBShFH2MVXYsanNeqNX2y/RNgnK56S8Ml7SqrQA==",
-      "type": "package",
-      "path": "rawinputlight/1.1.1",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/net6.0/RawInputLight.dll",
-        "rawinputlight.1.1.1.nupkg.sha512",
-        "rawinputlight.nuspec"
-      ]
+      "type": "project",
+      "path": "../../RawInputLight/RawInputLight/RawInputLight.csproj",
+      "msbuildProject": "../../RawInputLight/RawInputLight/RawInputLight.csproj"
     },
     "TDE3ManagerInterfaces/1.0.0": {
       "type": "project",
@@ -449,6 +443,9 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
+            "D:\\projects\\RiderProjects\\RawInputLight\\RawInputLight\\RawInputLight.csproj": {
+              "projectPath": "D:\\projects\\RiderProjects\\RawInputLight\\RawInputLight\\RawInputLight.csproj"
+            },
             "D:\\projects\\RiderProjects\\TwoDEngine3\\TDE3ManagerInterfaces\\TDE3ManagerInterfaces.fsproj": {
               "projectPath": "D:\\projects\\RiderProjects\\TwoDEngine3\\TDE3ManagerInterfaces\\TDE3ManagerInterfaces.fsproj"
             }
@@ -459,13 +456,6 @@
     "frameworks": {
       "net6.0": {
         "targetAlias": "net6.0",
-        "dependencies": {
-          "RawInputLight": {
-            "target": "Package",
-            "version": "[1.1.1, )",
-            "generatePathProperty": true
-          }
-        },
         "imports": [
           "net461",
           "net462",

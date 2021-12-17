@@ -100,3 +100,8 @@ C:\Users\jpkessel\RiderProjects\TwoDEngine3\TwoDEngine3\obj\Debug\net6.0\TwoDEng
 C:\Users\jpkessel\RiderProjects\TwoDEngine3\TwoDEngine3\obj\Debug\net6.0\TwoDEngine3.dll
 C:\Users\jpkessel\RiderProjects\TwoDEngine3\TwoDEngine3\obj\Debug\net6.0\TwoDEngine3.pdb
 C:\Users\jpkessel\RiderProjects\TwoDEngine3\TwoDEngine3\obj\Debug\net6.0\TwoDEngine3.genruntimeconfig.cache
+D:\projects\RiderProjects\TwoDEngine3\TwoDEngine3\bin\Debug\net6.0\RawInputLight.dll
+D:\projects\RiderProjects\TwoDEngine3\TwoDEngine3\bin\Debug\net6.0\InputManagerWinRawInput.dll
+D:\projects\RiderProjects\TwoDEngine3\TwoDEngine3\bin\Debug\net6.0\InputManagerWinRawInput.pdb
+D:\projects\RiderProjects\TwoDEngine3\TwoDEngine3\bin\Debug\net6.0\InputManagerWinRawInput.xml
+D:\projects\RiderProjects\TwoDEngine3\TwoDEngine3\bin\Debug\net6.0\RawInputLight.pdb

@@ -7,6 +7,7 @@ open AngelCodeTextRenderer
 
 open GraphicsManagerGLFW
 open InputManagerGLFW
+open InputManagerWinRawInput
 open TwoDEngine3.ExampleLevel
 open TwoDEngine3.LevelManagerInterface
 open TwoDEngine3.ManagerInterfaces.GraphicsManagerInterface
@@ -50,7 +51,7 @@ let main argv =
     typedefof<AngelCodeTextRenderer>
     |> ManagerRegistry.addManager
      //register InputManager
-    typedefof<InputManagerGLFW>
+    typedefof<InputManagerWinRawInput>
     |> ManagerRegistry.addManager
 
     match ManagerRegistry.getManager<GraphicsManager> () with

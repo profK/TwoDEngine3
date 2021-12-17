@@ -189,6 +189,30 @@
           "bin/placeholder/InputManagerGLFW.dll": {}
         }
       },
+      "InputManagerWinRawInput/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "RawInputLight": "1.1.1",
+          "TDE3ManagerInterfaces": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/InputManagerWinRawInput.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/InputManagerWinRawInput.dll": {}
+        }
+      },
+      "RawInputLight/1.1.1": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/RawInputLight.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/RawInputLight.dll": {}
+        }
+      },
       "TDE3ManagerInterfaces/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -853,6 +877,16 @@
       "path": "../InputManagerGLFW/InputManagerGLFW.fsproj",
       "msbuildProject": "../InputManagerGLFW/InputManagerGLFW.fsproj"
     },
+    "InputManagerWinRawInput/1.0.0": {
+      "type": "project",
+      "path": "../InputManagerWinRawInput/InputManagerWinRawInput.fsproj",
+      "msbuildProject": "../InputManagerWinRawInput/InputManagerWinRawInput.fsproj"
+    },
+    "RawInputLight/1.1.1": {
+      "type": "project",
+      "path": "../../RawInputLight/RawInputLight/RawInputLight.csproj",
+      "msbuildProject": "../../RawInputLight/RawInputLight/RawInputLight.csproj"
+    },
     "TDE3ManagerInterfaces/1.0.0": {
       "type": "project",
       "path": "../TDE3ManagerInterfaces/TDE3ManagerInterfaces.fsproj",
@@ -866,6 +900,7 @@
       "FSharp.Core >= 6.0.1",
       "GraphicsManagerGLFW >= 1.0.0",
       "InputManagerGLFW >= 1.0.0",
+      "InputManagerWinRawInput >= 1.0.0",
       "MathSharp >= 2.0.0-pre"
     ]
   },
@@ -917,6 +952,9 @@
             },
             "D:\\projects\\RiderProjects\\TwoDEngine3\\InputManagerGLFW\\InputManagerGLFW.fsproj": {
               "projectPath": "D:\\projects\\RiderProjects\\TwoDEngine3\\InputManagerGLFW\\InputManagerGLFW.fsproj"
+            },
+            "D:\\projects\\RiderProjects\\TwoDEngine3\\InputManagerWinRawInput\\InputManagerWinRawInput.fsproj": {
+              "projectPath": "D:\\projects\\RiderProjects\\TwoDEngine3\\InputManagerWinRawInput\\InputManagerWinRawInput.fsproj"
             }
           }
         }

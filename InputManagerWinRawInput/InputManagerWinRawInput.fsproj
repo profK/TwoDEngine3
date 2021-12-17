@@ -10,11 +10,11 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\..\RawInputLight\RawInputLight\RawInputLight.csproj" />
       <ProjectReference Include="..\TDE3ManagerInterfaces\TDE3ManagerInterfaces.fsproj" />
     </ItemGroup>
 
     <ItemGroup>
-      <PackageReference Include="RawInputLight" Version="1.1.1" />
       <PackageReference Remove="FSharp.Core" />
     </ItemGroup>
 

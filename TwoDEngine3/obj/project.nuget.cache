@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "ZsK+kuiHsicunCvS9iBFBqJV50uvMfOTPwsuO7bhdpjW52ow7B6i6s35QVAvXbTTTQDKiGXOODYFylcixGHaww==",
+  "dgSpecHash": "QmvCdAmDBPeeV11duk1m/SQVO4qSWGLzQekOCv6XYYCSKUcBYPpBTDlFLpUMx+v7BrDDtgbEfB0j9yzXHs61UA==",
   "success": true,
   "projectFilePath": "D:\\projects\\RiderProjects\\TwoDEngine3\\TwoDEngine3\\TwoDEngine3.fsproj",
   "expectedPackageFiles": [
@@ -13,7 +13,8 @@
     "C:\\Users\\jpkessel\\.nuget\\packages\\microsoft.net.compilers.toolset\\3.2.0-beta1-final\\microsoft.net.compilers.toolset.3.2.0-beta1-final.nupkg.sha512",
     "C:\\Users\\jpkessel\\.nuget\\packages\\opengl.net\\0.8.4\\opengl.net.0.8.4.nupkg.sha512",
     "C:\\Users\\jpkessel\\.nuget\\packages\\stbimagesharp\\2.22.6\\stbimagesharp.2.22.6.nupkg.sha512",
-    "C:\\Users\\jpkessel\\.nuget\\packages\\glfw-net\\3.3.1\\glfw-net.3.3.1.nupkg.sha512"
+    "C:\\Users\\jpkessel\\.nuget\\packages\\glfw-net\\3.3.1\\glfw-net.3.3.1.nupkg.sha512",
+    "C:\\Users\\jpkessel\\.nuget\\packages\\rawinputlight\\1.1.1\\rawinputlight.1.1.1.nupkg.sha512"
   ],
   "logs": [
     {

@@ -10,14 +10,14 @@ open Windows.Win32.Devices.HumanInterfaceDevice
         interface Node with
             member val Name:string = name with get
             member val Parent: Node option = Some(parent) with get
-            member val Path:string=parent.Path+"."+name with get
+            member this.Path:string=parent.Path+"."+name 
             member val Value= Axis(Analog(0)) // value is ignored
             
 type ButtonNode(parent:Node,name) =
      interface Node with
         member val Name:string = name with get
         member val Parent: Node option = Some(parent) with get
-        member val Path:string=parent.Path+"."+name with get
+        member this.Path:string=parent.Path+"."+name 
         member val Value= Axis(Digital(false)) // value is ignored
                 
 type MouseNode(devInfo:DeviceInfo) as this=
@@ -26,7 +26,7 @@ type MouseNode(devInfo:DeviceInfo) as this=
     interface Node with
         member val Name:string = name with get
         member val Parent: Node option = None with get
-        member val Path:string=name with get
+        member this.Path:string=name 
         member val Value= Children(
                 [AxisNode(this,"deltaX");AxisNode(this,"deltaY");AxisNode(this,"deltaWheel")
                  ButtonNode(this,"button1");ButtonNode(this,"button2");ButtonNode(this,"button3")
@@ -39,7 +39,7 @@ type KeyboardNode(devInfo:DeviceInfo) as this =
     interface Node with
         member val Name:string = name with get
         member val Parent: Node option = None with get
-        member val Path:string=name with get
+        member this.Path:string=name
         member val Value= Axis(Keyboard([]))
             
 type JoystickNode(devInfo:DeviceInfo) as this =
@@ -77,7 +77,7 @@ type JoystickNode(devInfo:DeviceInfo) as this =
     interface Node with
         member val Name:string = name with get
         member val Parent: Node option = None with get
-        member val Path:string=name with get
+        member this.Path:string=name 
         member val Value= Children(
             [
                 devInfo.ButtonCaps
@@ -89,38 +89,41 @@ type JoystickNode(devInfo:DeviceInfo) as this =
             )
 
 type InputManagerWinRawInput() as this =
-       let messagePumpThread =
-           Thread(ThreadStart(this.messagePump)).Start()
-       
-       member val RawInput: RawInput option = None with get, set
-       
-       [<STAThread>]
-       member this.messagePump():unit =
+       let mutable rawInput = None
+      
+       let messagePump():unit =
            NativeAPI.OpenWindow()
            |> fun wrapper ->
-               this.RawInput <- Some(RawInput(wrapper))
-               NativeAPI.RefreshDeviceInfo();
+               rawInput <- Some(RawInput(wrapper))
                NativeAPI.MessagePump(wrapper)
-               
+       let messagePumpThread =
+           Thread(ThreadStart(messagePump))
+ 
+       do messagePumpThread.Start()
+       
+       member val RawInput = rawInput with get
+       member val PumpThread = messagePumpThread with get
+       
        interface InputDeviceInterface with
-           member val Controllers =
+           member this.Controllers =
+               NativeAPI.RefreshDeviceInfo()
                NativeAPI.GetDevices()
                |> Array.fold(fun state (devInfo:DeviceInfo) ->
-                        if (devInfo.DeviceCaps.UsagePage = uint16(1)) then
-                            let usage:HIDDesktopUsages =
-                                Microsoft.FSharp.Core.LanguagePrimitives.
-                                    EnumOfValue<uint, HIDDesktopUsages>(
-                                        uint devInfo.DeviceCaps.Usage)
-                            match usage  with
-                            | HIDDesktopUsages.GenericDesktopMouse ->
-                                MouseNode(devInfo):>Node :: state
-                            | HIDDesktopUsages.GenericDesktopKeyboard ->
-                                KeyboardNode(devInfo):>Node :: state
-                            | HIDDesktopUsages.GenericDesktopJoystick ->
-                                JoystickNode(devInfo):>Node :: state
-                            | _ -> state
-                        else
-                            state
+                        Console.WriteLine(devInfo.Names.Product+":"+
+                                          devInfo.DeviceCaps.Usage.ToString())
+                        let usage:HIDDesktopUsages =
+                            Microsoft.FSharp.Core.LanguagePrimitives.
+                                EnumOfValue<uint, HIDDesktopUsages>(
+                                    ((uint devInfo.DeviceCaps.UsagePage)<<<16)|||
+                                     uint devInfo.DeviceCaps.Usage)
+                        match usage  with
+                        | HIDDesktopUsages.GenericDesktopMouse ->
+                            MouseNode(devInfo):>Node :: state
+                        | HIDDesktopUsages.GenericDesktopKeyboard ->
+                            KeyboardNode(devInfo):>Node :: state
+                        | HIDDesktopUsages.GenericDesktopJoystick ->
+                            JoystickNode(devInfo):>Node :: state
+                        | _ -> state
                    ) List.Empty
-           member val StateChanges = failwith "todo"
+           member val StateChanges = (Map.empty, Map.empty, Map.empty)
        

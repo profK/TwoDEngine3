@@ -56,6 +56,7 @@ type BouncyBall() as this =
         base.Close()
 
     override this.Open() =
+        
         let rec PrintControllers (controllerList:Node list) (indent:string) =
             controllerList
             |> Seq.iter(fun controller ->
@@ -71,7 +72,7 @@ type BouncyBall() as this =
                 )
         printfn "BouncyBall opened"
         
-        let im = ManagerRegistry.getManager<GameControllerManager>()
+        let im = ManagerRegistry.getManager<InputDeviceInterface>()
         match im with
         | None -> printfn "No Input Manager found" |> ignore
         | Some im -> PrintControllers im.Controllers "" |> ignore
