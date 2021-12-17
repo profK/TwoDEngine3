@@ -33,8 +33,8 @@ type MouseNode(devInfo:DeviceInfo) as this=
         member this.Path:string=name 
         member val Value= Children(
                 [AxisNode(this,"deltaX");AxisNode(this,"deltaY");AxisNode(this,"deltaWheel")
-                 ButtonNode(this,"button1");ButtonNode(this,"button2");ButtonNode(this,"button3")
-                 ButtonNode(this,"button4")]
+                 ButtonNode(this,"button0");ButtonNode(this,"button1");ButtonNode(this,"button2")
+                 ButtonNode(this,"button3")]
             ) with get
         
 type KeyboardNode(devInfo:DeviceInfo) as this =
@@ -128,13 +128,53 @@ type InputManagerWinRawInput() as this =
             else
                 ()
                 
+       let SetAnalogAxis (name:string, value:float):AxisUnion =
+           axisStateCollector.AddOrUpdate(
+                   name,
+                    Analog(value),
+                    (fun (name:string) (currentAxis:AxisUnion)->
+                        let (Analog currentVal) = currentAxis
+                        Analog(currentVal+value)
+                    )
+                )
+       let SetDigitalAxis(name:string, value:bool) =
+           axisStateCollector.AddOrUpdate(
+                   name,
+                    Digital(value),
+                    (fun (name:string) (currentAxis:AxisUnion)->
+                        let (Digital currentVal) = currentAxis
+                        Digital(value)
+                    )
+                )
+           
+       let doMouseEvent (devh:HANDLE) (dx:int) (dy:int) (buttons:UInt32)
+            (dWheel:int) =
+            let devInfo:Nullable<DeviceInfo> = NativeAPI.GetDeviceInfo(devh)
+            if devInfo.HasValue then
+                SetAnalogAxis(devInfo.Value.Names.Product+".deltaX", dx) |> ignore
+                SetAnalogAxis(devInfo.Value.Names.Product+".deltaY", dx) |> ignore
+                [0..4]
+                |> Seq.iter (fun (buttonNum:int) ->
+                        let bitVal:UInt32 = uint32 1<<<(buttonNum*2)
+                        if  (bitVal &&& buttons) = bitVal then
+                            SetDigitalAxis(devInfo.Value.Names.Product+".button"+
+                                           buttonNum.ToString(),true) |> ignore
+                        else
+                            SetDigitalAxis(devInfo.Value.Names.Product+".button"+
+                                           buttonNum.ToString(),false) |> ignore
+                    )
+                
+            else
+                ()
+           
        let messagePump():unit =
            NativeAPI.OpenWindow()
            |> fun wrapper ->
                rawInput <- Some(RawInput(wrapper))
                rawInput.Value.add_KeyStateChangeEvent (
                     Action<HANDLE,uint16, KeyState>(doKbEvent))
-                    
+               rawInput.Value.add_MouseStateChangeEvent(
+                   Action<HANDLE,int,int,UInt32,int>(doMouseEvent))
                NativeAPI.MessagePump(wrapper)
        let messagePumpThread =
            Thread(ThreadStart(messagePump))
