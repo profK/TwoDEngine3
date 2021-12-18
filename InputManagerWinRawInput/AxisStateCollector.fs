@@ -60,7 +60,7 @@ type AxisStateCollector()=
                                 )
                             )
                         )|> ignore
-       member this.GetState =
+       member this.GetState() =
            axisStateCollector
            |> Seq.fold (fun (map:Map<string,AxisUnion>) kvp ->
                 map.Add(kvp.Key,kvp.Value)

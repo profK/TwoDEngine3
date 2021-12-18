@@ -18,9 +18,9 @@ and Node =
     abstract Path: string with get
     
 type InputDeviceInterface =
-    abstract Controllers : Node list
+    abstract Controllers : unit -> Node list
     // gets changes since last update
     // The first map is added nodes
     // The second map is removed nodes
     // The third map is nodes whose value has changed
-    abstract StateChanges : (Map<string,AxisUnion> * Map<string,AxisUnion> * Map<string,AxisUnion>)
+    abstract StateChanges: unit -> (Map<string,AxisUnion> * Map<string,AxisUnion> * Map<string,AxisUnion>)

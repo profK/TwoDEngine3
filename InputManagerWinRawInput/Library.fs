@@ -176,7 +176,7 @@ type InputManagerWinRawInput() as this =
        member val PumpThread = messagePumpThread with get
        
        interface InputDeviceInterface with
-           member this.Controllers =
+           member this.Controllers() =
                NativeAPI.RefreshDeviceInfo()
                NativeAPI.GetDevices()
                |> Array.fold(fun state (devInfo:DeviceInfo) ->
@@ -197,6 +197,22 @@ type InputManagerWinRawInput() as this =
                         | _ -> state
                    ) List.Empty
           
-           member val StateChanges = (Map.empty, Map.empty, Map.empty)
-            
+           member this.StateChanges() = 
+               let currentStateMap = axisStateCollector.GetState()
+               let stateDelta =
+                    currentStateMap
+                    |> Map.fold (fun (map:Map<string,AxisUnion>) key value->
+                       if oldStateMap.ContainsKey(key) &&
+                            (oldStateMap[key]=value) then
+                          map
+                       else    
+                           map.Add(key,value) 
+                    ) Map.empty
+               let states = (
+                   oldStateMap,
+                   currentStateMap,
+                   stateDelta
+               )
+               oldStateMap <-currentStateMap
+               states
            
