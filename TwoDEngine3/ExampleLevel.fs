@@ -75,7 +75,7 @@ type BouncyBall() as this =
         let im = ManagerRegistry.getManager<InputDeviceInterface>()
         match im with
         | None -> printfn "No Input Manager found" |> ignore
-        | Some im -> PrintControllers im.Controllers "" |> ignore
+        | Some im -> PrintControllers (im.Controllers()) "" |> ignore
 
 
         base.Open()

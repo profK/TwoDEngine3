@@ -1,4 +1,4 @@
-﻿module InputManagerWinRawInput.AxisStateCollector
+﻿module AxisStateCollector
 
 open System.Collections.Concurrent
 open RawInputLight

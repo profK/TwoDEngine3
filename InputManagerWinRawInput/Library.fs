@@ -9,7 +9,7 @@ open TDE3ManagerInterfaces.InputDevices
 open TwoDEngine3.ManagerInterfaces.InputManager
 open Windows.Win32.Devices.HumanInterfaceDevice
 open Windows.Win32.Foundation
-open InputManagerWinRawInput.AxisStateCollector
+open AxisStateCollector
  
 type AxisNode(parent:Node,name) =
         interface Node with
@@ -109,7 +109,7 @@ type InputManagerWinRawInput() as this =
             if devInfo.HasValue then
                 axisStateCollector.DeltaAnalogAxis(devInfo.Value.Names.Product+".deltaX", dx) |> ignore
                 axisStateCollector.DeltaAnalogAxis(devInfo.Value.Names.Product+".deltaY", dx) |> ignore
-                [0..4]
+                [0..3]
                 |> Seq.iter (fun (buttonNum:int) ->
                         let bitVal:UInt32 = uint32 1<<<(buttonNum*2)
                         if  (bitVal &&& buttons) = bitVal then
@@ -132,7 +132,7 @@ type InputManagerWinRawInput() as this =
        let doButtonDownEvent (devh:HANDLE) (usageBase:UInt32) (values:bool[]) =
             let devInfo:Nullable<DeviceInfo> = NativeAPI.GetDeviceInfo(devh)
             if devInfo.HasValue then
-                [0..values.Length]
+                [0..values.Length-1]
                 |> Seq.iter (fun (index:int) ->
                         let usage:HIDDesktopUsages =
                             uint32ToHidUsage (usageBase + uint32 index) 
@@ -146,7 +146,7 @@ type InputManagerWinRawInput() as this =
        let doAxisChangeEvent(devh:HANDLE) (usages:uint32[]) (values:uint32[]) =
             let devInfo:Nullable<DeviceInfo> = NativeAPI.GetDeviceInfo(devh)
             if devInfo.HasValue then
-                [0..usages.Length]
+                [0..usages.Length-1]
                 |> Seq.iter (fun index ->
                         let hidUsage:HIDDesktopUsages =
                             LanguagePrimitives.EnumOfValue usages[index]
