@@ -127,7 +127,6 @@ type InputManagerWinRawInput() as this =
                         )|> ignore
             else
                 ()
-                
        let DeltaAnalogAxis (name:string, value:float):AxisUnion =
            axisStateCollector.AddOrUpdate(
                    name,
@@ -135,6 +134,15 @@ type InputManagerWinRawInput() as this =
                     (fun (name:string) (currentAxis:AxisUnion)->
                         let (Analog currentVal) = currentAxis
                         Analog(currentVal+value)
+                    )
+           )
+                    
+       let SetAnalogAxis (name:string, value:float):AxisUnion =
+           axisStateCollector.AddOrUpdate(
+                   name,
+                    Analog(value),
+                    (fun (name:string) (currentAxis:AxisUnion)->
+                        Analog(value)
                     )
                 )
        let SetDigitalAxis(name:string, value:bool) =
@@ -168,7 +176,36 @@ type InputManagerWinRawInput() as this =
                                     dWheel) |> ignore
             else
                 ()
-           
+                
+       let uint32ToHidUsage (num:uint32):HIDDesktopUsages =
+           let usage:HIDDesktopUsages =  LanguagePrimitives.EnumOfValue num
+           usage
+          
+       let doButtonDownEvent (devh:HANDLE) (usageBase:UInt32) (values:bool[]) =
+            let devInfo:Nullable<DeviceInfo> = NativeAPI.GetDeviceInfo(devh)
+            if devInfo.HasValue then
+                [0..values.Length]
+                |> Seq.iter (fun (index:int) ->
+                        let usage:HIDDesktopUsages =
+                            uint32ToHidUsage (usageBase + uint32 index) 
+                        let name = devInfo.Value.Names.Product + "." + usage.ToString()
+                        SetDigitalAxis(name,values[index]) |> ignore
+                    )
+                
+            else
+                ()
+                
+       let doAxisChangeEvent(devh:HANDLE) (usages:uint32[]) (values:uint32[]) =
+            let devInfo:Nullable<DeviceInfo> = NativeAPI.GetDeviceInfo(devh)
+            if devInfo.HasValue then
+                [0..usages.Length]
+                |> Seq.iter (fun index ->
+                        let hidUsage:HIDDesktopUsages =
+                            LanguagePrimitives.EnumOfValue usages[index]
+                        let name = devInfo.Value.Names.Product+"."+
+                                   hidUsage.ToString()
+                        SetAnalogAxis(name,float values[index]) |> ignore       
+                    )
        let messagePump():unit =
            NativeAPI.OpenWindow()
            |> fun wrapper ->
@@ -177,6 +214,10 @@ type InputManagerWinRawInput() as this =
                     Action<HANDLE,uint16, KeyState>(doKbEvent))
                rawInput.Value.add_MouseStateChangeEvent(
                    Action<HANDLE,int,int,UInt32,int>(doMouseEvent))
+               rawInput.Value.add_ButtonDownEvent(
+                   Action<HANDLE, UInt32, bool[]>(doButtonDownEvent))
+               rawInput.Value.add_AxisEvent(
+                   Action<HANDLE,uint32[], uint32[]>(doAxisChangeEvent))
                NativeAPI.MessagePump(wrapper)
        let messagePumpThread =
            Thread(ThreadStart(messagePump))
