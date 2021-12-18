@@ -9,6 +9,7 @@ open TDE3ManagerInterfaces.InputDevices
 open TwoDEngine3.ManagerInterfaces.InputManager
 open Windows.Win32.Devices.HumanInterfaceDevice
 open Windows.Win32.Foundation
+open InputManagerWinRawInput.AxisStateCollector
  
 type AxisNode(parent:Node,name) =
         interface Node with
@@ -95,84 +96,31 @@ type JoystickNode(devInfo:DeviceInfo) as this =
 type InputManagerWinRawInput() as this =
        let mutable rawInput: RawInput option = None
        let mutable oldStateMap = Map.empty
-       let  axisStateCollector =
-           new ConcurrentDictionary<string,AxisUnion>()
+       let  axisStateCollector = AxisStateCollector()
            
        let doKbEvent (devh:HANDLE) (asc:uint16) (keystate:KeyState):unit =
             let devInfo:Nullable<DeviceInfo> = NativeAPI.GetDeviceInfo(devh)
             if devInfo.HasValue then
-                match keystate with
-                | KeyState.KeyDown ->
-                    axisStateCollector.AddOrUpdate(
-                        devInfo.Value.Names.Product,
-                        Keyboard([char asc]),
-                        (fun (name:string) (oldAxisUnion:AxisUnion)->
-                            let (Keyboard oldList) = oldAxisUnion
-                            Keyboard(
-                                (char asc)::oldList
-                            )
-                        )
-                    ) |> ignore
-                | KeyState.KeyUp ->
-                    axisStateCollector.AddOrUpdate(
-                        devInfo.Value.Names.Product,
-                        Keyboard([]),
-                        (fun (name:string) (oldAxisUnion:AxisUnion) ->
-                            let (Keyboard oldList) = oldAxisUnion 
-                            Keyboard(
-                                    oldList
-                                    |> List.except([char asc])
-                                )
-                            )
-                        )|> ignore
-            else
-                ()
-       let DeltaAnalogAxis (name:string, value:float):AxisUnion =
-           axisStateCollector.AddOrUpdate(
-                   name,
-                    Analog(value),
-                    (fun (name:string) (currentAxis:AxisUnion)->
-                        let (Analog currentVal) = currentAxis
-                        Analog(currentVal+value)
-                    )
-           )
-                    
-       let SetAnalogAxis (name:string, value:float):AxisUnion =
-           axisStateCollector.AddOrUpdate(
-                   name,
-                    Analog(value),
-                    (fun (name:string) (currentAxis:AxisUnion)->
-                        Analog(value)
-                    )
-                )
-       let SetDigitalAxis(name:string, value:bool) =
-           axisStateCollector.AddOrUpdate(
-                   name,
-                    Digital(value),
-                    (fun (name:string) (currentAxis:AxisUnion)->
-                        let (Digital currentVal) = currentAxis
-                        Digital(value)
-                    )
-                )
-           
+                axisStateCollector.SetKeyboardAxis(devInfo.Value.Names.Product,char asc,keystate)
+       
        let doMouseEvent (devh:HANDLE) (dx:int) (dy:int) (buttons:UInt32)
             (dWheel:int) =
             let devInfo:Nullable<DeviceInfo> = NativeAPI.GetDeviceInfo(devh)
             if devInfo.HasValue then
-                DeltaAnalogAxis(devInfo.Value.Names.Product+".deltaX", dx) |> ignore
-                DeltaAnalogAxis(devInfo.Value.Names.Product+".deltaY", dx) |> ignore
+                axisStateCollector.DeltaAnalogAxis(devInfo.Value.Names.Product+".deltaX", dx) |> ignore
+                axisStateCollector.DeltaAnalogAxis(devInfo.Value.Names.Product+".deltaY", dx) |> ignore
                 [0..4]
                 |> Seq.iter (fun (buttonNum:int) ->
                         let bitVal:UInt32 = uint32 1<<<(buttonNum*2)
                         if  (bitVal &&& buttons) = bitVal then
-                            SetDigitalAxis(devInfo.Value.Names.Product+".button"+
+                            axisStateCollector.SetDigitalAxis(devInfo.Value.Names.Product+".button"+
                                            buttonNum.ToString(),true) |> ignore
                         else
-                            SetDigitalAxis(devInfo.Value.Names.Product+".button"+
+                            axisStateCollector.SetDigitalAxis(devInfo.Value.Names.Product+".button"+
                                            buttonNum.ToString(),false) |> ignore
                     )
                 if (buttons &&& 0x0400ul ) = 0x0400ul then
-                    DeltaAnalogAxis(devInfo.Value.Names.Product+".deltaWheel",
+                    axisStateCollector.DeltaAnalogAxis(devInfo.Value.Names.Product+".deltaWheel",
                                     dWheel) |> ignore
             else
                 ()
@@ -189,7 +137,7 @@ type InputManagerWinRawInput() as this =
                         let usage:HIDDesktopUsages =
                             uint32ToHidUsage (usageBase + uint32 index) 
                         let name = devInfo.Value.Names.Product + "." + usage.ToString()
-                        SetDigitalAxis(name,values[index]) |> ignore
+                        axisStateCollector.SetDigitalAxis(name,values[index]) |> ignore
                     )
                 
             else
@@ -204,7 +152,7 @@ type InputManagerWinRawInput() as this =
                             LanguagePrimitives.EnumOfValue usages[index]
                         let name = devInfo.Value.Names.Product+"."+
                                    hidUsage.ToString()
-                        SetAnalogAxis(name,float values[index]) |> ignore       
+                        axisStateCollector.SetAnalogAxis(name,float values[index]) |> ignore       
                     )
        let messagePump():unit =
            NativeAPI.OpenWindow()
