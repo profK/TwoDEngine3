@@ -54,13 +54,19 @@ type JoystickNode(devInfo:DeviceInfo) as this =
     let MakeButtonNodes (buttonCaps:HIDP_BUTTON_CAPS array) =
         buttonCaps
         |> Array.fold(fun state (buttonCap:HIDP_BUTTON_CAPS) ->
+            
             match buttonCap.IsRange.Value with
             | 0uy -> //FALSE
-                ButtonNode(this, MakeUsage(buttonCap.Anonymous.NotRange.Usage).ToString()):> Node ::state // false
+                let name = MakeUsage(
+                    (uint32 buttonCap.UsagePage<<<16) |||
+                    (uint32 buttonCap.Anonymous.NotRange.Usage))
+                ButtonNode(this, name.ToString()):> Node ::state // false
             | _ -> // TRUE
                 [buttonCap.Anonymous.Range.UsageMin..buttonCap.Anonymous.Range.UsageMax]
                 |> List.fold(fun state usageNum ->
-                        ButtonNode(this,MakeUsage(usageNum).ToString()):>Node ::state
+                        let name = MakeUsage(
+                            (uint32 buttonCap.UsagePage<<<16) ||| uint32 usageNum)
+                        ButtonNode(this,name.ToString()):>Node ::state
                     ) state
             ) List.Empty
         
@@ -69,11 +75,16 @@ type JoystickNode(devInfo:DeviceInfo) as this =
         |> Array.fold(fun state (valueCap:HIDP_VALUE_CAPS) ->
             match valueCap.IsRange.Value with
             | 0uy -> //FALSE
-                AxisNode(this, MakeUsage(valueCap.Anonymous.NotRange.Usage).ToString()):> Node ::state // false
+                let name = MakeUsage(
+                    (uint32 valueCap.UsagePage<<<16) |||
+                    (uint32 valueCap.Anonymous.NotRange.Usage))
+                AxisNode(this, name.ToString()):> Node ::state // false
             | _ -> // TRUE
                 [valueCap.Anonymous.Range.UsageMin..valueCap.Anonymous.Range.UsageMax]
                 |> List.fold(fun state usageNum ->
-                        AxisNode(this,MakeUsage(usageNum).ToString()):>Node ::state
+                        let name = MakeUsage(
+                            (uint32 valueCap.UsagePage<<<16) ||| uint32 usageNum)
+                        AxisNode(this,name.ToString()):>Node ::state
                     ) state
             ) List.Empty
         
@@ -125,10 +136,10 @@ type InputManagerWinRawInput() as this =
             else
                 ()
                 
-       let uint32ToHidUsage (num:uint32):HIDDesktopUsages =
-           let usage:HIDDesktopUsages =  LanguagePrimitives.EnumOfValue num
-           usage
-          
+       let uint32ToHidUsage  (usage:uint32):HIDDesktopUsages =
+           let hid:HIDDesktopUsages =
+               LanguagePrimitives.EnumOfValue usage
+           hid
        let doButtonDownEvent (devh:HANDLE) (usageBase:UInt32) (values:bool[]) =
             let devInfo:Nullable<DeviceInfo> = NativeAPI.GetDeviceInfo(devh)
             if devInfo.HasValue then
@@ -180,8 +191,8 @@ type InputManagerWinRawInput() as this =
                NativeAPI.RefreshDeviceInfo()
                NativeAPI.GetDevices()
                |> Array.fold(fun state (devInfo:DeviceInfo) ->
-                        Console.WriteLine(devInfo.Names.Product+":"+
-                                          devInfo.DeviceCaps.Usage.ToString())
+                       // Console.WriteLine(devInfo.Names.Product+":"+
+                        //                  devInfo.DeviceCaps.Usage.ToString())
                         let usage:HIDDesktopUsages =
                             Microsoft.FSharp.Core.LanguagePrimitives.
                                 EnumOfValue<uint, HIDDesktopUsages>(
