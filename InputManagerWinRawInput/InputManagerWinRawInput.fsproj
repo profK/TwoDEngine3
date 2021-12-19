@@ -6,7 +6,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <Compile Include="AxisStateCollector.fs" />
+        <Compile Include="AxisEventCollector.fs" />
         <Compile Include="Library.fs" />
     </ItemGroup>
 
