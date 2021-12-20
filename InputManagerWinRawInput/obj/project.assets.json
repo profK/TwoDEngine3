@@ -405,7 +405,6 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "C:\\Users\\jpkessel\\RiderProjects\\RawInputLight\\RawInputLight\\RawInputLight.csproj",
       "RawInputLight >= 1.1.5",
       "TDE3ManagerInterfaces >= 1.0.0"
     ]
@@ -448,9 +447,6 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\jpkessel\\RiderProjects\\RawInputLight\\RawInputLight\\RawInputLight.csproj": {
-              "projectPath": "C:\\Users\\jpkessel\\RiderProjects\\RawInputLight\\RawInputLight\\RawInputLight.csproj"
-            },
             "C:\\Users\\jpkessel\\RiderProjects\\TwoDEngine3\\TDE3ManagerInterfaces\\TDE3ManagerInterfaces.fsproj": {
               "projectPath": "C:\\Users\\jpkessel\\RiderProjects\\TwoDEngine3\\TDE3ManagerInterfaces\\TDE3ManagerInterfaces.fsproj"
             }
@@ -486,16 +482,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1104",
-      "level": "Error",
-      "message": "Unable to find project 'C:\\Users\\jpkessel\\RiderProjects\\RawInputLight\\RawInputLight\\RawInputLight.csproj'. Check that the project reference is valid and that the project file exists.",
-      "libraryId": "C:\\Users\\jpkessel\\RiderProjects\\RawInputLight\\RawInputLight\\RawInputLight.csproj",
-      "targetGraphs": [
-        "net6.0"
-      ]
-    }
-  ]
+  }
 }

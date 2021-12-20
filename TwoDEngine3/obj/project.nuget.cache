@@ -1,7 +1,7 @@
 {
   "version": 2,
-  "dgSpecHash": "bAfhsLZWTkyWzonN6crmZnhk5YhS2MRscreYYGRNeOuuOUis+Uhqi4vJ0e6Yy8f4bcctrcs2XzXBOZlisdybKw==",
-  "success": false,
+  "dgSpecHash": "fB3IioyFkDeXXPwbc5mvUfOrbHsQqq0fF3iBgWd2bDuxuDtmGf3meLsmokLRM6TaJVrGBH4ZGZm527o7lqHpdg==",
+  "success": true,
   "projectFilePath": "C:\\Users\\jpkessel\\RiderProjects\\TwoDEngine3\\TwoDEngine3\\TwoDEngine3.fsproj",
   "expectedPackageFiles": [
     "C:\\Users\\jpkessel\\.nuget\\packages\\cyotek.drawing.bitmapfont\\2.0.3\\cyotek.drawing.bitmapfont.2.0.3.nupkg.sha512",
@@ -16,15 +16,6 @@
     "C:\\Users\\jpkessel\\.nuget\\packages\\stbimagesharp\\2.22.6\\stbimagesharp.2.22.6.nupkg.sha512"
   ],
   "logs": [
-    {
-      "code": "NU1104",
-      "level": "Error",
-      "message": "Unable to find project 'C:\\Users\\jpkessel\\RiderProjects\\RawInputLight\\RawInputLight\\RawInputLight.csproj'. Check that the project reference is valid and that the project file exists.",
-      "libraryId": "C:\\Users\\jpkessel\\RiderProjects\\RawInputLight\\RawInputLight\\RawInputLight.csproj",
-      "targetGraphs": [
-        "net6.0"
-      ]
-    },
     {
       "code": "NU1701",
       "level": "Warning",

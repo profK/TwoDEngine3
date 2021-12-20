@@ -202,7 +202,6 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
-          "C:\\Users\\jpkessel\\RiderProjects\\RawInputLight\\RawInputLight\\RawInputLight.csproj": "1.0.0",
           "RawInputLight": "1.1.5",
           "TDE3ManagerInterfaces": "1.0.0"
         },
@@ -1006,15 +1005,6 @@
     }
   },
   "logs": [
-    {
-      "code": "NU1104",
-      "level": "Error",
-      "message": "Unable to find project 'C:\\Users\\jpkessel\\RiderProjects\\RawInputLight\\RawInputLight\\RawInputLight.csproj'. Check that the project reference is valid and that the project file exists.",
-      "libraryId": "C:\\Users\\jpkessel\\RiderProjects\\RawInputLight\\RawInputLight\\RawInputLight.csproj",
-      "targetGraphs": [
-        "net6.0"
-      ]
-    },
     {
       "code": "NU1701",
       "level": "Warning",

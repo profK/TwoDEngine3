@@ -36,9 +36,6 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\jpkessel\\RiderProjects\\RawInputLight\\RawInputLight\\RawInputLight.csproj": {
-                "projectPath": "C:\\Users\\jpkessel\\RiderProjects\\RawInputLight\\RawInputLight\\RawInputLight.csproj"
-              },
               "C:\\Users\\jpkessel\\RiderProjects\\TwoDEngine3\\TDE3ManagerInterfaces\\TDE3ManagerInterfaces.fsproj": {
                 "projectPath": "C:\\Users\\jpkessel\\RiderProjects\\TwoDEngine3\\TDE3ManagerInterfaces\\TDE3ManagerInterfaces.fsproj"
               }

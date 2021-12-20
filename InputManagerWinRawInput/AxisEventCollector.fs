@@ -41,7 +41,7 @@ type AxisEventCollector()=
                        DigitalEvents((down || value), (up && value)) |> ignore
                 else
                     axisStateCollector.Add(
-                       name, DigitalEvents((not value),value))
+                       name, DigitalEvents(value,not value))
            )
            axisStateCollector[name]
        member this.SetKeyboardAxis(name:string,key:char, keystate:KeyState):AxisEvent =

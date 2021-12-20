@@ -23,9 +23,9 @@ let rec PrintControl (node: Node, writer: TextWriter, indent: int) =
         let spaces = new string (' ', indent + 4)
 
         match axis with
-        | Digital b -> fprintf writer $"%s{spaces}Digital = %s{b.ToString()}"
-        | Analog a -> fprintf writer $"%s{spaces}Analog = %s{a.ToString()}"
-        | Keyboard k -> fprintf writer $"%s{spaces}Keyboard = %s{k.ToString()}"
+        | Digital  -> fprintf writer $"%s{spaces}Digital"
+        | Analog  -> fprintf writer $"%s{spaces}Analog"
+        | Keyboard  -> fprintf writer $"%s{spaces}Keyboard"
 
         printfn ""// newline
 
@@ -65,9 +65,9 @@ type BouncyBall() as this =
                     match controller.Value with
                     | Axis axis ->
                         match axis with
-                        | Digital b -> printfn $"{newIndent}Digitial Axis"
-                        | Analog a ->  printfn $"%s{newIndent}Analog Axis"
-                        | Keyboard ca -> printfn $"%s{newIndent}Keyboard Axis"
+                        | Digital -> printfn $"%s{newIndent}Digitial Axis"
+                        | Analog ->  printfn $"%s{newIndent}Analog Axis"
+                        | Keyboard  -> printfn $"%s{newIndent}Keyboard Axis"
                     | Children c -> PrintControllers c newIndent     
                 )
         printfn "BouncyBall opened"
@@ -80,6 +80,18 @@ type BouncyBall() as this =
 
         base.Open()
 
+    override this.UpdateImpl int : string option =
+        let im = ManagerRegistry.getManager<InputDeviceInterface>()
+        match im with
+        | Some imgr ->
+            imgr.PollEvents()
+            |> Map.iter(fun (key:string) (value:AxisEvent) ->
+                    printfn $"%s{key} : %s{AxisEventToStr(value)}"
+                    |> ignore
+                )
+            |> ignore
+        | None -> ()
+        None // no fatal error or quit 
     override this.RenderImpl graphics =
         let screenSize = this.graphics.Value.ScreenSize
 
