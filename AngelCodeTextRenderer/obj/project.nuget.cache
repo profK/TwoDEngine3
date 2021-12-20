@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Yagi/cOEdpks/HbSL77b4uT1TCkYlWKREqTRncNGSACNG5eG/7u+LIoUYns4yJnMlnkdbofFYaX+D8CbdeGmqw==",
+  "dgSpecHash": "fPBtAtz3pFljexIVEhwF0521ACDp2TDZ1WG7WM66SZeSg/Vezxg/M8iKv+Gbo/TKf0L/GZk9bEy/QZ5BnRHL7Q==",
   "success": true,
-  "projectFilePath": "D:\\projects\\RiderProjects\\TwoDEngine3\\AngelCodeTextRenderer\\AngelCodeTextRenderer.fsproj",
+  "projectFilePath": "C:\\Users\\jpkessel\\RiderProjects\\TwoDEngine3\\AngelCodeTextRenderer\\AngelCodeTextRenderer.fsproj",
   "expectedPackageFiles": [
     "C:\\Users\\jpkessel\\.nuget\\packages\\cyotek.drawing.bitmapfont\\2.0.3\\cyotek.drawing.bitmapfont.2.0.3.nupkg.sha512",
     "C:\\Users\\jpkessel\\.nuget\\packages\\fsframework\\1.0.0-preview-1\\fsframework.1.0.0-preview-1.nupkg.sha512",

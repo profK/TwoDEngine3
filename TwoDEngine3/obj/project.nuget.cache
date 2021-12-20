@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "sBZjQBva2isunAXzi8o21ErIQo7VF9HOeGENtr5Tcrn3RmkTWb9gKsbDo57OJTBbpaAmxmoUJGD7tGLajA6oCg==",
-  "success": true,
-  "projectFilePath": "D:\\projects\\RiderProjects\\TwoDEngine3\\TwoDEngine3\\TwoDEngine3.fsproj",
+  "dgSpecHash": "bAfhsLZWTkyWzonN6crmZnhk5YhS2MRscreYYGRNeOuuOUis+Uhqi4vJ0e6Yy8f4bcctrcs2XzXBOZlisdybKw==",
+  "success": false,
+  "projectFilePath": "C:\\Users\\jpkessel\\RiderProjects\\TwoDEngine3\\TwoDEngine3\\TwoDEngine3.fsproj",
   "expectedPackageFiles": [
     "C:\\Users\\jpkessel\\.nuget\\packages\\cyotek.drawing.bitmapfont\\2.0.3\\cyotek.drawing.bitmapfont.2.0.3.nupkg.sha512",
     "C:\\Users\\jpkessel\\.nuget\\packages\\fsframework\\1.0.0-preview-1\\fsframework.1.0.0-preview-1.nupkg.sha512",
@@ -12,11 +12,19 @@
     "C:\\Users\\jpkessel\\.nuget\\packages\\mathsharp\\2.0.0-pre\\mathsharp.2.0.0-pre.nupkg.sha512",
     "C:\\Users\\jpkessel\\.nuget\\packages\\microsoft.net.compilers.toolset\\3.2.0-beta1-final\\microsoft.net.compilers.toolset.3.2.0-beta1-final.nupkg.sha512",
     "C:\\Users\\jpkessel\\.nuget\\packages\\opengl.net\\0.8.4\\opengl.net.0.8.4.nupkg.sha512",
-    "C:\\Users\\jpkessel\\.nuget\\packages\\stbimagesharp\\2.22.6\\stbimagesharp.2.22.6.nupkg.sha512",
-    "C:\\Users\\jpkessel\\.nuget\\packages\\glfw-net\\3.3.1\\glfw-net.3.3.1.nupkg.sha512",
-    "C:\\Users\\jpkessel\\.nuget\\packages\\rawinputlight\\1.1.1\\rawinputlight.1.1.1.nupkg.sha512"
+    "C:\\Users\\jpkessel\\.nuget\\packages\\rawinputlight\\1.1.5\\rawinputlight.1.1.5.nupkg.sha512",
+    "C:\\Users\\jpkessel\\.nuget\\packages\\stbimagesharp\\2.22.6\\stbimagesharp.2.22.6.nupkg.sha512"
   ],
   "logs": [
+    {
+      "code": "NU1104",
+      "level": "Error",
+      "message": "Unable to find project 'C:\\Users\\jpkessel\\RiderProjects\\RawInputLight\\RawInputLight\\RawInputLight.csproj'. Check that the project reference is valid and that the project file exists.",
+      "libraryId": "C:\\Users\\jpkessel\\RiderProjects\\RawInputLight\\RawInputLight\\RawInputLight.csproj",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    },
     {
       "code": "NU1701",
       "level": "Warning",
