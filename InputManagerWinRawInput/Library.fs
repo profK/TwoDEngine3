@@ -9,21 +9,21 @@ open TDE3ManagerInterfaces.InputDevices
 open TwoDEngine3.ManagerInterfaces.InputManager
 open Windows.Win32.Devices.HumanInterfaceDevice
 open Windows.Win32.Foundation
-open AxisStateCollector
+open AxisEventCollector
  
 type AxisNode(parent:Node,name) =
         interface Node with
             member val Name:string = name with get
             member val Parent: Node option = Some(parent) with get
             member this.Path:string=parent.Path+"."+name 
-            member val Value= Axis(Analog(0)) // value is ignored
+            member val Value= Axis(Analog) // value is ignored
             
 type ButtonNode(parent:Node,name) =
      interface Node with
         member val Name:string = name with get
         member val Parent: Node option = Some(parent) with get
         member this.Path:string=parent.Path+"."+name 
-        member val Value= Axis(Digital(false)) // value is ignored
+        member val Value= Axis(Digital) // value is ignored
                 
 type MouseNode(devInfo:DeviceInfo) as this=
     let name = devInfo.Names.Product
@@ -45,7 +45,7 @@ type KeyboardNode(devInfo:DeviceInfo) as this =
         member val Name:string = name with get
         member val Parent: Node option = None with get
         member this.Path:string=name
-        member val Value= Axis(Keyboard([]))
+        member val Value= Axis(Keyboard)
             
 type JoystickNode(devInfo:DeviceInfo) as this =
     let MakeUsage(usage) =
@@ -107,32 +107,38 @@ type JoystickNode(devInfo:DeviceInfo) as this =
 type InputManagerWinRawInput() as this =
        let mutable rawInput: RawInput option = None
        let mutable oldStateMap = Map.empty
-       let  axisStateCollector = AxisStateCollector()
+       let  axisEventCollector = AxisEventCollector()
            
        let doKbEvent (devh:HANDLE) (asc:uint16) (keystate:KeyState):unit =
             let devInfo:Nullable<DeviceInfo> = NativeAPI.GetDeviceInfo(devh)
             if devInfo.HasValue then
-                axisStateCollector.SetKeyboardAxis(devInfo.Value.Names.Product,char asc,keystate)
+                axisEventCollector.SetKeyboardAxis(
+                    devInfo.Value.Names.Product, char asc,keystate)
+                |> ignore
        
        let doMouseEvent (devh:HANDLE) (dx:int) (dy:int) (buttons:UInt32)
             (dWheel:int) =
             let devInfo:Nullable<DeviceInfo> = NativeAPI.GetDeviceInfo(devh)
             if devInfo.HasValue then
-                axisStateCollector.DeltaAnalogAxis(devInfo.Value.Names.Product+".deltaX", dx) |> ignore
-                axisStateCollector.DeltaAnalogAxis(devInfo.Value.Names.Product+".deltaY", dx) |> ignore
+                axisEventCollector.DeltaAnalogAxis(devInfo.Value.Names.Product+".deltaX", dx) |> ignore
+                axisEventCollector.DeltaAnalogAxis(devInfo.Value.Names.Product+".deltaY", dx) |> ignore
                 [0..3]
                 |> Seq.iter (fun (buttonNum:int) ->
                         let bitVal:UInt32 = uint32 1<<<(buttonNum*2)
                         if  (bitVal &&& buttons) = bitVal then
-                            axisStateCollector.SetDigitalAxis(devInfo.Value.Names.Product+".button"+
+                            axisEventCollector.SetDigitalAxis(
+                                           devInfo.Value.Names.Product+".button"+
                                            buttonNum.ToString(),true) |> ignore
                         else
-                            axisStateCollector.SetDigitalAxis(devInfo.Value.Names.Product+".button"+
+                            axisEventCollector.SetDigitalAxis(
+                                           devInfo.Value.Names.Product+".button"+
                                            buttonNum.ToString(),false) |> ignore
                     )
                 if (buttons &&& 0x0400ul ) = 0x0400ul then
-                    axisStateCollector.DeltaAnalogAxis(devInfo.Value.Names.Product+".deltaWheel",
-                                    dWheel) |> ignore
+                    axisEventCollector.DeltaAnalogAxis(
+                            devInfo.Value.Names.Product+ ".deltaWheel",
+                                    dWheel)
+                    |> ignore
             else
                 ()
                 
@@ -148,9 +154,8 @@ type InputManagerWinRawInput() as this =
                         let usage:HIDDesktopUsages =
                             uint32ToHidUsage (usageBase + uint32 index) 
                         let name = devInfo.Value.Names.Product + "." + usage.ToString()
-                        axisStateCollector.SetDigitalAxis(name,values[index]) |> ignore
+                        axisEventCollector.SetDigitalAxis(name,values[index]) |> ignore
                     )
-                
             else
                 ()
                 
@@ -163,7 +168,9 @@ type InputManagerWinRawInput() as this =
                             LanguagePrimitives.EnumOfValue usages[index]
                         let name = devInfo.Value.Names.Product+"."+
                                    hidUsage.ToString()
-                        axisStateCollector.SetAnalogAxis(name,float values[index]) |> ignore       
+                        axisEventCollector.SetAnalogAxis(
+                            name,float values[index])
+                        |> ignore       
                     )
        let messagePump():unit =
            NativeAPI.OpenWindow()
@@ -208,22 +215,7 @@ type InputManagerWinRawInput() as this =
                         | _ -> state
                    ) List.Empty
           
-           member this.StateChanges() = 
-               let currentStateMap = axisStateCollector.GetState()
-               let stateDelta =
-                    currentStateMap
-                    |> Map.fold (fun (map:Map<string,AxisUnion>) key value->
-                       if oldStateMap.ContainsKey(key) &&
-                            (oldStateMap[key]=value) then
-                          map
-                       else    
-                           map.Add(key,value) 
-                    ) Map.empty
-               let states = (
-                   oldStateMap,
-                   currentStateMap,
-                   stateDelta
-               )
-               oldStateMap <-currentStateMap
-               states
+           member this.PollEvents() = 
+               axisEventCollector.Reset()
+              
            

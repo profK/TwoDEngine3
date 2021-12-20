@@ -31,5 +31,4 @@ type InputDeviceInterface =
     // The first map is added nodes
     // The second map is removed nodes
     // The third map is nodes whose value has changed
-    abstract StateChanges: unit ->
-        (Map<string,AxisEvent> * Map<string,AxisEvent> * Map<string,AxisEvent>)
+    abstract PollEvents: unit -> Map<string,AxisEvent>
