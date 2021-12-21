@@ -12,7 +12,6 @@
           "FSFramework": "1.0.0-preview-1",
           "FSharp.Core": "6.0.1",
           "GraphicsManagerGLFW": "1.0.0",
-          "InputManagerGLFW": "1.0.0",
           "InputManagerWinRawInput": "1.0.0",
           "MathSharp": "2.0.0-pre"
         },
@@ -163,17 +162,6 @@
           "GraphicsManagerGLFW.dll": {}
         }
       },
-      "InputManagerGLFW/1.0.0": {
-        "dependencies": {
-          "FSFramework": "1.0.0-preview-1",
-          "FSharp.Core": "6.0.1",
-          "TDE3ManagerInterfaces": "1.0.0",
-          "glfw-net": "3.3.1"
-        },
-        "runtime": {
-          "InputManagerGLFW.dll": {}
-        }
-      },
       "InputManagerWinRawInput/1.0.0": {
         "dependencies": {
           "RawInputLight": "1.1.5",
@@ -282,11 +270,6 @@
       "sha512": ""
     },
     "GraphicsManagerGLFW/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "InputManagerGLFW/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

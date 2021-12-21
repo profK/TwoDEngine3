@@ -12,15 +12,15 @@ let charListImplode (xs:char list) : string =
     let sb = System.Text.StringBuilder(xs.Length)
     xs |> List.iter (sb.Append >> ignore)
     sb.ToString()
-let AxisEventToStr (axisEvt: AxisEvent) : string =
+let AxisStateToStr (axisEvt: AxisState) : string =
     match axisEvt with
-    | DigitalEvents (down, up) -> $"Digital event (down=%b{down} up=%b{up})"
-    | AnalogEvents value -> $"Analog Event (value=%f{value})"
-    | HatEvents value -> $"Hat Event (value=%d{value})"
-    | KeyboardEvents (downChars, upChars) ->
-        $"Keyboard events (down=%s{charListImplode downChars} up=%s{charListImplode upChars})"
-    | DeltaEvents value ->
-        $"Delta event (%f{value})"
+    | DigitalState down  -> $"Digital(%b{down})"
+    | AnalogState value -> $"Analog(%f{value})"
+    | HatState value -> $"Hat Event (%d{value})"
+    | KeyboardState downChars ->
+        $"Keyboard(%s{charListImplode downChars})"
+    | DeltaState value ->
+        $"Delta(%f{value})"
 type AxisEnum =
     | Digital 
     | Analog 

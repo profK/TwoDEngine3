@@ -6,7 +6,6 @@ open System
 open AngelCodeTextRenderer
 
 open GraphicsManagerGLFW
-open InputManagerGLFW
 open InputManagerWinRawInput
 open TwoDEngine3.ExampleLevel
 open TwoDEngine3.LevelManagerInterface

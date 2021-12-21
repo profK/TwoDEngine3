@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "fB3IioyFkDeXXPwbc5mvUfOrbHsQqq0fF3iBgWd2bDuxuDtmGf3meLsmokLRM6TaJVrGBH4ZGZm527o7lqHpdg==",
+  "dgSpecHash": "ldZwHXSWPJfFY655iPIB5QKOEnjWgqxdEDUydFENjUMgXYv6lWzQw+hVmHZWzcVUQdjcQIld2VsJz/UyiDApzA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\jpkessel\\RiderProjects\\TwoDEngine3\\TwoDEngine3\\TwoDEngine3.fsproj",
+  "projectFilePath": "D:\\projects\\RiderProjects\\TwoDEngine3\\TwoDEngine3\\TwoDEngine3.fsproj",
   "expectedPackageFiles": [
     "C:\\Users\\jpkessel\\.nuget\\packages\\cyotek.drawing.bitmapfont\\2.0.3\\cyotek.drawing.bitmapfont.2.0.3.nupkg.sha512",
     "C:\\Users\\jpkessel\\.nuget\\packages\\fsframework\\1.0.0-preview-1\\fsframework.1.0.0-preview-1.nupkg.sha512",
@@ -13,7 +13,8 @@
     "C:\\Users\\jpkessel\\.nuget\\packages\\microsoft.net.compilers.toolset\\3.2.0-beta1-final\\microsoft.net.compilers.toolset.3.2.0-beta1-final.nupkg.sha512",
     "C:\\Users\\jpkessel\\.nuget\\packages\\opengl.net\\0.8.4\\opengl.net.0.8.4.nupkg.sha512",
     "C:\\Users\\jpkessel\\.nuget\\packages\\rawinputlight\\1.1.5\\rawinputlight.1.1.5.nupkg.sha512",
-    "C:\\Users\\jpkessel\\.nuget\\packages\\stbimagesharp\\2.22.6\\stbimagesharp.2.22.6.nupkg.sha512"
+    "C:\\Users\\jpkessel\\.nuget\\packages\\stbimagesharp\\2.22.6\\stbimagesharp.2.22.6.nupkg.sha512",
+    "C:\\Users\\jpkessel\\.nuget\\packages\\glfw-net\\3.3.1\\glfw-net.3.3.1.nupkg.sha512"
   ],
   "logs": [
     {
