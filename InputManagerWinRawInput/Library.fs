@@ -9,7 +9,7 @@ open TDE3ManagerInterfaces.InputDevices
 open TwoDEngine3.ManagerInterfaces.InputManager
 open Windows.Win32.Devices.HumanInterfaceDevice
 open Windows.Win32.Foundation
-open AxisEventCollector
+open AxisStateCollector
  
 type AxisNode(parent:Node,name) =
         interface Node with
@@ -107,12 +107,12 @@ type JoystickNode(devInfo:DeviceInfo) as this =
 type InputManagerWinRawInput() as this =
        let mutable rawInput: RawInput option = None
        let mutable oldStateMap = Map.empty
-       let  axisEventCollector = AxisEventCollector()
+       let  axisStateCollector = AxisStateCollector()
            
        let doKbEvent (devh:HANDLE) (asc:uint16) (keystate:KeyState):unit =
             let devInfo:Nullable<DeviceInfo> = NativeAPI.GetDeviceInfo(devh)
             if devInfo.HasValue then
-                axisEventCollector.SetKeyboardAxis(
+                axisStateCollector.SetKeyboardAxis(
                     devInfo.Value.Names.Product, char asc,keystate)
                 |> ignore
        
@@ -120,22 +120,22 @@ type InputManagerWinRawInput() as this =
             (dWheel:int) =
             let devInfo:Nullable<DeviceInfo> = NativeAPI.GetDeviceInfo(devh)
             if devInfo.HasValue then
-                axisEventCollector.DeltaAnalogAxis(devInfo.Value.Names.Product+".deltaX", dx) |> ignore
-                axisEventCollector.DeltaAnalogAxis(devInfo.Value.Names.Product+".deltaY", dx) |> ignore
+                axisStateCollector.DeltaAnalogAxis(devInfo.Value.Names.Product+".deltaX", dx) |> ignore
+                axisStateCollector.DeltaAnalogAxis(devInfo.Value.Names.Product+".deltaY", dx) |> ignore
                 [0..3]
                 |> Seq.iter (fun (buttonNum:int) ->
                         let bitVal:UInt32 = uint32 1<<<(buttonNum*2)
                         if  (bitVal &&& buttons) = bitVal then
-                            axisEventCollector.SetDigitalAxis(
+                            axisStateCollector.SetDigitalAxis(
                                            devInfo.Value.Names.Product+".button"+
                                            buttonNum.ToString(),true) |> ignore
                         else
-                            axisEventCollector.SetDigitalAxis(
+                            axisStateCollector.SetDigitalAxis(
                                            devInfo.Value.Names.Product+".button"+
                                            buttonNum.ToString(),false) |> ignore
                     )
                 if (buttons &&& 0x0400ul ) = 0x0400ul then
-                    axisEventCollector.DeltaAnalogAxis(
+                    axisStateCollector.DeltaAnalogAxis(
                             devInfo.Value.Names.Product+ ".deltaWheel",
                                     dWheel)
                     |> ignore
@@ -154,7 +154,7 @@ type InputManagerWinRawInput() as this =
                         let usage:HIDDesktopUsages =
                             uint32ToHidUsage (usageBase + uint32 index) 
                         let name = devInfo.Value.Names.Product + "." + usage.ToString()
-                        axisEventCollector.SetDigitalAxis(name,values[index]) |> ignore
+                        axisStateCollector.SetDigitalAxis(name,values[index]) |> ignore
                     )
             else
                 ()
@@ -168,7 +168,7 @@ type InputManagerWinRawInput() as this =
                             LanguagePrimitives.EnumOfValue usages[index]
                         let name = devInfo.Value.Names.Product+"."+
                                    hidUsage.ToString()
-                        axisEventCollector.SetAnalogAxis(
+                        axisStateCollector.SetAnalogAxis(
                             name,float values[index])
                         |> ignore       
                     )
@@ -215,7 +215,7 @@ type InputManagerWinRawInput() as this =
                         | _ -> state
                    ) List.Empty
           
-           member this.PollEvents() = 
-               axisEventCollector.Reset()
+           member this.PollState() = 
+               axisStateCollector.GetState()
               
            

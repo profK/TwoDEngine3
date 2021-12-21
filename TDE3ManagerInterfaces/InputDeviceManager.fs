@@ -1,12 +1,12 @@
 ﻿module TDE3ManagerInterfaces.InputDevices
 
 
-type AxisEvent =
-    | DigitalEvents of ButtonDownEvent:bool * ButtonUpEvent:bool
-    | AnalogEvents of float
-    | HatEvents of int
-    | KeyboardEvents of KeyDownEvents:char list * KeyUpEvents:char list
-    | DeltaEvents of float
+type AxisState =
+    | DigitalState of bool
+    | AnalogState of float
+    | HatState of int
+    | KeyboardState of char list
+    | DeltaState of float
 
 type AxisEnum =
     | Digital 
@@ -31,4 +31,4 @@ type InputDeviceInterface =
     // The first map is added nodes
     // The second map is removed nodes
     // The third map is nodes whose value has changed
-    abstract PollEvents: unit -> Map<string,AxisEvent>
+    abstract PollState: unit -> Map<string,AxisState>

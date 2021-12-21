@@ -1,80 +1,82 @@
-﻿module AxisEventCollector
+﻿module AxisStateCollector
 
 open System.Collections.Concurrent
 open System.Collections.Generic
 open RawInputLight
 open TDE3ManagerInterfaces.InputDevices
 
-type AxisEventCollector()=
-       let axisStateCollector:Dictionary<string,AxisEvent> =
-           Dictionary<string,AxisEvent>()
-       member this.DeltaAnalogAxis (name:string, value:float):AxisEvent =
+type AxisStateCollector()=
+       let axisStateCollector:Dictionary<string,AxisState> =
+           Dictionary<string,AxisState>()
+       member this.DeltaAnalogAxis (name:string, value:float):AxisState =
            lock axisStateCollector (fun () ->
                if (axisStateCollector.ContainsKey(name)) then
-                   let (DeltaEvents currentValue) = axisStateCollector[name]
+                   let (DeltaState currentValue) = axisStateCollector[name]
                    axisStateCollector[name] =
-                       DeltaEvents(value+currentValue) |> ignore
+                       DeltaState(value+currentValue) |> ignore
                 else
                     axisStateCollector.Add(
-                       name, DeltaEvents(value))
+                       name, DeltaState(value))
            )
            axisStateCollector[name]
           
                     
-       member this.SetAnalogAxis (name:string, value:float):AxisEvent =
+       member this.SetAnalogAxis (name:string, value:float):AxisState =
            lock axisStateCollector (fun () ->
                if (axisStateCollector.ContainsKey(name)) then
-                   let (AnalogEvents currentValue) = axisStateCollector[name]
+                   let (AnalogState currentValue) = axisStateCollector[name]
                    axisStateCollector[name] =
-                       AnalogEvents(value) |> ignore
+                       AnalogState(value) |> ignore
                 else
                     axisStateCollector.Add(
-                       name, AnalogEvents(value))
+                       name, AnalogState(value))
            )
            axisStateCollector[name]
            
-       member this.SetDigitalAxis(name:string, value:bool):AxisEvent =
+       member this.SetDigitalAxis(name:string, value:bool):AxisState =
            lock axisStateCollector (fun () ->
                if (axisStateCollector.ContainsKey(name)) then
-                   let (DigitalEvents (down, up)) = axisStateCollector[name]
+                   let (DigitalState value) = axisStateCollector[name]
                    axisStateCollector[name] =
-                       DigitalEvents((down || value), (up && value)) |> ignore
+                       DigitalState value
+                   |> ignore
                 else
                     axisStateCollector.Add(
-                       name, DigitalEvents((not value),value))
+                       name, DigitalState value )
            )
            axisStateCollector[name]
-       member this.SetKeyboardAxis(name:string,key:char, keystate:KeyState):AxisEvent =
+       member this.SetKeyboardAxis(name:string,key:char, keystate:KeyState):AxisState =
          lock axisStateCollector (fun () ->
            if (axisStateCollector.ContainsKey(name)) then
-               let (KeyboardEvents (downKeys, upKeys)) = axisStateCollector[name]
+               let (KeyboardState downKeys) = axisStateCollector[name]
                axisStateCollector[name] =
                    match keystate with
                    | KeyState.KeyDown ->
-                           KeyboardEvents((key::downKeys,upKeys))
+                           KeyboardState (key::downKeys)
                    | KeyState.KeyUp ->
-                           KeyboardEvents((downKeys,key::upKeys))
+                           KeyboardState(
+                               downKeys
+                               |> List.except [key])
                |> ignore     
             else
                 axisStateCollector.Add(
-                   name, KeyboardEvents(
+                   name, KeyboardState(
                        match keystate with
                        | KeyState.KeyDown ->
-                               ([key],[])
+                               [key]
                        | KeyState.KeyUp ->
-                               ([],[key])
+                               [] // this really shouldnt happen
                    )
                 )
          )      
          axisStateCollector[name]
-       member this.Reset():Map<string,AxisEvent> = 
+       member this.GetState():Map<string,AxisState> = 
            lock axisStateCollector (fun () ->
                let result =
                    axisStateCollector
-                   |> Seq.fold (fun (map:Map<string,AxisEvent>) kvp ->
+                   |> Seq.fold (fun (map:Map<string,AxisState>) kvp ->
                         map.Add(kvp.Key,kvp.Value)
                        ) Map.empty
-               axisStateCollector.Clear()
                result
            )
                

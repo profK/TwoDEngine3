@@ -23,12 +23,16 @@ let rec PrintControl (node: Node, writer: TextWriter, indent: int) =
         let spaces = new string (' ', indent + 4)
 
         match axis with
-        | Digital b -> fprintf writer $"%s{spaces}Digital = %s{b.ToString()}"
-        | Analog a -> fprintf writer $"%s{spaces}Analog = %s{a.ToString()}"
-        | Keyboard k -> fprintf writer $"%s{spaces}Keyboard = %s{k.ToString()}"
+        | Digital -> fprintf writer $"%s{spaces}Digital "
+        | Analog -> fprintf writer $"%s{spaces}Analog "
+        | Keyboard -> fprintf writer $"%s{spaces}Keyboard "
 
         printfn ""// newline
 
+let implode (xs:char list) =
+  let sb = System.Text.StringBuilder(xs.Length)
+  xs |> List.iter (sb.Append >> ignore)
+  sb.ToString()  
 type BouncyBall() as this =
     inherit AbstractLevelController()
 
@@ -65,9 +69,9 @@ type BouncyBall() as this =
                     match controller.Value with
                     | Axis axis ->
                         match axis with
-                        | Digital b -> printfn $"{newIndent}Digitial Axis"
-                        | Analog a ->  printfn $"%s{newIndent}Analog Axis"
-                        | Keyboard ca -> printfn $"%s{newIndent}Keyboard Axis"
+                        | Digital -> printfn $"{newIndent}Digitial Axis"
+                        | Analog ->  printfn $"%s{newIndent}Analog Axis"
+                        | Keyboard -> printfn $"%s{newIndent}Keyboard Axis"
                     | Children c -> PrintControllers c newIndent     
                 )
         printfn "BouncyBall opened"
@@ -79,7 +83,34 @@ type BouncyBall() as this =
 
 
         base.Open()
+        
+   
 
+    override this.UpdateImpl(timeDelta) =
+        printfn "press a key to read state "
+        let key_info = Console.ReadKey()
+        let im = ManagerRegistry.getManager<InputDeviceInterface>()
+        match im with
+        | None ->
+            printfn "No Input Manager found" 
+        | Some img ->
+            img.PollState()
+            |> Map.iter (fun (key:string) (value:AxisState) ->
+                match value with
+                | DigitalState b ->
+                    printfn $"%s{key} : Digital(%b{b})" 
+                | AnalogState v ->
+                    printf $"%s{key} : Analog(%f{v})"
+                | DeltaState v ->
+                    printf $"%s{key} : Delta(%f{v})"
+                | HatState h ->
+                    printf $"%s{key} : Hat(%d{h})"
+                | KeyboardState chars ->
+                    let s = implode(chars)
+                    printf $"%s{key} : Keyboard(%s{s})"
+            )
+        |> ignore
+        None // no errors
     override this.RenderImpl graphics =
         let screenSize = this.graphics.Value.ScreenSize
 
