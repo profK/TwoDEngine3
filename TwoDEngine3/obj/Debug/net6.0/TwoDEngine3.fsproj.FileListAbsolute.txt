@@ -105,3 +105,7 @@ D:\projects\RiderProjects\TwoDEngine3\TwoDEngine3\bin\Debug\net6.0\InputManagerW
 D:\projects\RiderProjects\TwoDEngine3\TwoDEngine3\bin\Debug\net6.0\InputManagerWinRawInput.pdb
 D:\projects\RiderProjects\TwoDEngine3\TwoDEngine3\bin\Debug\net6.0\InputManagerWinRawInput.xml
 D:\projects\RiderProjects\TwoDEngine3\TwoDEngine3\bin\Debug\net6.0\RawInputLight.pdb
+C:\Users\jpkessel\RiderProjects\TwoDEngine3\TwoDEngine3\bin\Debug\net6.0\RawInputLight.dll
+C:\Users\jpkessel\RiderProjects\TwoDEngine3\TwoDEngine3\bin\Debug\net6.0\InputManagerWinRawInput.dll
+C:\Users\jpkessel\RiderProjects\TwoDEngine3\TwoDEngine3\bin\Debug\net6.0\InputManagerWinRawInput.pdb
+C:\Users\jpkessel\RiderProjects\TwoDEngine3\TwoDEngine3\bin\Debug\net6.0\InputManagerWinRawInput.xml

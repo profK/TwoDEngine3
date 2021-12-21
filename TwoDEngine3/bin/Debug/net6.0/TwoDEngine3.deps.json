@@ -117,6 +117,14 @@
           }
         }
       },
+      "RawInputLight/1.1.5": {
+        "runtime": {
+          "lib/net6.0/RawInputLight.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
       "StbImageSharp/2.22.6": {
         "runtime": {
           "lib/netstandard2.0/StbImageSharp.dll": {
@@ -168,16 +176,11 @@
       },
       "InputManagerWinRawInput/1.0.0": {
         "dependencies": {
-          "RawInputLight": "1.1.1",
+          "RawInputLight": "1.1.5",
           "TDE3ManagerInterfaces": "1.0.0"
         },
         "runtime": {
           "InputManagerWinRawInput.dll": {}
-        }
-      },
-      "RawInputLight/1.1.1": {
-        "runtime": {
-          "RawInputLight.dll": {}
         }
       },
       "TDE3ManagerInterfaces/1.0.0": {
@@ -254,6 +257,13 @@
       "path": "opengl.net/0.8.4",
       "hashPath": "opengl.net.0.8.4.nupkg.sha512"
     },
+    "RawInputLight/1.1.5": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-uAhTmPSEJMov4G966i21I7ioRlPOXZRx3Z8Y9FGRhaHp8tvs6c1pk8l5uv8abWwkmTrHvF2U0l3gJEdR8xSeGw==",
+      "path": "rawinputlight/1.1.5",
+      "hashPath": "rawinputlight.1.1.5.nupkg.sha512"
+    },
     "StbImageSharp/2.22.6": {
       "type": "package",
       "serviceable": true,
@@ -282,11 +292,6 @@
       "sha512": ""
     },
     "InputManagerWinRawInput/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "RawInputLight/1.1.1": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

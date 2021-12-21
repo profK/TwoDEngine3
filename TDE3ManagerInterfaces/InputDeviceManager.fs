@@ -8,6 +8,19 @@ type AxisState =
     | KeyboardState of char list
     | DeltaState of float
 
+let charListImplode (xs:char list) : string =
+    let sb = System.Text.StringBuilder(xs.Length)
+    xs |> List.iter (sb.Append >> ignore)
+    sb.ToString()
+let AxisEventToStr (axisEvt: AxisEvent) : string =
+    match axisEvt with
+    | DigitalEvents (down, up) -> $"Digital event (down=%b{down} up=%b{up})"
+    | AnalogEvents value -> $"Analog Event (value=%f{value})"
+    | HatEvents value -> $"Hat Event (value=%d{value})"
+    | KeyboardEvents (downChars, upChars) ->
+        $"Keyboard events (down=%s{charListImplode downChars} up=%s{charListImplode upChars})"
+    | DeltaEvents value ->
+        $"Delta event (%f{value})"
 type AxisEnum =
     | Digital 
     | Analog 
