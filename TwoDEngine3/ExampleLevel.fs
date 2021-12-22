@@ -3,6 +3,7 @@
 open System
 open System.IO
 open System.Numerics
+open System.Threading
 open TDE3ManagerInterfaces.InputDevices
 open TDE3ManagerInterfaces.TextRendererInterfaces
 open TwoDEngine3.LevelManagerInterface
@@ -87,8 +88,7 @@ type BouncyBall() as this =
    
 
     override this.UpdateImpl(timeDelta) =
-        printfn "press a key to read state "
-        let key_info = Console.ReadKey()
+        Thread.Sleep(5000)
         let im = ManagerRegistry.getManager<InputDeviceInterface>()
         match im with
         | None ->
@@ -100,14 +100,14 @@ type BouncyBall() as this =
                 | DigitalState b ->
                     printfn $"%s{key} : Digital(%b{b})" 
                 | AnalogState v ->
-                    printf $"%s{key} : Analog(%f{v})"
+                    printfn $"%s{key} : Analog(%f{v})"
                 | DeltaState v ->
-                    printf $"%s{key} : Delta(%f{v})"
+                    printfn $"%s{key} : Delta(%f{v})"
                 | HatState h ->
-                    printf $"%s{key} : Hat(%d{h})"
+                    printfn $"%s{key} : Hat(%d{h})"
                 | KeyboardState chars ->
                     let s = implode(chars)
-                    printf $"%s{key} : Keyboard(%s{s})"
+                    printfn $"%s{key} : Keyboard(%s{s})"
             )
         |> ignore
         None // no errors

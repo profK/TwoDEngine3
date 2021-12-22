@@ -6,50 +6,48 @@ open RawInputLight
 open TDE3ManagerInterfaces.InputDevices
 
 type AxisStateCollector()=
-       let axisStateCollector:Dictionary<string,AxisState> =
+       let axisStateDictionary:Dictionary<string,AxisState> =
            Dictionary<string,AxisState>()
        member this.DeltaAnalogAxis (name:string, value:float):AxisState =
-           lock axisStateCollector (fun () ->
-               if (axisStateCollector.ContainsKey(name)) then
-                   let (DeltaState currentValue) = axisStateCollector[name]
-                   axisStateCollector[name] =
-                       DeltaState(value+currentValue) |> ignore
+           lock axisStateDictionary (fun () ->
+               if (axisStateDictionary.ContainsKey(name)) then
+                   let (DeltaState currentValue) = axisStateDictionary[name]
+                   axisStateDictionary[name] <-
+                       DeltaState(value+currentValue) 
                 else
-                    axisStateCollector.Add(
+                    axisStateDictionary.Add(
                        name, DeltaState(value))
            )
-           axisStateCollector[name]
+           axisStateDictionary[name]
           
                     
        member this.SetAnalogAxis (name:string, value:float):AxisState =
-           lock axisStateCollector (fun () ->
-               if (axisStateCollector.ContainsKey(name)) then
-                   let (AnalogState currentValue) = axisStateCollector[name]
-                   axisStateCollector[name] =
-                       AnalogState(value) |> ignore
+           lock axisStateDictionary (fun () ->
+               if (axisStateDictionary.ContainsKey(name)) then
+                   axisStateDictionary[name] <-
+                       AnalogState(value) 
                 else
-                    axisStateCollector.Add(
+                    axisStateDictionary.Add(
                        name, AnalogState(value))
            )
-           axisStateCollector[name]
+           axisStateDictionary[name]
            
        member this.SetDigitalAxis(name:string, value:bool):AxisState =
-           lock axisStateCollector (fun () ->
-               if (axisStateCollector.ContainsKey(name)) then
-                   let (DigitalState value) = axisStateCollector[name]
-                   axisStateCollector[name] =
+           lock axisStateDictionary (fun () ->
+               if (axisStateDictionary.ContainsKey(name)) then
+                   axisStateDictionary[name] <-
                        DigitalState value
-                   |> ignore
+                   |> ignore    
                 else
-                    axisStateCollector.Add(
+                    axisStateDictionary.Add(
                        name, DigitalState value )
            )
-           axisStateCollector[name]
+           axisStateDictionary[name]
        member this.SetKeyboardAxis(name:string,key:char, keystate:KeyState):AxisState =
-         lock axisStateCollector (fun () ->
-           if (axisStateCollector.ContainsKey(name)) then
-               let (KeyboardState downKeys) = axisStateCollector[name]
-               axisStateCollector[name] =
+         lock axisStateDictionary (fun () ->
+           if (axisStateDictionary.ContainsKey(name)) then
+               let (KeyboardState downKeys) = axisStateDictionary[name]
+               axisStateDictionary[name] <-
                    match keystate with
                    | KeyState.KeyDown ->
                            KeyboardState (key::downKeys)
@@ -59,7 +57,7 @@ type AxisStateCollector()=
                                |> List.except [key])
                |> ignore     
             else
-                axisStateCollector.Add(
+                axisStateDictionary.Add(
                    name, KeyboardState(
                        match keystate with
                        | KeyState.KeyDown ->
@@ -69,14 +67,12 @@ type AxisStateCollector()=
                    )
                 )
          )      
-         axisStateCollector[name]
+         axisStateDictionary[name]
        member this.GetState():Map<string,AxisState> = 
-           lock axisStateCollector (fun () ->
-               let result =
-                   axisStateCollector
-                   |> Seq.fold (fun (map:Map<string,AxisState>) kvp ->
-                        map.Add(kvp.Key,kvp.Value)
-                       ) Map.empty
-               result
+           lock axisStateDictionary (fun () ->
+               axisStateDictionary
+               |> Seq.fold (fun m kvp ->
+                    m.Add(kvp.Key,kvp.Value)
+                   ) Map.empty
            )
                
