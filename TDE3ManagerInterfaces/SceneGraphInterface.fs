@@ -13,7 +13,7 @@ and SceneGraphObjectInterface =
     inherit SceneGraphObjectContainerInterface
     abstract Name:string
     abstract Path:string
-    abstract Parent:SceneGraphObjectContainerInterface
+    abstract Parent:SceneGraphObjectContainerInterface 
     
 and SceneGraphInterface =
     inherit SceneGraphObjectContainerInterface
