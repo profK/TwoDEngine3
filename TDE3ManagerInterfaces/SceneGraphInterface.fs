@@ -1,12 +1,13 @@
 ﻿module TDE3ManagerInterfaces.SceneGraphInterface
+open TwoDEngine3.ManagerInterfaces.GraphicsManagerInterface
 
-open TDE3ManagerInterfaces
 type SceneGraphObjectContainerInterface =
-    abstract AddObject: SceneGraphObjectInterface -> SceneGraphObjectContainerInterface
-    abstract RemoveByPath: string -> SceneGraphObjectContainerInterface
-    abstract RemoveByPath: string list -> SceneGraphObjectContainerInterface
-    abstract RemoveObject: SceneGraphObjectInterface -> SceneGraphObjectContainerInterface
     abstract Children : SceneGraphObjectInterface list
+    abstract AddChild: SceneGraphObjectInterface -> SceneGraphObjectContainerInterface
+   
+    abstract RemoveChild: SceneGraphObjectInterface -> SceneGraphObjectContainerInterface
+
+    abstract FindChild : string list-> SceneGraphObjectInterface option
 
 
 and SceneGraphObjectInterface =
@@ -17,8 +18,8 @@ and SceneGraphObjectInterface =
     
 and SceneGraphInterface =
     inherit SceneGraphObjectContainerInterface
-    abstract Update: uint -> string option
-    abstract Render: unit -> unit
+   
+    
     
     
     

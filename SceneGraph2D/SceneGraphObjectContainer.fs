@@ -1,4 +1,4 @@
-﻿namespace SceneGraph
+﻿namespace SceneGraph2D
 
 
 open System.Reflection.Metadata
@@ -7,37 +7,21 @@ open TDE3ManagerInterfaces.SceneGraphInterface
 type SceneGraphObjectContainer() =
     let mutable childList = List.Empty
     interface SceneGraphObjectContainerInterface with
-        member this.AddObject(sceneObj:SceneGraphObjectInterface) = 
-            childList <- sceneObj::childList
-            this
-            
-        member this.RemoveObject(sceneObj: SceneGraphObjectInterface):
-            SceneGraphObjectContainerInterface =
-            childList <- childList |> List.except [sceneObj]
-            this
-            
-        member this.RemoveByPath(path: string): SceneGraphObjectContainerInterface =
-            (this:>SceneGraphObjectContainerInterface).RemoveByPath(path.Split "." |> Seq.toList)
-            this
-        member this.RemoveByPath(path: string list): SceneGraphObjectContainerInterface =    
-            match path with
-            | [_] ->
-                childList
-                |> List.tryFind (fun node -> node.Name = path.Head)
-                |> function
-                    | Some node ->
-                        (this:> SceneGraphObjectContainerInterface).RemoveObject(node)
-                    | None ->
-                        this
-            | head::tail ->
-                childList
-                |> List.tryFind (fun node -> node.Name = head)
-                |> function
-                    |Some node ->
-                        (node:> SceneGraphObjectContainerInterface).RemoveByPath(tail)
-                        this
-                    | None ->
-                        this
-                        
         member val Children = childList
+        member this.AddChild child : SceneGraphObjectContainerInterface =
+            childList <- child::childList
+            this
+        member this.RemoveChild child : SceneGraphObjectContainerInterface =
+            childList <- (childList |> List.except child)
+            this
+        member this.FindChild path : SceneGraphObjectInterface option =
+            childList
+            |> List.tryFind (fun child -> child.Name = path.Head)
+            |> function
+                | Some child ->
+                    if path.Tail.Length = 0 then
+                        Some child
+                    else
+                        child.FindChild path.Tail
+                | None -> None 
     

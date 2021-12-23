@@ -9,6 +9,7 @@
     <ItemGroup>
         <Compile Include="SceneGraphObjectContainer.fs" />
         <Compile Include="Library.fs" />
+        <Compile Include="SG2DConcreteObjects.fs" />
     </ItemGroup>
 
     <ItemGroup>
