@@ -5,7 +5,7 @@ open TwoDEngine3.ManagerInterfaces.GraphicsManagerInterface
 type SceneGraphObjectInterface =
     abstract Name:string
     abstract Path:string
-    abstract Parent:SceneGraphObjectInterface 
+    abstract Parent:SceneGraphObjectInterface option
     abstract Children : SceneGraphObjectInterface list
     abstract AddChild: SceneGraphObjectInterface -> SceneGraphObjectInterface
    
