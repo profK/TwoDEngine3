@@ -10,10 +10,12 @@
     <ItemGroup>
         <Compile Include="AbstractLevelController.fs" />
         <Compile Include="ExampleLevel.fs" />
+        <Compile Include="AsteroidsLevel.fs" />
         <Compile Include="Program.fs" />
         <Content Include="Assets\football_small.png">
             <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </Content>
+        <Content Include="Assets\asteroids-arcade.png" />
     </ItemGroup>
 
     <ItemGroup>

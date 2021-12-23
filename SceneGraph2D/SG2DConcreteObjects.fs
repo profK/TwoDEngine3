@@ -3,6 +3,7 @@
 open SceneGraph2D
 open TwoDEngine3.ManagerInterfaces.GraphicsManagerInterface
 
+[<AbstractClass>]
 type SG2DPositionedObject<'T when 'T :> SG2DPositionedObject<'T> >
     (parent:SceneGraphObjectContainer, name:string, xform:Transform)=
     inherit SceneGraph2DObject(name,parent)

@@ -16,10 +16,10 @@ and SceneGraphObjectInterface =
     abstract Path:string
     abstract Parent:SceneGraphObjectContainerInterface 
     
-and SceneGraphInterface =
+and SceneGraph2DInterface =
     inherit SceneGraphObjectContainerInterface
    
-    
+  
     
     
     
