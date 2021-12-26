@@ -1,4 +1,5 @@
 ﻿module TDE3ManagerInterfaces.SceneGraphInterface
+open TDE3ManagerInterfaces
 open TwoDEngine3.ManagerInterfaces.GraphicsManagerInterface
 
    
@@ -17,16 +18,10 @@ type SceneGraphObjectInterface =
     abstract Render: GraphicsManager -> unit
     
     
-and SceneGraph2DInterface =
+and SceneGraphInterface =
     inherit SceneGraphObjectInterface
-    abstract MakeSprite: SceneGraphObjectInterface -> string ->
-        Transform -> Image -> SpriteInterface
-    
-and SpriteInterface =
-    inherit SceneGraphObjectInterface
-    abstract Transform:
-        Transform->SceneGraphObjectInterface->SpriteInterface
-    abstract Image: Image
+   
+ 
     
    
   

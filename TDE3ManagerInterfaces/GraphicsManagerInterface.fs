@@ -25,7 +25,7 @@ type Transform =
     abstract Multiply : Transform -> Transform
 
 type GraphicsListener =
-    abstract Update : int -> string option
+    abstract Update : uint -> string option
     abstract Render : GraphicsManager -> unit
 
 and GraphicsManager =
