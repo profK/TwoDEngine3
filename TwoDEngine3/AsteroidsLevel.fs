@@ -1,5 +1,6 @@
 ﻿module TwoDEngine3.AsteroidsLevel
 
+open SceneGraph2D
 open TDE3ManagerInterfaces
 open TDE3ManagerInterfaces.SceneGraphInterface
 open TwoDEngine3.LevelManagerInterface
@@ -8,7 +9,7 @@ open TwoDEngine3.ManagerInterfaces.GraphicsManagerInterface
 type AsteroidsLevel() =
      inherit AbstractLevelController()
      let mutable ship = None
-     let sceneGraph = ManagerRegistry.getManager<SceneGraph2DInterface>
+     let sceneGraph = ManagerRegistry.getManager<SceneGraph2D>
      
      override this.Open() =
         base.Open()

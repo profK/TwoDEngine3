@@ -153,6 +153,19 @@
           "bin/placeholder/AngelCodeTextRenderer.dll": {}
         }
       },
+      "FSTree/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "FSharp.Core": "6.0.1"
+        },
+        "compile": {
+          "bin/placeholder/FSTree.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/FSTree.dll": {}
+        }
+      },
       "glfw-net/3.3.1": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
@@ -194,6 +207,21 @@
         },
         "runtime": {
           "bin/placeholder/InputManagerWinRawInput.dll": {}
+        }
+      },
+      "SceneGraph2D/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "FSTree": "1.0.0",
+          "FSharp.Core": "6.0.1",
+          "TDE3ManagerInterfaces": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/SceneGraph2D.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SceneGraph2D.dll": {}
         }
       },
       "TDE3ManagerInterfaces/1.0.0": {
@@ -857,6 +885,11 @@
       "path": "../AngelCodeTextRenderer/AngelCodeTextRenderer.fsproj",
       "msbuildProject": "../AngelCodeTextRenderer/AngelCodeTextRenderer.fsproj"
     },
+    "FSTree/1.0.0": {
+      "type": "project",
+      "path": "../FSTree/FSTree.fsproj",
+      "msbuildProject": "../FSTree/FSTree.fsproj"
+    },
     "glfw-net/3.3.1": {
       "type": "project",
       "path": "../../glfw-net/GLFW.NET/GLFW.NET.csproj",
@@ -872,6 +905,11 @@
       "path": "../InputManagerWinRawInput/InputManagerWinRawInput.fsproj",
       "msbuildProject": "../InputManagerWinRawInput/InputManagerWinRawInput.fsproj"
     },
+    "SceneGraph2D/1.0.0": {
+      "type": "project",
+      "path": "../SceneGraph2D/SceneGraph2D.fsproj",
+      "msbuildProject": "../SceneGraph2D/SceneGraph2D.fsproj"
+    },
     "TDE3ManagerInterfaces/1.0.0": {
       "type": "project",
       "path": "../TDE3ManagerInterfaces/TDE3ManagerInterfaces.fsproj",
@@ -885,7 +923,8 @@
       "FSharp.Core >= 6.0.1",
       "GraphicsManagerGLFW >= 1.0.0",
       "InputManagerWinRawInput >= 1.0.0",
-      "MathSharp >= 2.0.0-pre"
+      "MathSharp >= 2.0.0-pre",
+      "SceneGraph2D >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -936,6 +975,9 @@
             },
             "D:\\projects\\RiderProjects\\TwoDEngine3\\InputManagerWinRawInput\\InputManagerWinRawInput.fsproj": {
               "projectPath": "D:\\projects\\RiderProjects\\TwoDEngine3\\InputManagerWinRawInput\\InputManagerWinRawInput.fsproj"
+            },
+            "D:\\projects\\RiderProjects\\TwoDEngine3\\SceneGraph2D\\SceneGraph2D.fsproj": {
+              "projectPath": "D:\\projects\\RiderProjects\\TwoDEngine3\\SceneGraph2D\\SceneGraph2D.fsproj"
             }
           }
         }
