@@ -2,11 +2,16 @@
 open TDE3ManagerInterfaces
 open TwoDEngine3.ManagerInterfaces.GraphicsManagerInterface
 
-type SceneGraphObject = interface end
+type SceneGraphObjectInterface =
+    abstract Update: GraphicsManager->uint->string option
+    abstract Render: GraphicsManager->unit
    
 
-type SceneGraph2DInterface =
-   abstract MakeSprite: Image->Transform->SceneGraphObject
+type SceneGraphInterface =
+    abstract  AddChild: SceneGraphObjectInterface -> SceneGraphInterface
+    abstract  RemoveChild: SceneGraphObjectInterface -> SceneGraphInterface
+    
+       
    
  
     

@@ -1,25 +1,10 @@
 ﻿namespace SceneGraph2D
 open FSTree
 
-
-open ManagerRegistry
-open TwoDEngine3.ManagerInterfaces
+open FSTree.Tree
+open TDE3ManagerInterfaces.SceneGraphInterface
 open TwoDEngine3.ManagerInterfaces.GraphicsManagerInterface
 
-type SceneGraphObject =
-    abstract Update: uint->string option
-    abstract Render: GraphicsManager->unit
-    
-type SpriteObject(image, transform) =
-    member val Transform = transform
-    member val Image = image
-    interface SceneGraphObject with
-        override this.Render(graphics) =
-            graphics.PushMultTransform this.Transform
-            graphics.DrawImage this.Image
-            graphics.PopTransform() |> ignore
-        override this.Update(deltaTime) =
-            None // no action, no error
        
 
 type SG2DSceneGraph() as this =
@@ -31,24 +16,32 @@ type SG2DSceneGraph() as this =
            | None ->
                printfn("Error: SG2DSceneGraph failed to find graphics manager")
    
-    member this.AddChild (child) : SG2DSceneGraph=
-        tree.AddChild child |> ignore
-        this
-    member this.RemoveChild (child) : SG2DSceneGraph =
-        tree.RemoveChild child |> ignore
-        this
+    interface SceneGraphInterface with
+        member this.AddChild (child) : SceneGraphInterface=
+            tree.AddChild (TreeNode (Some child)) |> ignore
+            this
+        member this.RemoveChild (child) : SceneGraphInterface =
+            tree.FindChild (Some child)
+            |> function
+                | Some node ->
+                    tree.RemoveChild node |> ignore
+                | None -> ()
+            this
+
+       
         
     interface GraphicsListener with
         member this.Render(graphics) =
-            Tree.iter (fun parent child level ->
+            Tree.iter (fun parent child  ->
                     match child.Data with
-                    | Some (data:SceneGraphObject) -> data.Render graphics
+                    | Some (data:SceneGraphObjectInterface) -> data.Render graphics
                     | None -> ()
                 ) tree
-        member this.Update(deltaT) =
-            Tree.iter (fun parent child level ->
+        member this.Update graphics deltaT =
+            Tree.iter (fun parent child  ->
                     match child.Data with
-                    | Some (data:SceneGraphObject) -> data.Update deltaT |> ignore
+                    | Some (data:SceneGraphObjectInterface) ->
+                        data.Update graphics deltaT |> ignore
                     | None -> ()
                 ) tree
             None // no error interrupting right now, probably needs to be a fold

@@ -269,7 +269,10 @@ type GraphicsManagerGLFW()as this=
             //window.SizeChanged.Add (fun args -> printfn "Size changed! New width %A, new height %A" args.width args.height)
             while 
                 (this :> GraphicsManager).GraphicsListeners 
-                |> List.tryPick (fun listener -> listener.Update DateTime.Now.Millisecond)
+                |> List.tryPick (fun listener ->
+                        listener.Update
+                            (this :> GraphicsManager)
+                            (uint DateTime.Now.Millisecond))
                 |> function
                    | Some (error) ->
                         printfn $"Quitting because %s{error}"
