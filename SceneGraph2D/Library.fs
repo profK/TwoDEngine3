@@ -43,7 +43,7 @@ type SG2DSceneGraph() as this =
               |> Tree.fold (fun state parentNode childNode  ->
                      let newData=
                         (match childNode.Data with
-                            | Some (data:SceneGraphObjectInterface) ->
+                            | Some data ->
                                 data.Update graphics deltaT 
                             | None ->
                                 None
