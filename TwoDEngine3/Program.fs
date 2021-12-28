@@ -8,6 +8,8 @@ open AngelCodeTextRenderer
 open GraphicsManagerGLFW
 open InputManagerWinRawInput
 open SceneGraph2D
+open TwoDEngine3
+open TwoDEngine3.AsteroidsLevel
 open TwoDEngine3.ExampleLevel
 open TwoDEngine3.LevelManagerInterface
 open TwoDEngine3.ManagerInterfaces.GraphicsManagerInterface
@@ -57,7 +59,7 @@ let main argv =
     |> ManagerRegistry.addManager
 
     match ManagerRegistry.getManager<GraphicsManager> () with
-    | Some graphics -> graphics.Start(fun gmgr -> SetLevelManager(Some(BouncyBall() :> AbstractLevelController)))
+    | Some graphics -> graphics.Start(fun gmgr -> SetLevelManager(Some(AsteroidsLevel() :> AbstractLevelController)))
 
     | None -> printfn "No Graphics Manager registered, check your project references"
 

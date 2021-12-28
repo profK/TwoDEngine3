@@ -15,10 +15,10 @@ type Sprite(img:Image,xform:Transform,veloc:Vector) =
             graphics.DrawImage image
             graphics.PopTransform |> ignore
         member this.Update graphics deltaT =
-            let move = graphics.NewVector
-                           (velocity.X*float32 deltaT)
-                           (velocity.Y*float32 deltaT)
+            let move = Vector
+                           (velocity.X*float32 deltaT,
+                            velocity.Y*float32 deltaT)
             let moveXform = graphics.TranslationTransform move.X move.Y               
-            Sprite(img,xform.Multiply moveXform,velocity)
+            Some(Sprite(img,xform.Multiply moveXform,velocity))
             
 

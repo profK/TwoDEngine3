@@ -38,12 +38,12 @@ type AngelCodeTextRenderer() =
                     let lastChar = snd state
                     let acChar: Character = font.GetCharacter char
                     let acImage: Image = font.GetPage(acChar.TexturePage)
-                    let rectPos = graphics.NewVector (float32 acChar.X) (float32 acChar.Y)
-                    let rectSz =  graphics.NewVector (float32 acChar.Width) (float32 acChar.Height)
+                    let rectPos = Vector (float32 acChar.X ,float32 acChar.Y)
+                    let rectSz =  Vector (float32 acChar.Width, float32 acChar.Height)
 
                     let charImage =
                         acImage.SubImage(Rectangle(rectPos,rectSz))
-                    let offset = graphics.NewVector (float32 acChar.XOffset) (float32 acChar.YOffset)
+                    let offset = Vector (float32 acChar.XOffset, float32 acChar.YOffset)
 
                     let translation:Vector = (pos + offset)
                     let xform = graphics.TranslationTransform translation.X  translation.Y
@@ -54,9 +54,9 @@ type AngelCodeTextRenderer() =
                     let kern = font.GetKern(lastChar, char)
                     let newX = pos.X + (float32 acChar.Width) + kern
                         
-                    ((graphics.NewVector newX pos.Y),char)    
+                    (Vector (newX, pos.Y),char)    
                 )
-                ((graphics.NewVector 0f 0f), '\n')
+                (Vector (0f, 0f), '\n')
             |> ignore
 
             ()

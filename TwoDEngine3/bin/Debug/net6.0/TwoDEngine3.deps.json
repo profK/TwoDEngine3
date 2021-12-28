@@ -13,7 +13,8 @@
           "FSharp.Core": "6.0.1",
           "GraphicsManagerGLFW": "1.0.0",
           "InputManagerWinRawInput": "1.0.0",
-          "MathSharp": "2.0.0-pre"
+          "MathSharp": "2.0.0-pre",
+          "SceneGraph2D": "1.0.0"
         },
         "runtime": {
           "TwoDEngine3.dll": {}
@@ -143,6 +144,14 @@
           "AngelCodeTextRenderer.dll": {}
         }
       },
+      "FSTree/1.0.0": {
+        "dependencies": {
+          "FSharp.Core": "6.0.1"
+        },
+        "runtime": {
+          "FSTree.dll": {}
+        }
+      },
       "glfw-net/3.3.1": {
         "runtime": {
           "GLFW.NET.dll": {}
@@ -169,6 +178,16 @@
         },
         "runtime": {
           "InputManagerWinRawInput.dll": {}
+        }
+      },
+      "SceneGraph2D/1.0.0": {
+        "dependencies": {
+          "FSTree": "1.0.0",
+          "FSharp.Core": "6.0.1",
+          "TDE3ManagerInterfaces": "1.0.0"
+        },
+        "runtime": {
+          "SceneGraph2D.dll": {}
         }
       },
       "TDE3ManagerInterfaces/1.0.0": {
@@ -264,6 +283,11 @@
       "serviceable": false,
       "sha512": ""
     },
+    "FSTree/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
     "glfw-net/3.3.1": {
       "type": "project",
       "serviceable": false,
@@ -275,6 +299,11 @@
       "sha512": ""
     },
     "InputManagerWinRawInput/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "SceneGraph2D/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

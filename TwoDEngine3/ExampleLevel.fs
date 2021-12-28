@@ -87,7 +87,7 @@ type BouncyBall() as this =
         
    
 
-    override this.UpdateImpl(timeDelta) =
+    override this.UpdateImpl graphics timeDelta =
         Thread.Sleep(5000)
         let im = ManagerRegistry.getManager<InputDeviceInterface>()
         match im with
@@ -119,8 +119,8 @@ type BouncyBall() as this =
         
         let subImage = ballImage.SubImage(
             Rectangle(
-                (graphics.NewVector (ballImage.Size.X/4f) (ballImage.Size.Y/4f)),
-                (graphics.NewVector (ballImage.Size.X/2f) (ballImage.Size.Y/2f))
+                Vector (ballImage.Size.X/4f, ballImage.Size.Y/4f),
+                Vector (ballImage.Size.X/2f, ballImage.Size.Y/2f)
             )
         )
 

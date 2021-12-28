@@ -9,13 +9,14 @@ type AbstractLevelController() =
 
 
     interface GraphicsListener with
-        member this.Update deltaMS : string option = this.UpdateImpl deltaMS
+        member this.Update graphics deltaMS : string option =
+            this.UpdateImpl graphics deltaMS
 
         member this.Render graphics : unit = this.RenderImpl graphics
 
-    abstract UpdateImpl : int -> string option
+    abstract UpdateImpl : GraphicsManager->uint -> string option
 
-    default this.UpdateImpl deltaMS : string option =
+    default this.UpdateImpl graphics deltaMS : string option =
         printfn "deltaMS = %d{deltaMS}" |> ignore
         None
 

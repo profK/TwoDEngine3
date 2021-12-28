@@ -105,3 +105,9 @@ D:\projects\RiderProjects\TwoDEngine3\TwoDEngine3\obj\Debug\net6.0\TwoDEngine3.f
 D:\projects\RiderProjects\TwoDEngine3\TwoDEngine3\obj\Debug\net6.0\TwoDEngine3.dll
 D:\projects\RiderProjects\TwoDEngine3\TwoDEngine3\obj\Debug\net6.0\TwoDEngine3.pdb
 D:\projects\RiderProjects\TwoDEngine3\TwoDEngine3\obj\Debug\net6.0\TwoDEngine3.genruntimeconfig.cache
+D:\projects\RiderProjects\TwoDEngine3\TwoDEngine3\bin\Debug\net6.0\FSTree.dll
+D:\projects\RiderProjects\TwoDEngine3\TwoDEngine3\bin\Debug\net6.0\SceneGraph2D.dll
+D:\projects\RiderProjects\TwoDEngine3\TwoDEngine3\bin\Debug\net6.0\SceneGraph2D.pdb
+D:\projects\RiderProjects\TwoDEngine3\TwoDEngine3\bin\Debug\net6.0\SceneGraph2D.xml
+D:\projects\RiderProjects\TwoDEngine3\TwoDEngine3\bin\Debug\net6.0\FSTree.pdb
+D:\projects\RiderProjects\TwoDEngine3\TwoDEngine3\bin\Debug\net6.0\FSTree.xml

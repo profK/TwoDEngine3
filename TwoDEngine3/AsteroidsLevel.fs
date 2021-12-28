@@ -19,12 +19,14 @@ type AsteroidsLevel() =
                         
         let shipImage = atlas.SubImage (
                             Rectangle(
-                                this.graphics.Value.NewVector 3f 2f,
-                                this.graphics.Value.NewVector 25f 30f)
+                                Vector(3f, 2f),
+                                Vector(25f, 30f)
+                            )
                          )
         let shipXform = this.graphics.Value.TranslationTransform 50f 50f 
         let shipSprite = Sprite(shipImage,shipXform,
-                                this.graphics.Value.NewVector 0f 0f)
+                                Vector(0f, 0f)
+                            )
         sceneGraph.Value.AddChild(shipSprite)
         ()
         
