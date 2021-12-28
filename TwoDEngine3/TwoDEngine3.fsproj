@@ -16,7 +16,9 @@
         <Content Include="Assets\football_small.png">
             <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </Content>
-        <Content Include="Assets\asteroids-arcade.png" />
+        <Content Include="Assets\asteroids-arcade.png">
+          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
     </ItemGroup>
 
     <ItemGroup>

@@ -14,7 +14,7 @@ type AsteroidsLevel() =
      
      override this.Open() =
         base.Open()
-        use filestream = File.Open("Assets/asteriods-arcade.png", FileMode.Open)
+        use filestream = File.Open("Assets/asteroids-arcade.png", FileMode.Open)
         let atlas = this.graphics.Value.LoadImage filestream
                         
         let shipImage = atlas.SubImage (

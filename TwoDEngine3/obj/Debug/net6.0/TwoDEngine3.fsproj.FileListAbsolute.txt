@@ -111,3 +111,4 @@ D:\projects\RiderProjects\TwoDEngine3\TwoDEngine3\bin\Debug\net6.0\SceneGraph2D.
 D:\projects\RiderProjects\TwoDEngine3\TwoDEngine3\bin\Debug\net6.0\SceneGraph2D.xml
 D:\projects\RiderProjects\TwoDEngine3\TwoDEngine3\bin\Debug\net6.0\FSTree.pdb
 D:\projects\RiderProjects\TwoDEngine3\TwoDEngine3\bin\Debug\net6.0\FSTree.xml
+D:\projects\RiderProjects\TwoDEngine3\TwoDEngine3\bin\Debug\net6.0\Assets\asteroids-arcade.png
