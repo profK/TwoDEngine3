@@ -19,17 +19,7 @@ type tdeImage = TwoDEngine3.ManagerInterfaces.GraphicsManagerInterface.Image
 
 let NormalizeTo (value:float32) (max:float32) =
         (value/max)
-type OglVector(vec:Vector4)  =
-    inherit Vector() 
-    member this.oglVec = vec
-   
-    override this.X = this.oglVec.X
-    override this.Y = this.oglVec.Y
-    override this.Plus (other:Vector) =
-        let otherVec = (other :?> OglVector).oglVec
-        OglVector(this.oglVec+otherVec) :> Vector
-    new(x:float32, y:float32) as this =
-        OglVector(Vector4(x, y, 0f,1f))
+
     
 type OglXform(glMatrix:Matrix4x4) =
    
@@ -41,14 +31,13 @@ type OglXform(glMatrix:Matrix4x4) =
             OglXform(otherXform * this.glMat) :> Transform
             
         member this.Multiply (vec:Vector): Vector =
-            let oglvec = (vec :?> OglVector).oglVec
-            let newVec =  Vector4.Transform(oglvec,this.glMat)
-            OglVector(newVec) :> Vector
+             Vector2.Transform(vec,this.glMat)
+
 
 type OglImage(image:ImageResult,?rect,?texid) as this =
     let srcRect:Rectangle = (defaultArg rect
-                  (Rectangle(OglVector(0f,0f),
-                        OglVector(float32 image.Width,float32 image.Height)))) 
+                  (Rectangle(Vector(0f,0f),
+                        Vector(float32 image.Width,float32 image.Height)))) 
 
     member val src = srcRect with get
     member val img:ImageResult = image with get
@@ -81,7 +70,7 @@ type OglImage(image:ImageResult,?rect,?texid) as this =
             OglImage(this.img,rect) :> tdeImage
         override this.Size with get() =
             let oglImage = this :> OglImage                      
-            OglVector(this.src.Size.X, this.src.Size.Y) :> Vector
+            Vector(this.src.Size.X, this.src.Size.Y) :> Vector
             
             
 type GraphicsManagerGLFW()as this=
@@ -223,7 +212,7 @@ type GraphicsManagerGLFW()as this=
             let wsz = window.Value.Bounds
             let sWidth = float32(wsz.Width)
             let sHeight = float32(wsz.Height)
-            (OglVector(float32 sWidth, float32 sHeight)) :> Vector
+            Vector(float32 sWidth, float32 sHeight)
         member this.Start() =
             let CheckCompile shader =
                 let mutable success = 99
@@ -301,8 +290,7 @@ type GraphicsManagerGLFW()as this=
                                             -(float32 y)/screenSize.Y,0f))
             oglXform :> Transform
         
-        member this.NewVector x y =
-            OglVector(x,y) :> Vector 
+    
         
        
     

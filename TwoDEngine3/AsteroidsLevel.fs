@@ -26,5 +26,5 @@ type AsteroidsLevel() =
         let shipSprite = Sprite(shipImage,shipXform,
                                 this.graphics.Value.NewVector 0f 0f)
         sceneGraph.Value.AddChild(shipSprite)
-        
+        ()
         

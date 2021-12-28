@@ -6,9 +6,9 @@ open TDE3ManagerInterfaces.SceneGraphInterface
 open TwoDEngine3.ManagerInterfaces.GraphicsManagerInterface
 
        
-
+type SceneGraphNode = TreeNode<SceneGraphInterface> 
 type SG2DSceneGraph() as this =
-    let tree= Tree.Empty
+    let mutable tree= Tree.Empty
     do ManagerRegistry.getManager<GraphicsManager>()
        |> function
            | Some gm ->
@@ -28,7 +28,7 @@ type SG2DSceneGraph() as this =
                 | None -> ()
             this
 
-       
+    
         
     interface GraphicsListener with
         member this.Render(graphics) =
@@ -38,10 +38,17 @@ type SG2DSceneGraph() as this =
                     | None -> ()
                 ) tree
         member this.Update graphics deltaT =
-            Tree.iter (fun parent child  ->
-                    match child.Data with
-                    | Some (data:SceneGraphObjectInterface) ->
-                        data.Update graphics deltaT |> ignore
-                    | None -> ()
-                ) tree
+            tree <-
+              tree
+              |> Tree.fold (fun state parentNode childNode  ->
+                     let newData=
+                        (match childNode.Data with
+                            | Some (data:SceneGraphObjectInterface) ->
+                                data.Update graphics deltaT 
+                            | None ->
+                                None
+                        )
+                     state.Children <- TreeNode(newData)::state.Children
+                     state
+                ) Tree.Empty 
             None // no error interrupting right now, probably needs to be a fold

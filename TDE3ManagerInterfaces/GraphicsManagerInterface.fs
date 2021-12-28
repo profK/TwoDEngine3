@@ -3,14 +3,9 @@
 open System.IO
 open System.Numerics
 
-[<AbstractClass>]
-type Vector() =
-    abstract X:float32 with get
-    abstract Y:float32 with get
-    
-    abstract Plus: Vector -> Vector
-    static member (+) (v : Vector, a: Vector) =
-        v.Plus(a)
+type Vector = System.Numerics.Vector2
+let Vector(x,y) = Vector2(x,y)
+   
      
 type Rectangle(pos, sz) =
     member val Position:Vector = pos
@@ -46,5 +41,5 @@ and GraphicsManager =
     abstract TranslationTransform : float32-> float32 -> Transform
     
     abstract ScaleTransform : float32-> float32 -> Transform
-    abstract NewVector: float32 ->float32->Vector
+
     
