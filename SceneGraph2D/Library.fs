@@ -1,14 +1,12 @@
 ﻿namespace SceneGraph2D
-open FSTree
 
-open FSTree.Tree
 open TDE3ManagerInterfaces.SceneGraphInterface
+open Tree
 open TwoDEngine3.ManagerInterfaces.GraphicsManagerInterface
 
-       
-type SceneGraphNode = TreeNode<SceneGraphInterface> 
+type private TreeNode = Tree<SceneGraphObjectInterface,SceneGraphObjectInterface>      
 type SG2DSceneGraph() as this =
-    let mutable tree= Tree.Empty
+    let mutable tree= ()
     do ManagerRegistry.getManager<GraphicsManager>()
        |> function
            | Some gm ->
