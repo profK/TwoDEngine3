@@ -33,6 +33,18 @@
             let finalAccum = subtrees |> Seq.fold recurse localAccum
             // ... and return it
             finalAccum
+            
+    let rec foldBack fLeaf fNode acc (tree:Tree<'LeafData,'INodeData>) :'r =
+        let recurse = foldBack fLeaf fNode
+        match tree with
+        | LeafNode leafInfo ->
+            fLeaf acc leafInfo
+        | InternalNode (nodeInfo,subtrees) ->
+            let localAcc = (Activator.CreateInstance(acc.GetType()));
+            subtrees
+            |> Seq.fold recurse 
+            |> fNode acc nodeInfo 
+    
     let rec except (ignore:'TreeType seq) 
         (tree:Tree<'LeafData,'INodeData>) : 'r =
         let recurse = except ignore

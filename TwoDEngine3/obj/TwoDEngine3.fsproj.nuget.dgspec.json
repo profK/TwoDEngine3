@@ -1,7 +1,7 @@
 {
   "format": 1,
   "restore": {
-    "D:\\projects\\RiderProjects\\TwoDEngine3\\TwoDEngine3\\TwoDEngine3.fsproj": {}
+    "D:\\projects\\RiderProjects\\TwoDengine3\\TwoDEngine3\\TwoDEngine3.fsproj": {}
   },
   "projects": {
     "D:\\projects\\RiderProjects\\glfw-net\\GLFW.NET\\GLFW.NET.csproj": {
@@ -92,22 +92,21 @@
         }
       }
     },
-    "D:\\projects\\RiderProjects\\TwoDEngine3\\AngelCodeTextRenderer\\AngelCodeTextRenderer.fsproj": {
+    "D:\\projects\\RiderProjects\\TwoDengine3\\AngelCodeTextRenderer\\AngelCodeTextRenderer.fsproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\projects\\RiderProjects\\TwoDEngine3\\AngelCodeTextRenderer\\AngelCodeTextRenderer.fsproj",
+        "projectUniqueName": "D:\\projects\\RiderProjects\\TwoDengine3\\AngelCodeTextRenderer\\AngelCodeTextRenderer.fsproj",
         "projectName": "AngelCodeTextRenderer",
-        "projectPath": "D:\\projects\\RiderProjects\\TwoDEngine3\\AngelCodeTextRenderer\\AngelCodeTextRenderer.fsproj",
+        "projectPath": "D:\\projects\\RiderProjects\\TwoDengine3\\AngelCodeTextRenderer\\AngelCodeTextRenderer.fsproj",
         "packagesPath": "C:\\Users\\jpkessel\\.nuget\\packages\\",
-        "outputPath": "D:\\projects\\RiderProjects\\TwoDEngine3\\AngelCodeTextRenderer\\obj\\",
+        "outputPath": "D:\\projects\\RiderProjects\\TwoDengine3\\AngelCodeTextRenderer\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\jpkessel\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "U:\\pchome\\.pcprefsBAD\\AppData\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
@@ -117,17 +116,16 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
-          "C:\\Users\\jpkessel\\AppData\\Local\\Stride\\NugetDev": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://packages.stride3d.net/nuget": {}
+          "U:\\Personal\\GitHub\\WebGL.NET\\src\\packages": {},
+          "U:\\pchome\\.pcprefsBAD\\AppData\\NuGet\\edu.purdue.jpkessel.SFMLx642019.2.5.13.nupkg": {},
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\projects\\RiderProjects\\TwoDEngine3\\TDE3ManagerInterfaces\\TDE3ManagerInterfaces.fsproj": {
-                "projectPath": "D:\\projects\\RiderProjects\\TwoDEngine3\\TDE3ManagerInterfaces\\TDE3ManagerInterfaces.fsproj"
+              "D:\\projects\\RiderProjects\\TwoDengine3\\TDE3ManagerInterfaces\\TDE3ManagerInterfaces.fsproj": {
+                "projectPath": "D:\\projects\\RiderProjects\\TwoDengine3\\TDE3ManagerInterfaces\\TDE3ManagerInterfaces.fsproj"
               }
             }
           }
@@ -173,22 +171,21 @@
         }
       }
     },
-    "D:\\projects\\RiderProjects\\TwoDEngine3\\FSTree\\FSTree.fsproj": {
+    "D:\\projects\\RiderProjects\\TwoDengine3\\FSTree\\FSTree.fsproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\projects\\RiderProjects\\TwoDEngine3\\FSTree\\FSTree.fsproj",
+        "projectUniqueName": "D:\\projects\\RiderProjects\\TwoDengine3\\FSTree\\FSTree.fsproj",
         "projectName": "FSTree",
-        "projectPath": "D:\\projects\\RiderProjects\\TwoDEngine3\\FSTree\\FSTree.fsproj",
+        "projectPath": "D:\\projects\\RiderProjects\\TwoDengine3\\FSTree\\FSTree.fsproj",
         "packagesPath": "C:\\Users\\jpkessel\\.nuget\\packages\\",
-        "outputPath": "D:\\projects\\RiderProjects\\TwoDEngine3\\FSTree\\obj\\",
+        "outputPath": "D:\\projects\\RiderProjects\\TwoDengine3\\FSTree\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\jpkessel\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "U:\\pchome\\.pcprefsBAD\\AppData\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
@@ -198,10 +195,9 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
-          "C:\\Users\\jpkessel\\AppData\\Local\\Stride\\NugetDev": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://packages.stride3d.net/nuget": {}
+          "U:\\Personal\\GitHub\\WebGL.NET\\src\\packages": {},
+          "U:\\pchome\\.pcprefsBAD\\AppData\\NuGet\\edu.purdue.jpkessel.SFMLx642019.2.5.13.nupkg": {},
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
@@ -240,22 +236,21 @@
         }
       }
     },
-    "D:\\projects\\RiderProjects\\TwoDEngine3\\GraphicsManagerGLFW\\GraphicsManagerGLFW.fsproj": {
+    "D:\\projects\\RiderProjects\\TwoDengine3\\GraphicsManagerGLFW\\GraphicsManagerGLFW.fsproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\projects\\RiderProjects\\TwoDEngine3\\GraphicsManagerGLFW\\GraphicsManagerGLFW.fsproj",
+        "projectUniqueName": "D:\\projects\\RiderProjects\\TwoDengine3\\GraphicsManagerGLFW\\GraphicsManagerGLFW.fsproj",
         "projectName": "GraphicsManagerGLFW",
-        "projectPath": "D:\\projects\\RiderProjects\\TwoDEngine3\\GraphicsManagerGLFW\\GraphicsManagerGLFW.fsproj",
+        "projectPath": "D:\\projects\\RiderProjects\\TwoDengine3\\GraphicsManagerGLFW\\GraphicsManagerGLFW.fsproj",
         "packagesPath": "C:\\Users\\jpkessel\\.nuget\\packages\\",
-        "outputPath": "D:\\projects\\RiderProjects\\TwoDEngine3\\GraphicsManagerGLFW\\obj\\",
+        "outputPath": "D:\\projects\\RiderProjects\\TwoDengine3\\GraphicsManagerGLFW\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\jpkessel\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "U:\\pchome\\.pcprefsBAD\\AppData\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
@@ -265,10 +260,9 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
-          "C:\\Users\\jpkessel\\AppData\\Local\\Stride\\NugetDev": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://packages.stride3d.net/nuget": {}
+          "U:\\Personal\\GitHub\\WebGL.NET\\src\\packages": {},
+          "U:\\pchome\\.pcprefsBAD\\AppData\\NuGet\\edu.purdue.jpkessel.SFMLx642019.2.5.13.nupkg": {},
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
@@ -277,8 +271,8 @@
               "D:\\projects\\RiderProjects\\glfw-net\\GLFW.NET\\GLFW.NET.csproj": {
                 "projectPath": "D:\\projects\\RiderProjects\\glfw-net\\GLFW.NET\\GLFW.NET.csproj"
               },
-              "D:\\projects\\RiderProjects\\TwoDEngine3\\TDE3ManagerInterfaces\\TDE3ManagerInterfaces.fsproj": {
-                "projectPath": "D:\\projects\\RiderProjects\\TwoDEngine3\\TDE3ManagerInterfaces\\TDE3ManagerInterfaces.fsproj"
+              "D:\\projects\\RiderProjects\\TwoDengine3\\TDE3ManagerInterfaces\\TDE3ManagerInterfaces.fsproj": {
+                "projectPath": "D:\\projects\\RiderProjects\\TwoDengine3\\TDE3ManagerInterfaces\\TDE3ManagerInterfaces.fsproj"
               }
             }
           }
@@ -334,22 +328,21 @@
         }
       }
     },
-    "D:\\projects\\RiderProjects\\TwoDEngine3\\InputManagerWinRawInput\\InputManagerWinRawInput.fsproj": {
+    "D:\\projects\\RiderProjects\\TwoDengine3\\InputManagerWinRawInput\\InputManagerWinRawInput.fsproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\projects\\RiderProjects\\TwoDEngine3\\InputManagerWinRawInput\\InputManagerWinRawInput.fsproj",
+        "projectUniqueName": "D:\\projects\\RiderProjects\\TwoDengine3\\InputManagerWinRawInput\\InputManagerWinRawInput.fsproj",
         "projectName": "InputManagerWinRawInput",
-        "projectPath": "D:\\projects\\RiderProjects\\TwoDEngine3\\InputManagerWinRawInput\\InputManagerWinRawInput.fsproj",
+        "projectPath": "D:\\projects\\RiderProjects\\TwoDengine3\\InputManagerWinRawInput\\InputManagerWinRawInput.fsproj",
         "packagesPath": "C:\\Users\\jpkessel\\.nuget\\packages\\",
-        "outputPath": "D:\\projects\\RiderProjects\\TwoDEngine3\\InputManagerWinRawInput\\obj\\",
+        "outputPath": "D:\\projects\\RiderProjects\\TwoDengine3\\InputManagerWinRawInput\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\jpkessel\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "U:\\pchome\\.pcprefsBAD\\AppData\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
@@ -359,17 +352,16 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
-          "C:\\Users\\jpkessel\\AppData\\Local\\Stride\\NugetDev": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://packages.stride3d.net/nuget": {}
+          "U:\\Personal\\GitHub\\WebGL.NET\\src\\packages": {},
+          "U:\\pchome\\.pcprefsBAD\\AppData\\NuGet\\edu.purdue.jpkessel.SFMLx642019.2.5.13.nupkg": {},
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\projects\\RiderProjects\\TwoDEngine3\\TDE3ManagerInterfaces\\TDE3ManagerInterfaces.fsproj": {
-                "projectPath": "D:\\projects\\RiderProjects\\TwoDEngine3\\TDE3ManagerInterfaces\\TDE3ManagerInterfaces.fsproj"
+              "D:\\projects\\RiderProjects\\TwoDengine3\\TDE3ManagerInterfaces\\TDE3ManagerInterfaces.fsproj": {
+                "projectPath": "D:\\projects\\RiderProjects\\TwoDengine3\\TDE3ManagerInterfaces\\TDE3ManagerInterfaces.fsproj"
               }
             }
           }
@@ -404,22 +396,21 @@
         }
       }
     },
-    "D:\\projects\\RiderProjects\\TwoDEngine3\\SceneGraph2D\\SceneGraph2D.fsproj": {
+    "D:\\projects\\RiderProjects\\TwoDengine3\\SceneGraph2D\\SceneGraph2D.fsproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\projects\\RiderProjects\\TwoDEngine3\\SceneGraph2D\\SceneGraph2D.fsproj",
+        "projectUniqueName": "D:\\projects\\RiderProjects\\TwoDengine3\\SceneGraph2D\\SceneGraph2D.fsproj",
         "projectName": "SceneGraph2D",
-        "projectPath": "D:\\projects\\RiderProjects\\TwoDEngine3\\SceneGraph2D\\SceneGraph2D.fsproj",
+        "projectPath": "D:\\projects\\RiderProjects\\TwoDengine3\\SceneGraph2D\\SceneGraph2D.fsproj",
         "packagesPath": "C:\\Users\\jpkessel\\.nuget\\packages\\",
-        "outputPath": "D:\\projects\\RiderProjects\\TwoDEngine3\\SceneGraph2D\\obj\\",
+        "outputPath": "D:\\projects\\RiderProjects\\TwoDengine3\\SceneGraph2D\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\jpkessel\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "U:\\pchome\\.pcprefsBAD\\AppData\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
@@ -429,20 +420,19 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
-          "C:\\Users\\jpkessel\\AppData\\Local\\Stride\\NugetDev": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://packages.stride3d.net/nuget": {}
+          "U:\\Personal\\GitHub\\WebGL.NET\\src\\packages": {},
+          "U:\\pchome\\.pcprefsBAD\\AppData\\NuGet\\edu.purdue.jpkessel.SFMLx642019.2.5.13.nupkg": {},
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\projects\\RiderProjects\\TwoDEngine3\\FSTree\\FSTree.fsproj": {
-                "projectPath": "D:\\projects\\RiderProjects\\TwoDEngine3\\FSTree\\FSTree.fsproj"
+              "D:\\projects\\RiderProjects\\TwoDengine3\\FSTree\\FSTree.fsproj": {
+                "projectPath": "D:\\projects\\RiderProjects\\TwoDengine3\\FSTree\\FSTree.fsproj"
               },
-              "D:\\projects\\RiderProjects\\TwoDEngine3\\TDE3ManagerInterfaces\\TDE3ManagerInterfaces.fsproj": {
-                "projectPath": "D:\\projects\\RiderProjects\\TwoDEngine3\\TDE3ManagerInterfaces\\TDE3ManagerInterfaces.fsproj"
+              "D:\\projects\\RiderProjects\\TwoDengine3\\TDE3ManagerInterfaces\\TDE3ManagerInterfaces.fsproj": {
+                "projectPath": "D:\\projects\\RiderProjects\\TwoDengine3\\TDE3ManagerInterfaces\\TDE3ManagerInterfaces.fsproj"
               }
             }
           }
@@ -478,22 +468,21 @@
         }
       }
     },
-    "D:\\projects\\RiderProjects\\TwoDEngine3\\TDE3ManagerInterfaces\\TDE3ManagerInterfaces.fsproj": {
+    "D:\\projects\\RiderProjects\\TwoDengine3\\TDE3ManagerInterfaces\\TDE3ManagerInterfaces.fsproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\projects\\RiderProjects\\TwoDEngine3\\TDE3ManagerInterfaces\\TDE3ManagerInterfaces.fsproj",
+        "projectUniqueName": "D:\\projects\\RiderProjects\\TwoDengine3\\TDE3ManagerInterfaces\\TDE3ManagerInterfaces.fsproj",
         "projectName": "TDE3ManagerInterfaces",
-        "projectPath": "D:\\projects\\RiderProjects\\TwoDEngine3\\TDE3ManagerInterfaces\\TDE3ManagerInterfaces.fsproj",
+        "projectPath": "D:\\projects\\RiderProjects\\TwoDengine3\\TDE3ManagerInterfaces\\TDE3ManagerInterfaces.fsproj",
         "packagesPath": "C:\\Users\\jpkessel\\.nuget\\packages\\",
-        "outputPath": "D:\\projects\\RiderProjects\\TwoDEngine3\\TDE3ManagerInterfaces\\obj\\",
+        "outputPath": "D:\\projects\\RiderProjects\\TwoDengine3\\TDE3ManagerInterfaces\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\jpkessel\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "U:\\pchome\\.pcprefsBAD\\AppData\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
@@ -503,10 +492,9 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
-          "C:\\Users\\jpkessel\\AppData\\Local\\Stride\\NugetDev": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://packages.stride3d.net/nuget": {}
+          "U:\\Personal\\GitHub\\WebGL.NET\\src\\packages": {},
+          "U:\\pchome\\.pcprefsBAD\\AppData\\NuGet\\edu.purdue.jpkessel.SFMLx642019.2.5.13.nupkg": {},
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
@@ -555,22 +543,21 @@
         }
       }
     },
-    "D:\\projects\\RiderProjects\\TwoDEngine3\\TwoDEngine3\\TwoDEngine3.fsproj": {
+    "D:\\projects\\RiderProjects\\TwoDengine3\\TwoDEngine3\\TwoDEngine3.fsproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\projects\\RiderProjects\\TwoDEngine3\\TwoDEngine3\\TwoDEngine3.fsproj",
+        "projectUniqueName": "D:\\projects\\RiderProjects\\TwoDengine3\\TwoDEngine3\\TwoDEngine3.fsproj",
         "projectName": "TwoDEngine3",
-        "projectPath": "D:\\projects\\RiderProjects\\TwoDEngine3\\TwoDEngine3\\TwoDEngine3.fsproj",
+        "projectPath": "D:\\projects\\RiderProjects\\TwoDengine3\\TwoDEngine3\\TwoDEngine3.fsproj",
         "packagesPath": "C:\\Users\\jpkessel\\.nuget\\packages\\",
-        "outputPath": "D:\\projects\\RiderProjects\\TwoDEngine3\\TwoDEngine3\\obj\\",
+        "outputPath": "D:\\projects\\RiderProjects\\TwoDengine3\\TwoDEngine3\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\jpkessel\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "U:\\pchome\\.pcprefsBAD\\AppData\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
@@ -580,26 +567,25 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
-          "C:\\Users\\jpkessel\\AppData\\Local\\Stride\\NugetDev": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://packages.stride3d.net/nuget": {}
+          "U:\\Personal\\GitHub\\WebGL.NET\\src\\packages": {},
+          "U:\\pchome\\.pcprefsBAD\\AppData\\NuGet\\edu.purdue.jpkessel.SFMLx642019.2.5.13.nupkg": {},
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\projects\\RiderProjects\\TwoDEngine3\\AngelCodeTextRenderer\\AngelCodeTextRenderer.fsproj": {
-                "projectPath": "D:\\projects\\RiderProjects\\TwoDEngine3\\AngelCodeTextRenderer\\AngelCodeTextRenderer.fsproj"
+              "D:\\projects\\RiderProjects\\TwoDengine3\\AngelCodeTextRenderer\\AngelCodeTextRenderer.fsproj": {
+                "projectPath": "D:\\projects\\RiderProjects\\TwoDengine3\\AngelCodeTextRenderer\\AngelCodeTextRenderer.fsproj"
               },
-              "D:\\projects\\RiderProjects\\TwoDEngine3\\GraphicsManagerGLFW\\GraphicsManagerGLFW.fsproj": {
-                "projectPath": "D:\\projects\\RiderProjects\\TwoDEngine3\\GraphicsManagerGLFW\\GraphicsManagerGLFW.fsproj"
+              "D:\\projects\\RiderProjects\\TwoDengine3\\GraphicsManagerGLFW\\GraphicsManagerGLFW.fsproj": {
+                "projectPath": "D:\\projects\\RiderProjects\\TwoDengine3\\GraphicsManagerGLFW\\GraphicsManagerGLFW.fsproj"
               },
-              "D:\\projects\\RiderProjects\\TwoDEngine3\\InputManagerWinRawInput\\InputManagerWinRawInput.fsproj": {
-                "projectPath": "D:\\projects\\RiderProjects\\TwoDEngine3\\InputManagerWinRawInput\\InputManagerWinRawInput.fsproj"
+              "D:\\projects\\RiderProjects\\TwoDengine3\\InputManagerWinRawInput\\InputManagerWinRawInput.fsproj": {
+                "projectPath": "D:\\projects\\RiderProjects\\TwoDengine3\\InputManagerWinRawInput\\InputManagerWinRawInput.fsproj"
               },
-              "D:\\projects\\RiderProjects\\TwoDEngine3\\SceneGraph2D\\SceneGraph2D.fsproj": {
-                "projectPath": "D:\\projects\\RiderProjects\\TwoDEngine3\\SceneGraph2D\\SceneGraph2D.fsproj"
+              "D:\\projects\\RiderProjects\\TwoDengine3\\SceneGraph2D\\SceneGraph2D.fsproj": {
+                "projectPath": "D:\\projects\\RiderProjects\\TwoDengine3\\SceneGraph2D\\SceneGraph2D.fsproj"
               }
             }
           }

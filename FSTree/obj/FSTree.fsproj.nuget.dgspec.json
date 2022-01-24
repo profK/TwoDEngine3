@@ -1,25 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "D:\\projects\\RiderProjects\\TwoDEngine3\\FSTree\\FSTree.fsproj": {}
+    "D:\\projects\\RiderProjects\\TwoDengine3\\FSTree\\FSTree.fsproj": {}
   },
   "projects": {
-    "D:\\projects\\RiderProjects\\TwoDEngine3\\FSTree\\FSTree.fsproj": {
+    "D:\\projects\\RiderProjects\\TwoDengine3\\FSTree\\FSTree.fsproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\projects\\RiderProjects\\TwoDEngine3\\FSTree\\FSTree.fsproj",
+        "projectUniqueName": "D:\\projects\\RiderProjects\\TwoDengine3\\FSTree\\FSTree.fsproj",
         "projectName": "FSTree",
-        "projectPath": "D:\\projects\\RiderProjects\\TwoDEngine3\\FSTree\\FSTree.fsproj",
+        "projectPath": "D:\\projects\\RiderProjects\\TwoDengine3\\FSTree\\FSTree.fsproj",
         "packagesPath": "C:\\Users\\jpkessel\\.nuget\\packages\\",
-        "outputPath": "D:\\projects\\RiderProjects\\TwoDEngine3\\FSTree\\obj\\",
+        "outputPath": "D:\\projects\\RiderProjects\\TwoDengine3\\FSTree\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\jpkessel\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "U:\\pchome\\.pcprefsBAD\\AppData\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
@@ -29,10 +28,9 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
-          "C:\\Users\\jpkessel\\AppData\\Local\\Stride\\NugetDev": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://packages.stride3d.net/nuget": {}
+          "U:\\Personal\\GitHub\\WebGL.NET\\src\\packages": {},
+          "U:\\pchome\\.pcprefsBAD\\AppData\\NuGet\\edu.purdue.jpkessel.SFMLx642019.2.5.13.nupkg": {},
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
