@@ -5,10 +5,14 @@
       "Cyotek.Drawing.BitmapFont/2.0.3": {
         "type": "package",
         "compile": {
-          "lib/net5.0/Cyotek.Drawing.BitmapFont.dll": {}
+          "lib/net5.0/Cyotek.Drawing.BitmapFont.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net5.0/Cyotek.Drawing.BitmapFont.dll": {}
+          "lib/net5.0/Cyotek.Drawing.BitmapFont.dll": {
+            "related": ".xml"
+          }
         }
       },
       "FSFramework/1.0.0-preview-1": {
@@ -17,19 +21,27 @@
           "FSharp.Core": "5.0.0"
         },
         "compile": {
-          "lib/net6.0/FSFramework.dll": {}
+          "lib/net6.0/FSFramework.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net6.0/FSFramework.dll": {}
+          "lib/net6.0/FSFramework.dll": {
+            "related": ".xml"
+          }
         }
       },
-      "FSharp.Core/6.0.1": {
+      "FSharp.Core/8.0.100": {
         "type": "package",
         "compile": {
-          "lib/netstandard2.1/FSharp.Core.dll": {}
+          "lib/netstandard2.1/FSharp.Core.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/netstandard2.1/FSharp.Core.dll": {}
+          "lib/netstandard2.1/FSharp.Core.dll": {
+            "related": ".xml"
+          }
         },
         "resource": {
           "lib/netstandard2.1/cs/FSharp.Core.resources.dll": {
@@ -71,13 +83,6 @@
           "lib/netstandard2.1/zh-Hant/FSharp.Core.resources.dll": {
             "locale": "zh-Hant"
           }
-        },
-        "contentFiles": {
-          "contentFiles/any/any/_._": {
-            "buildAction": "None",
-            "codeLanguage": "any",
-            "copyToOutput": false
-          }
         }
       },
       "glfw/3.3.5": {
@@ -86,10 +91,14 @@
       "GlmNet/0.7.0": {
         "type": "package",
         "compile": {
-          "lib/net40/GlmNet.dll": {}
+          "lib/net40/GlmNet.dll": {
+            "related": ".XML"
+          }
         },
         "runtime": {
-          "lib/net40/GlmNet.dll": {}
+          "lib/net40/GlmNet.dll": {
+            "related": ".XML"
+          }
         }
       },
       "MathSharp/2.0.0-pre": {
@@ -113,10 +122,14 @@
       "OpenGL.Net/0.8.4": {
         "type": "package",
         "compile": {
-          "lib/net461/OpenGL.Net.dll": {}
+          "lib/net461/OpenGL.Net.dll": {
+            "related": ".pdb;.xml"
+          }
         },
         "runtime": {
-          "lib/net461/OpenGL.Net.dll": {}
+          "lib/net461/OpenGL.Net.dll": {
+            "related": ".pdb;.xml"
+          }
         }
       },
       "RawInputLight/1.1.5": {
@@ -143,7 +156,7 @@
         "dependencies": {
           "Cyotek.Drawing.BitmapFont": "2.0.3",
           "FSFramework": "1.0.0-preview-1",
-          "FSharp.Core": "6.0.1",
+          "FSharp.Core": "8.0.100",
           "TDE3ManagerInterfaces": "1.0.0"
         },
         "compile": {
@@ -157,36 +170,25 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
-          "FSharp.Core": "6.0.1"
+          "FSharp.Core": "8.0.100"
         },
         "compile": {
           "bin/placeholder/FSTree.dll": {}
         },
         "runtime": {
           "bin/placeholder/FSTree.dll": {}
-        }
-      },
-      "glfw-net/3.3.1": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v5.0",
-        "compile": {
-          "bin/placeholder/glfw-net.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/glfw-net.dll": {}
         }
       },
       "GraphicsManagerGLFW/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
-          "FSharp.Core": "6.0.1",
+          "FSharp.Core": "8.0.100",
           "GlmNet": "0.7.0",
           "OpenGL.Net": "0.8.4",
           "StbImageSharp": "2.22.6",
           "TDE3ManagerInterfaces": "1.0.0",
-          "glfw": "3.3.5",
-          "glfw-net": "3.3.1"
+          "glfw": "3.3.5"
         },
         "compile": {
           "bin/placeholder/GraphicsManagerGLFW.dll": {}
@@ -214,7 +216,7 @@
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "FSTree": "1.0.0",
-          "FSharp.Core": "6.0.1",
+          "FSharp.Core": "8.0.100",
           "TDE3ManagerInterfaces": "1.0.0"
         },
         "compile": {
@@ -229,7 +231,7 @@
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "FSFramework": "1.0.0-preview-1",
-          "FSharp.Core": "6.0.1",
+          "FSharp.Core": "8.0.100",
           "MathSharp": "2.0.0-pre"
         },
         "compile": {
@@ -293,17 +295,15 @@
         "lib/net6.0/FSFramework.xml"
       ]
     },
-    "FSharp.Core/6.0.1": {
-      "sha512": "VrFAiW8dEEekk+0aqlbvMNZzDvYXmgWZwAt68AUBqaWK8RnoEVUNglj66bZzhs4/U63q0EfXlhcEKnH1sTYLjw==",
+    "FSharp.Core/8.0.100": {
+      "sha512": "ZOVZ/o+jI3ormTZOa28Wh0tSRoyle1f7lKFcUN61sPiXI7eDZu8eSveFybgTeyIEyW0ujjp31cp7GOglDgsNEg==",
       "type": "package",
-      "path": "fsharp.core/6.0.1",
+      "path": "fsharp.core/8.0.100",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
-        "contentFiles/any/netstandard2.0/FSharp.Core.xml",
-        "contentFiles/any/netstandard2.1/FSharp.Core.xml",
-        "fsharp.core.6.0.1.nupkg.sha512",
+        "fsharp.core.8.0.100.nupkg.sha512",
         "fsharp.core.nuspec",
         "lib/netstandard2.0/FSharp.Core.dll",
         "lib/netstandard2.0/FSharp.Core.xml",
@@ -890,11 +890,6 @@
       "path": "../FSTree/FSTree.fsproj",
       "msbuildProject": "../FSTree/FSTree.fsproj"
     },
-    "glfw-net/3.3.1": {
-      "type": "project",
-      "path": "../../glfw-net/GLFW.NET/GLFW.NET.csproj",
-      "msbuildProject": "../../glfw-net/GLFW.NET/GLFW.NET.csproj"
-    },
     "GraphicsManagerGLFW/1.0.0": {
       "type": "project",
       "path": "../GraphicsManagerGLFW/GraphicsManagerGLFW.fsproj",
@@ -920,7 +915,7 @@
     "net6.0": [
       "AngelCodeTextRenderer >= 1.0.0",
       "FSFramework >= 1.0.0-preview-1",
-      "FSharp.Core >= 6.0.1",
+      "FSharp.Core >= 8.0.100",
       "GraphicsManagerGLFW >= 1.0.0",
       "InputManagerWinRawInput >= 1.0.0",
       "MathSharp >= 2.0.0-pre",
@@ -929,52 +924,49 @@
   },
   "packageFolders": {
     "C:\\Users\\jpkessel\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\projects\\RiderProjects\\TwoDengine3\\TwoDEngine3\\TwoDEngine3.fsproj",
+      "projectUniqueName": "C:\\Users\\jpkessel\\Documents\\RiderProjects\\TwoDEngine3\\TwoDEngine3\\TwoDEngine3.fsproj",
       "projectName": "TwoDEngine3",
-      "projectPath": "D:\\projects\\RiderProjects\\TwoDengine3\\TwoDEngine3\\TwoDEngine3.fsproj",
+      "projectPath": "C:\\Users\\jpkessel\\Documents\\RiderProjects\\TwoDEngine3\\TwoDEngine3\\TwoDEngine3.fsproj",
       "packagesPath": "C:\\Users\\jpkessel\\.nuget\\packages\\",
-      "outputPath": "D:\\projects\\RiderProjects\\TwoDengine3\\TwoDEngine3\\obj\\",
+      "outputPath": "C:\\Users\\jpkessel\\Documents\\RiderProjects\\TwoDEngine3\\TwoDEngine3\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "U:\\pchome\\.pcprefsBAD\\AppData\\NuGet\\NuGet.Config",
+        "C:\\Users\\jpkessel\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "U:\\Personal\\GitHub\\WebGL.NET\\src\\packages": {},
-        "U:\\pchome\\.pcprefsBAD\\AppData\\NuGet\\edu.purdue.jpkessel.SFMLx642019.2.5.13.nupkg": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
+        "C:\\Program Files\\dotnet\\sdk\\8.0.100\\FSharp\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "D:\\projects\\RiderProjects\\TwoDengine3\\AngelCodeTextRenderer\\AngelCodeTextRenderer.fsproj": {
-              "projectPath": "D:\\projects\\RiderProjects\\TwoDengine3\\AngelCodeTextRenderer\\AngelCodeTextRenderer.fsproj"
+            "C:\\Users\\jpkessel\\Documents\\RiderProjects\\TwoDEngine3\\AngelCodeTextRenderer\\AngelCodeTextRenderer.fsproj": {
+              "projectPath": "C:\\Users\\jpkessel\\Documents\\RiderProjects\\TwoDEngine3\\AngelCodeTextRenderer\\AngelCodeTextRenderer.fsproj"
             },
-            "D:\\projects\\RiderProjects\\TwoDengine3\\GraphicsManagerGLFW\\GraphicsManagerGLFW.fsproj": {
-              "projectPath": "D:\\projects\\RiderProjects\\TwoDengine3\\GraphicsManagerGLFW\\GraphicsManagerGLFW.fsproj"
+            "C:\\Users\\jpkessel\\Documents\\RiderProjects\\TwoDEngine3\\GraphicsManagerGLFW\\GraphicsManagerGLFW.fsproj": {
+              "projectPath": "C:\\Users\\jpkessel\\Documents\\RiderProjects\\TwoDEngine3\\GraphicsManagerGLFW\\GraphicsManagerGLFW.fsproj"
             },
-            "D:\\projects\\RiderProjects\\TwoDengine3\\InputManagerWinRawInput\\InputManagerWinRawInput.fsproj": {
-              "projectPath": "D:\\projects\\RiderProjects\\TwoDengine3\\InputManagerWinRawInput\\InputManagerWinRawInput.fsproj"
+            "C:\\Users\\jpkessel\\Documents\\RiderProjects\\TwoDEngine3\\InputManagerWinRawInput\\InputManagerWinRawInput.fsproj": {
+              "projectPath": "C:\\Users\\jpkessel\\Documents\\RiderProjects\\TwoDEngine3\\InputManagerWinRawInput\\InputManagerWinRawInput.fsproj"
             },
-            "D:\\projects\\RiderProjects\\TwoDengine3\\SceneGraph2D\\SceneGraph2D.fsproj": {
-              "projectPath": "D:\\projects\\RiderProjects\\TwoDengine3\\SceneGraph2D\\SceneGraph2D.fsproj"
+            "C:\\Users\\jpkessel\\Documents\\RiderProjects\\TwoDEngine3\\SceneGraph2D\\SceneGraph2D.fsproj": {
+              "projectPath": "C:\\Users\\jpkessel\\Documents\\RiderProjects\\TwoDEngine3\\SceneGraph2D\\SceneGraph2D.fsproj"
             }
           }
         }
@@ -992,7 +984,7 @@
           "FSharp.Core": {
             "include": "Runtime, Compile, Build, Native, Analyzers, BuildTransitive",
             "target": "Package",
-            "version": "[6.0.1, )",
+            "version": "[8.0.100, )",
             "generatePathProperty": true
           },
           "MathSharp": {
@@ -1007,7 +999,8 @@
           "net47",
           "net471",
           "net472",
-          "net48"
+          "net48",
+          "net481"
         ],
         "assetTargetFallback": true,
         "warn": true,
@@ -1016,7 +1009,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   },
@@ -1025,7 +1018,7 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Package 'GlmNet 0.7.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
+      "message": "Package 'GlmNet 0.7.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
       "libraryId": "GlmNet",
       "targetGraphs": [
         "net6.0"
@@ -1035,7 +1028,7 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Package 'OpenGL.Net 0.8.4' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
+      "message": "Package 'OpenGL.Net 0.8.4' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
       "libraryId": "OpenGL.Net",
       "targetGraphs": [
         "net6.0"

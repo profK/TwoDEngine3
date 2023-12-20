@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "DTFTZM4LOd95Y5Rg2Y0BEazS1QlOR7Uf/J/dXFO9Tm2GIe4XbjHpwDItHzoUb4RT5sWjPp7rgDqFgTfAc9fibg==",
+  "dgSpecHash": "Zf1aNR0kU2wII4uvDmH45KkyUrEV3U15nMFrWs69jTkQVkastA1OliMrKsQpi1vBYWuZZxx+tU6GO5nNpF7aQw==",
   "success": true,
-  "projectFilePath": "D:\\projects\\RiderProjects\\TwoDengine3\\GraphicsManagerGLFW\\GraphicsManagerGLFW.fsproj",
+  "projectFilePath": "C:\\Users\\jpkessel\\Documents\\RiderProjects\\TwoDEngine3\\GraphicsManagerGLFW\\GraphicsManagerGLFW.fsproj",
   "expectedPackageFiles": [
     "C:\\Users\\jpkessel\\.nuget\\packages\\fsframework\\1.0.0-preview-1\\fsframework.1.0.0-preview-1.nupkg.sha512",
-    "C:\\Users\\jpkessel\\.nuget\\packages\\fsharp.core\\6.0.1\\fsharp.core.6.0.1.nupkg.sha512",
+    "C:\\Users\\jpkessel\\.nuget\\packages\\fsharp.core\\8.0.100\\fsharp.core.8.0.100.nupkg.sha512",
     "C:\\Users\\jpkessel\\.nuget\\packages\\glfw\\3.3.5\\glfw.3.3.5.nupkg.sha512",
     "C:\\Users\\jpkessel\\.nuget\\packages\\glmnet\\0.7.0\\glmnet.0.7.0.nupkg.sha512",
     "C:\\Users\\jpkessel\\.nuget\\packages\\mathsharp\\2.0.0-pre\\mathsharp.2.0.0-pre.nupkg.sha512",
@@ -18,7 +18,7 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Package 'GlmNet 0.7.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
+      "message": "Package 'GlmNet 0.7.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
       "libraryId": "GlmNet",
       "targetGraphs": [
         "net6.0"
@@ -28,7 +28,7 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Package 'OpenGL.Net 0.8.4' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
+      "message": "Package 'OpenGL.Net 0.8.4' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
       "libraryId": "OpenGL.Net",
       "targetGraphs": [
         "net6.0"

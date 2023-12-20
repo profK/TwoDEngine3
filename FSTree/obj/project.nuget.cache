@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "L4AgNFI1H4W73dLbWV+obj5JAHquMNlidXUlNo0J9VW0J6qHkNE6fVzGHrgtdsd6CuZyI3Bmk1RiGXS0BpVJ7g==",
+  "dgSpecHash": "Hz5zAaWahoraytyndBiD6XX8LZ0u5YBUQzdq9znbOOMve64tYNeaDkbl6RCs99Vpw6NOsY9PfghgZRmoYmLVdQ==",
   "success": true,
-  "projectFilePath": "D:\\projects\\RiderProjects\\TwoDengine3\\FSTree\\FSTree.fsproj",
+  "projectFilePath": "C:\\Users\\jpkessel\\Documents\\RiderProjects\\TwoDEngine3\\FSTree\\FSTree.fsproj",
   "expectedPackageFiles": [
-    "C:\\Users\\jpkessel\\.nuget\\packages\\fsharp.core\\6.0.1\\fsharp.core.6.0.1.nupkg.sha512"
+    "C:\\Users\\jpkessel\\.nuget\\packages\\fsharp.core\\8.0.100\\fsharp.core.8.0.100.nupkg.sha512"
   ],
   "logs": []
 }

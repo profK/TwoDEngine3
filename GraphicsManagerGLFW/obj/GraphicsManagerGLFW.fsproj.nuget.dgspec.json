@@ -1,134 +1,41 @@
 {
   "format": 1,
   "restore": {
-    "D:\\projects\\RiderProjects\\TwoDengine3\\GraphicsManagerGLFW\\GraphicsManagerGLFW.fsproj": {}
+    "C:\\Users\\jpkessel\\Documents\\RiderProjects\\TwoDEngine3\\GraphicsManagerGLFW\\GraphicsManagerGLFW.fsproj": {}
   },
   "projects": {
-    "D:\\projects\\RiderProjects\\glfw-net\\GLFW.NET\\GLFW.NET.csproj": {
-      "version": "3.3.1",
+    "C:\\Users\\jpkessel\\Documents\\RiderProjects\\TwoDEngine3\\GraphicsManagerGLFW\\GraphicsManagerGLFW.fsproj": {
+      "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\projects\\RiderProjects\\glfw-net\\GLFW.NET\\GLFW.NET.csproj",
-        "projectName": "glfw-net",
-        "projectPath": "D:\\projects\\RiderProjects\\glfw-net\\GLFW.NET\\GLFW.NET.csproj",
+        "projectUniqueName": "C:\\Users\\jpkessel\\Documents\\RiderProjects\\TwoDEngine3\\GraphicsManagerGLFW\\GraphicsManagerGLFW.fsproj",
+        "projectName": "GraphicsManagerGLFW",
+        "projectPath": "C:\\Users\\jpkessel\\Documents\\RiderProjects\\TwoDEngine3\\GraphicsManagerGLFW\\GraphicsManagerGLFW.fsproj",
         "packagesPath": "C:\\Users\\jpkessel\\.nuget\\packages\\",
-        "outputPath": "D:\\projects\\RiderProjects\\glfw-net\\GLFW.NET\\obj\\",
+        "outputPath": "C:\\Users\\jpkessel\\Documents\\RiderProjects\\TwoDEngine3\\GraphicsManagerGLFW\\obj\\",
         "projectStyle": "PackageReference",
-        "crossTargeting": true,
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
           "C:\\Users\\jpkessel\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
-        ],
-        "originalTargetFrameworks": [
-          "net5.0",
-          "netstandard2.1"
-        ],
-        "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Users\\jpkessel\\AppData\\Local\\Stride\\NugetDev": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://packages.stride3d.net/nuget": {}
-        },
-        "frameworks": {
-          "net5.0": {
-            "targetAlias": "net5.0",
-            "projectReferences": {}
-          },
-          "netstandard2.1": {
-            "targetAlias": "netstandard2.1",
-            "projectReferences": {}
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        }
-      },
-      "frameworks": {
-        "net5.0": {
-          "targetAlias": "net5.0",
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
-        },
-        "netstandard2.1": {
-          "targetAlias": "netstandard2.1",
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "frameworkReferences": {
-            "NETStandard.Library": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
-        }
-      }
-    },
-    "D:\\projects\\RiderProjects\\TwoDengine3\\GraphicsManagerGLFW\\GraphicsManagerGLFW.fsproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "D:\\projects\\RiderProjects\\TwoDengine3\\GraphicsManagerGLFW\\GraphicsManagerGLFW.fsproj",
-        "projectName": "GraphicsManagerGLFW",
-        "projectPath": "D:\\projects\\RiderProjects\\TwoDengine3\\GraphicsManagerGLFW\\GraphicsManagerGLFW.fsproj",
-        "packagesPath": "C:\\Users\\jpkessel\\.nuget\\packages\\",
-        "outputPath": "D:\\projects\\RiderProjects\\TwoDengine3\\GraphicsManagerGLFW\\obj\\",
-        "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
-        "configFilePaths": [
-          "U:\\pchome\\.pcprefsBAD\\AppData\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "U:\\Personal\\GitHub\\WebGL.NET\\src\\packages": {},
-          "U:\\pchome\\.pcprefsBAD\\AppData\\NuGet\\edu.purdue.jpkessel.SFMLx642019.2.5.13.nupkg": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "C:\\Program Files\\dotnet\\sdk\\8.0.100\\FSharp\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\projects\\RiderProjects\\glfw-net\\GLFW.NET\\GLFW.NET.csproj": {
-                "projectPath": "D:\\projects\\RiderProjects\\glfw-net\\GLFW.NET\\GLFW.NET.csproj"
-              },
-              "D:\\projects\\RiderProjects\\TwoDengine3\\TDE3ManagerInterfaces\\TDE3ManagerInterfaces.fsproj": {
-                "projectPath": "D:\\projects\\RiderProjects\\TwoDengine3\\TDE3ManagerInterfaces\\TDE3ManagerInterfaces.fsproj"
+              "C:\\Users\\jpkessel\\Documents\\RiderProjects\\TwoDEngine3\\TDE3ManagerInterfaces\\TDE3ManagerInterfaces.fsproj": {
+                "projectPath": "C:\\Users\\jpkessel\\Documents\\RiderProjects\\TwoDEngine3\\TDE3ManagerInterfaces\\TDE3ManagerInterfaces.fsproj"
               }
             }
           }
@@ -141,7 +48,7 @@
             "FSharp.Core": {
               "include": "Runtime, Compile, Build, Native, Analyzers, BuildTransitive",
               "target": "Package",
-              "version": "[6.0.1, )",
+              "version": "[8.0.100, )",
               "generatePathProperty": true
             },
             "GlmNet": {
@@ -171,7 +78,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -180,36 +88,34 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\projects\\RiderProjects\\TwoDengine3\\TDE3ManagerInterfaces\\TDE3ManagerInterfaces.fsproj": {
+    "C:\\Users\\jpkessel\\Documents\\RiderProjects\\TwoDEngine3\\TDE3ManagerInterfaces\\TDE3ManagerInterfaces.fsproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\projects\\RiderProjects\\TwoDengine3\\TDE3ManagerInterfaces\\TDE3ManagerInterfaces.fsproj",
+        "projectUniqueName": "C:\\Users\\jpkessel\\Documents\\RiderProjects\\TwoDEngine3\\TDE3ManagerInterfaces\\TDE3ManagerInterfaces.fsproj",
         "projectName": "TDE3ManagerInterfaces",
-        "projectPath": "D:\\projects\\RiderProjects\\TwoDengine3\\TDE3ManagerInterfaces\\TDE3ManagerInterfaces.fsproj",
+        "projectPath": "C:\\Users\\jpkessel\\Documents\\RiderProjects\\TwoDEngine3\\TDE3ManagerInterfaces\\TDE3ManagerInterfaces.fsproj",
         "packagesPath": "C:\\Users\\jpkessel\\.nuget\\packages\\",
-        "outputPath": "D:\\projects\\RiderProjects\\TwoDengine3\\TDE3ManagerInterfaces\\obj\\",
+        "outputPath": "C:\\Users\\jpkessel\\Documents\\RiderProjects\\TwoDEngine3\\TDE3ManagerInterfaces\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "U:\\pchome\\.pcprefsBAD\\AppData\\NuGet\\NuGet.Config",
+          "C:\\Users\\jpkessel\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "U:\\Personal\\GitHub\\WebGL.NET\\src\\packages": {},
-          "U:\\pchome\\.pcprefsBAD\\AppData\\NuGet\\edu.purdue.jpkessel.SFMLx642019.2.5.13.nupkg": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "C:\\Program Files\\dotnet\\sdk\\8.0.100\\FSharp\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -231,7 +137,7 @@
             "FSharp.Core": {
               "include": "Runtime, Compile, Build, Native, Analyzers, BuildTransitive",
               "target": "Package",
-              "version": "[6.0.1, )",
+              "version": "[8.0.100, )",
               "generatePathProperty": true
             },
             "MathSharp": {
@@ -246,7 +152,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -255,7 +162,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }
