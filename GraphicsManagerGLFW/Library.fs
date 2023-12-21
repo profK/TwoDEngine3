@@ -10,7 +10,7 @@ open System.Threading
 open GlmNet
 open StbImageSharp
 open TwoDEngine3.ManagerInterfaces.GraphicsManagerInterface
-open GLFW
+open gl
 open OpenGL
 
 
@@ -112,7 +112,7 @@ type GraphicsManagerGLFW()as this=
     let mutable xformStack:Transform list = List.Empty
     let mutable clipStack:Rectangle list = List.Empty
     
-    let mutable window : NativeWindow option = None
+    let mutable window : DeviceContextGLX.NativeWindow option = None
     
     member val shaderProgram:uint32 = 0u with get, set
                                                                             
@@ -177,7 +177,7 @@ type GraphicsManagerGLFW()as this=
             let image = ImageResult.FromStream(stream, ColorComponents.RedGreenBlueAlpha);
             OglImage(image) :> tdeImage
         member this.PopClip() =
-             match clipStack with
+            match clipStack with
             | [] -> None
             | head::tail ->
                 clipStack <- tail
@@ -276,7 +276,7 @@ type GraphicsManagerGLFW()as this=
                     Gl.UseProgram(this.shaderProgram)  
                     (this :> GraphicsManager).GraphicsListeners 
                     |> Seq.iter(fun listener-> listener.Render(this) ) 
-                    window.SwapBuffers()
+                    window.SwapBuffers
                     Glfw.PollEvents();
         member this.Start(userfunc) =
             userfunc(this)  

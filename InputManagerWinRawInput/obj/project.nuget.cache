@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "uLBQnoAF/BZZPxfv/m35hVyYo+Y+oQjNJeoHM5hc+qAMeFmk2VxjyHHVT8BvWKHpfiCnepnYKDs8wSxycPjc/Q==",
+  "dgSpecHash": "okMbEuo0Rn5RGzKCOsNG43ZNbHJcX62PhW8oWw/vhknhuuK5eW+itpvGkp/mTIzJHNgDnMpZb8ALmi/SWXXZ1w==",
   "success": true,
-  "projectFilePath": "D:\\projects\\RiderProjects\\TwoDEngine3\\InputManagerWinRawInput\\InputManagerWinRawInput.fsproj",
+  "projectFilePath": "C:\\Users\\jpkessel\\Documents\\RiderProjects\\TwoDEngine3\\InputManagerWinRawInput\\InputManagerWinRawInput.fsproj",
   "expectedPackageFiles": [
     "C:\\Users\\jpkessel\\.nuget\\packages\\fsframework\\1.0.0-preview-1\\fsframework.1.0.0-preview-1.nupkg.sha512",
     "C:\\Users\\jpkessel\\.nuget\\packages\\fsharp.core\\8.0.100\\fsharp.core.8.0.100.nupkg.sha512",
+    "C:\\Users\\jpkessel\\.nuget\\packages\\glfw-net\\3.3.1\\glfw-net.3.3.1.nupkg.sha512",
     "C:\\Users\\jpkessel\\.nuget\\packages\\mathsharp\\2.0.0-pre\\mathsharp.2.0.0-pre.nupkg.sha512",
     "C:\\Users\\jpkessel\\.nuget\\packages\\microsoft.net.compilers.toolset\\3.2.0-beta1-final\\microsoft.net.compilers.toolset.3.2.0-beta1-final.nupkg.sha512",
     "C:\\Users\\jpkessel\\.nuget\\packages\\rawinputlight\\1.1.5\\rawinputlight.1.1.5.nupkg.sha512"

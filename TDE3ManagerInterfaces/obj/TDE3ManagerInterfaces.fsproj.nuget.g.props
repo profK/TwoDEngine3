@@ -15,6 +15,7 @@
   </ItemGroup>
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <PkgMathSharp Condition=" '$(PkgMathSharp)' == '' ">C:\Users\jpkessel\.nuget\packages\mathsharp\2.0.0-pre</PkgMathSharp>
+    <Pkgglfw-net Condition=" '$(Pkgglfw-net)' == '' ">C:\Users\jpkessel\.nuget\packages\glfw-net\3.3.1</Pkgglfw-net>
     <PkgFSharp_Core Condition=" '$(PkgFSharp_Core)' == '' ">C:\Users\jpkessel\.nuget\packages\fsharp.core\8.0.100</PkgFSharp_Core>
     <PkgFSFramework Condition=" '$(PkgFSFramework)' == '' ">C:\Users\jpkessel\.nuget\packages\fsframework\1.0.0-preview-1</PkgFSFramework>
   </PropertyGroup>

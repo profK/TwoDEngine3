@@ -8,17 +8,17 @@
     ".NETCoreApp,Version=v6.0": {
       "FSTree/1.0.0": {
         "dependencies": {
-          "FSharp.Core": "6.0.1"
+          "FSharp.Core": "8.0.100"
         },
         "runtime": {
           "FSTree.dll": {}
         }
       },
-      "FSharp.Core/6.0.1": {
+      "FSharp.Core/8.0.100": {
         "runtime": {
           "lib/netstandard2.1/FSharp.Core.dll": {
-            "assemblyVersion": "6.0.0.0",
-            "fileVersion": "6.0.121.52202"
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.1.23.52306"
           }
         },
         "resources": {
@@ -71,12 +71,12 @@
       "serviceable": false,
       "sha512": ""
     },
-    "FSharp.Core/6.0.1": {
+    "FSharp.Core/8.0.100": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-VrFAiW8dEEekk+0aqlbvMNZzDvYXmgWZwAt68AUBqaWK8RnoEVUNglj66bZzhs4/U63q0EfXlhcEKnH1sTYLjw==",
-      "path": "fsharp.core/6.0.1",
-      "hashPath": "fsharp.core.6.0.1.nupkg.sha512"
+      "sha512": "sha512-ZOVZ/o+jI3ormTZOa28Wh0tSRoyle1f7lKFcUN61sPiXI7eDZu8eSveFybgTeyIEyW0ujjp31cp7GOglDgsNEg==",
+      "path": "fsharp.core/8.0.100",
+      "hashPath": "fsharp.core.8.0.100.nupkg.sha512"
     }
   }
 }

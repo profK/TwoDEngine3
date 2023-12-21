@@ -1,46 +1,22 @@
 {
   "version": 2,
-  "dgSpecHash": "SADhb6oRlZ3dGioGU9ZbJYjrXGJG0Dux7RQV9+Xsq7ZG7ZF9qj4S7F9B5tqZhbkdPYoVby41FFwxBlnflmBlgQ==",
+  "dgSpecHash": "ti0+FW0YT3+MWFHHuBkOSPOAnuIgPZTahUxtssC9TW5kDndLtPC+9J3oyR2pY4m8Wl/cS64JWQYPe6LkESGc5g==",
   "success": false,
-  "projectFilePath": "D:\\projects\\RiderProjects\\TwoDEngine3\\GraphicsManagerGLFW\\GraphicsManagerGLFW.fsproj",
+  "projectFilePath": "C:\\Users\\jpkessel\\Documents\\RiderProjects\\TwoDEngine3\\GraphicsManagerGLFW\\GraphicsManagerGLFW.fsproj",
   "expectedPackageFiles": [
-    "C:\\Users\\jpkessel\\.nuget\\packages\\fsframework\\1.0.0-preview-1\\fsframework.1.0.0-preview-1.nupkg.sha512",
     "C:\\Users\\jpkessel\\.nuget\\packages\\fsharp.core\\8.0.100\\fsharp.core.8.0.100.nupkg.sha512",
-    "C:\\Users\\jpkessel\\.nuget\\packages\\glfw\\3.3.5\\glfw.3.3.5.nupkg.sha512",
     "C:\\Users\\jpkessel\\.nuget\\packages\\glmnet\\0.7.0\\glmnet.0.7.0.nupkg.sha512",
-    "C:\\Users\\jpkessel\\.nuget\\packages\\mathsharp\\2.0.0-pre\\mathsharp.2.0.0-pre.nupkg.sha512",
-    "C:\\Users\\jpkessel\\.nuget\\packages\\microsoft.net.compilers.toolset\\3.2.0-beta1-final\\microsoft.net.compilers.toolset.3.2.0-beta1-final.nupkg.sha512",
     "C:\\Users\\jpkessel\\.nuget\\packages\\opengl.net\\0.8.4\\opengl.net.0.8.4.nupkg.sha512",
     "C:\\Users\\jpkessel\\.nuget\\packages\\stbimagesharp\\2.22.6\\stbimagesharp.2.22.6.nupkg.sha512"
   ],
   "logs": [
     {
-      "code": "NU1105",
+      "code": "NU1201",
       "level": "Error",
-      "message": "Unable to find project information for 'D:\\projects\\RiderProjects\\glfw-net\\GLFW.NET\\GLFW.NET.csproj'. If you are using Visual Studio, this may be because the project is unloaded or not part of the current solution so run a restore from the command-line. Otherwise, the project file may be invalid or missing targets required for restore.",
-      "libraryId": "D:\\projects\\RiderProjects\\glfw-net\\GLFW.NET\\GLFW.NET.csproj",
+      "message": "Project TDE3ManagerInterfaces is not compatible with net48 (.NETFramework,Version=v4.8). Project TDE3ManagerInterfaces supports: net6.0 (.NETCoreApp,Version=v6.0)",
+      "libraryId": "TDE3ManagerInterfaces",
       "targetGraphs": [
-        "net6.0"
-      ]
-    },
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'GlmNet 0.7.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
-      "libraryId": "GlmNet",
-      "targetGraphs": [
-        "net6.0"
-      ]
-    },
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'OpenGL.Net 0.8.4' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
-      "libraryId": "OpenGL.Net",
-      "targetGraphs": [
-        "net6.0"
+        ".NETFramework,Version=v4.8"
       ]
     }
   ]

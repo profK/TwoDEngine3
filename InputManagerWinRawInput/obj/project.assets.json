@@ -72,6 +72,19 @@
           }
         }
       },
+      "glfw-net/3.3.1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/GLFW.NET.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/GLFW.NET.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "MathSharp/2.0.0-pre": {
         "type": "package",
         "dependencies": {
@@ -103,7 +116,8 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
-          "FSharp.Core": "8.0.100"
+          "FSharp.Core": "8.0.100",
+          "glfw-net": "3.3.1"
         },
         "compile": {
           "bin/placeholder/FSTree.dll": {}
@@ -119,7 +133,8 @@
           "FSFramework": "1.0.0-preview-1",
           "FSTree": "1.0.0",
           "FSharp.Core": "8.0.100",
-          "MathSharp": "2.0.0-pre"
+          "MathSharp": "2.0.0-pre",
+          "glfw-net": "3.3.1"
         },
         "compile": {
           "bin/placeholder/TDE3ManagerInterfaces.dll": {}
@@ -184,6 +199,19 @@
         "lib/netstandard2.1/tr/FSharp.Core.resources.dll",
         "lib/netstandard2.1/zh-Hans/FSharp.Core.resources.dll",
         "lib/netstandard2.1/zh-Hant/FSharp.Core.resources.dll"
+      ]
+    },
+    "glfw-net/3.3.1": {
+      "sha512": "TpFcYN+/YjBRRJ1O3L6V1y2YpT15AgGn8DRFtsXow76++x9QC8m+mxb38Uv43N4Xh4//k9NkxlIhF/Ci2khqqA==",
+      "type": "package",
+      "path": "glfw-net/3.3.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "glfw-net.3.3.1.nupkg.sha512",
+        "glfw-net.nuspec",
+        "lib/netstandard2.0/GLFW.NET.dll",
+        "lib/netstandard2.0/GLFW.NET.xml"
       ]
     },
     "MathSharp/2.0.0-pre": {
@@ -424,7 +452,8 @@
   "projectFileDependencyGroups": {
     "net6.0": [
       "RawInputLight >= 1.1.5",
-      "TDE3ManagerInterfaces >= 1.0.0"
+      "TDE3ManagerInterfaces >= 1.0.0",
+      "glfw-net >= 3.3.1"
     ]
   },
   "packageFolders": {
@@ -434,11 +463,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\projects\\RiderProjects\\TwoDEngine3\\InputManagerWinRawInput\\InputManagerWinRawInput.fsproj",
+      "projectUniqueName": "C:\\Users\\jpkessel\\Documents\\RiderProjects\\TwoDEngine3\\InputManagerWinRawInput\\InputManagerWinRawInput.fsproj",
       "projectName": "InputManagerWinRawInput",
-      "projectPath": "D:\\projects\\RiderProjects\\TwoDEngine3\\InputManagerWinRawInput\\InputManagerWinRawInput.fsproj",
+      "projectPath": "C:\\Users\\jpkessel\\Documents\\RiderProjects\\TwoDEngine3\\InputManagerWinRawInput\\InputManagerWinRawInput.fsproj",
       "packagesPath": "C:\\Users\\jpkessel\\.nuget\\packages\\",
-      "outputPath": "D:\\projects\\RiderProjects\\TwoDEngine3\\InputManagerWinRawInput\\obj\\",
+      "outputPath": "C:\\Users\\jpkessel\\Documents\\RiderProjects\\TwoDEngine3\\InputManagerWinRawInput\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -453,6 +482,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "C:\\Program Files\\dotnet\\sdk\\8.0.100\\FSharp\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
@@ -460,8 +490,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "D:\\projects\\RiderProjects\\TwoDEngine3\\TDE3ManagerInterfaces\\TDE3ManagerInterfaces.fsproj": {
-              "projectPath": "D:\\projects\\RiderProjects\\TwoDEngine3\\TDE3ManagerInterfaces\\TDE3ManagerInterfaces.fsproj"
+            "C:\\Users\\jpkessel\\Documents\\RiderProjects\\TwoDEngine3\\TDE3ManagerInterfaces\\TDE3ManagerInterfaces.fsproj": {
+              "projectPath": "C:\\Users\\jpkessel\\Documents\\RiderProjects\\TwoDEngine3\\TDE3ManagerInterfaces\\TDE3ManagerInterfaces.fsproj"
             }
           }
         }
@@ -474,6 +504,11 @@
           "RawInputLight": {
             "target": "Package",
             "version": "[1.1.5, )",
+            "generatePathProperty": true
+          },
+          "glfw-net": {
+            "target": "Package",
+            "version": "[3.3.1, )",
             "generatePathProperty": true
           }
         },

@@ -8,3 +8,15 @@ D:\projects\RiderProjects\TwoDEngine3\FSTree\bin\Debug\net6.0\FSTree.xml
 D:\projects\RiderProjects\TwoDEngine3\FSTree\obj\Debug\net6.0\FSTree.dll
 D:\projects\RiderProjects\TwoDEngine3\FSTree\obj\Debug\net6.0\FSTree.xml
 D:\projects\RiderProjects\TwoDEngine3\FSTree\obj\Debug\net6.0\FSTree.pdb
+C:\Users\jpkessel\Documents\RiderProjects\TwoDEngine3\FSTree\bin\Debug\net6.0\FSTree.deps.json
+C:\Users\jpkessel\Documents\RiderProjects\TwoDEngine3\FSTree\bin\Debug\net6.0\FSTree.dll
+C:\Users\jpkessel\Documents\RiderProjects\TwoDEngine3\FSTree\bin\Debug\net6.0\FSTree.pdb
+C:\Users\jpkessel\Documents\RiderProjects\TwoDEngine3\FSTree\bin\Debug\net6.0\FSTree.xml
+C:\Users\jpkessel\Documents\RiderProjects\TwoDEngine3\FSTree\obj\Debug\net6.0\FSTree.fsproj.AssemblyReference.cache
+C:\Users\jpkessel\Documents\RiderProjects\TwoDEngine3\FSTree\obj\Debug\net6.0\FSTree.AssemblyInfoInputs.cache
+C:\Users\jpkessel\Documents\RiderProjects\TwoDEngine3\FSTree\obj\Debug\net6.0\FSTree.AssemblyInfo.fs
+C:\Users\jpkessel\Documents\RiderProjects\TwoDEngine3\FSTree\obj\Debug\net6.0\FSTree.fsproj.CoreCompileInputs.cache
+C:\Users\jpkessel\Documents\RiderProjects\TwoDEngine3\FSTree\obj\Debug\net6.0\FSTree.sourcelink.json
+C:\Users\jpkessel\Documents\RiderProjects\TwoDEngine3\FSTree\obj\Debug\net6.0\FSTree.dll
+C:\Users\jpkessel\Documents\RiderProjects\TwoDEngine3\FSTree\obj\Debug\net6.0\FSTree.xml
+C:\Users\jpkessel\Documents\RiderProjects\TwoDEngine3\FSTree\obj\Debug\net6.0\FSTree.pdb

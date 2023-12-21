@@ -16,6 +16,7 @@
 
     <ItemGroup>
       <PackageReference Remove="FSharp.Core" />
+      <PackageReference Include="glfw-net" Version="3.3.1" />
       <PackageReference Include="RawInputLight" Version="1.1.5" />
     </ItemGroup>
 

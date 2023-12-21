@@ -55,8 +55,7 @@ let main argv =
      //register InputManager
     typedefof<InputManagerWinRawInput>
     |> ManagerRegistry.addManager
-    typedefof<SG2DSceneGraph>
-    |> ManagerRegistry.addManager
+    
 
     match ManagerRegistry.getManager<GraphicsManager> () with
     | Some graphics -> graphics.Start(fun gmgr -> SetLevelManager(Some(AsteroidsLevel() :> AbstractLevelController)))

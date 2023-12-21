@@ -19,6 +19,7 @@
 
     <ItemGroup>
         <PackageReference Include="FSFramework" Version="1.0.0-preview-1" />
+        <PackageReference Include="glfw-net" Version="3.3.1" />
         <PackageReference Include="MathSharp" Version="2.0.0-pre" />
     </ItemGroup>
 

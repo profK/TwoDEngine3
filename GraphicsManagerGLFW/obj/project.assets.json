@@ -1,79 +1,60 @@
 {
   "version": 3,
   "targets": {
-    "net6.0": {
-      "FSFramework/1.0.0-preview-1": {
-        "type": "package",
-        "dependencies": {
-          "FSharp.Core": "5.0.0"
-        },
-        "compile": {
-          "lib/net6.0/FSFramework.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net6.0/FSFramework.dll": {
-            "related": ".xml"
-          }
-        }
-      },
+    ".NETFramework,Version=v4.8": {
       "FSharp.Core/8.0.100": {
         "type": "package",
         "compile": {
-          "lib/netstandard2.1/FSharp.Core.dll": {
+          "lib/netstandard2.0/FSharp.Core.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/netstandard2.1/FSharp.Core.dll": {
+          "lib/netstandard2.0/FSharp.Core.dll": {
             "related": ".xml"
           }
         },
         "resource": {
-          "lib/netstandard2.1/cs/FSharp.Core.resources.dll": {
+          "lib/netstandard2.0/cs/FSharp.Core.resources.dll": {
             "locale": "cs"
           },
-          "lib/netstandard2.1/de/FSharp.Core.resources.dll": {
+          "lib/netstandard2.0/de/FSharp.Core.resources.dll": {
             "locale": "de"
           },
-          "lib/netstandard2.1/es/FSharp.Core.resources.dll": {
+          "lib/netstandard2.0/es/FSharp.Core.resources.dll": {
             "locale": "es"
           },
-          "lib/netstandard2.1/fr/FSharp.Core.resources.dll": {
+          "lib/netstandard2.0/fr/FSharp.Core.resources.dll": {
             "locale": "fr"
           },
-          "lib/netstandard2.1/it/FSharp.Core.resources.dll": {
+          "lib/netstandard2.0/it/FSharp.Core.resources.dll": {
             "locale": "it"
           },
-          "lib/netstandard2.1/ja/FSharp.Core.resources.dll": {
+          "lib/netstandard2.0/ja/FSharp.Core.resources.dll": {
             "locale": "ja"
           },
-          "lib/netstandard2.1/ko/FSharp.Core.resources.dll": {
+          "lib/netstandard2.0/ko/FSharp.Core.resources.dll": {
             "locale": "ko"
           },
-          "lib/netstandard2.1/pl/FSharp.Core.resources.dll": {
+          "lib/netstandard2.0/pl/FSharp.Core.resources.dll": {
             "locale": "pl"
           },
-          "lib/netstandard2.1/pt-BR/FSharp.Core.resources.dll": {
+          "lib/netstandard2.0/pt-BR/FSharp.Core.resources.dll": {
             "locale": "pt-BR"
           },
-          "lib/netstandard2.1/ru/FSharp.Core.resources.dll": {
+          "lib/netstandard2.0/ru/FSharp.Core.resources.dll": {
             "locale": "ru"
           },
-          "lib/netstandard2.1/tr/FSharp.Core.resources.dll": {
+          "lib/netstandard2.0/tr/FSharp.Core.resources.dll": {
             "locale": "tr"
           },
-          "lib/netstandard2.1/zh-Hans/FSharp.Core.resources.dll": {
+          "lib/netstandard2.0/zh-Hans/FSharp.Core.resources.dll": {
             "locale": "zh-Hans"
           },
-          "lib/netstandard2.1/zh-Hant/FSharp.Core.resources.dll": {
+          "lib/netstandard2.0/zh-Hant/FSharp.Core.resources.dll": {
             "locale": "zh-Hant"
           }
         }
-      },
-      "glfw/3.3.5": {
-        "type": "package"
       },
       "GlmNet/0.7.0": {
         "type": "package",
@@ -88,26 +69,12 @@
           }
         }
       },
-      "MathSharp/2.0.0-pre": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Net.Compilers.Toolset": "3.2.0-beta1-final"
-        },
-        "compile": {
-          "lib/netcoreapp3.0/MathSharp.dll": {}
-        },
-        "runtime": {
-          "lib/netcoreapp3.0/MathSharp.dll": {}
-        }
-      },
-      "Microsoft.Net.Compilers.Toolset/3.2.0-beta1-final": {
-        "type": "package",
-        "build": {
-          "build/_._": {}
-        }
-      },
       "OpenGL.Net/0.8.4": {
         "type": "package",
+        "frameworkAssemblies": [
+          "System",
+          "System.Xml"
+        ],
         "compile": {
           "lib/net461/OpenGL.Net.dll": {
             "related": ".pdb;.xml"
@@ -122,34 +89,15 @@
       "StbImageSharp/2.22.6": {
         "type": "package",
         "compile": {
-          "lib/netstandard2.0/StbImageSharp.dll": {}
+          "lib/net45/StbImageSharp.dll": {}
         },
         "runtime": {
-          "lib/netstandard2.0/StbImageSharp.dll": {}
-        }
-      },
-      "FSTree/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
-        "dependencies": {
-          "FSharp.Core": "8.0.100"
-        },
-        "compile": {
-          "bin/placeholder/FSTree.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/FSTree.dll": {}
+          "lib/net45/StbImageSharp.dll": {}
         }
       },
       "TDE3ManagerInterfaces/1.0.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
-        "dependencies": {
-          "FSFramework": "1.0.0-preview-1",
-          "FSTree": "1.0.0",
-          "FSharp.Core": "8.0.100",
-          "MathSharp": "2.0.0-pre"
-        },
+        "framework": "Unsupported,Version=v0.0",
         "compile": {
           "bin/placeholder/TDE3ManagerInterfaces.dll": {}
         },
@@ -160,19 +108,6 @@
     }
   },
   "libraries": {
-    "FSFramework/1.0.0-preview-1": {
-      "sha512": "pmykRxvdCxAnO4Cb7H+KoXO4kM0vrWt7Ookx/mFl17PD1EKurevrBoBMb1XsslZ1/97zb0ultXdXgX8nE4v4ow==",
-      "type": "package",
-      "path": "fsframework/1.0.0-preview-1",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "fsframework.1.0.0-preview-1.nupkg.sha512",
-        "fsframework.nuspec",
-        "lib/net6.0/FSFramework.dll",
-        "lib/net6.0/FSFramework.xml"
-      ]
-    },
     "FSharp.Core/8.0.100": {
       "sha512": "ZOVZ/o+jI3ormTZOa28Wh0tSRoyle1f7lKFcUN61sPiXI7eDZu8eSveFybgTeyIEyW0ujjp31cp7GOglDgsNEg==",
       "type": "package",
@@ -215,280 +150,6 @@
         "lib/netstandard2.1/zh-Hant/FSharp.Core.resources.dll"
       ]
     },
-    "glfw/3.3.5": {
-      "sha512": "nY9HyL8kejc0hSbfQH1eoxj3AH4GBnKu4XHq2MmIu8p+sAApSwMt1YIXTkoHln8mf6FtdiUXQ9P4Y/QlTnFJxA==",
-      "type": "package",
-      "path": "glfw/3.3.5",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "build/native/bin/dynamic/v100/win32/glfw3.dll",
-        "build/native/bin/dynamic/v110/win32/glfw3.dll",
-        "build/native/bin/dynamic/v110/x64/glfw3.dll",
-        "build/native/bin/dynamic/v120/win32/glfw3.dll",
-        "build/native/bin/dynamic/v120/x64/glfw3.dll",
-        "build/native/bin/dynamic/v140/win32/glfw3.dll",
-        "build/native/bin/dynamic/v140/x64/glfw3.dll",
-        "build/native/bin/dynamic/v141/win32/glfw3.dll",
-        "build/native/bin/dynamic/v141/x64/glfw3.dll",
-        "build/native/bin/dynamic/v142/win32/glfw3.dll",
-        "build/native/bin/dynamic/v142/x64/glfw3.dll",
-        "build/native/bin/dynamic/v143/win32/glfw3.dll",
-        "build/native/bin/dynamic/v143/x64/glfw3.dll",
-        "build/native/glfw-propertiesui.xml",
-        "build/native/glfw.targets",
-        "build/native/include/GLFW/glfw3.h",
-        "build/native/include/GLFW/glfw3native.h",
-        "build/native/lib/dynamic/v100/win32/glfw3dll.lib",
-        "build/native/lib/dynamic/v110/win32/glfw3dll.lib",
-        "build/native/lib/dynamic/v110/x64/glfw3dll.lib",
-        "build/native/lib/dynamic/v120/win32/glfw3dll.lib",
-        "build/native/lib/dynamic/v120/x64/glfw3dll.lib",
-        "build/native/lib/dynamic/v140/win32/glfw3dll.lib",
-        "build/native/lib/dynamic/v140/x64/glfw3dll.lib",
-        "build/native/lib/dynamic/v141/win32/glfw3dll.lib",
-        "build/native/lib/dynamic/v141/x64/glfw3dll.lib",
-        "build/native/lib/dynamic/v142/win32/glfw3dll.lib",
-        "build/native/lib/dynamic/v142/x64/glfw3dll.lib",
-        "build/native/lib/dynamic/v143/win32/glfw3dll.lib",
-        "build/native/lib/dynamic/v143/x64/glfw3dll.lib",
-        "build/native/lib/static/v100/win32/glfw3.lib",
-        "build/native/lib/static/v110/win32/glfw3.lib",
-        "build/native/lib/static/v110/x64/glfw3.lib",
-        "build/native/lib/static/v120/win32/glfw3.lib",
-        "build/native/lib/static/v120/x64/glfw3.lib",
-        "build/native/lib/static/v140/win32/glfw3.lib",
-        "build/native/lib/static/v140/x64/glfw3.lib",
-        "build/native/lib/static/v141/win32/glfw3.lib",
-        "build/native/lib/static/v141/x64/glfw3.lib",
-        "build/native/lib/static/v142/win32/glfw3.lib",
-        "build/native/lib/static/v142/x64/glfw3.lib",
-        "build/native/lib/static/v143/win32/glfw3.lib",
-        "build/native/lib/static/v143/x64/glfw3.lib",
-        "docs/LICENSE.md",
-        "docs/README.md",
-        "docs/glfw_sq.png",
-        "docs/html/bc_s.png",
-        "docs/html/bdwn.png",
-        "docs/html/build_8dox.html",
-        "docs/html/build_guide.html",
-        "docs/html/closed.png",
-        "docs/html/compat_8dox.html",
-        "docs/html/compat_guide.html",
-        "docs/html/compile_8dox.html",
-        "docs/html/compile_guide.html",
-        "docs/html/context_8dox.html",
-        "docs/html/context_guide.html",
-        "docs/html/deprecated.html",
-        "docs/html/dir_95e305b1bfdd4b95b22076c452f17802.html",
-        "docs/html/dir_a2f8ccc4e596c8744057ab6c4a040d5c.html",
-        "docs/html/dir_af88d45d38f632316cb7d639530d38c2.html",
-        "docs/html/dir_ba478fc71671afc03f16a7df0eff1823.html",
-        "docs/html/doc.png",
-        "docs/html/doxygen.css",
-        "docs/html/doxygen.svg",
-        "docs/html/dynsections.js",
-        "docs/html/extra.css",
-        "docs/html/files.html",
-        "docs/html/folderclosed.png",
-        "docs/html/folderopen.png",
-        "docs/html/glfw3_8h.html",
-        "docs/html/glfw3_8h_source.html",
-        "docs/html/glfw3native_8h.html",
-        "docs/html/glfw3native_8h_source.html",
-        "docs/html/group__buttons.html",
-        "docs/html/group__context.html",
-        "docs/html/group__errors.html",
-        "docs/html/group__gamepad__axes.html",
-        "docs/html/group__gamepad__buttons.html",
-        "docs/html/group__hat__state.html",
-        "docs/html/group__init.html",
-        "docs/html/group__input.html",
-        "docs/html/group__joysticks.html",
-        "docs/html/group__keys.html",
-        "docs/html/group__mods.html",
-        "docs/html/group__monitor.html",
-        "docs/html/group__native.html",
-        "docs/html/group__shapes.html",
-        "docs/html/group__vulkan.html",
-        "docs/html/group__window.html",
-        "docs/html/index.html",
-        "docs/html/input_8dox.html",
-        "docs/html/input_guide.html",
-        "docs/html/internal_8dox.html",
-        "docs/html/internals_guide.html",
-        "docs/html/intro_8dox.html",
-        "docs/html/intro_guide.html",
-        "docs/html/jquery.js",
-        "docs/html/main_8dox.html",
-        "docs/html/menu.js",
-        "docs/html/menudata.js",
-        "docs/html/modules.html",
-        "docs/html/monitor_8dox.html",
-        "docs/html/monitor_guide.html",
-        "docs/html/moving_8dox.html",
-        "docs/html/moving_guide.html",
-        "docs/html/nav_f.png",
-        "docs/html/nav_g.png",
-        "docs/html/nav_h.png",
-        "docs/html/news.html",
-        "docs/html/news_8dox.html",
-        "docs/html/open.png",
-        "docs/html/pages.html",
-        "docs/html/quick_8dox.html",
-        "docs/html/quick_guide.html",
-        "docs/html/search/all_0.html",
-        "docs/html/search/all_0.js",
-        "docs/html/search/all_1.html",
-        "docs/html/search/all_1.js",
-        "docs/html/search/all_10.html",
-        "docs/html/search/all_10.js",
-        "docs/html/search/all_11.html",
-        "docs/html/search/all_11.js",
-        "docs/html/search/all_2.html",
-        "docs/html/search/all_2.js",
-        "docs/html/search/all_3.html",
-        "docs/html/search/all_3.js",
-        "docs/html/search/all_4.html",
-        "docs/html/search/all_4.js",
-        "docs/html/search/all_5.html",
-        "docs/html/search/all_5.js",
-        "docs/html/search/all_6.html",
-        "docs/html/search/all_6.js",
-        "docs/html/search/all_7.html",
-        "docs/html/search/all_7.js",
-        "docs/html/search/all_8.html",
-        "docs/html/search/all_8.js",
-        "docs/html/search/all_9.html",
-        "docs/html/search/all_9.js",
-        "docs/html/search/all_a.html",
-        "docs/html/search/all_a.js",
-        "docs/html/search/all_b.html",
-        "docs/html/search/all_b.js",
-        "docs/html/search/all_c.html",
-        "docs/html/search/all_c.js",
-        "docs/html/search/all_d.html",
-        "docs/html/search/all_d.js",
-        "docs/html/search/all_e.html",
-        "docs/html/search/all_e.js",
-        "docs/html/search/all_f.html",
-        "docs/html/search/all_f.js",
-        "docs/html/search/classes_0.html",
-        "docs/html/search/classes_0.js",
-        "docs/html/search/close.svg",
-        "docs/html/search/defines_0.html",
-        "docs/html/search/defines_0.js",
-        "docs/html/search/files_0.html",
-        "docs/html/search/files_0.js",
-        "docs/html/search/files_1.html",
-        "docs/html/search/files_1.js",
-        "docs/html/search/files_2.html",
-        "docs/html/search/files_2.js",
-        "docs/html/search/files_3.html",
-        "docs/html/search/files_3.js",
-        "docs/html/search/files_4.html",
-        "docs/html/search/files_4.js",
-        "docs/html/search/files_5.html",
-        "docs/html/search/files_5.js",
-        "docs/html/search/files_6.html",
-        "docs/html/search/files_6.js",
-        "docs/html/search/files_7.html",
-        "docs/html/search/files_7.js",
-        "docs/html/search/files_8.html",
-        "docs/html/search/files_8.js",
-        "docs/html/search/functions_0.html",
-        "docs/html/search/functions_0.js",
-        "docs/html/search/groups_0.html",
-        "docs/html/search/groups_0.js",
-        "docs/html/search/groups_1.html",
-        "docs/html/search/groups_1.js",
-        "docs/html/search/groups_2.html",
-        "docs/html/search/groups_2.js",
-        "docs/html/search/groups_3.html",
-        "docs/html/search/groups_3.js",
-        "docs/html/search/groups_4.html",
-        "docs/html/search/groups_4.js",
-        "docs/html/search/groups_5.html",
-        "docs/html/search/groups_5.js",
-        "docs/html/search/groups_6.html",
-        "docs/html/search/groups_6.js",
-        "docs/html/search/groups_7.html",
-        "docs/html/search/groups_7.js",
-        "docs/html/search/groups_8.html",
-        "docs/html/search/groups_8.js",
-        "docs/html/search/groups_9.html",
-        "docs/html/search/groups_9.js",
-        "docs/html/search/groups_a.html",
-        "docs/html/search/groups_a.js",
-        "docs/html/search/mag_sel.svg",
-        "docs/html/search/nomatches.html",
-        "docs/html/search/pages_0.html",
-        "docs/html/search/pages_0.js",
-        "docs/html/search/pages_1.html",
-        "docs/html/search/pages_1.js",
-        "docs/html/search/pages_2.html",
-        "docs/html/search/pages_2.js",
-        "docs/html/search/pages_3.html",
-        "docs/html/search/pages_3.js",
-        "docs/html/search/pages_4.html",
-        "docs/html/search/pages_4.js",
-        "docs/html/search/pages_5.html",
-        "docs/html/search/pages_5.js",
-        "docs/html/search/pages_6.html",
-        "docs/html/search/pages_6.js",
-        "docs/html/search/pages_7.html",
-        "docs/html/search/pages_7.js",
-        "docs/html/search/pages_8.html",
-        "docs/html/search/pages_8.js",
-        "docs/html/search/pages_9.html",
-        "docs/html/search/pages_9.js",
-        "docs/html/search/pages_a.html",
-        "docs/html/search/pages_a.js",
-        "docs/html/search/search.css",
-        "docs/html/search/search.js",
-        "docs/html/search/search_l.png",
-        "docs/html/search/search_m.png",
-        "docs/html/search/search_r.png",
-        "docs/html/search/searchdata.js",
-        "docs/html/search/typedefs_0.html",
-        "docs/html/search/typedefs_0.js",
-        "docs/html/search/variables_0.html",
-        "docs/html/search/variables_0.js",
-        "docs/html/search/variables_1.html",
-        "docs/html/search/variables_1.js",
-        "docs/html/search/variables_2.html",
-        "docs/html/search/variables_2.js",
-        "docs/html/search/variables_3.html",
-        "docs/html/search/variables_3.js",
-        "docs/html/search/variables_4.html",
-        "docs/html/search/variables_4.js",
-        "docs/html/search/variables_5.html",
-        "docs/html/search/variables_5.js",
-        "docs/html/search/variables_6.html",
-        "docs/html/search/variables_6.js",
-        "docs/html/search/variables_7.html",
-        "docs/html/search/variables_7.js",
-        "docs/html/spaces.svg",
-        "docs/html/splitbar.png",
-        "docs/html/structGLFWgamepadstate.html",
-        "docs/html/structGLFWgammaramp.html",
-        "docs/html/structGLFWimage.html",
-        "docs/html/structGLFWvidmode.html",
-        "docs/html/sync_off.png",
-        "docs/html/sync_on.png",
-        "docs/html/tab_a.png",
-        "docs/html/tab_b.png",
-        "docs/html/tab_h.png",
-        "docs/html/tab_s.png",
-        "docs/html/tabs.css",
-        "docs/html/vulkan_8dox.html",
-        "docs/html/vulkan_guide.html",
-        "docs/html/window_8dox.html",
-        "docs/html/window_guide.html",
-        "glfw.3.3.5.nupkg.sha512",
-        "glfw.nuspec"
-      ]
-    },
     "GlmNet/0.7.0": {
       "sha512": "g3EFJOV89dWppRVT5PJ8nVYWSEIoB4yqqEZy71ryb3mfxSGrvwqxsF+XbK+J0jUgSwRIYEWHqodvtd3LchlE+w==",
       "type": "package",
@@ -500,218 +161,6 @@
         "glmnet.nuspec",
         "lib/net40/GlmNet.XML",
         "lib/net40/GlmNet.dll"
-      ]
-    },
-    "MathSharp/2.0.0-pre": {
-      "sha512": "no7zvuWKdJWG4fVps/rgJBZe+jbdddT2EaZGjGlvCNLZsbmqRS03mR7TwtA4FVDGzvLqirJyAIaa6vvnTtxucg==",
-      "type": "package",
-      "path": "mathsharp/2.0.0-pre",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/netcoreapp3.0/MathSharp.dll",
-        "mathsharp.2.0.0-pre.nupkg.sha512",
-        "mathsharp.nuspec"
-      ]
-    },
-    "Microsoft.Net.Compilers.Toolset/3.2.0-beta1-final": {
-      "sha512": "vNBRdj9T0TA6YLFCzFqozK7K3qUYPE7K09sC+RgU7Q8MC1BjdB+SkeuNBDRrd+3tFTfDG6RYni1WJASzrkjcQQ==",
-      "type": "package",
-      "path": "microsoft.net.compilers.toolset/3.2.0-beta1-final",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "ThirdPartyNotices.rtf",
-        "build/Microsoft.Net.Compilers.Toolset.props",
-        "microsoft.net.compilers.toolset.3.2.0-beta1-final.nupkg.sha512",
-        "microsoft.net.compilers.toolset.nuspec",
-        "tasks/net472/Microsoft.Build.Tasks.CodeAnalysis.dll",
-        "tasks/net472/Microsoft.CSharp.Core.targets",
-        "tasks/net472/Microsoft.CodeAnalysis.CSharp.Scripting.dll",
-        "tasks/net472/Microsoft.CodeAnalysis.CSharp.dll",
-        "tasks/net472/Microsoft.CodeAnalysis.Scripting.dll",
-        "tasks/net472/Microsoft.CodeAnalysis.VisualBasic.dll",
-        "tasks/net472/Microsoft.CodeAnalysis.dll",
-        "tasks/net472/Microsoft.DiaSymReader.Native.amd64.dll",
-        "tasks/net472/Microsoft.DiaSymReader.Native.x86.dll",
-        "tasks/net472/Microsoft.Managed.Core.targets",
-        "tasks/net472/Microsoft.Managed.EditorConfig.targets",
-        "tasks/net472/Microsoft.VisualBasic.Core.targets",
-        "tasks/net472/System.Buffers.dll",
-        "tasks/net472/System.Collections.Immutable.dll",
-        "tasks/net472/System.Memory.dll",
-        "tasks/net472/System.Numerics.Vectors.dll",
-        "tasks/net472/System.Reflection.Metadata.dll",
-        "tasks/net472/System.Runtime.CompilerServices.Unsafe.dll",
-        "tasks/net472/System.Text.Encoding.CodePages.dll",
-        "tasks/net472/System.Threading.Tasks.Extensions.dll",
-        "tasks/net472/VBCSCompiler.exe",
-        "tasks/net472/VBCSCompiler.exe.config",
-        "tasks/net472/cs/Microsoft.Build.Tasks.CodeAnalysis.resources.dll",
-        "tasks/net472/cs/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll",
-        "tasks/net472/cs/Microsoft.CodeAnalysis.CSharp.resources.dll",
-        "tasks/net472/cs/Microsoft.CodeAnalysis.Scripting.resources.dll",
-        "tasks/net472/cs/Microsoft.CodeAnalysis.VisualBasic.resources.dll",
-        "tasks/net472/cs/Microsoft.CodeAnalysis.resources.dll",
-        "tasks/net472/csc.exe",
-        "tasks/net472/csc.exe.config",
-        "tasks/net472/csc.rsp",
-        "tasks/net472/csi.exe",
-        "tasks/net472/csi.exe.config",
-        "tasks/net472/csi.rsp",
-        "tasks/net472/de/Microsoft.Build.Tasks.CodeAnalysis.resources.dll",
-        "tasks/net472/de/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll",
-        "tasks/net472/de/Microsoft.CodeAnalysis.CSharp.resources.dll",
-        "tasks/net472/de/Microsoft.CodeAnalysis.Scripting.resources.dll",
-        "tasks/net472/de/Microsoft.CodeAnalysis.VisualBasic.resources.dll",
-        "tasks/net472/de/Microsoft.CodeAnalysis.resources.dll",
-        "tasks/net472/es/Microsoft.Build.Tasks.CodeAnalysis.resources.dll",
-        "tasks/net472/es/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll",
-        "tasks/net472/es/Microsoft.CodeAnalysis.CSharp.resources.dll",
-        "tasks/net472/es/Microsoft.CodeAnalysis.Scripting.resources.dll",
-        "tasks/net472/es/Microsoft.CodeAnalysis.VisualBasic.resources.dll",
-        "tasks/net472/es/Microsoft.CodeAnalysis.resources.dll",
-        "tasks/net472/fr/Microsoft.Build.Tasks.CodeAnalysis.resources.dll",
-        "tasks/net472/fr/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll",
-        "tasks/net472/fr/Microsoft.CodeAnalysis.CSharp.resources.dll",
-        "tasks/net472/fr/Microsoft.CodeAnalysis.Scripting.resources.dll",
-        "tasks/net472/fr/Microsoft.CodeAnalysis.VisualBasic.resources.dll",
-        "tasks/net472/fr/Microsoft.CodeAnalysis.resources.dll",
-        "tasks/net472/it/Microsoft.Build.Tasks.CodeAnalysis.resources.dll",
-        "tasks/net472/it/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll",
-        "tasks/net472/it/Microsoft.CodeAnalysis.CSharp.resources.dll",
-        "tasks/net472/it/Microsoft.CodeAnalysis.Scripting.resources.dll",
-        "tasks/net472/it/Microsoft.CodeAnalysis.VisualBasic.resources.dll",
-        "tasks/net472/it/Microsoft.CodeAnalysis.resources.dll",
-        "tasks/net472/ja/Microsoft.Build.Tasks.CodeAnalysis.resources.dll",
-        "tasks/net472/ja/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll",
-        "tasks/net472/ja/Microsoft.CodeAnalysis.CSharp.resources.dll",
-        "tasks/net472/ja/Microsoft.CodeAnalysis.Scripting.resources.dll",
-        "tasks/net472/ja/Microsoft.CodeAnalysis.VisualBasic.resources.dll",
-        "tasks/net472/ja/Microsoft.CodeAnalysis.resources.dll",
-        "tasks/net472/ko/Microsoft.Build.Tasks.CodeAnalysis.resources.dll",
-        "tasks/net472/ko/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll",
-        "tasks/net472/ko/Microsoft.CodeAnalysis.CSharp.resources.dll",
-        "tasks/net472/ko/Microsoft.CodeAnalysis.Scripting.resources.dll",
-        "tasks/net472/ko/Microsoft.CodeAnalysis.VisualBasic.resources.dll",
-        "tasks/net472/ko/Microsoft.CodeAnalysis.resources.dll",
-        "tasks/net472/pl/Microsoft.Build.Tasks.CodeAnalysis.resources.dll",
-        "tasks/net472/pl/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll",
-        "tasks/net472/pl/Microsoft.CodeAnalysis.CSharp.resources.dll",
-        "tasks/net472/pl/Microsoft.CodeAnalysis.Scripting.resources.dll",
-        "tasks/net472/pl/Microsoft.CodeAnalysis.VisualBasic.resources.dll",
-        "tasks/net472/pl/Microsoft.CodeAnalysis.resources.dll",
-        "tasks/net472/pt-BR/Microsoft.Build.Tasks.CodeAnalysis.resources.dll",
-        "tasks/net472/pt-BR/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll",
-        "tasks/net472/pt-BR/Microsoft.CodeAnalysis.CSharp.resources.dll",
-        "tasks/net472/pt-BR/Microsoft.CodeAnalysis.Scripting.resources.dll",
-        "tasks/net472/pt-BR/Microsoft.CodeAnalysis.VisualBasic.resources.dll",
-        "tasks/net472/pt-BR/Microsoft.CodeAnalysis.resources.dll",
-        "tasks/net472/ru/Microsoft.Build.Tasks.CodeAnalysis.resources.dll",
-        "tasks/net472/ru/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll",
-        "tasks/net472/ru/Microsoft.CodeAnalysis.CSharp.resources.dll",
-        "tasks/net472/ru/Microsoft.CodeAnalysis.Scripting.resources.dll",
-        "tasks/net472/ru/Microsoft.CodeAnalysis.VisualBasic.resources.dll",
-        "tasks/net472/ru/Microsoft.CodeAnalysis.resources.dll",
-        "tasks/net472/tr/Microsoft.Build.Tasks.CodeAnalysis.resources.dll",
-        "tasks/net472/tr/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll",
-        "tasks/net472/tr/Microsoft.CodeAnalysis.CSharp.resources.dll",
-        "tasks/net472/tr/Microsoft.CodeAnalysis.Scripting.resources.dll",
-        "tasks/net472/tr/Microsoft.CodeAnalysis.VisualBasic.resources.dll",
-        "tasks/net472/tr/Microsoft.CodeAnalysis.resources.dll",
-        "tasks/net472/vbc.exe",
-        "tasks/net472/vbc.exe.config",
-        "tasks/net472/vbc.rsp",
-        "tasks/net472/zh-Hans/Microsoft.Build.Tasks.CodeAnalysis.resources.dll",
-        "tasks/net472/zh-Hans/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll",
-        "tasks/net472/zh-Hans/Microsoft.CodeAnalysis.CSharp.resources.dll",
-        "tasks/net472/zh-Hans/Microsoft.CodeAnalysis.Scripting.resources.dll",
-        "tasks/net472/zh-Hans/Microsoft.CodeAnalysis.VisualBasic.resources.dll",
-        "tasks/net472/zh-Hans/Microsoft.CodeAnalysis.resources.dll",
-        "tasks/net472/zh-Hant/Microsoft.Build.Tasks.CodeAnalysis.resources.dll",
-        "tasks/net472/zh-Hant/Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll",
-        "tasks/net472/zh-Hant/Microsoft.CodeAnalysis.CSharp.resources.dll",
-        "tasks/net472/zh-Hant/Microsoft.CodeAnalysis.Scripting.resources.dll",
-        "tasks/net472/zh-Hant/Microsoft.CodeAnalysis.VisualBasic.resources.dll",
-        "tasks/net472/zh-Hant/Microsoft.CodeAnalysis.resources.dll",
-        "tasks/netcoreapp2.1/Microsoft.Build.Tasks.CodeAnalysis.dll",
-        "tasks/netcoreapp2.1/Microsoft.CSharp.Core.targets",
-        "tasks/netcoreapp2.1/Microsoft.Managed.Core.targets",
-        "tasks/netcoreapp2.1/Microsoft.Managed.EditorConfig.targets",
-        "tasks/netcoreapp2.1/Microsoft.VisualBasic.Core.targets",
-        "tasks/netcoreapp2.1/bincore/Microsoft.CodeAnalysis.CSharp.dll",
-        "tasks/netcoreapp2.1/bincore/Microsoft.CodeAnalysis.VisualBasic.dll",
-        "tasks/netcoreapp2.1/bincore/Microsoft.CodeAnalysis.dll",
-        "tasks/netcoreapp2.1/bincore/System.Runtime.CompilerServices.Unsafe.dll",
-        "tasks/netcoreapp2.1/bincore/System.Text.Encoding.CodePages.dll",
-        "tasks/netcoreapp2.1/bincore/VBCSCompiler.deps.json",
-        "tasks/netcoreapp2.1/bincore/VBCSCompiler.dll",
-        "tasks/netcoreapp2.1/bincore/VBCSCompiler.runtimeconfig.json",
-        "tasks/netcoreapp2.1/bincore/cs/Microsoft.CodeAnalysis.CSharp.resources.dll",
-        "tasks/netcoreapp2.1/bincore/cs/Microsoft.CodeAnalysis.VisualBasic.resources.dll",
-        "tasks/netcoreapp2.1/bincore/cs/Microsoft.CodeAnalysis.resources.dll",
-        "tasks/netcoreapp2.1/bincore/csc.deps.json",
-        "tasks/netcoreapp2.1/bincore/csc.dll",
-        "tasks/netcoreapp2.1/bincore/csc.runtimeconfig.json",
-        "tasks/netcoreapp2.1/bincore/de/Microsoft.CodeAnalysis.CSharp.resources.dll",
-        "tasks/netcoreapp2.1/bincore/de/Microsoft.CodeAnalysis.VisualBasic.resources.dll",
-        "tasks/netcoreapp2.1/bincore/de/Microsoft.CodeAnalysis.resources.dll",
-        "tasks/netcoreapp2.1/bincore/es/Microsoft.CodeAnalysis.CSharp.resources.dll",
-        "tasks/netcoreapp2.1/bincore/es/Microsoft.CodeAnalysis.VisualBasic.resources.dll",
-        "tasks/netcoreapp2.1/bincore/es/Microsoft.CodeAnalysis.resources.dll",
-        "tasks/netcoreapp2.1/bincore/fr/Microsoft.CodeAnalysis.CSharp.resources.dll",
-        "tasks/netcoreapp2.1/bincore/fr/Microsoft.CodeAnalysis.VisualBasic.resources.dll",
-        "tasks/netcoreapp2.1/bincore/fr/Microsoft.CodeAnalysis.resources.dll",
-        "tasks/netcoreapp2.1/bincore/it/Microsoft.CodeAnalysis.CSharp.resources.dll",
-        "tasks/netcoreapp2.1/bincore/it/Microsoft.CodeAnalysis.VisualBasic.resources.dll",
-        "tasks/netcoreapp2.1/bincore/it/Microsoft.CodeAnalysis.resources.dll",
-        "tasks/netcoreapp2.1/bincore/ja/Microsoft.CodeAnalysis.CSharp.resources.dll",
-        "tasks/netcoreapp2.1/bincore/ja/Microsoft.CodeAnalysis.VisualBasic.resources.dll",
-        "tasks/netcoreapp2.1/bincore/ja/Microsoft.CodeAnalysis.resources.dll",
-        "tasks/netcoreapp2.1/bincore/ko/Microsoft.CodeAnalysis.CSharp.resources.dll",
-        "tasks/netcoreapp2.1/bincore/ko/Microsoft.CodeAnalysis.VisualBasic.resources.dll",
-        "tasks/netcoreapp2.1/bincore/ko/Microsoft.CodeAnalysis.resources.dll",
-        "tasks/netcoreapp2.1/bincore/pl/Microsoft.CodeAnalysis.CSharp.resources.dll",
-        "tasks/netcoreapp2.1/bincore/pl/Microsoft.CodeAnalysis.VisualBasic.resources.dll",
-        "tasks/netcoreapp2.1/bincore/pl/Microsoft.CodeAnalysis.resources.dll",
-        "tasks/netcoreapp2.1/bincore/pt-BR/Microsoft.CodeAnalysis.CSharp.resources.dll",
-        "tasks/netcoreapp2.1/bincore/pt-BR/Microsoft.CodeAnalysis.VisualBasic.resources.dll",
-        "tasks/netcoreapp2.1/bincore/pt-BR/Microsoft.CodeAnalysis.resources.dll",
-        "tasks/netcoreapp2.1/bincore/ru/Microsoft.CodeAnalysis.CSharp.resources.dll",
-        "tasks/netcoreapp2.1/bincore/ru/Microsoft.CodeAnalysis.VisualBasic.resources.dll",
-        "tasks/netcoreapp2.1/bincore/ru/Microsoft.CodeAnalysis.resources.dll",
-        "tasks/netcoreapp2.1/bincore/runtimes/win-x64/native/Microsoft.DiaSymReader.Native.amd64.dll",
-        "tasks/netcoreapp2.1/bincore/runtimes/win-x86/native/Microsoft.DiaSymReader.Native.x86.dll",
-        "tasks/netcoreapp2.1/bincore/runtimes/win/lib/netcoreapp2.0/System.Text.Encoding.CodePages.dll",
-        "tasks/netcoreapp2.1/bincore/runtimes/win/native/Microsoft.DiaSymReader.Native.amd64.dll",
-        "tasks/netcoreapp2.1/bincore/runtimes/win/native/Microsoft.DiaSymReader.Native.arm.dll",
-        "tasks/netcoreapp2.1/bincore/runtimes/win/native/Microsoft.DiaSymReader.Native.x86.dll",
-        "tasks/netcoreapp2.1/bincore/runtimes/win8-arm/native/Microsoft.DiaSymReader.Native.arm.dll",
-        "tasks/netcoreapp2.1/bincore/tr/Microsoft.CodeAnalysis.CSharp.resources.dll",
-        "tasks/netcoreapp2.1/bincore/tr/Microsoft.CodeAnalysis.VisualBasic.resources.dll",
-        "tasks/netcoreapp2.1/bincore/tr/Microsoft.CodeAnalysis.resources.dll",
-        "tasks/netcoreapp2.1/bincore/vbc.deps.json",
-        "tasks/netcoreapp2.1/bincore/vbc.dll",
-        "tasks/netcoreapp2.1/bincore/vbc.runtimeconfig.json",
-        "tasks/netcoreapp2.1/bincore/zh-Hans/Microsoft.CodeAnalysis.CSharp.resources.dll",
-        "tasks/netcoreapp2.1/bincore/zh-Hans/Microsoft.CodeAnalysis.VisualBasic.resources.dll",
-        "tasks/netcoreapp2.1/bincore/zh-Hans/Microsoft.CodeAnalysis.resources.dll",
-        "tasks/netcoreapp2.1/bincore/zh-Hant/Microsoft.CodeAnalysis.CSharp.resources.dll",
-        "tasks/netcoreapp2.1/bincore/zh-Hant/Microsoft.CodeAnalysis.VisualBasic.resources.dll",
-        "tasks/netcoreapp2.1/bincore/zh-Hant/Microsoft.CodeAnalysis.resources.dll",
-        "tasks/netcoreapp2.1/cs/Microsoft.Build.Tasks.CodeAnalysis.resources.dll",
-        "tasks/netcoreapp2.1/de/Microsoft.Build.Tasks.CodeAnalysis.resources.dll",
-        "tasks/netcoreapp2.1/es/Microsoft.Build.Tasks.CodeAnalysis.resources.dll",
-        "tasks/netcoreapp2.1/fr/Microsoft.Build.Tasks.CodeAnalysis.resources.dll",
-        "tasks/netcoreapp2.1/it/Microsoft.Build.Tasks.CodeAnalysis.resources.dll",
-        "tasks/netcoreapp2.1/ja/Microsoft.Build.Tasks.CodeAnalysis.resources.dll",
-        "tasks/netcoreapp2.1/ko/Microsoft.Build.Tasks.CodeAnalysis.resources.dll",
-        "tasks/netcoreapp2.1/pl/Microsoft.Build.Tasks.CodeAnalysis.resources.dll",
-        "tasks/netcoreapp2.1/pt-BR/Microsoft.Build.Tasks.CodeAnalysis.resources.dll",
-        "tasks/netcoreapp2.1/ru/Microsoft.Build.Tasks.CodeAnalysis.resources.dll",
-        "tasks/netcoreapp2.1/tr/Microsoft.Build.Tasks.CodeAnalysis.resources.dll",
-        "tasks/netcoreapp2.1/zh-Hans/Microsoft.Build.Tasks.CodeAnalysis.resources.dll",
-        "tasks/netcoreapp2.1/zh-Hant/Microsoft.Build.Tasks.CodeAnalysis.resources.dll"
       ]
     },
     "OpenGL.Net/0.8.4": {
@@ -746,11 +195,6 @@
         "stbimagesharp.nuspec"
       ]
     },
-    "FSTree/1.0.0": {
-      "type": "project",
-      "path": "../FSTree/FSTree.fsproj",
-      "msbuildProject": "../FSTree/FSTree.fsproj"
-    },
     "TDE3ManagerInterfaces/1.0.0": {
       "type": "project",
       "path": "../TDE3ManagerInterfaces/TDE3ManagerInterfaces.fsproj",
@@ -758,14 +202,12 @@
     }
   },
   "projectFileDependencyGroups": {
-    "net6.0": [
-      "D:\\projects\\RiderProjects\\glfw-net\\GLFW.NET\\GLFW.NET.csproj",
+    ".NETFramework,Version=v4.8": [
       "FSharp.Core >= 8.0.100",
       "GlmNet >= 0.7.0",
       "OpenGL.Net >= 0.8.4",
       "StbImageSharp >= 2.22.6",
-      "TDE3ManagerInterfaces >= 1.0.0",
-      "glfw >= 3.3.5"
+      "TDE3ManagerInterfaces >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -775,11 +217,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\projects\\RiderProjects\\TwoDEngine3\\GraphicsManagerGLFW\\GraphicsManagerGLFW.fsproj",
+      "projectUniqueName": "C:\\Users\\jpkessel\\Documents\\RiderProjects\\TwoDEngine3\\GraphicsManagerGLFW\\GraphicsManagerGLFW.fsproj",
       "projectName": "GraphicsManagerGLFW",
-      "projectPath": "D:\\projects\\RiderProjects\\TwoDEngine3\\GraphicsManagerGLFW\\GraphicsManagerGLFW.fsproj",
+      "projectPath": "C:\\Users\\jpkessel\\Documents\\RiderProjects\\TwoDEngine3\\GraphicsManagerGLFW\\GraphicsManagerGLFW.fsproj",
       "packagesPath": "C:\\Users\\jpkessel\\.nuget\\packages\\",
-      "outputPath": "D:\\projects\\RiderProjects\\TwoDEngine3\\GraphicsManagerGLFW\\obj\\",
+      "outputPath": "C:\\Users\\jpkessel\\Documents\\RiderProjects\\TwoDEngine3\\GraphicsManagerGLFW\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -790,30 +232,28 @@
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
-        "net6.0"
+        "net48"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "C:\\Program Files\\dotnet\\sdk\\8.0.100\\FSharp\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
-        "net6.0": {
-          "targetAlias": "net6.0",
+        "net48": {
+          "targetAlias": "net48",
           "projectReferences": {
-            "D:\\projects\\RiderProjects\\glfw-net\\GLFW.NET\\GLFW.NET.csproj": {
-              "projectPath": "D:\\projects\\RiderProjects\\glfw-net\\GLFW.NET\\GLFW.NET.csproj"
-            },
-            "D:\\projects\\RiderProjects\\TwoDEngine3\\TDE3ManagerInterfaces\\TDE3ManagerInterfaces.fsproj": {
-              "projectPath": "D:\\projects\\RiderProjects\\TwoDEngine3\\TDE3ManagerInterfaces\\TDE3ManagerInterfaces.fsproj"
+            "C:\\Users\\jpkessel\\Documents\\RiderProjects\\TwoDEngine3\\TDE3ManagerInterfaces\\TDE3ManagerInterfaces.fsproj": {
+              "projectPath": "C:\\Users\\jpkessel\\Documents\\RiderProjects\\TwoDEngine3\\TDE3ManagerInterfaces\\TDE3ManagerInterfaces.fsproj"
             }
           }
         }
       }
     },
     "frameworks": {
-      "net6.0": {
-        "targetAlias": "net6.0",
+      "net48": {
+        "targetAlias": "net48",
         "dependencies": {
           "FSharp.Core": {
             "include": "Runtime, Compile, Build, Native, Analyzers, BuildTransitive",
@@ -835,27 +275,6 @@
             "target": "Package",
             "version": "[2.22.6, )",
             "generatePathProperty": true
-          },
-          "glfw": {
-            "target": "Package",
-            "version": "[3.3.5, )",
-            "generatePathProperty": true
-          }
-        },
-        "imports": [
-          "net461",
-          "net462",
-          "net47",
-          "net471",
-          "net472",
-          "net48",
-          "net481"
-        ],
-        "assetTargetFallback": true,
-        "warn": true,
-        "frameworkReferences": {
-          "Microsoft.NETCore.App": {
-            "privateAssets": "all"
           }
         },
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
@@ -864,32 +283,12 @@
   },
   "logs": [
     {
-      "code": "NU1105",
+      "code": "NU1201",
       "level": "Error",
-      "message": "Unable to find project information for 'D:\\projects\\RiderProjects\\glfw-net\\GLFW.NET\\GLFW.NET.csproj'. If you are using Visual Studio, this may be because the project is unloaded or not part of the current solution so run a restore from the command-line. Otherwise, the project file may be invalid or missing targets required for restore.",
-      "libraryId": "D:\\projects\\RiderProjects\\glfw-net\\GLFW.NET\\GLFW.NET.csproj",
+      "message": "Project TDE3ManagerInterfaces is not compatible with net48 (.NETFramework,Version=v4.8). Project TDE3ManagerInterfaces supports: net6.0 (.NETCoreApp,Version=v6.0)",
+      "libraryId": "TDE3ManagerInterfaces",
       "targetGraphs": [
-        "net6.0"
-      ]
-    },
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'GlmNet 0.7.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
-      "libraryId": "GlmNet",
-      "targetGraphs": [
-        "net6.0"
-      ]
-    },
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'OpenGL.Net 0.8.4' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
-      "libraryId": "OpenGL.Net",
-      "targetGraphs": [
-        "net6.0"
+        ".NETFramework,Version=v4.8"
       ]
     }
   ]

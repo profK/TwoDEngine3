@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "cANSx4zbwnHtCSH2dP+4s/oKlBC8AsXW5tUzu/NniaOOXsmmfo4AifF5Z3bTfuUqNqH1HD7iG416zaa1jXKLEA==",
+  "dgSpecHash": "McwfIvPs4QUUdzznUk0I/P6i9kSWJOeTP/uLzMnVwQ1MhWkBXPVs0IIpxU/HBtr8mN0ORPHHdaciRfql36I07w==",
   "success": true,
-  "projectFilePath": "D:\\projects\\RiderProjects\\TwoDEngine3\\TDE3ManagerInterfaces\\TDE3ManagerInterfaces.fsproj",
+  "projectFilePath": "C:\\Users\\jpkessel\\Documents\\RiderProjects\\TwoDEngine3\\TDE3ManagerInterfaces\\TDE3ManagerInterfaces.fsproj",
   "expectedPackageFiles": [
     "C:\\Users\\jpkessel\\.nuget\\packages\\fsframework\\1.0.0-preview-1\\fsframework.1.0.0-preview-1.nupkg.sha512",
     "C:\\Users\\jpkessel\\.nuget\\packages\\fsharp.core\\8.0.100\\fsharp.core.8.0.100.nupkg.sha512",
+    "C:\\Users\\jpkessel\\.nuget\\packages\\glfw-net\\3.3.1\\glfw-net.3.3.1.nupkg.sha512",
     "C:\\Users\\jpkessel\\.nuget\\packages\\mathsharp\\2.0.0-pre\\mathsharp.2.0.0-pre.nupkg.sha512",
     "C:\\Users\\jpkessel\\.nuget\\packages\\microsoft.net.compilers.toolset\\3.2.0-beta1-final\\microsoft.net.compilers.toolset.3.2.0-beta1-final.nupkg.sha512"
   ],
