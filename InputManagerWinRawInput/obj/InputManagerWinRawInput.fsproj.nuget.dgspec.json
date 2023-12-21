@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jpkessel\\Documents\\RiderProjects\\TwoDEngine3\\InputManagerWinRawInput\\InputManagerWinRawInput.fsproj": {}
+    "D:\\projects\\RiderProjects\\TwoDEngine3\\InputManagerWinRawInput\\InputManagerWinRawInput.fsproj": {}
   },
   "projects": {
-    "C:\\Users\\jpkessel\\Documents\\RiderProjects\\TwoDEngine3\\InputManagerWinRawInput\\InputManagerWinRawInput.fsproj": {
+    "D:\\projects\\RiderProjects\\TwoDEngine3\\FSTree\\FSTree.fsproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jpkessel\\Documents\\RiderProjects\\TwoDEngine3\\InputManagerWinRawInput\\InputManagerWinRawInput.fsproj",
-        "projectName": "InputManagerWinRawInput",
-        "projectPath": "C:\\Users\\jpkessel\\Documents\\RiderProjects\\TwoDEngine3\\InputManagerWinRawInput\\InputManagerWinRawInput.fsproj",
+        "projectUniqueName": "D:\\projects\\RiderProjects\\TwoDEngine3\\FSTree\\FSTree.fsproj",
+        "projectName": "FSTree",
+        "projectPath": "D:\\projects\\RiderProjects\\TwoDEngine3\\FSTree\\FSTree.fsproj",
         "packagesPath": "C:\\Users\\jpkessel\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jpkessel\\Documents\\RiderProjects\\TwoDEngine3\\InputManagerWinRawInput\\obj\\",
+        "outputPath": "D:\\projects\\RiderProjects\\TwoDEngine3\\FSTree\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -26,7 +26,69 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
+          "C:\\Program Files\\dotnet\\sdk\\8.0.100\\FSharp\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "FSharp.Core": {
+              "include": "Runtime, Compile, Build, Native, Analyzers, BuildTransitive",
+              "target": "Package",
+              "version": "[8.0.100, )",
+              "generatePathProperty": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\projects\\RiderProjects\\TwoDEngine3\\InputManagerWinRawInput\\InputManagerWinRawInput.fsproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\projects\\RiderProjects\\TwoDEngine3\\InputManagerWinRawInput\\InputManagerWinRawInput.fsproj",
+        "projectName": "InputManagerWinRawInput",
+        "projectPath": "D:\\projects\\RiderProjects\\TwoDEngine3\\InputManagerWinRawInput\\InputManagerWinRawInput.fsproj",
+        "packagesPath": "C:\\Users\\jpkessel\\.nuget\\packages\\",
+        "outputPath": "D:\\projects\\RiderProjects\\TwoDEngine3\\InputManagerWinRawInput\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\jpkessel\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "C:\\Program Files\\dotnet\\sdk\\8.0.100\\FSharp\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
@@ -34,8 +96,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\jpkessel\\Documents\\RiderProjects\\TwoDEngine3\\TDE3ManagerInterfaces\\TDE3ManagerInterfaces.fsproj": {
-                "projectPath": "C:\\Users\\jpkessel\\Documents\\RiderProjects\\TwoDEngine3\\TDE3ManagerInterfaces\\TDE3ManagerInterfaces.fsproj"
+              "D:\\projects\\RiderProjects\\TwoDEngine3\\TDE3ManagerInterfaces\\TDE3ManagerInterfaces.fsproj": {
+                "projectPath": "D:\\projects\\RiderProjects\\TwoDEngine3\\TDE3ManagerInterfaces\\TDE3ManagerInterfaces.fsproj"
               }
             }
           }
@@ -71,14 +133,14 @@
         }
       }
     },
-    "C:\\Users\\jpkessel\\Documents\\RiderProjects\\TwoDEngine3\\TDE3ManagerInterfaces\\TDE3ManagerInterfaces.fsproj": {
+    "D:\\projects\\RiderProjects\\TwoDEngine3\\TDE3ManagerInterfaces\\TDE3ManagerInterfaces.fsproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jpkessel\\Documents\\RiderProjects\\TwoDEngine3\\TDE3ManagerInterfaces\\TDE3ManagerInterfaces.fsproj",
+        "projectUniqueName": "D:\\projects\\RiderProjects\\TwoDEngine3\\TDE3ManagerInterfaces\\TDE3ManagerInterfaces.fsproj",
         "projectName": "TDE3ManagerInterfaces",
-        "projectPath": "C:\\Users\\jpkessel\\Documents\\RiderProjects\\TwoDEngine3\\TDE3ManagerInterfaces\\TDE3ManagerInterfaces.fsproj",
+        "projectPath": "D:\\projects\\RiderProjects\\TwoDEngine3\\TDE3ManagerInterfaces\\TDE3ManagerInterfaces.fsproj",
         "packagesPath": "C:\\Users\\jpkessel\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jpkessel\\Documents\\RiderProjects\\TwoDEngine3\\TDE3ManagerInterfaces\\obj\\",
+        "outputPath": "D:\\projects\\RiderProjects\\TwoDEngine3\\TDE3ManagerInterfaces\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -93,14 +155,17 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "C:\\Program Files\\dotnet\\sdk\\8.0.100\\FSharp\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "D:\\projects\\RiderProjects\\TwoDEngine3\\FSTree\\FSTree.fsproj": {
+                "projectPath": "D:\\projects\\RiderProjects\\TwoDEngine3\\FSTree\\FSTree.fsproj"
+              }
+            }
           }
         }
       },

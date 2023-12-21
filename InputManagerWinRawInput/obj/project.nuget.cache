@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "LNqWzaar0+15gdTPLWXvER6R0tRPeYFdI0p3zNB8Px0Fhf/el87W8ixvDxwNI9ll9sbX1IXCO9HWMktejNZ9Dw==",
+  "dgSpecHash": "uLBQnoAF/BZZPxfv/m35hVyYo+Y+oQjNJeoHM5hc+qAMeFmk2VxjyHHVT8BvWKHpfiCnepnYKDs8wSxycPjc/Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\jpkessel\\Documents\\RiderProjects\\TwoDEngine3\\InputManagerWinRawInput\\InputManagerWinRawInput.fsproj",
+  "projectFilePath": "D:\\projects\\RiderProjects\\TwoDEngine3\\InputManagerWinRawInput\\InputManagerWinRawInput.fsproj",
   "expectedPackageFiles": [
     "C:\\Users\\jpkessel\\.nuget\\packages\\fsframework\\1.0.0-preview-1\\fsframework.1.0.0-preview-1.nupkg.sha512",
     "C:\\Users\\jpkessel\\.nuget\\packages\\fsharp.core\\8.0.100\\fsharp.core.8.0.100.nupkg.sha512",

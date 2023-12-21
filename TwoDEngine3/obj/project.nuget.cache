@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "U6kSyoaOCD5yeO0kYmhjA4lLLcRpleSgDCrgPe+FcHQ7cmEXewTX/cSe7e4ePYuclDNRUemdnC0XFXYuHbsE+Q==",
-  "success": true,
-  "projectFilePath": "C:\\Users\\jpkessel\\Documents\\RiderProjects\\TwoDEngine3\\TwoDEngine3\\TwoDEngine3.fsproj",
+  "dgSpecHash": "5ksV6mmJm73Lh/ZXJ308jJIFPIaDdZ2ZwnlunOTH7ZhCPhXon1vWk8+PTERDMCgCqJeMDJ0DcfECWyVjJhIw0g==",
+  "success": false,
+  "projectFilePath": "D:\\projects\\RiderProjects\\TwoDEngine3\\TwoDEngine3\\TwoDEngine3.fsproj",
   "expectedPackageFiles": [
     "C:\\Users\\jpkessel\\.nuget\\packages\\cyotek.drawing.bitmapfont\\2.0.3\\cyotek.drawing.bitmapfont.2.0.3.nupkg.sha512",
     "C:\\Users\\jpkessel\\.nuget\\packages\\fsframework\\1.0.0-preview-1\\fsframework.1.0.0-preview-1.nupkg.sha512",
@@ -16,6 +16,15 @@
     "C:\\Users\\jpkessel\\.nuget\\packages\\stbimagesharp\\2.22.6\\stbimagesharp.2.22.6.nupkg.sha512"
   ],
   "logs": [
+    {
+      "code": "NU1105",
+      "level": "Error",
+      "message": "Unable to find project information for 'D:\\projects\\RiderProjects\\glfw-net\\GLFW.NET\\GLFW.NET.csproj'. If you are using Visual Studio, this may be because the project is unloaded or not part of the current solution so run a restore from the command-line. Otherwise, the project file may be invalid or missing targets required for restore.",
+      "libraryId": "D:\\projects\\RiderProjects\\glfw-net\\GLFW.NET\\GLFW.NET.csproj",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    },
     {
       "code": "NU1701",
       "level": "Warning",

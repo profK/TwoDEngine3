@@ -30,7 +30,6 @@
         <ProjectReference Include="..\GraphicsManagerGLFW\GraphicsManagerGLFW.fsproj" />
         <ProjectReference Include="..\AngelCodeTextRenderer\AngelCodeTextRenderer.fsproj" />
         <ProjectReference Include="..\InputManagerWinRawInput\InputManagerWinRawInput.fsproj" />
-        <ProjectReference Include="..\SceneGraph2D\SceneGraph2D.fsproj" />
     </ItemGroup>
 
 </Project>

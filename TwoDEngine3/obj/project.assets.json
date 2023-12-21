@@ -183,6 +183,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
+          "D:\\projects\\RiderProjects\\glfw-net\\GLFW.NET\\GLFW.NET.csproj": "1.0.0",
           "FSharp.Core": "8.0.100",
           "GlmNet": "0.7.0",
           "OpenGL.Net": "0.8.4",
@@ -211,26 +212,12 @@
           "bin/placeholder/InputManagerWinRawInput.dll": {}
         }
       },
-      "SceneGraph2D/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
-        "dependencies": {
-          "FSTree": "1.0.0",
-          "FSharp.Core": "8.0.100",
-          "TDE3ManagerInterfaces": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/SceneGraph2D.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/SceneGraph2D.dll": {}
-        }
-      },
       "TDE3ManagerInterfaces/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "FSFramework": "1.0.0-preview-1",
+          "FSTree": "1.0.0",
           "FSharp.Core": "8.0.100",
           "MathSharp": "2.0.0-pre"
         },
@@ -900,11 +887,6 @@
       "path": "../InputManagerWinRawInput/InputManagerWinRawInput.fsproj",
       "msbuildProject": "../InputManagerWinRawInput/InputManagerWinRawInput.fsproj"
     },
-    "SceneGraph2D/1.0.0": {
-      "type": "project",
-      "path": "../SceneGraph2D/SceneGraph2D.fsproj",
-      "msbuildProject": "../SceneGraph2D/SceneGraph2D.fsproj"
-    },
     "TDE3ManagerInterfaces/1.0.0": {
       "type": "project",
       "path": "../TDE3ManagerInterfaces/TDE3ManagerInterfaces.fsproj",
@@ -918,8 +900,7 @@
       "FSharp.Core >= 8.0.100",
       "GraphicsManagerGLFW >= 1.0.0",
       "InputManagerWinRawInput >= 1.0.0",
-      "MathSharp >= 2.0.0-pre",
-      "SceneGraph2D >= 1.0.0"
+      "MathSharp >= 2.0.0-pre"
     ]
   },
   "packageFolders": {
@@ -929,11 +910,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\jpkessel\\Documents\\RiderProjects\\TwoDEngine3\\TwoDEngine3\\TwoDEngine3.fsproj",
+      "projectUniqueName": "D:\\projects\\RiderProjects\\TwoDEngine3\\TwoDEngine3\\TwoDEngine3.fsproj",
       "projectName": "TwoDEngine3",
-      "projectPath": "C:\\Users\\jpkessel\\Documents\\RiderProjects\\TwoDEngine3\\TwoDEngine3\\TwoDEngine3.fsproj",
+      "projectPath": "D:\\projects\\RiderProjects\\TwoDEngine3\\TwoDEngine3\\TwoDEngine3.fsproj",
       "packagesPath": "C:\\Users\\jpkessel\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\jpkessel\\Documents\\RiderProjects\\TwoDEngine3\\TwoDEngine3\\obj\\",
+      "outputPath": "D:\\projects\\RiderProjects\\TwoDEngine3\\TwoDEngine3\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -948,7 +929,6 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "C:\\Program Files\\dotnet\\sdk\\8.0.100\\FSharp\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
@@ -956,17 +936,14 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\jpkessel\\Documents\\RiderProjects\\TwoDEngine3\\AngelCodeTextRenderer\\AngelCodeTextRenderer.fsproj": {
-              "projectPath": "C:\\Users\\jpkessel\\Documents\\RiderProjects\\TwoDEngine3\\AngelCodeTextRenderer\\AngelCodeTextRenderer.fsproj"
+            "D:\\projects\\RiderProjects\\TwoDEngine3\\AngelCodeTextRenderer\\AngelCodeTextRenderer.fsproj": {
+              "projectPath": "D:\\projects\\RiderProjects\\TwoDEngine3\\AngelCodeTextRenderer\\AngelCodeTextRenderer.fsproj"
             },
-            "C:\\Users\\jpkessel\\Documents\\RiderProjects\\TwoDEngine3\\GraphicsManagerGLFW\\GraphicsManagerGLFW.fsproj": {
-              "projectPath": "C:\\Users\\jpkessel\\Documents\\RiderProjects\\TwoDEngine3\\GraphicsManagerGLFW\\GraphicsManagerGLFW.fsproj"
+            "D:\\projects\\RiderProjects\\TwoDEngine3\\GraphicsManagerGLFW\\GraphicsManagerGLFW.fsproj": {
+              "projectPath": "D:\\projects\\RiderProjects\\TwoDEngine3\\GraphicsManagerGLFW\\GraphicsManagerGLFW.fsproj"
             },
-            "C:\\Users\\jpkessel\\Documents\\RiderProjects\\TwoDEngine3\\InputManagerWinRawInput\\InputManagerWinRawInput.fsproj": {
-              "projectPath": "C:\\Users\\jpkessel\\Documents\\RiderProjects\\TwoDEngine3\\InputManagerWinRawInput\\InputManagerWinRawInput.fsproj"
-            },
-            "C:\\Users\\jpkessel\\Documents\\RiderProjects\\TwoDEngine3\\SceneGraph2D\\SceneGraph2D.fsproj": {
-              "projectPath": "C:\\Users\\jpkessel\\Documents\\RiderProjects\\TwoDEngine3\\SceneGraph2D\\SceneGraph2D.fsproj"
+            "D:\\projects\\RiderProjects\\TwoDEngine3\\InputManagerWinRawInput\\InputManagerWinRawInput.fsproj": {
+              "projectPath": "D:\\projects\\RiderProjects\\TwoDEngine3\\InputManagerWinRawInput\\InputManagerWinRawInput.fsproj"
             }
           }
         }
@@ -1014,6 +991,15 @@
     }
   },
   "logs": [
+    {
+      "code": "NU1105",
+      "level": "Error",
+      "message": "Unable to find project information for 'D:\\projects\\RiderProjects\\glfw-net\\GLFW.NET\\GLFW.NET.csproj'. If you are using Visual Studio, this may be because the project is unloaded or not part of the current solution so run a restore from the command-line. Otherwise, the project file may be invalid or missing targets required for restore.",
+      "libraryId": "D:\\projects\\RiderProjects\\glfw-net\\GLFW.NET\\GLFW.NET.csproj",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    },
     {
       "code": "NU1701",
       "level": "Warning",

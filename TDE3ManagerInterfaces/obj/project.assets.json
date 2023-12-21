@@ -89,6 +89,19 @@
         "build": {
           "build/_._": {}
         }
+      },
+      "FSTree/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "FSharp.Core": "8.0.100"
+        },
+        "compile": {
+          "bin/placeholder/FSTree.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/FSTree.dll": {}
+        }
       }
     }
   },
@@ -359,11 +372,17 @@
         "tasks/netcoreapp2.1/zh-Hans/Microsoft.Build.Tasks.CodeAnalysis.resources.dll",
         "tasks/netcoreapp2.1/zh-Hant/Microsoft.Build.Tasks.CodeAnalysis.resources.dll"
       ]
+    },
+    "FSTree/1.0.0": {
+      "type": "project",
+      "path": "../FSTree/FSTree.fsproj",
+      "msbuildProject": "../FSTree/FSTree.fsproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
       "FSFramework >= 1.0.0-preview-1",
+      "FSTree >= 1.0.0",
       "FSharp.Core >= 8.0.100",
       "MathSharp >= 2.0.0-pre"
     ]
@@ -375,11 +394,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\jpkessel\\Documents\\RiderProjects\\TwoDEngine3\\TDE3ManagerInterfaces\\TDE3ManagerInterfaces.fsproj",
+      "projectUniqueName": "D:\\projects\\RiderProjects\\TwoDEngine3\\TDE3ManagerInterfaces\\TDE3ManagerInterfaces.fsproj",
       "projectName": "TDE3ManagerInterfaces",
-      "projectPath": "C:\\Users\\jpkessel\\Documents\\RiderProjects\\TwoDEngine3\\TDE3ManagerInterfaces\\TDE3ManagerInterfaces.fsproj",
+      "projectPath": "D:\\projects\\RiderProjects\\TwoDEngine3\\TDE3ManagerInterfaces\\TDE3ManagerInterfaces.fsproj",
       "packagesPath": "C:\\Users\\jpkessel\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\jpkessel\\Documents\\RiderProjects\\TwoDEngine3\\TDE3ManagerInterfaces\\obj\\",
+      "outputPath": "D:\\projects\\RiderProjects\\TwoDEngine3\\TDE3ManagerInterfaces\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -394,14 +413,17 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "C:\\Program Files\\dotnet\\sdk\\8.0.100\\FSharp\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "D:\\projects\\RiderProjects\\TwoDEngine3\\FSTree\\FSTree.fsproj": {
+              "projectPath": "D:\\projects\\RiderProjects\\TwoDEngine3\\FSTree\\FSTree.fsproj"
+            }
+          }
         }
       }
     },
